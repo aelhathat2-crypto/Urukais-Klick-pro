@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <meta name="author" content="Manuel Casimiro Carrasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitecturas Web Sostenibles - Zero-Bundling | Islands | Serverless Edge</title>
+    <meta name="description" content="Sitio educativo sobre arquitecturas web modernas de mínimo impacto: Zero-Bundling, Islands Architecture y Serverless Edge. Para estudiantes y CTOs.">
+    <link rel="stylesheet" href="/mas-css/web-sostenile.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/boton.css">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/menu/menu.css">
+
+    
+</head>
+<body>
+   
+
+        
+        <!-- Overlay para móvil -->
+    <div class="mnm-overlay" id="mnmOverlay"></div>
+
+    <!-- Botón toggle reproductor -->
+    <!-- Navegación principal -->
+    <nav class="mnm-nav-container">
+        <div class="mnm-nav-wrapper">
+            <a href="/index.html" class="mnm-logo">Urukais Klick</a>
+            
+            
+            <button class="mnm-hamburger" id="mnmHamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="mnm-nav-menu" id="mnmNavMenu">
+                <!-- Categoría 1: Entretenimiento y Ocio -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Entretenimiento y Ocio
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/buscador-de-peliculas.html" class="mnm-dropdown-item">🎬 Catálogo de Películas</a>
+                        <a href="/cabecera/cine/la-nasa.html" class="mnm-dropdown-item">🚀 Espacio y Astronomía</a>
+                        <a href="/cabecera/cine/peluculas.html" class="mnm-dropdown-item">🎭 Films Favoritos</a>
+                        <a href="/cabecera/cine/noticias.html" class="mnm-dropdown-item">📰 Noticias Actuales</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😂 Humor y Entretenimiento</a>
+                        <a href="/cabecera/musica/hadmed.html" class="mnm-dropdown-item">🎵 Ambiente Musical</a>
+                        <a href="/cabecera/musica/mas.html" class="mnm-dropdown-item">🎶 Musicalife</a>
+                        <a href="/cabecera/musica/musica-clasica.html" class="mnm-dropdown-item">🎼 Música Clásica</a>
+                        <a href="/cabecera/musica/prueva.html" class="mnm-dropdown-item">🎤 Géneros Musicales</a>
+                        <a href="/cabecera/musica/tartituras.html" class="mnm-dropdown-item">🎵 Partituras y Escore</a>
+                        <a href="/cabecera/musica/videos3.html" class="mnm-dropdown-item">📺 Centro de Videos</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 2: Herramientas y Productividad -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Herramientas y Productividad
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/herramientas/chat.html" class="mnm-dropdown-item">💬 Asistente Virtual Urukais</a>
+                        <a href="/cabecera/herramientas/control-de-consultas.html" class="mnm-dropdown-item">🗂 Sistema de Consultas</a>
+                        <a href="/cabecera/herramientas/DevStudio.html" class="mnm-dropdown-item">⚙️ Estudio de Desarrollo</a>
+                        <a href="/cabecera/herramientas/FinTech.html" class="mnm-dropdown-item">💼 Soluciones Financieras</a>
+                        <a href="/cabecera/herramientas/generador-contraseñas.html" class="mnm-dropdown-item">🔐 Generador Seguro de<br>Contraseñas</a>
+                        <a href="/cabecera/herramientas/genesis.html" class="mnm-dropdown-item">🌟 Plataforma Genesis</a>
+                        <a href="/cabecera/herramientas/herramienta.html" class="mnm-dropdown-item">🛠 Suite de Herramientas</a>
+                        <a href="/cabecera/herramientas/hot.html" class="mnm-dropdown-item">🔥 Tendencias Actuales</a>
+                        <a href="/cabecera/herramientas/ia-educativa.html" class="mnm-dropdown-item">🎓 IA Educativa</a>
+                        <a href="/cabecera/herramientas/listado-de-prons.html" class="mnm-dropdown-item">📋 Pronósticos en Línea</a>
+                        <a href="/cabecera/herramientas/localizacion-de-faker.html" class="mnm-dropdown-item">📍 Localizador Universal</a>
+                        <a href="/cabecera/herramientas/mas-datos.html" class="mnm-dropdown-item">📊 Análisis de Datos</a>
+                        <a href="/cabecera/herramientas/pruevas.html" class="mnm-dropdown-item">🧪 Centro de Pruebas</a>
+                        <a href="/cabecera/herramientas/texto-voz.html" class="mnm-dropdown-item">🔊 Síntesis de Voz</a>
+                        <a href="/cabecera/herramientas/tienda-de-urukais.html" class="mnm-dropdown-item">🛒 Tienda Oficial</a>
+                        <a href="/cabecera/buscadores/gestor-de-tareas.html" class="mnm-dropdown-item">✅ Organizador de Tareas</a>
+                        <a href="/cabecera/buscadores/gestor-de-proyectos.html" class="mnm-dropdown-item">📈 Gestor de Proyectos</a>
+                        <a href="/cabecera/cine/ProTask.html" class="mnm-dropdown-item">⏰ ProTask Profesional</a>
+                        <a href="/cabecera/cine/ReservaPro.html" class="mnm-dropdown-item">📅 Sistema de Reservas</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 3: Buscadores y Información -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Buscadores y Información
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/buscadores/buscadorurukais.html" class="mnm-dropdown-item">📚 Búsqueda de Libros</a>
+                        <a href="/cabecera/buscadores/busqueda.html" class="mnm-dropdown-item">🔍 Buscador Matrix</a>
+                        <a href="/cabecera/cine/libros.html" class="mnm-dropdown-item">📖 Biblioteca Digital</a>
+                        <a href="/cabecera/cine/localizador.html" class="mnm-dropdown-item">🌐 Ubicador IP</a>
+                        <a href="/cabecera/buscadores/barcelona-sustainabitil.html" class="mnm-dropdown-item">🌱 Barcelona Sostenible</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 4: Mascotas y Animales -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Mascotas y Animales
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/animales/animales.html" class="mnm-dropdown-item">🐾 Generador de Animales</a>
+                        <a href="/cabecera/animales/buscador-de-perros.html" class="mnm-dropdown-item">🐕 Aplicación de Mascotas</a>
+                        <a href="/cabecera/buscadores/deportes.html" class="mnm-dropdown-item">⚽ Buscador de Equipos<br>Deportivos</a>
+                        <a href="/cabecera/animales/Marketing.html" class="mnm-dropdown-item">📱 Marketing Digital</a>
+                        <a href="/cabecera/animales/multi.html" class="mnm-dropdown-item">💻 Solución Multiplataforma</a>
+                        <a href="/cabecera/animales/neocron.html" class="mnm-dropdown-item">🌟 Neocron Urukais</a>
+                        <a href="/cabecera/animales/portal-interactivo.html" class="mnm-dropdown-item">✨ Portal Interactivo</a>
+                        <a href="/cabecera/animales/site-de-productividad.html" class="mnm-dropdown-item">💼 Suite de Productividad</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 5: Comida y Bebidas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Comida y Bebidas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/comida/coctel.html" class="mnm-dropdown-item">🍹 Sistema de Coctelería</a>
+                        <a href="/cabecera/comida/comida.html" class="mnm-dropdown-item">🍽 Gastronomía Exquisita</a>
+                        <a href="/cabecera/comida/cocia-en-inggles.html" class="mnm-dropdown-item">🍳 Cocina Internacional</a>
+                        
+                    </div>
+                </li>
+
+                <!-- Categoría 6: Creatividad y Arte -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Creatividad y Arte
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/conics/archivo-de-hielo.html" class="mnm-dropdown-item">❄️ Archivo Creativo</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😄 Galería de Humor</a>
+                        <a href="/cabecera/conics/Morty.html" class="mnm-dropdown-item">🎨 Colección Morty</a>
+                        <a href="/cabecera/conics/generador-de-fondos.html" class="mnm-dropdown-item">🎨 Generador de Fondos</a>
+                        <a href="/cabecera/conics/neocron.html" class="mnm-dropdown-item">😊 Control de Estado de Ánimo</a>
+                        <a href="/cabecera/conics/plataforma-de-herattientas.html" class="mnm-dropdown-item">🛠 Plataforma de<br>Herramientas Creativas</a>
+                        <a href="/cabecera/conics/portal-interactivo.html" class="mnm-dropdown-item">🎭 Portal Interactivo</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 7: Medio Ambiente -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Medio Ambiente
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/tierra/ambiental-mundial.html" class="mnm-dropdown-item">🌍 Global Ambiental</a>
+                        <a href="/cabecera/tierra/busca-ciudades.html" class="mnm-dropdown-item">🏙 Explorador de Ciudades</a>
+                        <a href="/cabecera/tierra/busca-cuidad.html" class="mnm-dropdown-item">🌆 Búsqueda Urbana</a>
+                        <a href="/cabecera/tierra/clima.html" class="mnm-dropdown-item">🌤️ Centro Meteorológico</a>
+                        <a href="/cabecera/tierra/deforestacion-mundial.html" class="mnm-dropdown-item">🌲 Control Deforestación</a>
+                        <a href="/cabecera/tierra/gia-de-supervivencia.html" class="mnm-dropdown-item">🧭 Guía de Supervivencia</a>
+                        <a href="/cabecera/tierra/mas.html" class="mnm-dropdown-item">🌿 Más Contenido Verde</a>
+                        <a href="/cabecera/tierra/renacer.html" class="mnm-dropdown-item">🌱 Renacer y Renovación</a>
+                        <a href="/cabecera/tierra/sistema-reus.html" class="mnm-dropdown-item">♻️ Sistema Inteligente de Reciclaje</a>
+                        <a href="/cabecera/tierra/supervivencia33.html" class="mnm-dropdown-item">🏕 Supervivencia Extrema</a>
+                    </div>
+                </li>
+                
+
+                <!-- Categoría 8: Eventos y Citas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Eventos y Citas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/gestor-de-citas.html" class="mnm-dropdown-item">💕 Organizador de Citas</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- ===============================
+         SECCIÓN HERO
+    =============================== -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1 class="hero-title h1">Arquitecturas Web del Futuro</h1>
+                <p class="hero-subtitle">Descubre las tecnologías que están revolucionando el desarrollo web sostenible: Zero-Bundling, Islands Architecture y Serverless Edge</p>
+                
+                <div class="hero-cta">
+                    <a href="#zero-bundling" class="btn btn-primary">Comenzar Aprendizaje</a>
+                    <a href="#demos" class="btn btn-secondary">Ver Demos</a>
+                </div>
+
+                <div class="sustainability-metrics">
+                    <div class="metric-card">
+                        <div class="metric-value" id="bundleSize">32KB</div>
+                        <div class="metric-label">Tamaño Total</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="loadTime">1.2s</div>
+                        <div class="metric-label">Tiempo de Carga</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="co2Estimate">0.08g</div>
+                        <div class="metric-label">CO₂ por Visita</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="energyScore">98</div>
+                        <div class="metric-label">Puntuación Energética</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================
+         ZERO-BUNDLING SECTION
+    =============================== -->
+    <section class="tech-section" id="zero-bundling">
+        <div class="container">
+            <div class="tech-grid">
+                <div class="tech-content">
+                    <h2 class="h2">Zero-Bundling</h2>
+                    <p>Elimina las herramientas de build complejas utilizando módulos ESM nativos. Los navegadores modernos soportan directamente la importación/exportación sin necesidad de bundlers como Webpack.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>Eliminación completa de herramientas de build</li>
+                        <li>Desarrollo más rápido y debugging nativo</li>
+                        <li>Reducción de 60-80% en tiempo de build</li>
+                        <li>Importación dinámica de módulos</li>
+                        <li>Tree-shaking automático del navegador</li>
+                    </ul>
+
+                    <a href="#demos" class="btn btn-primary">Ver Demo Interactivo</a>
+                </div>
+
+                <div class="tech-demo">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-lang">HTML + ESM</span>
+                            <button class="copy-btn" onclick="copyCode('zero-bundling-code')">Copiar</button>
+                        </div>
+                        <div class="code-content" id="zero-bundling-code">
+<span class="token.comment">// main.html - Sin bundlers, solo ESM nativo</span>
+&lt;<span class="token.keyword">script</span> <span class="token.keyword">type</span>=<span class="token.string">"module"</span>&gt;
+  <span class="token.comment">// Importación directa desde CDN o servidor</span>
+  <span class="token.keyword">import</span> { calculateMetrics } <span class="token.keyword">from</span> <span class="token.string">'./utils.js'</span>;
+  <span class="token.keyword">import</span> { createChart } <span class="token.keyword">from</span> <span class="token.string">'https://cdn.example.com/chart-lib.js'</span>;
+  
+  <span class="token.keyword">const</span> app = <span class="token.keyword">await</span> calculateMetrics();
+  <span class="token.function">createChart</span>(app.metrics);
+&lt;/<span class="token.keyword">script</span>&gt;</div>
+                    </div>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-lang">utils.js</span>
+                            <button class="copy-btn" onclick="copyCode('zero-bundling-utils')">Copiar</button>
+                        </div>
+                        <div class="code-content" id="zero-bundling-utils">
+<span class="token.comment">// utils.js - Módulo ESM exportable</span>
+<span class="token.keyword">export</span> <span class="token.keyword">const</span> <span class="token.function">calculateMetrics</span> = <span class="token.keyword">async</span> () => {
+  <span class="token.keyword">const</span> performance = <span class="token.function">getPerformanceMetrics</span>();
+  <span class="token.keyword">return</span> {
+    loadTime: performance.<span class="token.function">getLoadTime</span>(),
+    bundleSize: <span class="token.function">calculateBundleSize</span>(),
+    energyScore: <span class="token.function">estimateEnergyUsage</span>()
+  };
+};
+
+<span class="token.keyword">export</span> <span class="token.keyword">const</span> <span class="token.function">lazyLoad</span> = <span class="token.keyword">async</span> (componentName) => {
+  <span class="token.comment">// Importación dinámica sin bundler</span>
+  <span class="token.keyword">const</span> module = <span class="token.keyword">await</span> <span class="token.function">import</span>(<span class="token.string">`./components/</span><span class="token.keyword">${</span>componentName<span class="token.keyword">}</span><span class="token.string">.js`</span>);
+  <span class="token.keyword">return</span> module.<span class="token.function">default</span>();
+};</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================
+         ISLANDS ARCHITECTURE SECTION
+    =============================== -->
+    <section class="tech-section" id="islands">
+        <div class="container">
+            <div class="tech-grid">
+                <div class="tech-content">
+                    <h2 class="h2">Islands Architecture</h2>
+                    <p>Renderiza HTML estático como base y solo hidrata componentes interactivos específicos. Las "islas" de JavaScript se cargan solo donde son necesarias, reduciendo drásticamente el bundle size.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>Hidratación selectiva de componentes</li>
+                        <li>Reducción de 70-90% en JavaScript enviado</li>
+                        <li>Mejor Core Web Vitals</li>
+                        <li>SEO optimizado con HTML estático</li>
+                        <li>Frameworks: Astro, Hugo, 11ty</li>
+                    </ul>
+
+                    <a href="#demos" class="btn btn-primary">Ver Hidratación en Acción</a>
+                </div>
+
+                <div class="tech-demo">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-lang">Astro Component</span>
+                            <button class="copy-btn" onclick="copyCode('islands-code')">Copiar</button>
+                        </div>
+                        <div class="code-content" id="islands-code">
+<span class="token.comment">// index.astro - Islands Architecture</span>
+<span class="token.comment">// HTML estático por defecto</span>
+&lt;<span class="token.keyword">h1</span>&gt;Bienvenido a Web Sostenible&lt;/<span class="token.keyword">h1</span>&gt;
+&lt;<span class="token.keyword">p</span>&gt;Contenido SEO optimizado&lt;/<span class="token.keyword">p</span>&gt;
+
+<span class="token.comment">// Solo este componente se hidrata</span>
+&lt;<span class="token.keyword">Counter</span> client:load /&gt;
+
+&lt;<span class="token.keyword">script</span> <span class="token.keyword">type</span>=<span class="token.string">"module"</span>&gt;
+  <span class="token.comment">// Solo 2KB de JavaScript</span>
+  <span class="token.keyword">const</span> counter = <span class="token.function">document</span>.<span class="token.function">querySelector</span>(<span class="token.string">'[data-counter]'</span>);
+  <span class="token.function">counter</span>.<span class="token.function">addEventListener</span>(<span class="token.string">'click'</span>, () => {
+    <span class="token.keyword">const</span> value = <span class="token.function">parseInt</span>(counter.textContent) + <span class="token.number">1</span>;
+    counter.textContent = value;
+  });
+&lt;/<span class="token.keyword">script</span>&gt;</div>
+                    </div>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-lang">Hidro-componente</span>
+                            <button class="copy-btn" onclick="copyCode('islands-hidro')">Copiar</button>
+                        </div>
+                        <div class="code-content" id="islands-hidro">
+<span class="token.comment">// islands.md - Hidratación selectiva</span>
+<span class="token.comment"># Página Estática
+
+- ✅ Contenido HTML se sirve inmediatamente
+- ✅ SEO completo sin JavaScript
+- ✅ Lighthouse score: 100/100
+
+## Navegación: HTML + CSS únicamente
+- ✅ No JavaScript necesario
+- ✅ Accesibilidad total
+- ✅ Velocidad óptima
+
+### Componente Interactivo
+```html
+&lt;<span class="token.keyword">button</span> data-island <span class="token.keyword">onclick</span>=<span class="token.string">"like()"</span>&gt;❤️ Like&lt;/<span class="token.keyword">button</span>&gt;
+&lt;<span class="token.keyword">script</span> <span class="token.keyword">type</span>=<span class="token.string">"module"</span>&gt;
+  <span class="token.comment">// Solo 500 bytes para interactividad</span>
+  <span class="token.function">like</span>() { <span class="token.function">alert</span>(<span class="token.string">'¡Gracias!'</span>); }
+&lt;/<span class="token.keyword">script</span>&gt;
+```</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================
+         SERVERLESS EDGE SECTION
+    =============================== -->
+    <section class="tech-section" id="serverless">
+        <div class="container">
+            <div class="tech-grid">
+                <div class="tech-content">
+                    <h2 class="h2">Serverless Edge</h2>
+                    <p>Ejecuta código JavaScript/TypeScript en edge locations distribuidas globalmente. Reduce latencia a menos de 50ms y minimiza el consumo energético versus servidores tradicionales.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>Latencia global &lt; 50ms</li>
+                        <li>Escalabilidad automática</li>
+                        <li>Reducción de 80% en costos de infraestructura</li>
+                        <li>Proveedores: Vercel, Netlify, Cloudflare</li>
+                        <li>Menor huella de carbono</li>
+                    </ul>
+
+                    <a href="#demos" class="btn btn-primary">Comparar Proveedores</a>
+                </div>
+
+                <div class="tech-demo">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-lang">Vercel Edge Function</span>
+                            <button class="copy-btn" onclick="copyCode('vercel-edge')">Copiar</button>
+                        </div>
+                        <div class="code-content" id="vercel-edge">
+<span class="token.comment">// api/edge.ts - Vercel Edge Runtime</span>
+<span class="token.keyword">import</span> { <span class="token.function">geo</span> } <span class="token.keyword">from</span> <span class="token.string">'@vercel/edge'</span>;
+
+<span class="token.keyword">export</span> <span class="token.keyword">const</span> <span class="token.function">config</span> = {
+  runtime: <span class="token.string">'edge'</span>,
+};
+
+<span class="token.keyword">export</span> <span class="token.keyword">default</span> <span class="token.keyword">async</span> <span class="token.keyword">function</span> <span class="token.function">handler</span>(req) {
+  <span class="token.comment">// Ejecutado en edge locations</span>
+  <span class="token.keyword">const</span> userLocation = <span class="token.function">geo</span>(req);
+  <span class="token.keyword">const</span> latency = <span class="token.function">calculateLatency</span>(userLocation.country);
+  
+  <span class="token.keyword">return</span> <span class="token.function">Response</span>.<span class="token.function">json</span>({
+    location: userLocation.city,
+    latency: <span class="token.string">`</span><span class="token.keyword">${</span>latency<span class="token.keyword">}</span><span class="token.string">ms`</span>,
+    serverless: <span class="token.keyword">true</span>,
+    ecoFriendly: <span class="token.keyword">true</span>
+  });
+}</div>
+                    </div>
+
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-lang">Netlify Function</span>
+                            <button class="copy-btn" onclick="copyCode('netlify-function')">Copiar</button>
+                        </div>
+                        <div class="code-content" id="netlify-function">
+<span class="token.comment">// netlify/functions/edge.js</span>
+<span class="token.keyword">export</span> <span class="token.keyword">const</span> <span class="token.function">handler</span> = <span class="token.keyword">async</span> (event) => {
+  <span class="token.comment">// AWS Lambda@Edge global</span>
+  <span class="token.keyword">const</span> { country } = event.headers.<span class="token.function">CloudFront-Viewer-Country</span>;
+  <span class="token.keyword">const</span> carbonFootprint = <span class="token.function">calculateCarbon</span>(country);
+  
+  <span class="token.keyword">return</span> {
+    statusCode: <span class="token.number">200</span>,
+    headers: {
+      <span class="token.string">'Content-Type'</span>: <span class="token.string">'application/json'</span>,
+      <span class="token.string">'X-Edge-Location'</span>: <span class="token.function">getEdgeLocation</span>()
+    },
+    body: <span class="token.function">JSON</span>.<span class="token.function">stringify</span>({
+      ecoImpact: carbonFootprint,
+      performance: <span class="token.string">'Edge-optimized'</span>
+    })
+  };
+};</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================
+         GALERÍA DE DEMOS INTERACTIVOS
+    =============================== -->
+    <section class="demos-section" id="demos">
+        <div class="container">
+            <div class="text-center mb-8">
+                <h2 class="h2">Demos Interactivos</h2>
+                <p class="text-secondary">Experimenta las arquitecturas en acción con métricas en tiempo real</p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <h3 class="h3">Zero-Bundling Demo</h3>
+                        <p>Importación dinámica sin bundlers</p>
+                    </div>
+                    <div class="demo-body">
+                        <div class="demo-demo" id="zeroDemo">
+                            <div>
+                                <p class="mb-4">Carga diferida de módulos ESM:</p>
+                                <button class="interactive-button" onclick="loadZeroModule()">Cargar Módulo</button>
+                                <div id="zeroResult" class="mt-4"></div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary" onclick="showMetrics('zero')">Ver Métricas</button>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <h3 class="h3">Islands Architecture</h3>
+                        <p>Hidratación selectiva visible</p>
+                    </div>
+                    <div class="demo-body">
+                        <div class="demo-demo" id="islandsDemo">
+                            <div>
+                                <p class="mb-4">Componentes que se hidratan solo cuando son visibles:</p>
+                                <div id="island1" style="padding: 1rem; background: var(--accent); color: white; border-radius: var(--radius-md); margin: 0.5rem 0;">
+                                    Componente Estático ✓
+                                </div>
+                                <div id="island2" style="padding: 1rem; background: var(--primary); color: white; border-radius: var(--radius-md); margin: 0.5rem 0;" data-hydrate>
+                                    Esperando Hidratación...
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary" onclick="showMetrics('islands')">Ver Métricas</button>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-header">
+                        <h3 class="h3">Serverless Edge</h3>
+                        <p>Simulación de latencia global</p>
+                    </div>
+                    <div class="demo-body">
+                        <div class="demo-demo" id="serverlessDemo">
+                            <div>
+                                <p class="mb-4">Latencia desde diferentes ubicaciones:</p>
+                                <button class="interactive-button" onclick="simulateEdge()">Simular Edge</button>
+                                <div id="edgeResult" class="mt-4"></div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary" onclick="showMetrics('serverless')">Ver Métricas</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===============================
+         DASHBOARD DE MÉTRICAS
+    =============================== -->
+    <div class="metrics-dashboard">
+        <button class="metrics-toggle" id="metricsToggle" onclick="toggleMetrics()">📊</button>
+        <div class="metrics-panel" id="metricsPanel">
+            <h3 class="h4 mb-4">Métricas en Tiempo Real</h3>
+            <div class="metric-item">
+                <span class="metric-name">Tamaño de Transferencia</span>
+                <span class="metric-value-small" id="realtimeBundle">32.4KB</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-name">Tiempo de Carga</span>
+                <span class="metric-value-small" id="realtimeLoadTime">1.2s</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-name">Core Web Vitals</span>
+                <span class="metric-value-small" id="realtimeCWV">98/100</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-name">CO₂ Estimado</span>
+                <span class="metric-value-small" id="realtimeCO2">0.08g</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-name">Energía Consumida</span>
+                <span class="metric-value-small" id="realtimeEnergy">0.12J</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-name">JavaScript Ejecutado</span>
+                <span class="metric-value-small" id="realtimeJS">2.1KB</span>
+            </div>
+        </div>
+    </div>
+     <section>
+            <footer class="urukais-footer">
+    <div class="footer-container">
+        <div class="footer-main">
+            <div class="footer-section">
+                <h3 class="footer-title">Urukais KLICK</h3>
+                <p class="footer-description">
+                    Una especie extraordinaria que habita las montañas alrededor de Alforja, 
+                    fusionando la biología con la geología en perfecta armonía mística.
+                </p>
+                <div class="footer-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">Características</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">847</span>
+                        <span class="stat-label">Número Sagrado</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100</span>
+                        <span class="stat-label">Años/Evento</span>
+                    </div>
+                        <a href="/index.html"  rel="noopener noreferrer" class="sound-link">Volver al Inicio</a>
+                </div>
+                
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Características Principales</h4>
+                <ul class="footer-links">
+                    <li><a href="/interior/sonido-metalico.html">El Sonido Metálico</a></li>
+                    <li><a href="/interior/vision-ecceccional.html">Visión Excepcional</a></li>
+                    <li><a href="/interior/polinizacion.html">Polinización Mineral</a></li>
+                    <li><a href="/interior/dispersion.html">Dispersión de Polen</a></li>
+                    <li><a href="/interior/havilidad.html">Hábitat Montañoso</a></li>
+                    <li><a href="/interior/camuflaje.html">Camuflaje Pétreo</a></li>
+                    <li><a href="/interior/la-vivracion.html">Latido de la Tierra</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Información Geográfica</h4>
+                <div class="geo-info">
+                    <p><strong>Ubicación:</strong> Valle de Alforja, España</p>
+                    <p><strong>Serra de Prades:</strong> Formación montañosa norte</p>
+                    <p><strong>Puigcerver:</strong> Pico principal del sistema</p>
+                    <p><strong>Cueva de l'Ermità:</strong> Lugar sagrado (847m profundidad)</p>
+                </div>
+                
+                <div class="coordinates">
+                    <h5>Coordenadas Clave:</h5>
+                    <p>Alforja: 41.1874°N, 1.0047°E</p>
+                    <p>Serra de Prades: 41.2345°N, 0.9876°E</p>
+                    <p>Puigcerver: 41.2101°N, 1.0123°E</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Datos Científicos</h4>
+                <div class="scientific-data">
+                    <div class="data-item">
+                        <span class="data-label">Frecuencia Klick:</span>
+                        <span class="data-value">847 Hz</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Profundidad máxima:</span>
+                        <span class="data-value">847 m</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Población estimada:</span>
+                        <span class="data-value">3,847 individuos</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Manantiales activados:</span>
+                        <span class="data-value">27 fuentes</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Precisión:</span>
+                        <span class="data-value">97.3%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Urukais Klick. Enciclopedia Digital Manuel Casimiro Carrasco.</p>
+                <p>Documentación científica del fenómeno místico-geológico del valle de Alforja.</p>
+            </div>
+            
+            <div class="footer-sacred-number">
+                <span class="sacred-text">847</span>
+                <span class="sacred-subtitle">El número sagrado</span>
+            </div>
+        </div>
+    </div>
+</footer>
+    </section>
+      <style>
+        /* Botón de scroll to top */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .scroll-to-top:active {
+            transform: translateY(-1px);
+        }
+
+        /* Estado visible del botón */
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Icono del botón */
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-to-top:hover svg {
+            transform: translateY(-2px);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scroll-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .scroll-to-top svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        /* Contenido mínimo para hacer scroll */
+        body {
+            height: 2000px;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <!-- Contenido mínimo para probar el scroll -->
+        
+    <!-- Botón de subida al principio de la web -->
+    <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Volver al inicio">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+        // Botón de Scroll to Top - Sin Conflictos
+        (function() {
+            'use strict';
+            
+            // Elementos del DOM
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            
+            // Verificar que el elemento existe
+            if (!scrollToTopBtn) {
+                console.warn('Botón scrollToTopBtn no encontrado');
+                return;
+            }
+            
+            // Configuración
+            const scrollOffset = 300; // Píxeles antes de mostrar el botón
+            
+            // Función para mostrar/ocultar el botón
+            function toggleScrollToTopButton() {
+                if (window.pageYOffset > scrollOffset) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            }
+            
+            // Función de scroll suave hacia arriba
+            function scrollToTop() {
+                // Scroll suave usando window.scrollTo
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                // Fallback para navegadores más antiguos
+                const startPosition = window.pageYOffset;
+                const startTime = performance.now();
+                const duration = 800; // Duración en milisegundos
+                
+                function easeInOutQuad(t, b, c, d) {
+                    t /= d/2;
+                    if (t < 1) return c/2*t*t + b;
+                    t--;
+                    return -c/2 * (t*(t-2) - 1) + b;
+                }
+                
+                function animateScroll(currentTime) {
+                    const timeElapsed = currentTime - startTime;
+                    const run = easeInOutQuad(timeElapsed, startPosition, -startPosition, duration);
+                    window.scrollTo(0, run);
+                    
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animateScroll);
+                    }
+                }
+                
+                requestAnimationFrame(animateScroll);
+            }
+            
+            // Event Listeners con verificaciones de seguridad
+            function addEventListeners() {
+                // Scroll event listener
+                window.addEventListener('scroll', function() {
+                    // Usar requestAnimationFrame para optimizar el rendimiento
+                    if (window.requestAnimationFrame) {
+                        requestAnimationFrame(toggleScrollToTopButton);
+                    } else {
+                        toggleScrollToTopButton();
+                    }
+                }, { passive: true }); // passive: true mejora el rendimiento
+                
+                // Click event listener
+                scrollToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    scrollToTop();
+                });
+                
+                // Keyboard accessibility
+                scrollToTopBtn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        scrollToTop();
+                    }
+                });
+            }
+            
+            // Inicialización
+            function init() {
+                // Verificar que el DOM está completamente cargado
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', function() {
+                        toggleScrollToTopButton();
+                        addEventListeners();
+                    });
+                } else {
+                    toggleScrollToTopButton();
+                    addEventListeners();
+                }
+            }
+            
+            // Función para verificar compatibilidad del navegador
+            function checkCompatibility() {
+                // Verificar soporte para smooth scroll
+                const supportsSmoothScroll = 'scrollBehavior' in document.documentElement.style;
+                if (!supportsSmoothScroll) {
+                    console.info('Usando fallback para smooth scroll');
+                }
+                
+                // Verificar soporte para requestAnimationFrame
+                const supportsRAF = 'requestAnimationFrame' in window;
+                if (!supportsRAF) {
+                    console.info('Usando fallback para requestAnimationFrame');
+                }
+            }
+            
+            // Ejecutar inicialización
+            checkCompatibility();
+            init();
+            
+            // Función para detectar cambios de orientación (móvil)
+            window.addEventListener('orientationchange', function() {
+                setTimeout(function() {
+                    toggleScrollToTopButton();
+                }, 500); // Delay para permitir que la orientación cambie
+            });
+            
+            // Prevenir conflictos con otros scripts
+            window.scrollToTopModule = {
+                show: function() {
+                    scrollToTopBtn.classList.add('show');
+                },
+                hide: function() {
+                    scrollToTopBtn.classList.remove('show');
+                },
+                scrollToTop: scrollToTop,
+                toggle: toggleScrollToTopButton
+            };
+            
+        })();
+    </script>
+    
+    <script src="/mas-javascript/web-sostenible.js"></script>
+    <style>
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideOutRight {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+    </style>
+    
+    <script src="/javascript/botones.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/botones.js"></script>
+    <script src="/menu/menu.js"></script>
+</body>
+</html>

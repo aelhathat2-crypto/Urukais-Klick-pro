@@ -1,0 +1,708 @@
+:root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a1a2e;
+            --tertiary-bg: #16213e;
+            --accent-color: #00ff88;
+            --accent-secondary: #88ff00;
+            --accent-tertiary: #ffffff;
+            --text-primary: #ffffff;
+            --text-secondary: #00ff88;
+            --border-color: #00ff8840;
+            --glow-color: #00ff8866;
+            --card-bg: rgba(26, 26, 46, 0.8);
+            --text-shadow: 0 0 10px currentColor;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animación de fondo de partículas de polen */
+        .pollen-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .pollen-particle {
+            position: absolute;
+            background: radial-gradient(circle, var(--accent-color), transparent);
+            border-radius: 50%;
+            animation: floatPollen 15s infinite linear;
+            opacity: 0.3;
+        }
+
+        .pollen-particle:nth-child(odd) {
+            background: radial-gradient(circle, var(--accent-secondary), transparent);
+            animation-duration: 20s;
+        }
+
+        .pollen-particle:nth-child(3n) {
+            background: radial-gradient(circle, var(--accent-tertiary), transparent);
+            animation-duration: 25s;
+        }
+
+        @keyframes floatPollen {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Navegación */
+        .nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .nav-title {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-link:hover {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            text-shadow: none;
+            transform: translateX(-5px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 50%, var(--tertiary-bg) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: bold;
+            color: var(--accent-color);
+            text-shadow: var(--text-shadow);
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            text-shadow: 0 0 10px var(--text-secondary);
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+            line-height: 1.8;
+        }
+
+        /* Animación de dispersión de polen */
+        .dispersion-animation {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .central-klick {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, var(--accent-color), var(--accent-secondary));
+            border-radius: 50%;
+            box-shadow: 0 0 30px var(--accent-color);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .pollen-wave {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spread 4s ease-out infinite;
+        }
+
+        .pollen-wave:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .pollen-wave:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                box-shadow: 0 0 30px var(--accent-color);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+                box-shadow: 0 0 50px var(--accent-color), 0 0 80px var(--accent-secondary);
+            }
+        }
+
+        @keyframes spread {
+            0% {
+                width: 60px;
+                height: 60px;
+                opacity: 1;
+                border-color: var(--accent-color);
+            }
+            100% {
+                width: 400px;
+                height: 400px;
+                opacity: 0;
+                border-color: var(--accent-secondary);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 20px var(--accent-color);
+            }
+            100% {
+                text-shadow: 0 0 30px var(--accent-color), 0 0 40px var(--accent-secondary);
+            }
+        }
+
+        /* Sección de contenido */
+        .content-section {
+            padding: 80px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 60px;
+            text-shadow: var(--text-shadow);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* Cards principales */
+        .main-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .main-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .main-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary), var(--accent-tertiary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .main-card:hover::before {
+            opacity: 1;
+        }
+
+        .main-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--glow-color);
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card-content {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Sistema de dispersión */
+        .dispersion-system {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin: 80px 0;
+        }
+
+        .system-info {
+            padding: 40px;
+        }
+
+        .system-visual {
+            position: relative;
+            height: 500px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .mountain-terrain {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(to top, #2a2a2a, #4a4a4a);
+            clip-path: polygon(0 100%, 20% 70%, 40% 80%, 60% 60%, 80% 75%, 100% 50%, 100% 100%);
+        }
+
+        .klick-source {
+            position: absolute;
+            bottom: 45%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--accent-color);
+            animation: emit-pollen 3s ease-in-out infinite;
+        }
+
+        .pollen-cloud {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--accent-color), transparent);
+            border-radius: 50%;
+            opacity: 0;
+            animation: disperse 3s ease-in-out infinite;
+        }
+
+        .soil-fertilization {
+            position: absolute;
+            bottom: 10%;
+            left: 20%;
+            right: 20%;
+            height: 20px;
+            background: linear-gradient(to right, #8B4513, #228B22, #32CD32);
+            border-radius: 10px;
+            opacity: 0;
+            animation: fertilize 6s ease-in-out infinite;
+        }
+
+        @keyframes emit-pollen {
+            0%, 100% {
+                transform: translateX(-50%) scale(1);
+                box-shadow: 0 0 20px var(--accent-color);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.2);
+                box-shadow: 0 0 40px var(--accent-color), 0 0 60px var(--accent-secondary);
+            }
+        }
+
+        @keyframes disperse {
+            0% {
+                width: 100px;
+                height: 100px;
+                opacity: 0.8;
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                width: 300px;
+                height: 300px;
+                opacity: 0.6;
+                transform: translateX(-50%) translateY(-50px) scale(1.5);
+            }
+            100% {
+                width: 500px;
+                height: 500px;
+                opacity: 0;
+                transform: translateX(-50%) translateY(-100px) scale(2);
+            }
+        }
+
+        @keyframes fertilize {
+            0%, 30% {
+                opacity: 0.2;
+            }
+            50%, 80% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.3;
+            }
+        }
+
+        /* Características técnicas */
+        .technical-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 80px 0;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--glow-color);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px auto;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-bg);
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .feature-value {
+            font-size: 2rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+
+        /* Tabla de datos */
+        .data-table {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 80px 0;
+        }
+
+        .table-header {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .table-content {
+            padding: 0;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .table-row:hover {
+            background-color: var(--glow-color);
+        }
+
+        .table-cell {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .table-cell:first-child {
+            color: var(--text-secondary);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .table-cell:last-child {
+            color: var(--text-primary);
+        }
+
+        /* Galería de polen */
+        .pollen-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 80px 0;
+        }
+
+        .pollen-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .pollen-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px var(--glow-color);
+        }
+
+        .pollen-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-bg);
+            text-shadow: 0 0 20px currentColor;
+        }
+
+        .pollen-info {
+            padding: 20px;
+        }
+
+        .pollen-name {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pollen-description {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 20px 20px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            text-shadow: var(--text-shadow);
+        }
+
+        .footer-text {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-link:hover {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px var(--glow-color);
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .nav {
+                position: static;
+                margin: 20px;
+                width: calc(100% - 40px);
+            }
+
+            .nav-links {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .dispersion-system {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .main-cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .system-visual {
+                height: 300px;
+            }
+
+            .technical-features {
+                grid-template-columns: 1fr;
+            }
+
+            .table-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .pollen-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Efectos adicionales */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--accent-color);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            z-index: 100;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        .content-section:nth-child(even) {
+            background: linear-gradient(135deg, var(--secondary-bg), var(--tertiary-bg));
+            border-radius: 20px;
+            margin: 40px -20px;
+            padding: 80px 20px;
+        }

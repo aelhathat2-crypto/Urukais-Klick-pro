@@ -1,0 +1,725 @@
+ :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a2e1a;
+            --tertiary-bg: #2d4a2d;
+            --accent-color: #6b8e23;
+            --accent-secondary: #8fbc8f;
+            --accent-tertiary: #556b2f;
+            --text-primary: #ffffff;
+            --text-secondary: #98fb98;
+            --text-tertiary: #90ee90;
+            --border-color: #6b8e2340;
+            --glow-color: #6b8e2366;
+            --card-bg: rgba(26, 46, 26, 0.8);
+            --text-shadow: 0 0 10px currentColor;
+            --rock-gray: #696969;
+            --moss-green: #7cb342;
+            --bark-brown: #8b4513;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animación de partículas de camuflaje */
+        .camouflage-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .camouflage-particle {
+            position: absolute;
+            background: radial-gradient(circle, var(--accent-color), transparent);
+            border-radius: 50%;
+            animation: floatCamouflage 18s infinite linear;
+            opacity: 0.2;
+        }
+
+        .camouflage-particle:nth-child(odd) {
+            background: radial-gradient(circle, var(--rock-gray), transparent);
+            animation-duration: 22s;
+        }
+
+        .camouflage-particle:nth-child(3n) {
+            background: radial-gradient(circle, var(--moss-green), transparent);
+            animation-duration: 25s;
+        }
+
+        .camouflage-particle:nth-child(4n) {
+            background: radial-gradient(circle, var(--bark-brown), transparent);
+            animation-duration: 20s;
+        }
+
+        @keyframes floatCamouflage {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(30px) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+        /* Navegación */
+        .nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .nav-title {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-link:hover {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            text-shadow: none;
+            transform: translateX(-5px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 30%, var(--tertiary-bg) 70%, var(--moss-green) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: bold;
+            color: var(--accent-color);
+            text-shadow: var(--text-shadow);
+            margin-bottom: 20px;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            text-shadow: 0 0 10px var(--text-secondary);
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+            line-height: 1.8;
+        }
+
+        /* Animación de camuflaje */
+        .camouflage-demo {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .urukai-form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--moss-green), var(--rock-gray));
+            border-radius: 10px;
+            box-shadow: 0 0 20px var(--accent-color);
+            animation: camouflage-cycle 8s ease-in-out infinite;
+        }
+
+        .camouflage-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--bark-brown) 25%, transparent 25%),
+                        linear-gradient(-45deg, var(--bark-brown) 25%, transparent 25%),
+                        linear-gradient(45deg, transparent 75%, var(--rock-gray) 75%),
+                        linear-gradient(-45deg, transparent 75%, var(--moss-green) 75%);
+            background-size: 60px 60px;
+            background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+            animation: background-shift 8s ease-in-out infinite;
+        }
+
+        .camouflage-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, var(--accent-color), transparent);
+            border-radius: 50%;
+            opacity: 0;
+            animation: overlay-cycle 8s ease-in-out infinite;
+        }
+
+        @keyframes camouflage-cycle {
+            0%, 100% {
+                background: linear-gradient(135deg, var(--moss-green), var(--rock-gray));
+                transform: translate(-50%, -50%) scale(1);
+            }
+            25% {
+                background: linear-gradient(135deg, var(--rock-gray), var(--bark-brown));
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+            50% {
+                background: linear-gradient(135deg, var(--bark-brown), var(--moss-green));
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+            75% {
+                background: linear-gradient(135deg, var(--moss-green), var(--bark-brown));
+                transform: translate(-50%, -50%) scale(0.95);
+            }
+        }
+
+        @keyframes background-shift {
+            0%, 100% {
+                background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+                opacity: 0.3;
+            }
+            50% {
+                background-position: 30px 30px, 30px 60px, 60px 0px, 0px 30px;
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes overlay-cycle {
+            0%, 100% {
+                opacity: 0;
+            }
+            25%, 75% {
+                opacity: 0.4;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 20px var(--accent-color);
+            }
+            100% {
+                text-shadow: 0 0 30px var(--accent-color), 0 0 40px var(--accent-secondary);
+            }
+        }
+
+        /* Sección de contenido */
+        .content-section {
+            padding: 80px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 60px;
+            text-shadow: var(--text-shadow);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* Cards principales */
+        .main-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .main-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .main-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary), var(--moss-green));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .main-card:hover::before {
+            opacity: 1;
+        }
+
+        .main-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--glow-color);
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card-content {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Simulador de camuflaje */
+        .camouflage-simulator {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin: 80px 0;
+        }
+
+        .simulator-info {
+            padding: 40px;
+        }
+
+        .interactive-simulator {
+            position: relative;
+            height: 400px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: crosshair;
+        }
+
+        .simulator-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, var(--bark-brown) 10px, transparent 10px),
+                linear-gradient(var(--bark-brown) 10px, transparent 10px),
+                linear-gradient(90deg, var(--rock-gray) 20px, transparent 20px),
+                linear-gradient(var(--rock-gray) 20px, transparent 20px),
+                linear-gradient(135deg, var(--moss-green) 30px, transparent 30px),
+                linear-gradient(225deg, var(--moss-green) 30px, transparent 30px);
+            background-size: 40px 40px, 40px 40px, 80px 80px, 80px 80px, 120px 120px, 120px 120px;
+            background-position: 0 0, 0 0, 10px 10px, 10px 10px, 20px 20px, 20px 20px;
+            animation: texture-animation 20s linear infinite;
+        }
+
+        .simulator-creature {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            background: var(--moss-green);
+            border-radius: 8px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 1s ease;
+            box-shadow: 0 0 15px var(--accent-color);
+        }
+
+        .simulator-instructions {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        @keyframes texture-animation {
+            0% {
+                background-position: 0 0, 0 0, 10px 10px, 10px 10px, 20px 20px, 20px 20px;
+            }
+            100% {
+                background-position: 200px 200px, 200px 200px, 210px 210px, 210px 210px, 220px 220px, 220px 220px;
+            }
+        }
+
+        /* Galería de patrones de camuflaje */
+        .camouflage-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 80px 0;
+        }
+
+        .pattern-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .pattern-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px var(--glow-color);
+        }
+
+        .pattern-preview {
+            width: 100%;
+            height: 150px;
+            background: var(--moss-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-bg);
+            text-shadow: 0 0 10px currentColor;
+        }
+
+        .pattern-moss { background: linear-gradient(45deg, var(--moss-green), #4a7c4a); }
+        .pattern-rock { background: linear-gradient(90deg, var(--rock-gray), #505050); }
+        .pattern-bark { background: linear-gradient(135deg, var(--bark-brown), #654321); }
+        .pattern-mixed { background: linear-gradient(45deg, var(--moss-green), var(--rock-gray), var(--bark-brown)); }
+        .pattern-shadow { background: linear-gradient(to bottom, var(--secondary-bg), var(--primary-bg)); }
+        .pattern-grotto { background: linear-gradient(225deg, var(--rock-gray), var(--moss-green), var(--bark-brown)); }
+
+        .pattern-info {
+            padding: 20px;
+        }
+
+        .pattern-name {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pattern-description {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Características técnicas */
+        .technical-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 80px 0;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--glow-color);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px auto;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-bg);
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .feature-value {
+            font-size: 2rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+
+        /* Tabla de datos */
+        .data-table {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 80px 0;
+        }
+
+        .table-header {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .table-content {
+            padding: 0;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .table-row:hover {
+            background-color: var(--glow-color);
+        }
+
+        .table-cell {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .table-cell:first-child {
+            color: var(--text-secondary);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .table-cell:last-child {
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 20px 20px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            text-shadow: var(--text-shadow);
+        }
+
+        .footer-text {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-link:hover {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px var(--glow-color);
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .nav {
+                position: static;
+                margin: 20px;
+                width: calc(100% - 40px);
+            }
+
+            .nav-links {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .camouflage-simulator {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .main-cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .interactive-simulator {
+                height: 300px;
+            }
+
+            .technical-features {
+                grid-template-columns: 1fr;
+            }
+
+            .table-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .camouflage-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Efectos adicionales */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--accent-color);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            z-index: 100;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        .content-section:nth-child(even) {
+            background: linear-gradient(135deg, var(--secondary-bg), var(--tertiary-bg));
+            border-radius: 20px;
+            margin: 40px -20px;
+            padding: 80px 20px;
+        }
+
+        /* Estilos específicos para camuflaje dinámico */
+        .hidden {
+            opacity: 0.3;
+            transform: scale(0.9);
+        }
+
+        .visible {
+            opacity: 1;
+            transform: scale(1);
+        }

@@ -1,0 +1,80 @@
+/* Ocultar el cursor por defecto en dispositivos no táctiles */
+@media (hover: hover) and (pointer: fine) {
+    body {
+        cursor: none;
+    }
+
+    /* Restaurar cursor en iframes o elementos específicos si es necesario */
+    iframe {
+        cursor: auto;
+    }
+}
+
+/* Cursor principal (punto central) */
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10001;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    /* Efecto interesante sobre colores claros */
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+/* Cursor seguidor (círculo exterior) */
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+/* Estado Hover (Enlaces y Botones) */
+body.hovering .cursor-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #00ff88;
+    box-shadow: 0 0 10px #00ff88;
+}
+
+body.hovering .cursor-outline {
+    width: 60px;
+    height: 60px;
+    border-color: #00ff88;
+    background-color: rgba(0, 255, 136, 0.1);
+}
+
+/* Estado Click (MouseDown) */
+body.clicking .cursor-outline {
+    width: 30px;
+    height: 30px;
+    border-color: #a855f7;
+    background-color: rgba(168, 85, 247, 0.2);
+}
+
+/* Desactivar cursor personalizado en móviles/tablets */
+@media (max-width: 768px) {
+
+    .cursor-dot,
+    .cursor-outline {
+        display: none;
+    }
+
+    body {
+        cursor: auto;
+    }
+}

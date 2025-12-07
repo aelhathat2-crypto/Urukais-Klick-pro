@@ -1,0 +1,301 @@
+  body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1a1a1a;
+      color: #fff;
+      min-height: 100vh;
+  }
+
+  .mnm-nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #222;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+  }
+
+  .mnm-logo {
+      color: #34da1e;
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+  }
+
+  /* --- Controles del Header --- */
+  .music-player-control {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+  }
+
+  .playlist-toggle-btn {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .playlist-toggle-btn:hover,
+  .playlist-toggle-btn.active {
+      background-color: rgba(229, 0, 80, 0.2);
+      border-color: #2caa05;
+      color: #078035;
+  }
+
+  /* --- Contenedor Principal del Reproductor (Desplegable) --- */
+  .player-container {
+      position: fixed;
+      top: 80px;
+      /* Debajo del header */
+      right: 30px;
+      width: 350px;
+      background: #2a2a2a;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      z-index: 999;
+
+      /* Estado inicial: oculto */
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-20px);
+      transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+
+  .player-container.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+  }
+
+  .player-header {
+      padding: 20px;
+      background: linear-gradient(135deg, #c7e70e, #990033);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .now-playing-info {
+      flex-grow: 1;
+      overflow: hidden;
+  }
+
+  .song-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+
+  .artist-name {
+      font-size: 0.85rem;
+      opacity: 0.9;
+  }
+
+  /* --- Botón Play Grande --- */
+  .music-toggle-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      color: white;
+      cursor: pointer;
+      padding: 0;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      flex-shrink: 0;
+      position: relative;
+  }
+
+  .music-toggle-btn:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+      transform: scale(1.05);
+  }
+
+  .music-icon {
+      width: 20px;
+      height: 20px;
+  }
+
+  .hidden {
+      display: none !important;
+  }
+
+  /* Animación de onda */
+  .music-wave {
+      position: absolute;
+      display: none;
+      align-items: flex-end;
+      gap: 2px;
+      height: 16px;
+  }
+
+  .music-toggle-btn.is-playing .music-wave {
+      display: flex;
+  }
+
+  .wave-bar {
+      width: 3px;
+      background-color: #fff;
+      border-radius: 2px;
+      animation: wave-animation 1s infinite alternate;
+  }
+
+  .wave-bar:nth-child(1) {
+      animation-delay: 0s;
+      height: 60%;
+  }
+
+  .wave-bar:nth-child(2) {
+      animation-delay: -0.4s;
+      height: 100%;
+  }
+
+  .wave-bar:nth-child(3) {
+      animation-delay: -0.8s;
+      height: 40%;
+  }
+
+  @keyframes wave-animation {
+      0% {
+          height: 30%;
+      }
+
+      100% {
+          height: 100%;
+      }
+  }
+
+  /* --- Lista de Reproducción --- */
+  .playlist-container {
+      max-height: 350px;
+      overflow-y: auto;
+      background: #333;
+  }
+
+  .playlist-item {
+      padding: 12px 15px;
+      border-bottom: 1px solid #000000;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      transition: background 0.2s;
+  }
+
+  .playlist-item:last-child {
+      border-bottom: none;
+  }
+
+  .playlist-item:hover {
+      background-color: #444;
+  }
+
+  .playlist-item.active {
+      background-color: #3d3d3d;
+      border-left: 4px solid #2d9114;
+  }
+
+  .playlist-item.active .item-title {
+      color: #07af10;
+      font-weight: bold;
+  }
+
+  .item-number {
+      color: #888;
+      margin-right: 10px;
+      font-size: 0.8rem;
+      width: 15px;
+  }
+
+  .item-info {
+      flex-grow: 1;
+      overflow: hidden;
+  }
+
+  .item-title {
+      font-size: 0.9rem;
+      color: #eee;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+
+  /* Scrollbar personalizado */
+  .playlist-container::-webkit-scrollbar {
+      width: 6px;
+  }
+
+  .playlist-container::-webkit-scrollbar-track {
+      background: #2a2a2a;
+  }
+
+  .playlist-container::-webkit-scrollbar-thumb {
+      background: #555;
+      border-radius: 3px;
+  }
+
+  .playlist-container::-webkit-scrollbar-thumb:hover {
+      background: #777;
+  }
+
+  /* Control de Volumen */
+  .volume-control {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+  }
+
+  .volume-slider {
+      -webkit-appearance: none;
+      width: 80px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 2px;
+      outline: none;
+  }
+
+  .volume-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+      transition: transform 0.1s;
+  }
+
+  .volume-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+  }
+
+  @media (max-width: 600px) {
+      .player-container {
+          width: 90%;
+          right: 5%;
+          left: 5%;
+      }
+
+      .mnm-nav-wrapper {
+          padding: 10px 15px;
+      }
+  }

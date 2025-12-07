@@ -1,0 +1,124 @@
+/* La Terminal del Guardián */
+
+#guardian-terminal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 350px;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 3px solid #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    z-index: 10005;
+    /* Encima de todo */
+    transform: translateY(-100%);
+    /* Oculto arriba */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    font-family: 'Courier New', monospace;
+    color: #00ff00;
+    overflow: hidden;
+}
+
+#guardian-terminal.active {
+    transform: translateY(0);
+}
+
+#terminal-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+#terminal-output {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    white-space: pre-wrap;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    scrollbar-width: thin;
+    scrollbar-color: #00ff00 #000;
+}
+
+/* Scroll personalizad */
+#terminal-output::-webkit-scrollbar {
+    width: 8px;
+}
+
+#terminal-output::-webkit-scrollbar-track {
+    background: #000;
+}
+
+#terminal-output::-webkit-scrollbar-thumb {
+    background: #00ff00;
+    border-radius: 4px;
+}
+
+.terminal-line {
+    margin: 4px 0;
+    line-height: 1.4;
+}
+
+.cmd-response {
+    color: #ccffcc;
+}
+
+.cmd-error {
+    color: #ff3333;
+    text-shadow: 0 0 5px red;
+}
+
+.cmd-system {
+    color: #00ffff;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+    background: #000;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.prompt {
+    color: #00ff00;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    flex-grow: 1;
+    outline: none;
+    caret-color: #00ff00;
+}
+
+/* Efecto Matrix de fondo (sutil) */
+#guardian-terminal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg,
+            rgba(0, 255, 0, 0.03) 0px,
+            rgba(0, 255, 0, 0.03) 1px,
+            transparent 1px,
+            transparent 2px);
+    pointer-events: none;
+    z-index: -1;
+}

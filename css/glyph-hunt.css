@@ -1,0 +1,133 @@
+/* La Caza del Glifo - Estilos */
+
+/* Glifo Individual */
+.glyph-rune {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.8), transparent 70%);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0.3;
+    /* Casi invisible */
+    transition: all 0.5s ease;
+    animation: glyph-pulse 3s infinite;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 0 0 5px #00ff88;
+    user-select: none;
+}
+
+/* Símbolos rúnicos */
+.glyph-rune::before {
+    content: "ᚠ";
+}
+
+/* Fehu (Riqueza) */
+.glyph-rune[data-id="2"]::before {
+    content: "ᚢ";
+}
+
+/* Uruz (Fuerza) */
+.glyph-rune[data-id="3"]::before {
+    content: "ᚦ";
+}
+
+/* Thurisaz (Protección) */
+
+/* Al pasar el ratón se revela */
+.glyph-rune:hover {
+    opacity: 1;
+    transform: scale(1.5) rotate(15deg);
+    box-shadow: 0 0 20px #00ff88;
+}
+
+/* Encontrado */
+.glyph-rune.found {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(3);
+}
+
+@keyframes glyph-pulse {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(1.1);
+    }
+}
+
+/* HUD Contador */
+#glyph-hud {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid #00ff88;
+    color: #00ff88;
+    font-family: monospace;
+    font-size: 1.2rem;
+    z-index: 10000;
+    display: none;
+    /* Se muestra al encontrar el primero */
+    animation: slide-in-top 0.5s;
+    backdrop-filter: blur(5px);
+}
+
+@keyframes slide-in-top {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Modal de Victoria */
+.glyph-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    animation: fade-in 1s;
+}
+
+.glyph-modal-content {
+    text-align: center;
+    color: #00ff88;
+    background: #111;
+    padding: 40px;
+    border: 2px solid #00ff88;
+    border-radius: 10px;
+    box-shadow: 0 0 50px #00ff88;
+}
+
+.glyph-modal h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.glyph-modal p {
+    font-size: 1.5rem;
+    color: #fff;
+}

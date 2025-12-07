@@ -1,0 +1,28 @@
+/* Barra de progreso de lectura */
+#reading-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    z-index: 10000;
+    /* Por encima de todo, incluido el menú si es necesario */
+    pointer-events: none;
+}
+
+#reading-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00d4ff, #00ff88, #a855f7);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.7);
+    transition: width 0.1s ease-out;
+    border-radius: 0 2px 2px 0;
+}
+
+/* Opcional: Ocultar si la barra de navegación ya ocupa ese espacio o en móviles */
+@media (max-width: 768px) {
+    #reading-progress-container {
+        height: 3px;
+    }
+}

@@ -1,0 +1,805 @@
+ :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a0d1a;
+            --tertiary-bg: #2d1a2d;
+            --accent-color: #d4af37;
+            --accent-secondary: #ffd700;
+            --accent-tertiary: #b8860b;
+            --text-primary: #ffffff;
+            --text-secondary: #ffd700;
+            --text-tertiary: #d4af37;
+            --border-color: #d4af3740;
+            --glow-color: #d4af3766;
+            --card-bg: rgba(26, 13, 26, 0.8);
+            --text-shadow: 0 0 10px currentColor;
+            --stone-color: #8b7355;
+            --crystal-color: #9932cc;
+            --sacred-gold: #ffd700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animación de partículas cósmicas */
+        .cosmic-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .cosmic-particle {
+            position: absolute;
+            background: radial-gradient(circle, var(--sacred-gold), transparent);
+            border-radius: 50%;
+            animation: floatCosmic 25s infinite linear;
+            opacity: 0.4;
+        }
+
+        .cosmic-particle:nth-child(odd) {
+            background: radial-gradient(circle, var(--crystal-color), transparent);
+            animation-duration: 30s;
+        }
+
+        .cosmic-particle:nth-child(3n) {
+            background: radial-gradient(circle, var(--accent-tertiary), transparent);
+            animation-duration: 35s;
+        }
+
+        @keyframes floatCosmic {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.4;
+                transform: scale(1);
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Navegación */
+        .nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .nav-title {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-link:hover {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            text-shadow: none;
+            transform: translateX(-5px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 30%, var(--tertiary-bg) 70%, var(--stone-color) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: bold;
+            color: var(--accent-color);
+            text-shadow: var(--text-shadow);
+            margin-bottom: 20px;
+            animation: glow 4s ease-in-out infinite alternate;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            text-shadow: 0 0 10px var(--text-secondary);
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+            line-height: 1.8;
+        }
+
+        /* Animación de la Cueva Sagrada */
+        .cave-visualization {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .cave-entrance {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 150px;
+            background: radial-gradient(ellipse at center, var(--stone-color), #2a2a2a);
+            border-radius: 50% 50% 0 0;
+            border: 3px solid var(--accent-color);
+            box-shadow: 
+                0 0 30px var(--accent-color),
+                inset 0 0 30px var(--crystal-color);
+            animation: cave-pulse 6s ease-in-out infinite;
+        }
+
+        .urukai-assembly {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .converging-urukai {
+            position: absolute;
+            width: 30px;
+            height: 40px;
+            background: var(--accent-color);
+            border-radius: 50% 50% 20% 20%;
+            box-shadow: 0 0 15px var(--accent-color);
+            animation: converge 10s ease-in-out infinite;
+        }
+
+        .converging-urukai:nth-child(1) {
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 0s;
+        }
+
+        .converging-urukai:nth-child(2) {
+            top: 20%;
+            right: 20%;
+            animation-delay: 1s;
+        }
+
+        .converging-urukai:nth-child(3) {
+            top: 20%;
+            left: 20%;
+            animation-delay: 2s;
+        }
+
+        .converging-urukai:nth-child(4) {
+            bottom: 20%;
+            right: 20%;
+            animation-delay: 3s;
+        }
+
+        .converging-urukai:nth-child(5) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .converging-urukai:nth-child(6) {
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 5s;
+        }
+
+        .energy-waves {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 3px solid var(--sacred-gold);
+            border-radius: 50%;
+            animation: energy-pulse 8s ease-out infinite;
+        }
+
+        .energy-waves:nth-child(8) {
+            animation-delay: 2s;
+        }
+
+        .energy-waves:nth-child(9) {
+            animation-delay: 4s;
+        }
+
+        .energy-waves:nth-child(10) {
+            animation-delay: 6s;
+        }
+
+        @keyframes cave-pulse {
+            0%, 100% {
+                box-shadow: 
+                    0 0 30px var(--accent-color),
+                    inset 0 0 30px var(--crystal-color);
+            }
+            50% {
+                box-shadow: 
+                    0 0 50px var(--sacred-gold),
+                    inset 0 0 50px var(--crystal-color);
+            }
+        }
+
+        @keyframes converge {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.2) rotate(180deg);
+                opacity: 1;
+                box-shadow: 
+                    0 0 30px var(--sacred-gold),
+                    0 0 60px var(--accent-color);
+            }
+        }
+
+        @keyframes energy-pulse {
+            0% {
+                width: 50px;
+                height: 50px;
+                opacity: 1;
+                border-color: var(--sacred-gold);
+            }
+            100% {
+                width: 400px;
+                height: 400px;
+                opacity: 0;
+                border-color: var(--crystal-color);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 20px var(--accent-color);
+            }
+            100% {
+                text-shadow: 0 0 30px var(--accent-color), 0 0 40px var(--sacred-gold), 0 0 50px var(--accent-secondary);
+            }
+        }
+
+        /* Sección de contenido */
+        .content-section {
+            padding: 80px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 60px;
+            text-shadow: var(--text-shadow);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* Cards principales */
+        .main-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .main-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .main-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), var(--sacred-gold), var(--crystal-color));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .main-card:hover::before {
+            opacity: 1;
+        }
+
+        .main-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--glow-color);
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card-content {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Cronómetro del próximo evento */
+        .centennial-timer {
+            background: var(--card-bg);
+            border: 2px solid var(--accent-color);
+            border-radius: 20px;
+            padding: 60px;
+            text-align: center;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .centennial-timer::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--glow-color), transparent);
+            animation: rotate 20s linear infinite;
+            opacity: 0.3;
+        }
+
+        .timer-title {
+            font-size: 2.5rem;
+            color: var(--sacred-gold);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timer-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timer-display {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .time-unit {
+            background: linear-gradient(135deg, var(--secondary-bg), var(--tertiary-bg));
+            border: 2px solid var(--accent-color);
+            border-radius: 15px;
+            padding: 25px;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .time-number {
+            font-size: 3.5rem;
+            color: var(--sacred-gold);
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 0 10px var(--sacred-gold);
+        }
+
+        .time-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+
+        .event-description {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-top: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Galería de eventos históricos */
+        .historic-events {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 80px 0;
+        }
+
+        .event-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .event-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px var(--glow-color);
+        }
+
+        .event-date {
+            background: linear-gradient(135deg, var(--accent-color), var(--sacred-gold));
+            color: var(--primary-bg);
+            padding: 20px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .event-info {
+            padding: 25px;
+        }
+
+        .event-title {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .event-description {
+            color: var(--text-primary);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .event-impact {
+            color: var(--sacred-gold);
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Características técnicas */
+        .technical-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 80px 0;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px var(--glow-color);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px auto;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-bg);
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .feature-value {
+            font-size: 2rem;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+
+        /* Tabla de datos */
+        .data-table {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 80px 0;
+        }
+
+        .table-header {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .table-content {
+            padding: 0;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .table-row:hover {
+            background-color: var(--glow-color);
+        }
+
+        .table-cell {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .table-cell:first-child {
+            color: var(--text-secondary);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .table-cell:last-child {
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 20px 20px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            text-shadow: var(--text-shadow);
+        }
+
+        .footer-text {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-link:hover {
+            background: var(--accent-color);
+            color: var(--primary-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px var(--glow-color);
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .nav {
+                position: static;
+                margin: 20px;
+                width: calc(100% - 40px);
+            }
+
+            .nav-links {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .main-cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .timer-display {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .time-unit {
+                min-width: 200px;
+            }
+
+            .technical-features {
+                grid-template-columns: 1fr;
+            }
+
+            .table-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .historic-events {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Efectos adicionales */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--accent-color);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            z-index: 100;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        .content-section:nth-child(even) {
+            background: linear-gradient(135deg, var(--secondary-bg), var(--tertiary-bg));
+            border-radius: 20px;
+            margin: 40px -20px;
+            padding: 80px 20px;
+        }
+
+        /* Efectos especiales para elementos sagrados */
+        .sacred-glow {
+            box-shadow: 
+                0 0 20px var(--accent-color),
+                0 0 40px var(--sacred-gold),
+                inset 0 0 20px var(--crystal-color);
+        }
+
+        .golden-pulse {
+            animation: golden-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes golden-pulse {
+            0%, 100% {
+                color: var(--accent-color);
+            }
+            50% {
+                color: var(--sacred-gold);
+                text-shadow: 0 0 20px var(--sacred-gold);
+            }
+        }

@@ -1,0 +1,97 @@
+/* Estilos para el Sistema de Clima Dinámico */
+
+/* Widget indicador de clima */
+#weather-widget {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: rgba(10, 10, 20, 0.7);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+#weather-widget:hover {
+    background: rgba(10, 10, 20, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.weather-location {
+    font-weight: bold;
+    color: #00d4ff;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+/* Efectos Globales de Clima (se aplican al body o a un overlay) */
+
+/* LLUVIA */
+body.weather-rain::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9990;
+    /* Debajo de modales */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='20' height='300'%3E%3Cdefs%3E%3ClinearGradient id='rainGradient' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23aaaaaa;stop-opacity:0' /%3E%3Cstop offset='50%25' style='stop-color:%23ffffff;stop-opacity:0.2' /%3E%3Cstop offset='100%25' style='stop-color:%23aaaaaa;stop-opacity:0' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1' height='100' fill='url(%23rainGradient)' /%3E%3C/svg%3E");
+    background-size: 20px 300px;
+    animation: rain 1.5s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes rain {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 10% 100%;
+    }
+
+    /* Ligera inclinación */
+}
+
+/* NOCHE */
+body.weather-night {
+    background-color: #050510;
+    /* Fondo más oscuro */
+}
+
+body.weather-night .hero,
+body.weather-night section {
+    filter: brightness(0.9) contrast(1.1);
+    /* Oscurecer ligeramente el contenido */
+}
+
+body.weather-night .hero-title {
+    text-shadow: 0 0 15px rgba(255, 136, 0, 0.6);
+    /* Títulos brillan más en la oscuridad */
+}
+
+/* Niebla / Nubes */
+body.weather-cloudy::before {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to top, rgba(200, 200, 200, 0.1), transparent);
+    z-index: 5;
+    pointer-events: none;
+    filter: blur(20px);
+}

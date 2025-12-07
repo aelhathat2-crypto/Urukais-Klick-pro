@@ -1,0 +1,190 @@
+/* Timeline Horizontal Interactiva */
+
+.timeline-section {
+    position: relative;
+    padding: 60px 0;
+    overflow: hidden;
+    background: transparent;
+    /* Fondo transparente para ver partículas */
+}
+
+/* Contenedor con Scroll Horizontal */
+.timeline-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    /* Snap para que las tarjetas se centren */
+    scroll-snap-type: x mandatory;
+    padding: 40px 20px;
+    -ms-overflow-style: none;
+    /* IE/Edge hide scrollbar */
+    scrollbar-width: none;
+    /* Firefox hide scrollbar */
+}
+
+.timeline-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari hide scrollbar */
+}
+
+/* Pista de la Línea de Tiempo */
+.timeline-track {
+    display: flex;
+    gap: 100px;
+    /* Separación amplia entre hitos */
+    padding: 0 50vw 0 50px;
+    /* Padding derecho grande para poder llevar el último ítem al inicio */
+    position: relative;
+}
+
+/* Línea conectora central */
+.timeline-track::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg,
+            rgba(0, 212, 255, 0.2) 0%,
+            rgba(0, 255, 136, 0.5) 50%,
+            rgba(168, 85, 247, 0.2) 100%);
+    transform: translateY(-50%);
+    z-index: 0;
+    border-radius: 4px;
+}
+
+/* Item Individual (Evento) */
+.timeline-item {
+    position: relative;
+    flex: 0 0 350px;
+    /* Ancho fijo */
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    transition: all 0.5s ease;
+    opacity: 0.5;
+    /* Atenuado por defecto */
+    transform: scale(0.9);
+}
+
+/* Estado Activo (Centro) */
+.timeline-item.active {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Marcador en la línea */
+.timeline-marker {
+    width: 24px;
+    height: 24px;
+    background: #000;
+    border: 3px solid #00ff88;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.timeline-item.active .timeline-marker {
+    background: #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.8), 0 0 40px rgba(0, 255, 136, 0.4);
+    transform: scale(1.3);
+}
+
+/* Tarjeta de Contenido */
+.timeline-content {
+    background: rgba(18, 18, 24, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s;
+    /* Efecto holográfico base si se aplica la clase externa */
+}
+
+/* Flecha de la tarjeta apuntando al marcador */
+.timeline-content::after {
+    content: "";
+    position: absolute;
+    /* Alternar arriba/abajo según par/impar para más dinamismo podría ser una opción,
+       pero para simplicidad horizontal, lo ponemos debajo del marcador visualmente */
+}
+
+.timeline-year {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #00d4ff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.timeline-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.timeline-desc {
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+/* Controles de Navegación */
+.timeline-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.timeline-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.timeline-btn:hover {
+    background: rgba(0, 255, 136, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+/* Alternancia Arriba/Abajo para romper monotonía (Opcional, requiere JS o nth-child complejo con flex) 
+   Para scroll horizontal simple, alineado al centro es más limpio en móvil.
+*/
+
+@media (max-width: 768px) {
+    .timeline-item {
+        flex: 0 0 85vw;
+        /* Casi pantalla completa en móvil */
+    }
+
+    .timeline-track {
+        padding: 0 7.5vw;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,238 @@
+   :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a0d1a;
+            --tertiary-bg: #2d1a2d;
+            --accent-color: #d4af37;
+            --accent-secondary: #ffd700;
+            --accent-tertiary: #b8860b;
+            --text-primary: #ffffff;
+            --text-secondary: #ffd700;
+            --text-tertiary: #d4af37;
+            --border-color: #d4af3740;
+            --glow-color: #d4af3766;
+            --card-bg: rgba(26, 13, 26, 0.8);
+            --text-shadow: 0 0 10px currentColor;
+            --stone-color: #8b7355;
+            --crystal-color: #9932cc;
+            --sacred-gold: #ffd700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Animación de partículas cósmicas */
+        .cosmic-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .cosmic-particle {
+            position: absolute;
+            background: radial-gradient(circle, var(--sacred-gold), transparent);
+            border-radius: 50%;
+            animation: floatCosmic 25s infinite linear;
+            opacity: 0.4;
+        }
+
+        .cosmic-particle:nth-child(odd) {
+            background: radial-gradient(circle, var(--crystal-color), transparent);
+            animation-duration: 30s;
+        }
+
+        .cosmic-particle:nth-child(3n) {
+            background: radial-gradient(circle, var(--accent-tertiary), transparent);
+            animation-duration: 35s;
+        }
+
+        @keyframes floatCosmic {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.4;
+                transform: scale(1);
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+
+        
+
+        .section-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--accent-color);
+            text-shadow: var(--text-shadow);
+            margin-bottom: 20px;
+            animation: glow 4s ease-in-out infinite alternate;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .section-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            text-shadow: 0 0 10px var(--text-secondary);
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 20px var(--accent-color);
+            }
+            100% {
+                text-shadow: 0 0 30px var(--accent-color), 0 0 40px var(--sacred-gold), 0 0 50px var(--accent-secondary);
+            }
+        }
+
+        /* Contenedor de botones */
+        .buttons-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
+
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Estilos para los botones */
+        .sacred-button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px 30px;
+            background: var(--card-bg);
+            border: 2px solid var(--accent-color);
+            border-radius: 20px;
+            color: var(--text-primary);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px var(--glow-color);
+        }
+
+        .sacred-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .sacred-button:hover::before {
+            left: 100%;
+        }
+
+        .sacred-button:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 
+                0 20px 40px var(--glow-color),
+                0 0 30px var(--accent-color),
+                inset 0 0 20px var(--crystal-color);
+            border-color: var(--sacred-gold);
+            color: var(--primary-bg);
+        }
+
+        .sacred-button .button-icon {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .sacred-button:hover .button-icon {
+            color: var(--primary-bg);
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* Efectos especiales para botones específicos */
+        .portal-entrance {
+            border: 3px solid var(--sacred-gold);
+            background: linear-gradient(135deg, var(--card-bg), rgba(255, 215, 0, 0.1));
+        }
+
+        .mystical-archive {
+            border: 2px solid var(--crystal-color);
+        }
+
+        .energy-focus {
+            border: 2px solid var(--accent-tertiary);
+        }
+
+        /* Sección de información adicional */
+        .info-section {
+            background: linear-gradient(135deg, var(--secondary-bg), var(--tertiary-bg));
+            border-radius: 20px;
+            margin: 40px -20px;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .info-title {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .info-text {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .buttons-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .sacred-button {
+                padding: 20px 25px;
+                font-size: 1rem;
+            }
+
+            .section-header {
+                padding: 80px 20px 40px;
+            }
+        }

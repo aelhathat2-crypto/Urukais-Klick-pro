@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <meta name="author" content="Manuel Casimiro Carrasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Urukais Klick - El Ecosistema Silencioso de Alforja. Descubre los guardianes minerales de las montañas.">
+    <meta name="theme-color" content="#0a0e27">
+    <title>Agua en Crisis: La Lucha por el Recurso Más Precioso</title>
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/menu/menu.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/estilos/crisis.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/botones.css">
+    <link rel="stylesheet" href="/css/boton.css">
+</head>
+<body>
+    
+              
+        <!-- Overlay para móvil -->
+    <div class="mnm-overlay" id="mnmOverlay"></div>
+
+    <!-- Botón toggle reproductor -->
+    <!-- Navegación principal -->
+    <nav class="mnm-nav-container">
+        <div class="mnm-nav-wrapper">
+            <a href="/index.html" class="mnm-logo">Urukais Klick</a>
+            
+            
+            <button class="mnm-hamburger" id="mnmHamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="mnm-nav-menu" id="mnmNavMenu">
+                <!-- Categoría 1: Entretenimiento y Ocio -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Entretenimiento y Ocio
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/buscador-de-peliculas.html" class="mnm-dropdown-item">🎬 Catálogo de Películas</a>
+                        <a href="/cabecera/cine/la-nasa.html" class="mnm-dropdown-item">🚀 Espacio y Astronomía</a>
+                        <a href="/cabecera/cine/peluculas.html" class="mnm-dropdown-item">🎭 Films Favoritos</a>
+                        <a href="/cabecera/cine/noticias.html" class="mnm-dropdown-item">📰 Noticias Actuales</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😂 Humor y Entretenimiento</a>
+                        <a href="/cabecera/musica/hadmed.html" class="mnm-dropdown-item">🎵 Ambiente Musical</a>
+                        <a href="/cabecera/musica/mas.html" class="mnm-dropdown-item">🎶 Musicalife</a>
+                        <a href="/cabecera/musica/musica-clasica.html" class="mnm-dropdown-item">🎼 Música Clásica</a>
+                        <a href="/cabecera/musica/prueva.html" class="mnm-dropdown-item">🎤 Géneros Musicales</a>
+                        <a href="/cabecera/musica/tartituras.html" class="mnm-dropdown-item">🎵 Partituras y Escore</a>
+                        <a href="/cabecera/musica/videos3.html" class="mnm-dropdown-item">📺 Centro de Videos</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 2: Herramientas y Productividad -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Herramientas y Productividad
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/herramientas/chat.html" class="mnm-dropdown-item">💬 Asistente Virtual Urukais</a>
+                        <a href="/cabecera/herramientas/control-de-consultas.html" class="mnm-dropdown-item">🗂 Sistema de Consultas</a>
+                        <a href="/cabecera/herramientas/DevStudio.html" class="mnm-dropdown-item">⚙️ Estudio de Desarrollo</a>
+                        <a href="/cabecera/herramientas/FinTech.html" class="mnm-dropdown-item">💼 Soluciones Financieras</a>
+                        <a href="/cabecera/herramientas/generador-contraseñas.html" class="mnm-dropdown-item">🔐 Generador Seguro de<br>Contraseñas</a>
+                        <a href="/cabecera/herramientas/genesis.html" class="mnm-dropdown-item">🌟 Plataforma Genesis</a>
+                        <a href="/cabecera/herramientas/herramienta.html" class="mnm-dropdown-item">🛠 Suite de Herramientas</a>
+                        <a href="/cabecera/herramientas/hot.html" class="mnm-dropdown-item">🔥 Tendencias Actuales</a>
+                        <a href="/cabecera/herramientas/ia-educativa.html" class="mnm-dropdown-item">🎓 IA Educativa</a>
+                        <a href="/cabecera/herramientas/listado-de-prons.html" class="mnm-dropdown-item">📋 Pronósticos en Línea</a>
+                        <a href="/cabecera/herramientas/localizacion-de-faker.html" class="mnm-dropdown-item">📍 Localizador Universal</a>
+                        <a href="/cabecera/herramientas/mas-datos.html" class="mnm-dropdown-item">📊 Análisis de Datos</a>
+                        <a href="/cabecera/herramientas/pruevas.html" class="mnm-dropdown-item">🧪 Centro de Pruebas</a>
+                        <a href="/cabecera/herramientas/texto-voz.html" class="mnm-dropdown-item">🔊 Síntesis de Voz</a>
+                        <a href="/cabecera/herramientas/tienda-de-urukais.html" class="mnm-dropdown-item">🛒 Tienda Oficial</a>
+                        <a href="/cabecera/buscadores/gestor-de-tareas.html" class="mnm-dropdown-item">✅ Organizador de Tareas</a>
+                        <a href="/cabecera/buscadores/gestor-de-proyectos.html" class="mnm-dropdown-item">📈 Gestor de Proyectos</a>
+                        <a href="/cabecera/cine/ProTask.html" class="mnm-dropdown-item">⏰ ProTask Profesional</a>
+                        <a href="/cabecera/cine/ReservaPro.html" class="mnm-dropdown-item">📅 Sistema de Reservas</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 3: Buscadores y Información -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Buscadores y Información
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/buscadores/buscadorurukais.html" class="mnm-dropdown-item">📚 Búsqueda de Libros</a>
+                        <a href="/cabecera/buscadores/busqueda.html" class="mnm-dropdown-item">🔍 Buscador Matrix</a>
+                        <a href="/cabecera/cine/libros.html" class="mnm-dropdown-item">📖 Biblioteca Digital</a>
+                        <a href="/cabecera/cine/localizador.html" class="mnm-dropdown-item">🌐 Ubicador IP</a>
+                        <a href="/cabecera/buscadores/barcelona-sustainabitil.html" class="mnm-dropdown-item">🌱 Barcelona Sostenible</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 4: Mascotas y Animales -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Mascotas y Animales
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/animales/animales.html" class="mnm-dropdown-item">🐾 Generador de Animales</a>
+                        <a href="/cabecera/animales/buscador-de-perros.html" class="mnm-dropdown-item">🐕 Aplicación de Mascotas</a>
+                        <a href="/cabecera/buscadores/deportes.html" class="mnm-dropdown-item">⚽ Buscador de Equipos<br>Deportivos</a>
+                        <a href="/cabecera/animales/Marketing.html" class="mnm-dropdown-item">📱 Marketing Digital</a>
+                        <a href="/cabecera/animales/multi.html" class="mnm-dropdown-item">💻 Solución Multiplataforma</a>
+                        <a href="/cabecera/animales/neocron.html" class="mnm-dropdown-item">🌟 Neocron Urukais</a>
+                        <a href="/cabecera/animales/portal-interactivo.html" class="mnm-dropdown-item">✨ Portal Interactivo</a>
+                        <a href="/cabecera/animales/site-de-productividad.html" class="mnm-dropdown-item">💼 Suite de Productividad</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 5: Comida y Bebidas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Comida y Bebidas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/comida/coctel.html" class="mnm-dropdown-item">🍹 Sistema de Coctelería</a>
+                        <a href="/cabecera/comida/comida.html" class="mnm-dropdown-item">🍽 Gastronomía Exquisita</a>
+                        <a href="/cabecera/comida/cocia-en-inggles.html" class="mnm-dropdown-item">🍳 Cocina Internacional</a>
+                        
+                    </div>
+                </li>
+
+                <!-- Categoría 6: Creatividad y Arte -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Creatividad y Arte
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/conics/archivo-de-hielo.html" class="mnm-dropdown-item">❄️ Archivo Creativo</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😄 Galería de Humor</a>
+                        <a href="/cabecera/conics/Morty.html" class="mnm-dropdown-item">🎨 Colección Morty</a>
+                        <a href="/cabecera/conics/generador-de-fondos.html" class="mnm-dropdown-item">🎨 Generador de Fondos</a>
+                        <a href="/cabecera/conics/neocron.html" class="mnm-dropdown-item">😊 Control de Estado de Ánimo</a>
+                        <a href="/cabecera/conics/plataforma-de-herattientas.html" class="mnm-dropdown-item">🛠 Plataforma de<br>Herramientas Creativas</a>
+                        <a href="/cabecera/conics/portal-interactivo.html" class="mnm-dropdown-item">🎭 Portal Interactivo</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 7: Medio Ambiente -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Medio Ambiente
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/tierra/ambiental-mundial.html" class="mnm-dropdown-item">🌍 Global Ambiental</a>
+                        <a href="/cabecera/tierra/busca-ciudades.html" class="mnm-dropdown-item">🏙 Explorador de Ciudades</a>
+                        <a href="/cabecera/tierra/busca-cuidad.html" class="mnm-dropdown-item">🌆 Búsqueda Urbana</a>
+                        <a href="/cabecera/tierra/clima.html" class="mnm-dropdown-item">🌤️ Centro Meteorológico</a>
+                        <a href="/cabecera/tierra/deforestacion-mundial.html" class="mnm-dropdown-item">🌲 Control Deforestación</a>
+                        <a href="/cabecera/tierra/gia-de-supervivencia.html" class="mnm-dropdown-item">🧭 Guía de Supervivencia</a>
+                        <a href="/cabecera/tierra/mas.html" class="mnm-dropdown-item">🌿 Más Contenido Verde</a>
+                        <a href="/cabecera/tierra/renacer.html" class="mnm-dropdown-item">🌱 Renacer y Renovación</a>
+                        <a href="/cabecera/tierra/sistema-reus.html" class="mnm-dropdown-item">♻️ Sistema Inteligente de Reciclaje</a>
+                        <a href="/cabecera/tierra/supervivencia33.html" class="mnm-dropdown-item">🏕 Supervivencia Extrema</a>
+                    </div>
+                </li>
+                
+
+                <!-- Categoría 8: Eventos y Citas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Eventos y Citas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/gestor-de-citas.html" class="mnm-dropdown-item">💕 Organizador de Citas</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+ 
+    
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="container">
+                <div class="water-drop"></div>
+                <h1 class="hero-title">La Guerra por el Agua</h1>
+                <p class="hero-subtitle">
+                    Mientras el 71% de la Tierra está cubierta por agua, solo el 2.5% es dulce y solo el 1% es potable. La escasez hídrica ya afecta a más de 2.3 mil millones de personas en el mundo.
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat1">2.3B</div>
+                        <div class="stat-label">personas sin acceso al agua segura</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat2">90%</div>
+                        <div class="stat-label">de muertes por agua contaminada son niños</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat3">30%</div>
+                        <div class="stat-label">aumento en escasez proyectado para 2030</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat4">$28B</div>
+                        <div class="stat-label">pérdidas anuales por escasez hídrica</div>
+                    </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="#escasez" class="btn btn-crisis">Entiende la Crisis</a>
+                    <a href="#soluciones" class="btn btn-success">Descubre Soluciones</a>
+                </div>
+            </div>
+        </div>
+        <div class="wave-pattern"></div>
+    </section>
+
+    <!-- Water Level Indicator -->
+    <section class="section">
+        <div class="container">
+            <div class="water-level-container">
+                <h2>Reservas de Agua Dulce Global</h2>
+                <p class="section-subtitle">Solo el 1% del agua dulce es fácilmente accesible para uso humano</p>
+                
+                <div class="water-level">
+                    <div class="water-fill" id="waterFill">
+                        <div class="water-percentage" id="waterPercentage">1%</div>
+                    </div>
+                </div>
+                
+                <p><small>De toda el agua en la Tierra, solo una pequeña fracción está disponible para uso humano directo</small></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crisis Section -->
+    <section class="section section-alt" id="escasez">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">La Crisis de Escasez</h2>
+                <p class="section-subtitle">
+                    La escasez de agua ya no es una amenaza futura: es una realidad presente que afecta a millones de personas y se intensifica por el cambio climático y el crecimiento poblacional.
+                </p>
+            </div>
+
+            <div class="crisis-grid">
+                <div class="crisis-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S9.5 8.83 9.5 8zm7 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <h3 class="card-title">Estrés Hídrico Severo</h3>
+                    <p class="card-description">
+                        Más de 2.3 mil millones de personas viven en países con escasez severa de agua. Para 2030, se proyecta que 700 millones podrían ser desplazados por la escasez hídrica.
+                    </p>
+                </div>
+
+                <div class="crisis-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="card-title">Sequías Extremas</h3>
+                    <p class="card-description">
+                        Las sequías han aumentado 29% desde el año 2000. El cambio climático intensifica estos eventos, afectando la agricultura, ganadería y acceso al agua potable.
+                    </p>
+                </div>
+
+                <div class="crisis-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 11H7v9h2v-9zm4-4h-2v13h2V7zm4-4h-2v17h2V3z"/>
+                    </svg>
+                    <h3 class="card-title">Sobreexplotación</h3>
+                    <p class="card-description">
+                        Los acuíferos se están agotando más rápido de lo que pueden recargarse. En 20 años, el 60% de los principales acuíferos podría no ser sostenible.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Water Scarcity Chart -->
+            <div class="chart-container">
+                <h3 class="chart-title">Proyección de Escasez Hídrica Global</h3>
+                <p class="chart-subtitle">Regiones que enfrentan estrés hídrico severo</p>
+                
+                <svg id="waterChart" viewBox="0 0 800 400">
+                    <!-- Chart Title -->
+                    <text x="400" y="30" text-anchor="middle" class="chart-title" style="font-size: 16px; font-family: var(--font-display); fill: var(--color-water-900);">Población en Regiones con Escasez Hídrica (millones)</text>
+                    
+                    <!-- Axes -->
+                    <line x1="80" y1="320" x2="750" y2="320" stroke="#475569" stroke-width="2"/>
+                    <line x1="80" y1="50" x2="80" y2="320" stroke="#475569" stroke-width="2"/>
+                    
+                    <!-- Axis Labels -->
+                    <text x="415" y="380" text-anchor="middle" style="font-size: 12px; fill: var(--color-text-secondary);">Años</text>
+                    <text x="30" y="185" text-anchor="middle" style="font-size: 12px; fill: var(--color-text-secondary);" transform="rotate(-90 30 185)">Millones de Personas</text>
+                    
+                    <!-- Grid lines -->
+                    <line x1="80" y1="260" x2="750" y2="260" stroke="#e2e8f0" stroke-width="1"/>
+                    <line x1="80" y1="200" x2="750" y2="200" stroke="#e2e8f0" stroke-width="1"/>
+                    <line x1="80" y1="140" x2="750" y2="140" stroke="#e2e8f0" stroke-width="1"/>
+                    <line x1="80" y1="80" x2="750" y2="80" stroke="#e2e8f0" stroke-width="1"/>
+                    
+                    <!-- Data bars - animating -->
+                    <rect x="150" y="280" width="60" height="40" fill="#0ea5e9" opacity="0">
+                        <animate attributeName="opacity" from="0" to="1" dur="1s" begin="0.5s" fill="freeze"/>
+                    </rect>
+                    <text x="180" y="345" text-anchor="middle" style="font-size: 10px; fill: var(--color-text-primary);">2015</text>
+                    
+                    <rect x="270" y="250" width="60" height="70" fill="#0ea5e9" opacity="0">
+                        <animate attributeName="opacity" from="0" to="1" dur="1s" begin="1s" fill="freeze"/>
+                    </rect>
+                    <text x="300" y="345" text-anchor="middle" style="font-size: 10px; fill: var(--color-text-primary);">2018</text>
+                    
+                    <rect x="390" y="210" width="60" height="110" fill="#0ea5e9" opacity="0">
+                        <animate attributeName="opacity" from="0" to="1" dur="1s" begin="1.5s" fill="freeze"/>
+                    </rect>
+                    <text x="420" y="345" text-anchor="middle" style="font-size: 10px; fill: var(--color-text-primary);">2021</text>
+                    
+                    <rect x="510" y="160" width="60" height="160" fill="#0ea5e9" opacity="0">
+                        <animate attributeName="opacity" from="0" to="1" dur="1s" begin="2s" fill="freeze"/>
+                    </rect>
+                    <text x="540" y="345" text-anchor="middle" style="font-size: 10px; fill: var(--color-text-primary);">2024</text>
+                    
+                    <rect x="630" y="120" width="60" height="200" fill="#ef4444" opacity="0">
+                        <animate attributeName="opacity" from="0" to="1" dur="1s" begin="2.5s" fill="freeze"/>
+                    </rect>
+                    <text x="660" y="345" text-anchor="middle" style="font-size: 10px; fill: var(--color-text-primary);">2030*</text>
+                    
+                    <!-- Future projection indicator -->
+                    <text x="660" y="110" text-anchor="middle" style="font-size: 8px; fill: #ef4444;">Proyección</text>
+                </svg>
+                
+                <div class="chart-source">
+                    * Proyección según el Banco Mundial y UNICEF. *Estimación: 700 millones de personas en riesgo de desplazamiento.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contamination Section -->
+    <section class="section" id="contaminacion">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">La Contaminación del Agua</h2>
+                <p class="section-subtitle">
+                    Más de 80% de las aguas residuales vuelven al medio ambiente sin tratamiento adecuado. La contaminación convierte agua disponible en agua no potable y peligrosa.
+                </p>
+            </div>
+
+            <div class="causes-grid">
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3>Industrial</h3>
+                    <p class="card-description">
+                        Empresas descargan químicos tóxicos, metales pesados y residuos radiactivos en ríos y lagos, contaminando fuentes de agua potable y aquatic life.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66C7.26 18.32 9.8 13 17 8z"/>
+                    </svg>
+                    <h3>Agrícola</h3>
+                    <p class="card-description">
+                        Pesticidas, herbicidas y fertilizantes se filtran a las aguas subterráneas, creando zonas muertas en océanos y contaminando el agua potable.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S9.5 8.83 9.5 8zm7 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <h3>Urbana</h3>
+                    <p class="card-description">
+                        Aguas residuales sin tratamiento, nutrientes urbanos ymicroplásticos se vierten en sistemas de agua dulce, afectando la calidad del agua potable.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 11H7v9h2v-9zm4-4h-2v13h2V7zm4-4h-2v17h2V3z"/>
+                    </svg>
+                    <h3>Microplásticos</h3>
+                    <p class="card-description">
+                        Cada semana consumimos una tarjeta de crédito en microplásticos a través del agua potable. Estos químicos persisten en el ambiente por siglos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="section section-alt" id="impacto">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Impacto en la Sociedad</h2>
+                <p class="section-subtitle">
+                    La crisis hídrica no es solo ambiental: tiene consecuencias directas en la salud, economía y estabilidad social de las comunidades globales.
+                </p>
+            </div>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="card-title">Salud Pública</h3>
+                    <p class="card-description">
+                        Cada año, más de 2 millones de personas mueren por enfermedades relacionadas con agua contaminada, incluyendo diarrea, cólera y malaria.
+                    </p>
+                </div>
+
+                <div class="impact-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S9.5 8.83 9.5 8zm7 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <h3 class="card-title">Conflictos Sociales</h3>
+                    <p class="card-description">
+                        La escasez de agua contribuye a 80% de los conflictos internacionales. Los refugiados hídricos son la mayor crisis de desplazamiento del siglo XXI.
+                    </p>
+                </div>
+
+                <div class="impact-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 11H7v9h2v-9zm4-4h-2v13h2V7zm4-4h-2v17h2V3z"/>
+                    </svg>
+                    <h3 class="card-title">Impacto Económico</h3>
+                    <p class="card-description">
+                        El cambio climático reduce el PIB global en 0.8% anual por problemas hídricos. La industria textil consume 100% del agua de una ciudad promedio al año.
+                    </p>
+                </div>
+
+                <div class="impact-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="card-title">Educación Afectada</h3>
+                    <p class="card-description">
+                        443 millones de días escolares se pierden anualmente por enfermedades relacionadas con agua. Las niñas caminan 200 millones de horas diarias para conseguir agua.
+                    </p>
+                </div>
+
+                <div class="impact-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S9.5 8.83 9.5 8zm7 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <h3 class="card-title">Inseguridad Alimentaria</h3>
+                    <p class="card-description">
+                        La agricultura consume 70% del agua dulce mundial. La escasez reduce la producción alimentaria y aumenta los precios de los alimentos globalmente.
+                    </p>
+                </div>
+
+                <div class="impact-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="card-title">Migración Forzada</h3>
+                    <p class="card-description">
+                        Para 2030, se proyecta que 200 millones de personas podrían ser desplazadas por problemas relacionados con el agua, más que los refugiados de guerra.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="section" id="soluciones">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Soluciones y Acciones</h2>
+                <p class="section-subtitle">
+                    La crisis hídrica tiene soluciones viables, pero requiere acción urgente y coordinada a nivel global, nacional y local.
+                </p>
+            </div>
+
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="card-title">Infraestructura de Agua</h3>
+                    <p class="card-description">
+                        Construir sistemas de purificación, tanques de almacenamiento y redes de distribución modernas para reducir pérdidas y garantizar acceso universal.
+                    </p>
+                </div>
+
+                <div class="solution-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S9.5 8.83 9.5 8zm7 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <h3 class="card-title">Tratamiento de Aguas Residuales</h3>
+                    <p class="card-description">
+                        Implementar plantas de tratamiento eficientes que conviertan aguas residuales en agua potable, reduciendo la contaminación y aumentando el suministro.
+                    </p>
+                </div>
+
+                <div class="solution-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 11H7v9h2v-9zm4-4h-2v13h2V7zm4-4h-2v17h2V3z"/>
+                    </svg>
+                    <h3 class="card-title">Desalinización</h3>
+                    <p class="card-description">
+                        Expandir tecnologías de desalinización para convertir agua de mar en agua potable, especialmente en regiones costeras y países con alta escasez.
+                    </p>
+                </div>
+
+                <div class="solution-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="card-title">Agricultura Inteligente</h3>
+                    <p class="card-description">
+                        Sistemas de riego por goteo, agricultura de precisión y cultivos resistentes a sequía para reducir el consumo agrícola de agua en 50%.
+                    </p>
+                </div>
+
+                <div class="solution-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S9.5 8.83 9.5 8zm7 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <h3 class="card-title">Cosecha de Lluvia</h3>
+                    <p class="card-description">
+                        Sistemas de recolección y almacenamiento de agua de lluvia para complementar fuentes locales, especialmente en regiones con lluvias estacionales.
+                    </p>
+                </div>
+
+                <div class="solution-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="card-title">Gestión Comunitaria</h3>
+                    <p class="card-description">
+                        Entrenar comunidades locales en gestión sostenible del agua, construcción de infraestructura simple y mantenimiento de sistemas de purificación.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <h3 class="cta-title">Actúa por el Agua</h3>
+                <p class="cta-description">
+                    Cada gota cuenta. Desde reducir el consumo individual hasta exigir políticas públicas que protejan este recurso vital, todos podemos contribuir a solucionar la crisis hídrica.
+                </p>
+                <div class="cta-actions">
+                    <a href="https://www.water.org" target="_blank" class="btn btn-water">Apoya a Water.org</a>
+                    <a href="https://www.unwater.org" target="_blank" class="btn btn-success">Únete a UN-Water</a>
+                    <a href="https://www.charitywater.org" target="_blank" class="btn btn-crisis">Dona para Agua Potable</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+  
+
+    <!-- Footer -->
+    <footer class="footer">
+            
+
+        <nav class="footer-nav">
+            <ul class="footer-column">
+                <li><strong>Secciones</strong></li>
+                <li><a href="/index.html">Inicio en Urukais Klick</a></li>
+                <li><a href="/#caracteristicas">Características Web</a></li>
+                <li><a href="/#galeria">Galería de Proyectos</a></li>
+                <li><a href="/#videos">Videos de Música</a></li>
+                <li><a href="/contenido/contacto.html">Contacto Manuel C.C.</a></li>
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Proyectos</strong></li>
+                <li><a href="https://zingy-pavlova-6aa6a6.netlify.app/" target="_blank" rel="noopener">Urukais Klick Pro 🐸</a></li>
+                <li><a href="https://adorable-belekoy-d064de.netlify.app/" target="_blank" rel="noopener">Clima Urukais</a></li>
+                <li><a href="https://resplendent-faun-6147ea.netlify.app/" target="_blank" rel="noopener">PokéDex Urukais</a></li>
+                <li><a href="https://cute-pegasus-a3487f.netlify.app/" target="_blank" rel="noopener">API Urukais Klick</a></li>
+                <li><a href="https://stately-sherbet-955c30.netlify.app/musica" target="_blank" rel="noopener">Plataforma Musical 🐸</a></li>
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Contenido</strong></li>
+                <li><a href="/contenido/heavy-metal.html" target="_blank" rel="noopener">Heavy Metal</a></li>
+                <li><a href="/contenido/libros.html" target="_blank" rel="noopener">Biblioteca del Infierno</a></li>
+                <li><a href="/contenido/matrix.html" target="_blank" rel="noopener">Centro de Búsqueda Matricial</a></li>
+                <li><a href="/contenido/montanas.html" target="_blank" rel="noopener">Ecosistema de Alforja</a></li>
+                <li><a href="/footer/generador-de-datos.html" target="_blank" rel="noopener">Generador avanzado de datos</a></li>
+            
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Redes & Legal</strong></li>
+                <li><a href="https://www.facebook.com/groups/1189456591848515/?ref=share_group_link" target="_blank" rel="noopener">Facebook</a></li>
+                <li><a href="https://www.youtube.com/channel/UCt8Wwz9KOwsq5VN-q2MnSWg" target="_blank" rel="noopener">YouTube</a></li>
+                <li><a href="/footer/cookies.html">Política de Cookies</a></li>
+                <li><a href="/footer/politica-de-privacidad.html">Política de Privacidad</a></li>
+                <li><a href="https://silly-boba-dc057e.netlify.app/" target="blank">Manuel Casimiro Carrasco</a></li>
+            </ul>
+        </nav>
+        <div class="footer-content">
+            <h3>&copy; 2025 Urukais Klick 🐸. Todos los derechos reservados.</h3>
+            <h3>Desarrollado por Manuel Casimiro Carrasco.👀</h3>
+        </div>
+    </footer>
+      <style>
+        /* Botón de scroll to top */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .scroll-to-top:active {
+            transform: translateY(-1px);
+        }
+
+        /* Estado visible del botón */
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Icono del botón */
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-to-top:hover svg {
+            transform: translateY(-2px);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scroll-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .scroll-to-top svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        /* Contenido mínimo para hacer scroll */
+        body {
+            height: 2000px;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <!-- Contenido mínimo para probar el scroll -->
+        
+    <!-- Botón de subida al principio de la web -->
+    <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Volver al inicio">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+        // Botón de Scroll to Top - Sin Conflictos
+        (function() {
+            'use strict';
+            
+            // Elementos del DOM
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            
+            // Verificar que el elemento existe
+            if (!scrollToTopBtn) {
+                console.warn('Botón scrollToTopBtn no encontrado');
+                return;
+            }
+            
+            // Configuración
+            const scrollOffset = 300; // Píxeles antes de mostrar el botón
+            
+            // Función para mostrar/ocultar el botón
+            function toggleScrollToTopButton() {
+                if (window.pageYOffset > scrollOffset) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            }
+            
+            // Función de scroll suave hacia arriba
+            function scrollToTop() {
+                // Scroll suave usando window.scrollTo
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                // Fallback para navegadores más antiguos
+                const startPosition = window.pageYOffset;
+                const startTime = performance.now();
+                const duration = 800; // Duración en milisegundos
+                
+                function easeInOutQuad(t, b, c, d) {
+                    t /= d/2;
+                    if (t < 1) return c/2*t*t + b;
+                    t--;
+                    return -c/2 * (t*(t-2) - 1) + b;
+                }
+                
+                function animateScroll(currentTime) {
+                    const timeElapsed = currentTime - startTime;
+                    const run = easeInOutQuad(timeElapsed, startPosition, -startPosition, duration);
+                    window.scrollTo(0, run);
+                    
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animateScroll);
+                    }
+                }
+                
+                requestAnimationFrame(animateScroll);
+            }
+            
+            // Event Listeners con verificaciones de seguridad
+            function addEventListeners() {
+                // Scroll event listener
+                window.addEventListener('scroll', function() {
+                    // Usar requestAnimationFrame para optimizar el rendimiento
+                    if (window.requestAnimationFrame) {
+                        requestAnimationFrame(toggleScrollToTopButton);
+                    } else {
+                        toggleScrollToTopButton();
+                    }
+                }, { passive: true }); // passive: true mejora el rendimiento
+                
+                // Click event listener
+                scrollToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    scrollToTop();
+                });
+                
+                // Keyboard accessibility
+                scrollToTopBtn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        scrollToTop();
+                    }
+                });
+            }
+            
+            // Inicialización
+            function init() {
+                // Verificar que el DOM está completamente cargado
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', function() {
+                        toggleScrollToTopButton();
+                        addEventListeners();
+                    });
+                } else {
+                    toggleScrollToTopButton();
+                    addEventListeners();
+                }
+            }
+            
+            // Función para verificar compatibilidad del navegador
+            function checkCompatibility() {
+                // Verificar soporte para smooth scroll
+                const supportsSmoothScroll = 'scrollBehavior' in document.documentElement.style;
+                if (!supportsSmoothScroll) {
+                    console.info('Usando fallback para smooth scroll');
+                }
+                
+                // Verificar soporte para requestAnimationFrame
+                const supportsRAF = 'requestAnimationFrame' in window;
+                if (!supportsRAF) {
+                    console.info('Usando fallback para requestAnimationFrame');
+                }
+            }
+            
+            // Ejecutar inicialización
+            checkCompatibility();
+            init();
+            
+            // Función para detectar cambios de orientación (móvil)
+            window.addEventListener('orientationchange', function() {
+                setTimeout(function() {
+                    toggleScrollToTopButton();
+                }, 500); // Delay para permitir que la orientación cambie
+            });
+            
+            // Prevenir conflictos con otros scripts
+            window.scrollToTopModule = {
+                show: function() {
+                    scrollToTopBtn.classList.add('show');
+                },
+                hide: function() {
+                    scrollToTopBtn.classList.remove('show');
+                },
+                scrollToTop: scrollToTop,
+                toggle: toggleScrollToTopButton
+            };
+            
+        })();
+    </script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate water level indicator
+        function animateWaterLevel() {
+            const waterFill = document.getElementById('waterFill');
+            const waterPercentage = document.getElementById('waterPercentage');
+            
+            if (waterFill && waterPercentage) {
+                setTimeout(() => {
+                    waterFill.style.height = '25px'; // 25px out of 300px = ~8%
+                    waterPercentage.textContent = '8%';
+                }, 1000);
+            }
+        }
+
+        // Animate stats numbers on scroll
+        function animateStats() {
+            const stats = [
+                { element: document.getElementById('stat1'), target: 2300000000, duration: 2500, suffix: '', format: '2.3B' },
+                { element: document.getElementById('stat2'), target: 90, duration: 2000, suffix: '%', format: null },
+                { element: document.getElementById('stat3'), target: 30, duration: 2000, suffix: '%', format: null },
+                { element: document.getElementById('stat4'), target: 28000000000, duration: 3000, suffix: '', format: '$28B' }
+            ];
+
+            stats.forEach((stat, index) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                animateNumber(stat.element, stat.target, stat.duration, stat.suffix, stat.format);
+                            }, index * 200);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+
+                if (stat.element) {
+                    observer.observe(stat.element);
+                }
+            });
+        }
+
+        function animateNumber(element, target, duration, suffix = '', format = null) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function update() {
+                start += increment;
+                let value = Math.min(start, target);
+                
+                if (format === '2.3B') {
+                    element.textContent = (value / 1000000000).toFixed(1) + 'B';
+                } else if (format === '$28B') {
+                    element.textContent = '$' + (value / 1000000000).toFixed(0) + 'B';
+                } else {
+                    element.textContent = Math.floor(value) + suffix;
+                }
+                
+                if (start < target) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            update();
+        }
+
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Parallax effect for hero wave pattern
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const wavePattern = document.querySelector('.wave-pattern');
+            if (wavePattern) {
+                wavePattern.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+
+        // Card hover effects
+        document.querySelectorAll('.card, .crisis-card, .impact-card, .solution-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            animateStats();
+            
+            // Animate water level after a delay
+            setTimeout(() => {
+                animateWaterLevel();
+            }, 2000);
+        });
+
+        // Accessibility: respect reduced motion
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.querySelectorAll('*').forEach(element => {
+                element.style.animationDuration = '0.01ms';
+                element.style.transitionDuration = '0.01ms';
+            });
+        }
+
+        // Console message for developers
+        console.log('%c💧 Agua en Crisis', 'color: #0ea5e9; font-size: 20px; font-weight: bold;');
+        console.log('%cUn sitio web sobre la crisis hídrica global y soluciones sostenibles', 'color: #475569; font-size: 14px;');
+        console.log('%cCreado para generar conciencia sobre la escasez y contaminación del agua.', 'color: #ef4444; font-size: 12px;');
+    </script>
+    
+    <script src="/javascript/botones.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/botones.js"></script>
+    <script src="/menu/menu.js"></script>
+</body>
+</html>

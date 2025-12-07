@@ -1,0 +1,84 @@
+/* Fondo Vivo (Living Background) */
+
+#living-bg-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -50;
+    /* Muy atrás */
+    pointer-events: none;
+    overflow: hidden;
+    background: transparent;
+    opacity: 0.6;
+}
+
+/* Luz del cursor (Nebulosa) */
+.cursor-light {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle,
+            rgba(59, 130, 246, 0.15) 0%,
+            rgba(139, 92, 246, 0.05) 40%,
+            transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    /* Centrar en el cursor */
+    pointer-events: none;
+    mix-blend-mode: screen;
+    will-change: transform;
+    opacity: 0;
+    /* Empieza invisible hasta mover */
+    transition: opacity 1s ease;
+}
+
+/* Onda expansiva (Ripple) al hacer clic */
+.bg-ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    /* background: rgba(255,255,255, 0.05); */
+    pointer-events: none;
+    animation: ripple-anim 1s ease-out forwards;
+}
+
+@keyframes ripple-anim {
+    0% {
+        width: 0px;
+        height: 0px;
+        border-color: rgba(0, 255, 136, 0.6);
+        opacity: 1;
+    }
+
+    100% {
+        width: 600px;
+        height: 600px;
+        border-color: transparent;
+        opacity: 0;
+    }
+}
+
+/* Modo Urukai Vision: El fondo cambia */
+body.urukai-vision-active #living-bg-layer .cursor-light {
+    background: radial-gradient(circle,
+            rgba(255, 0, 0, 0.2) 0%,
+            rgba(255, 100, 0, 0.1) 40%,
+            transparent 70%);
+}
+
+/* Textura de ruido sutil (Film Grain) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -49;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+}

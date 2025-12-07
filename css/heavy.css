@@ -1,0 +1,384 @@
+
+/* ========================================
+VARIABLES CSS - SISTEMA DE COLORES
+======================================== */
+:root {
+/* Paleta Conspiración (Oscuro) */
+--conspiracy-primary: #00FFAB;
+--conspiracy-bg-page: #000000;
+--conspiracy-bg-surface: #101010;
+--conspiracy-border: #27272A;
+--conspiracy-text-primary: #E4E4E7;
+--conspiracy-text-secondary: #A1A1AA;
+/* Paleta Meditación (Claro) */
+--meditation-primary: #8B5CF6;
+--meditation-bg-gradient-1: #F3E8FF;
+--meditation-bg-gradient-2: #E9D5FF;
+--meditation-bg-gradient-3: #D8B4FE;
+--meditation-bg-surface: rgba(255, 255, 255, 0.45);
+--meditation-border: rgba(255, 255, 255, 0.6);
+--meditation-text-primary: #2D1D4D;
+--meditation-text-secondary: #6B578D;
+/* Espaciado */
+--space-xs: 8px;
+--space-sm: 16px;
+--space-md: 24px;
+--space-lg: 32px;
+--space-xl: 48px;
+--space-xxl: 64px;
+--space-xxxl: 96px;
+/* Tipografía */
+--font-conspiracy-heading: 'Fira Code', monospace;
+--font-meditation-heading: 'Poppins', sans-serif;
+--font-body: 'Inter', sans-serif;
+}
+/* ========================================
+RESET Y ESTILOS BASE
+======================================== */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: var(--font-body);
+font-size: 16px;
+line-height: 1.6;
+transition: background 1000ms ease, color 600ms ease;
+overflow-x: hidden;
+}
+/* ========================================
+ESTILOS PARA MODO CONSPIRACIÓN
+======================================== */
+body.conspiracy-mode {
+background: var(--conspiracy-bg-page);
+color: var(--conspiracy-text-primary);
+}
+body.conspiracy-mode h1,
+body.conspiracy-mode h2,
+body.conspiracy-mode h3 {
+font-family: var(--font-conspiracy-heading);
+color: var(--conspiracy-text-primary);
+}
+/* ========================================
+ESTILOS PARA MODO MEDITACIÓN
+======================================== */
+body.meditation-mode {
+background: linear-gradient(45deg, 
+var(--meditation-bg-gradient-1), 
+var(--meditation-bg-gradient-2), 
+var(--meditation-bg-gradient-3));
+background-size: 200% 200%;
+animation: gradientShift 30s ease infinite;
+color: var(--meditation-text-primary);
+position: relative;
+}
+body.meditation-mode h1,
+body.meditation-mode h2,
+body.meditation-mode h3 {
+font-family: var(--font-meditation-heading);
+color: var(--meditation-text-primary);
+}
+/* Animación de gradiente para fondo de meditación */
+@keyframes gradientShift {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+/* Efecto de partículas para modo meditación */
+body.meditation-mode::before {
+content: '';
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+background-image: 
+radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+radial-gradient(circle at 60% 70%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+background-size: 200px 200px, 300px 300px, 250px 250px;
+animation: particleDrift 60s linear infinite;
+opacity: 0.5;
+z-index: 0;
+}
+@keyframes particleDrift {
+0% { transform: translate(0, 0); }
+100% { transform: translate(50px, 50px); }
+}
+/* Líneas de escaneo para modo conspiración */
+body.conspiracy-mode::before {
+content: '';
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+background-image: repeating-linear-gradient(
+0deg,
+transparent,
+transparent 2px,
+rgba(0, 255, 171, 0.03) 2px,
+rgba(0, 255, 171, 0.03) 4px
+);
+opacity: 0.5;
+z-index: 0;
+}
+/* ========================================
+LAYOUT PRINCIPAL
+======================================== */
+.container {
+max-width: 1280px;
+margin: 0 auto;
+padding: 0 var(--space-md);
+position: relative;
+z-index: 1;
+}
+/* ========================================
+HEADER Y NAVEGACIÓN
+======================================== */
+header {
+padding: var(--space-md) 0;
+position: sticky;
+top: 0;
+z-index: 100;
+backdrop-filter: blur(10px);
+}
+.conspiracy-mode header {
+background: rgba(0, 0, 0, 0.8);
+border-bottom: 1px solid var(--conspiracy-border);
+}
+.meditation-mode header {
+background: rgba(255, 255, 255, 0.3);
+border-bottom: 1px solid var(--meditation-border);
+}
+.header-content {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: var(--space-md);
+flex-wrap: wrap;
+}
+.logo {
+font-size: 24px;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: var(--space-sm);
+}
+.conspiracy-mode .logo {
+color: var(--conspiracy-primary);
+text-shadow: 0 0 10px rgba(0, 255, 171, 0.5);
+}
+.meditation-mode .logo {
+color: var(--meditation-primary);
+}
+/* Botón de cambio de tema */
+.theme-toggle {
+display: flex;
+gap: var(--space-sm);
+padding: var(--space-xs);
+border-radius: 50px;
+cursor: pointer;
+transition: all 300ms ease;
+}
+.conspiracy-mode .theme-toggle {
+background: var(--conspiracy-bg-surface);
+border: 1px solid var(--conspiracy-border);
+}
+.meditation-mode .theme-toggle {
+background: var(--meditation-bg-surface);
+border: 1px solid var(--meditation-border);
+backdrop-filter: blur(20px);
+}
+.theme-btn {
+padding: var(--space-sm) var(--space-md);
+border: none;
+border-radius: 50px;
+cursor: pointer;
+font-family: var(--font-body);
+font-size: 14px;
+font-weight: 500;
+transition: all 250ms ease;
+display: flex;
+align-items: center;
+gap: var(--space-xs);
+}
+.conspiracy-mode .theme-btn {
+background: transparent;
+color: var(--conspiracy-text-secondary);
+}
+.conspiracy-mode .theme-btn.active {
+background: var(--conspiracy-primary);
+color: #000000;
+box-shadow: 0 0 16px rgba(0, 255, 171, 0.4);
+}
+.meditation-mode .theme-btn {
+background: transparent;
+color: var(--meditation-text-secondary);
+}
+.meditation-mode .theme-btn.active {
+background: var(--meditation-primary);
+color: #FFFFFF;
+}
+.theme-btn:hover {
+transform: scale(1.05);
+}
+/* ========================================
+SECCIÓN PRINCIPAL
+======================================== */
+.main-section {
+padding: var(--space-xxl) 0;
+}
+.section-header {
+text-align: center;
+margin-bottom: var(--space-xl);
+}
+.section-header h1 {
+font-size: 48px;
+font-weight: 600;
+line-height: 1.2;
+margin-bottom: var(--space-sm);
+}
+.section-header p {
+font-size: 18px;
+line-height: 1.6;
+}
+.conspiracy-mode .section-header p {
+color: var(--conspiracy-text-secondary);
+}
+.meditation-mode .section-header p {
+color: var(--meditation-text-secondary);
+}
+/* ========================================
+GRID DE VIDEOS RESPONSIVE
+======================================== */
+.videos-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: var(--space-md);
+margin-bottom: var(--space-xl);
+}
+
+/* Contenedor de video con ratio 16:9 */
+.video-container {
+position: relative;
+width: 100%;
+padding-bottom: 56.25%; /* Ratio 16:9 */
+overflow: hidden;
+border-radius: 8px;
+background: #000;
+transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.conspiracy-mode .video-container {
+border: 1px solid var(--conspiracy-border);
+}
+
+.conspiracy-mode .video-container:hover {
+transform: translateY(-4px);
+box-shadow: 0 0 20px rgba(0, 255, 171, 0.3);
+border-color: var(--conspiracy-primary);
+}
+
+.meditation-mode .video-container {
+border: 1px solid var(--meditation-border);
+box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+}
+
+.meditation-mode .video-container:hover {
+transform: translateY(-4px);
+box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+}
+
+.video-container iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+border: none;
+}
+
+/* ========================================
+RESPONSIVE BREAKPOINTS
+======================================== */
+
+/* Tablets (2 columnas) */
+@media (max-width: 1024px) {
+.videos-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+
+/* Móviles (1 columna) */
+@media (max-width: 768px) {
+.section-header h1 {
+font-size: 32px;
+}
+.section-header p {
+font-size: 16px;
+}
+.videos-grid {
+grid-template-columns: 1fr;
+gap: var(--space-sm);
+}
+.header-content {
+justify-content: center;
+}
+.theme-toggle {
+width: 100%;
+}
+.theme-btn {
+flex: 1;
+justify-content: center;
+}
+/* Reducir efectos en móvil para performance */
+body.meditation-mode::before {
+display: none;
+}
+}
+
+/* Desktop grande (4 columnas) */
+@media (min-width: 1025px) {
+.videos-grid {
+grid-template-columns: repeat(4, 1fr);
+}
+}
+
+/* ========================================
+UTILIDADES
+======================================== */
+.hidden {
+display: none !important;
+}
+/* Scroll suave */
+html {
+scroll-behavior: smooth;
+}
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+width: 10px;
+}
+.conspiracy-mode ::-webkit-scrollbar-track {
+background: var(--conspiracy-bg-page);
+}
+.conspiracy-mode ::-webkit-scrollbar-thumb {
+background: var(--conspiracy-border);
+border-radius: 5px;
+}
+.conspiracy-mode ::-webkit-scrollbar-thumb:hover {
+background: var(--conspiracy-primary);
+}
+.meditation-mode ::-webkit-scrollbar-track {
+background: rgba(255, 255, 255, 0.3);
+}
+.meditation-mode ::-webkit-scrollbar-thumb {
+background: rgba(139, 92, 246, 0.3);
+border-radius: 5px;
+}
+.meditation-mode ::-webkit-scrollbar-thumb:hover {
+background: var(--meditation-primary);
+}

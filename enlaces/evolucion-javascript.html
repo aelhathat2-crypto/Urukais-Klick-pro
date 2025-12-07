@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <meta name="author" content="Manuel Casimiro Carrasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bun & Deno: Runtimes Modernos para JavaScript</title>
+    <meta name="description" content="Guía completa sobre Bun y Deno: Runtimes nativos modernos que revolucionan el desarrollo JavaScript con velocidad, seguridad y simplicidad.">
+    <meta property="og:title" content="Bun & Deno: Runtimes Modernos para JavaScript">
+    <meta property="og:description" content="Aprende sobre los runtimes Bun y Deno que están transformando el ecosistema JavaScript con herramientas todo-en-uno.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/boton.css">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/menu/menu.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/mas-css/evolucion.css">
+</head>
+<body>
+  
+
+        
+         
+        <!-- Overlay para móvil -->
+    <div class="mnm-overlay" id="mnmOverlay"></div>
+
+    <!-- Botón toggle reproductor -->
+    <!-- Navegación principal -->
+    <nav class="mnm-nav-container">
+        <div class="mnm-nav-wrapper">
+            <a href="/index.html" class="mnm-logo">Urukais Klick</a>
+            
+            
+            <button class="mnm-hamburger" id="mnmHamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="mnm-nav-menu" id="mnmNavMenu">
+                <!-- Categoría 1: Entretenimiento y Ocio -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Entretenimiento y Ocio
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/buscador-de-peliculas.html" class="mnm-dropdown-item">🎬 Catálogo de Películas</a>
+                        <a href="/cabecera/cine/la-nasa.html" class="mnm-dropdown-item">🚀 Espacio y Astronomía</a>
+                        <a href="/cabecera/cine/peluculas.html" class="mnm-dropdown-item">🎭 Films Favoritos</a>
+                        <a href="/cabecera/cine/noticias.html" class="mnm-dropdown-item">📰 Noticias Actuales</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😂 Humor y Entretenimiento</a>
+                        <a href="/cabecera/musica/hadmed.html" class="mnm-dropdown-item">🎵 Ambiente Musical</a>
+                        <a href="/cabecera/musica/mas.html" class="mnm-dropdown-item">🎶 Musicalife</a>
+                        <a href="/cabecera/musica/musica-clasica.html" class="mnm-dropdown-item">🎼 Música Clásica</a>
+                        <a href="/cabecera/musica/prueva.html" class="mnm-dropdown-item">🎤 Géneros Musicales</a>
+                        <a href="/cabecera/musica/tartituras.html" class="mnm-dropdown-item">🎵 Partituras y Escore</a>
+                        <a href="/cabecera/musica/videos3.html" class="mnm-dropdown-item">📺 Centro de Videos</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 2: Herramientas y Productividad -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Herramientas y Productividad
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/herramientas/chat.html" class="mnm-dropdown-item">💬 Asistente Virtual Urukais</a>
+                        <a href="/cabecera/herramientas/control-de-consultas.html" class="mnm-dropdown-item">🗂 Sistema de Consultas</a>
+                        <a href="/cabecera/herramientas/DevStudio.html" class="mnm-dropdown-item">⚙️ Estudio de Desarrollo</a>
+                        <a href="/cabecera/herramientas/FinTech.html" class="mnm-dropdown-item">💼 Soluciones Financieras</a>
+                        <a href="/cabecera/herramientas/generador-contraseñas.html" class="mnm-dropdown-item">🔐 Generador Seguro de<br>Contraseñas</a>
+                        <a href="/cabecera/herramientas/genesis.html" class="mnm-dropdown-item">🌟 Plataforma Genesis</a>
+                        <a href="/cabecera/herramientas/herramienta.html" class="mnm-dropdown-item">🛠 Suite de Herramientas</a>
+                        <a href="/cabecera/herramientas/hot.html" class="mnm-dropdown-item">🔥 Tendencias Actuales</a>
+                        <a href="/cabecera/herramientas/ia-educativa.html" class="mnm-dropdown-item">🎓 IA Educativa</a>
+                        <a href="/cabecera/herramientas/listado-de-prons.html" class="mnm-dropdown-item">📋 Pronósticos en Línea</a>
+                        <a href="/cabecera/herramientas/localizacion-de-faker.html" class="mnm-dropdown-item">📍 Localizador Universal</a>
+                        <a href="/cabecera/herramientas/mas-datos.html" class="mnm-dropdown-item">📊 Análisis de Datos</a>
+                        <a href="/cabecera/herramientas/pruevas.html" class="mnm-dropdown-item">🧪 Centro de Pruebas</a>
+                        <a href="/cabecera/herramientas/texto-voz.html" class="mnm-dropdown-item">🔊 Síntesis de Voz</a>
+                        <a href="/cabecera/herramientas/tienda-de-urukais.html" class="mnm-dropdown-item">🛒 Tienda Oficial</a>
+                        <a href="/cabecera/buscadores/gestor-de-tareas.html" class="mnm-dropdown-item">✅ Organizador de Tareas</a>
+                        <a href="/cabecera/buscadores/gestor-de-proyectos.html" class="mnm-dropdown-item">📈 Gestor de Proyectos</a>
+                        <a href="/cabecera/cine/ProTask.html" class="mnm-dropdown-item">⏰ ProTask Profesional</a>
+                        <a href="/cabecera/cine/ReservaPro.html" class="mnm-dropdown-item">📅 Sistema de Reservas</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 3: Buscadores y Información -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Buscadores y Información
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/buscadores/buscadorurukais.html" class="mnm-dropdown-item">📚 Búsqueda de Libros</a>
+                        <a href="/cabecera/buscadores/busqueda.html" class="mnm-dropdown-item">🔍 Buscador Matrix</a>
+                        <a href="/cabecera/cine/libros.html" class="mnm-dropdown-item">📖 Biblioteca Digital</a>
+                        <a href="/cabecera/cine/localizador.html" class="mnm-dropdown-item">🌐 Ubicador IP</a>
+                        <a href="/cabecera/buscadores/barcelona-sustainabitil.html" class="mnm-dropdown-item">🌱 Barcelona Sostenible</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 4: Mascotas y Animales -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Mascotas y Animales
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/animales/animales.html" class="mnm-dropdown-item">🐾 Generador de Animales</a>
+                        <a href="/cabecera/animales/buscador-de-perros.html" class="mnm-dropdown-item">🐕 Aplicación de Mascotas</a>
+                        <a href="/cabecera/buscadores/deportes.html" class="mnm-dropdown-item">⚽ Buscador de Equipos<br>Deportivos</a>
+                        <a href="/cabecera/animales/Marketing.html" class="mnm-dropdown-item">📱 Marketing Digital</a>
+                        <a href="/cabecera/animales/multi.html" class="mnm-dropdown-item">💻 Solución Multiplataforma</a>
+                        <a href="/cabecera/animales/neocron.html" class="mnm-dropdown-item">🌟 Neocron Urukais</a>
+                        <a href="/cabecera/animales/portal-interactivo.html" class="mnm-dropdown-item">✨ Portal Interactivo</a>
+                        <a href="/cabecera/animales/site-de-productividad.html" class="mnm-dropdown-item">💼 Suite de Productividad</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 5: Comida y Bebidas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Comida y Bebidas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/comida/coctel.html" class="mnm-dropdown-item">🍹 Sistema de Coctelería</a>
+                        <a href="/cabecera/comida/comida.html" class="mnm-dropdown-item">🍽 Gastronomía Exquisita</a>
+                        <a href="/cabecera/comida/cocia-en-inggles.html" class="mnm-dropdown-item">🍳 Cocina Internacional</a>
+                        
+                    </div>
+                </li>
+
+                <!-- Categoría 6: Creatividad y Arte -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Creatividad y Arte
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/conics/archivo-de-hielo.html" class="mnm-dropdown-item">❄️ Archivo Creativo</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😄 Galería de Humor</a>
+                        <a href="/cabecera/conics/Morty.html" class="mnm-dropdown-item">🎨 Colección Morty</a>
+                        <a href="/cabecera/conics/generador-de-fondos.html" class="mnm-dropdown-item">🎨 Generador de Fondos</a>
+                        <a href="/cabecera/conics/neocron.html" class="mnm-dropdown-item">😊 Control de Estado de Ánimo</a>
+                        <a href="/cabecera/conics/plataforma-de-herattientas.html" class="mnm-dropdown-item">🛠 Plataforma de<br>Herramientas Creativas</a>
+                        <a href="/cabecera/conics/portal-interactivo.html" class="mnm-dropdown-item">🎭 Portal Interactivo</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 7: Medio Ambiente -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Medio Ambiente
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/tierra/ambiental-mundial.html" class="mnm-dropdown-item">🌍 Global Ambiental</a>
+                        <a href="/cabecera/tierra/busca-ciudades.html" class="mnm-dropdown-item">🏙 Explorador de Ciudades</a>
+                        <a href="/cabecera/tierra/busca-cuidad.html" class="mnm-dropdown-item">🌆 Búsqueda Urbana</a>
+                        <a href="/cabecera/tierra/clima.html" class="mnm-dropdown-item">🌤️ Centro Meteorológico</a>
+                        <a href="/cabecera/tierra/deforestacion-mundial.html" class="mnm-dropdown-item">🌲 Control Deforestación</a>
+                        <a href="/cabecera/tierra/gia-de-supervivencia.html" class="mnm-dropdown-item">🧭 Guía de Supervivencia</a>
+                        <a href="/cabecera/tierra/mas.html" class="mnm-dropdown-item">🌿 Más Contenido Verde</a>
+                        <a href="/cabecera/tierra/renacer.html" class="mnm-dropdown-item">🌱 Renacer y Renovación</a>
+                        <a href="/cabecera/tierra/sistema-reus.html" class="mnm-dropdown-item">♻️ Sistema Inteligente de Reciclaje</a>
+                        <a href="/cabecera/tierra/supervivencia33.html" class="mnm-dropdown-item">🏕 Supervivencia Extrema</a>
+                    </div>
+                </li>
+                
+
+                <!-- Categoría 8: Eventos y Citas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Eventos y Citas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/gestor-de-citas.html" class="mnm-dropdown-item">💕 Organizador de Citas</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Runtimes Modernos para JavaScript</h1>
+                <p class="subtitle">Descubre cómo Bun y Deno están revolucionando el desarrollo con velocidad, seguridad y simplicidad sin precedentes</p>
+                <a href="#introduccion" class="cta-button pulse">Explorar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introducción -->
+    <section id="introduccion" class="section">
+        <div class="container">
+            <h2>La Evolución de JavaScript</h2>
+            <div class="fade-in">
+                <p>Durante años, Node.js ha sido el estándar de facto para ejecutar JavaScript en el servidor. Sin embargo, la evolución del ecosistema ha revelado limitaciones significativas: configuración compleja, problemas de seguridad, y la necesidad de múltiples herramientas para tareas básicas.</p>
+                
+                <p>Surgen <strong class="gradient-text">Bun</strong> y <strong class="gradient-text">Deno</strong> como soluciones modernas que abordan estos problemas fundamentales. Ambos runtimes buscan simplificar la experiencia del desarrollador mientras mejoran el rendimiento y la seguridad.</p>
+                
+                <p>Estos nuevos runtimes eliminan la necesidad de configurar múltiples herramientas separadas, ofreciendo un ecosistema todo-en-uno que incluye runtime, bundler, transpilador y gestor de paquetes integrados.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features de Bun -->
+    <section id="bun-features" class="section">
+        <div class="container">
+            <h2>Bun: El Runtime Todo-en-Uno</h2>
+            <div class="fade-in">
+                <p>Bun es un runtime moderno escrito en Zig que promete ser <strong>3x más rápido que Node.js</strong>. Diseñado por Jarred Sumner, Bun es mucho más que un simple runtime: es un ecosistema completo de herramientas de desarrollo.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">⚡</span>
+                        <h3>Rendimiento Excepcional</h3>
+                        <p>Construido con Zig para máximo rendimiento, Bun es significativamente más rápido que Node.js en la mayoría de operaciones.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="feature-icon">🛠️</span>
+                        <h3>Ecosistema Completo</h3>
+                        <p>Incluye runtime, bundler, transpilador, gestor de paquetes y servidor de desarrollo en un solo binary.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="feature-icon">📦</span>
+                        <h3>Gestor de Paquetes Nativo</h3>
+                        <p>Un gestor de paquetes ultra-rápido compatible con npm que puede instalar dependencias hasta 50x más rápido.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="feature-icon">🔧</span>
+                        <h3>Compatibilidad Node.js</h3>
+                        <p>Ejecuta la mayoría de código Node.js existente con mínimas modificaciones, facilitando la migración.</p>
+                    </div>
+                </div>
+
+                <h3>Ejemplo de Código Bun</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-title">ejemplo.bun.ts</span>
+                        <button class="copy-button" onclick="copyCode(this)">Copiar</button>
+                    </div>
+                    <pre><code class="syntax-js"><span class="comment">// Servidor HTTP con Bun - simplicidad sin configuración</span>
+<span class="keyword">import</span> { <span class="function">serve</span> <span class="keyword">from</span> <span class="string">"bun"</span>;
+
+<span class="keyword">const</span> server = <span class="function">serve</span>({
+  <span class="function">port</span>: <span class="number">3000</span>,
+  <span class="function">fetch</span>: <span class="keyword">async</span> (request) => {
+    <span class="keyword">const</span> html = <span class="string">`
+      &lt;!DOCTYPE html&gt;
+      &lt;html&gt;
+        &lt;head&gt;&lt;title&gt;Bun Server&lt;/title&gt;&lt;/head&gt;
+        &lt;body&gt;
+          &lt;h1&gt;🚀 Servidor Bun en funcionamiento!&lt;/h1&gt;
+          &lt;p&gt;Tiempo de respuesta: ${<span class="keyword">new</span> Date().toISOString()}&lt;/p&gt;
+        &lt;/body&gt;
+      &lt;/html&gt;
+    `</span>;
+    
+    <span class="keyword">return</span> <span class="keyword">new</span> <span class="function">Response</span>(html, {
+      <span class="function">headers</span>: { <span class="string">"Content-Type"</span>: <span class="string">"text/html"</span> }
+    });
+  }
+});
+
+console.<span class="function">log</span>(<span class="string">`🌐 Servidor Bun ejecutándose en http://localhost:3000`</span>);</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-title">bun-config.json</span>
+                        <button class="copy-button" onclick="copyCode(this)">Copiar</button>
+                    </div>
+                    <pre><code class="syntax-json">{
+  <span class="string">"compilerOptions"</span>: {
+    <span class="string">"target"</span>: <span class="string">"ES2022"</span>,
+    <span class="string">"lib"</span>: [<span class="string">"ES2022"</span>, <span class="string">"DOM"</span>],
+    <span class="string">"module"</span>: <span class="string">"ESNext"</span>,
+    <span class="string">"moduleResolution"</span>: <span class="string">"bundler"</span>,
+    <span class="string">"allowJs"</span>: <span class="keyword">true</span>,
+    <span class="string">"strict"</span>: <span class="keyword">true</span>,
+    <span class="string">"noEmit"</span>: <span class="keyword">true</span>,
+    <span class="string">"skipLibCheck"</span>: <span class="keyword">true</span>,
+    <span class="string">"types"</span>: [<span class="string">"bun"</span>]
+  }
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features de Deno -->
+    <section id="deno-features" class="section">
+        <div class="container">
+            <h2>Deno: Seguridad por Defecto</h2>
+            <div class="fade-in">
+                <p>Creado por Ryan Dahl, el mismo ingeniero detrás de Node.js, Deno surge como una respuesta a los "10 problemas que odio de Node.js". Con enfoque en seguridad, simplicidad y uso de APIs web modernas.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">🔒</span>
+                        <h3>Seguridad por Defecto</h3>
+                        <p>Sin acceso a archivos, red o entorno por defecto. Permisos explícitos para cada operación sensible.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="feature-icon">📘</span>
+                        <h3>TypeScript Nativo</h3>
+                        <p>Soporte integrado para TypeScript sin configuración adicional. Compilación instantánea sin herramientas externas.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="feature-icon">🌐</span>
+                        <h3>APIs Web Estándar</h3>
+                        <p>Utiliza APIs del navegador como fetch, WebCrypto, y URL patterns, creando mayor consistencia entre cliente y servidor.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="feature-icon">📦</span>
+                        <h3>Gestor de Módulos Integrado</h3>
+                        <p>Importación directa desde URLs sin necesidad de package.json o node_modules. Distribución descentralizada.</p>
+                    </div>
+                </div>
+
+                <h3>Ejemplo de Código Deno</h3>
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-title">servidor.deno.ts</span>
+                        <button class="copy-button" onclick="copyCode(this)">Copiar</button>
+                    </div>
+                    <pre><code class="syntax-ts"><span class="comment">// Servidor HTTP con Deno - seguridad integrada</span>
+<span class="keyword">import</span> { <span class="function">serve</span> <span class="keyword">from</span> <span class="string">"https://deno.land/std@0.168.0/http/server.ts"</span>;
+
+<span class="keyword">const</span> server = <span class="function">serve</span>((req: Request) => {
+  <span class="keyword">const</span> { pathname } = <span class="keyword">new</span> URL(req.<span class="function">url</span>);
+  
+  <span class="keyword">if</span> (pathname === <span class="string">"/api/time"</span>) {
+    <span class="keyword">return</span> <span class="keyword">new</span> <span class="function">Response</span>(
+      JSON.<span class="function">stringify</span>({ 
+        <span class="string">"time"</span>: <span class="keyword">new</span> Date().<span class="function">toISOString</span>(),
+        <span class="string">"runtime"</span>: <span class="string">"Deno"</span> 
+      }),
+      { 
+        <span class="function">headers</span>: { <span class="string">"Content-Type"</span>: <span class="string">"application/json"</span> }
+      }
+    );
+  }
+  
+  <span class="keyword">return</span> <span class="keyword">new</span> <span class="function">Response</span>(
+    <span class="string">`&lt;h1&gt;🌟 Servidor Deno funcionando!&lt;/h1&gt;
+     &lt;p&gt;Endpoint disponible: /api/time&lt;/p&gt;
+     &lt;pre&gt;curl http://localhost:8000/api/time&lt;/pre&gt;`</span>,
+    { 
+      <span class="function">headers</span>: { <span class="string">"Content-Type"</span>: <span class="string">"text/html"</span> }
+    }
+  );
+}, { <span class="function">port</span>: <span class="number">8000</span> });
+
+console.<span class="function">log</span>(<span class="string">"🎯 Deno server listening on http://localhost:8000"</span>);</code></pre>
+                </div>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-title">permisos-deno.ts</span>
+                        <button class="copy-button" onclick="copyCode(this)">Copiar</button>
+                    </div>
+                    <pre><code class="syntax-ts"><span class="comment">// Ejemplo de sistema de permisos de Deno</span>
+<span class="comment">// Ejecutar con: deno run --allow-net --allow-read permisos-deno.ts</span>
+
+<span class="comment">// Acceso a red (requiere --allow-net)</span>
+<span class="keyword">const</span> response = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">"https://api.github.com/users/denoland"</span>);
+<span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="function">json</span>();
+console.<span class="function">log</span>(<span class="string">"GitHub user:"</span>, data.<span class="function">login</span>);
+
+<span class="comment">// Acceso a archivos (requiere --allow-read)</span>
+<span class="keyword">const</span> fileContent = <span class="keyword">await</span> Deno.<span class="function">readTextFile</span>(<span class="string">"./config.json"</span>);
+console.<span class="function">log</span>(<span class="string">"Config content:"</span>, fileContent);
+
+<span class="comment">// Variables de entorno (requiere --allow-env)</span>
+console.<span class="function">log</span>(<span class="string">"Environment:"</span>, Deno.<span class="function">env</span>.<span class="function">get</span>(<span class="string">"NODE_ENV"</span>));</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparación Detallada -->
+    <section id="comparacion" class="section">
+        <div class="container">
+            <h2>Comparación: Node.js vs Bun vs Deno</h2>
+            <div class="fade-in">
+                <p>Una comparación completa de los tres runtimes principales para JavaScript, evaluando rendimiento, seguridad, experiencia del desarrollador y ecosistema.</p>
+                
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Característica</th>
+                                <th>Node.js</th>
+                                <th>Bun</th>
+                                <th>Deno</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Rendimiento</strong></td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">★</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">★</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Seguridad</strong></td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">★</span>
+                                        <span class="star empty">★</span>
+                                        <span class="star empty">★</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">★</span>
+                                        <span class="star empty">★</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Experiencia del Desarrollador</strong></td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">★</span>
+                                        <span class="star empty">★</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">★</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ecosistema</strong></td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">★</span>
+                                        <span class="star empty">★</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star empty">★</span>
+                                        <span class="star empty">★</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>TypeScript</strong></td>
+                                <td>Requiere configuración</td>
+                                <td>Nativo, zero-config</td>
+                                <td>Nativo, zero-config</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tamaño del Binary</strong></td>
+                                <td>~70MB</td>
+                                <td>~50MB</td>
+                                <td>~100MB</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Compatibilidad npm</strong></td>
+                                <td>Total</td>
+                                <td>Alta (en desarrollo)</td>
+                                <td>Via compat layer</td>
+                            </tr>
+                            <tr>
+                                <td><strong>APIs del navegador</strong></td>
+                                <td>Parcial</td>
+                                <td>Buena</td>
+                                <td>Excelente</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demos Interactivas -->
+    <section id="demos" class="section">
+        <div class="container">
+            <h2>Demos Interactivas</h2>
+            <div class="fade-in">
+                <p>Experimenta con Bun y Deno directamente en tu navegador. Estas demos simulan el comportamiento de ambos runtimes para que puedas entender sus diferencias sin necesidad de instalación.</p>
+
+                <!-- Demo 1: Comparador de Velocidad -->
+                <div class="demo-container">
+                    <h3>🚀 Demo 1: Comparador de Velocidad</h3>
+                    <p>Simula la ejecución de código y mide el tiempo de respuesta entre diferentes runtimes.</p>
+                    
+                    <textarea class="demo-input" id="speedInput" placeholder="Escribe tu código JavaScript aquí...">// Código de ejemplo para medir velocidad
+function fibonacci(n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log('Fibonacci(30):', fibonacci(30));
+console.log('Proceso completado');</textarea>
+                    
+                    <div style="margin: 1rem 0;">
+                        <label style="margin-right: 1rem;">
+                            <input type="radio" name="runtime" value="node" checked> Node.js
+                        </label>
+                        <label style="margin-right: 1rem;">
+                            <input type="radio" name="runtime" value="bun"> Bun (3x más rápido)
+                        </label>
+                        <label style="margin-right: 1rem;">
+                            <input type="radio" name="runtime" value="deno"> Deno (2x más rápido)
+                        </label>
+                    </div>
+                    
+                    <button class="demo-button" onclick="runSpeedDemo()">Ejecutar y Medir</button>
+                    
+                    <div class="demo-output" id="speedOutput">Resultado aparecerá aquí...</div>
+                </div>
+
+                <!-- Demo 2: Simulador de Permisos Deno -->
+                <div class="demo-container">
+                    <h3>🔒 Demo 2: Simulador de Permisos Deno</h3>
+                    <p>Experimenta con el sistema de permisos de Deno. Observa qué sucede cuando intentas acceder a recursos sin los permisos apropiados.</p>
+                    
+                    <div style="margin: 1rem 0;">
+                        <label style="display: block; margin-bottom: 0.5rem;">Selecciona los permisos a otorgar:</label>
+                        <label style="margin-right: 1rem;">
+                            <input type="checkbox" id="permNet"> Acceso a Red (--allow-net)
+                        </label>
+                        <label style="margin-right: 1rem;">
+                            <input type="checkbox" id="permRead"> Acceso a Archivos (--allow-read)
+                        </label>
+                        <label style="margin-right: 1rem;">
+                            <input type="checkbox" id="permWrite"> Escritura (--allow-write)
+                        </label>
+                        <label>
+                            <input type="checkbox" id="permEnv"> Variables de Entorno (--allow-env)
+                        </label>
+                    </div>
+                    
+                    <textarea class="demo-input" id="permissionInput" placeholder="Código que intenta acceder a recursos...">// Código que intenta varias operaciones
+console.log('Intentando acceder a internet...');
+const response = await fetch('https://api.github.com/users/denoland');
+
+console.log('Intentando leer un archivo...');
+const fileContent = await Deno.readTextFile('./config.json');
+
+console.log('Accediendo a variables de entorno...');
+const nodeEnv = Deno.env.get('NODE_ENV');
+
+console.log('Operación completada');</textarea>
+                    
+                    <button class="demo-button" onclick="runPermissionDemo()">Simular Ejecución con Permisos</button>
+                    
+                    <div class="demo-output" id="permissionOutput">Configura los permisos y ejecuta el código...</div>
+                </div>
+
+                <!-- Demo 3: Playground de Código -->
+                <div class="demo-container">
+                    <h3>🎮 Demo 3: Playground de Código</h3>
+                    <p>Escribe y ejecuta código JavaScript en un entorno seguro. Experimenta con las características de Bun y Deno.</p>
+                    
+                    <textarea class="demo-input" id="playgroundInput" placeholder="Escribe tu código JavaScript aquí...">// Playground para experimentar
+// Bun y Deno soportan top-level await
+
+// Ejemplo: API Fetch nativa
+const response = await fetch('https://httpbin.org/json');
+const data = await response.json();
+
+console.log('🚀 Datos obtenidos:', data);
+
+// Ejemplo: TypeScript en tiempo real (simulado)
+interface User {
+  name: string;
+  age: number;
+}
+
+const user: User = {
+  name: 'Desarrollador',
+  age: 25
+};
+
+console.log('👤 Usuario:', user);
+
+// Ejemplo: Módulos ES
+const crypto = await import('node:crypto');
+const hash = crypto.randomUUID();
+console.log('🔐 Hash generado:', hash);</textarea>
+                    
+                    <button class="demo-button" onclick="runPlayground()">Ejecutar Código</button>
+                    <button class="demo-button" style="background: var(--gradient-secondary); margin-left: 1rem;" onclick="clearPlayground()">Limpiar</button>
+                    
+                    <div class="demo-output" id="playgroundOutput">Tu código se ejecutará aquí...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guías de Instalación -->
+    <section id="instalacion" class="section">
+        <div class="container">
+            <h2>Guías de Instalación</h2>
+            <div class="fade-in">
+                <p>Instrucciones paso a paso para instalar Bun y Deno en diferentes sistemas operativos.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>🟠 Instalar Bun</h3>
+                        <h4>macOS (Apple Silicon/Intel)</h4>
+                        <div class="code-block">
+                            <pre><code class="syntax-bash"># Usando el instalador oficial
+curl -fsSL https://bun.sh/install | bash
+
+# Verificar instalación
+bun --version</code></pre>
+                        </div>
+                        
+                        <h4>Windows (WSL/Linux)</h4>
+                        <div class="code-block">
+                            <pre><code class="syntax-bash"># Usando PowerShell
+iwr https://bun.sh/install.ps1 -useb | iex
+
+# O usando npm
+npm install -g bun</code></pre>
+                        </div>
+                        
+                        <h4>Linux</h4>
+                        <div class="code-block">
+                            <pre><code class="syntax-bash"># Usando el script oficial
+curl -fsSL https://bun.sh/install | bash
+
+# O usando el paquete
+npm install -g bun</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3>🟨 Instalar Deno</h3>
+                        <h4>Todas las plataformas</h4>
+                        <div class="code-block">
+                            <pre><code class="syntax-bash"># Usando el instalador oficial (recomendado)
+curl -fsSL https://deno.land/install.sh | sh
+
+# Verificar instalación
+deno --version
+
+# Actualizar Deno
+deno upgrade</code></pre>
+                        </div>
+                        
+                        <h4>Windows (PowerShell)</h4>
+                        <div class="code-block">
+                            <pre><code class="syntax-powershell"># Usando PowerShell
+iwr https://deno.land/install.ps1 -useb | iex
+
+# O usando Scoop
+scoop install deno</code></pre>
+                        </div>
+                        
+                        <h4>macOS (Homebrew)</h4>
+                        <div class="code-block">
+                            <pre><code class="syntax-bash"># Usando Homebrew
+brew install deno
+
+# Verificar
+deno --version</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por Qué Importa -->
+    <section id="importancia" class="section">
+        <div class="container">
+            <h2>¿Por Qué Importan Bun y Deno?</h2>
+            <div class="fade-in">
+                <p>La llegada de Bun y Deno representa un cambio fundamental en cómo desarrollamos y desplegamos aplicaciones JavaScript. Su impacto trasciende las mejoras técnicas individuales.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">⚡</span>
+                        <h3>Velocidad de Desarrollo</h3>
+                        <p>Al eliminar la necesidad de configurar múltiples herramientas, los desarrolladores pueden enfocarse en crear funcionalidades en lugar de configurar toolchains.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="feature-icon">🛡️</span>
+                        <h3>Seguridad Mejorada</h3>
+                        <p>El enfoque de "seguridad por defecto" de Deno y las mejoras de Bun reducen significativamente la superficie de ataque en aplicaciones de producción.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="feature-icon">🌐</span>
+                        <h3>Estandarización</h3>
+                        <p>La adopción de APIs web estándar facilita la reutilización de código entre cliente y servidor, mejorando la consistencia del ecosistema.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <span class="feature-icon">🚀</span>
+                        <h3>Rendimiento Superior</h3>
+                        <p>Las mejoras de velocidad traducen en aplicaciones más responsivas, menor consumo de recursos y costos de infraestructura reducidos.</p>
+                    </div>
+                </div>
+                
+                <h3>Casos de Uso Reales</h3>
+                <p><strong>Aplicaciones de Alta Frecuencia:</strong> Trading, gaming en tiempo real, IoT donde cada milisegundo cuenta.</p>
+                <p><strong>Microservicios:</strong> Los rieles de build más rápidos y los binarios más pequeños reducen significativamente el tiempo de despliegue.</p>
+                <p><strong>Desarrollo Local:</strong> Los servidores de desarrollo con hot reload instantáneo mejoran dramáticamente la productividad.</p>
+                <p><strong>Edge Computing:</strong> El soporte nativo de APIs web hace que sea ideal para funciones en el edge de CDN.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos -->
+    <section id="recursos" class="section">
+        <div class="container">
+            <h2>Recursos Adicionales</h2>
+            <div class="fade-in">
+                <p>Enlaces a documentación oficial, tutoriales, comunidad y herramientas complementarias para continuar tu aprendizaje.</p>
+                
+                <div class="resources-grid">
+                    <a href="https://bun.sh" class="resource-card" target="_blank">
+                        <h4>🌐 Bun.sh</h4>
+                        <p>Documentación oficial, API reference y guías de inicio rápido para Bun.</p>
+                    </a>
+                    
+                    <a href="https://deno.land" class="resource-card" target="_blank">
+                        <h4>🌐 Deno.land</h4>
+                        <p>Documentación completa, módulos, y recursos oficiales de Deno.</p>
+                    </a>
+                    
+                    <a href="https://github.com/oven-sh/bun" class="resource-card" target="_blank">
+                        <h4>📦 GitHub Bun</h4>
+                        <p>Repositorio oficial de Bun con código fuente, issues y contribuciones.</p>
+                    </a>
+                    
+                    <a href="https://github.com/denoland/deno" class="resource-card" target="_blank">
+                        <h4>📦 GitHub Deno</h4>
+                        <p>Repositorio oficial de Deno con desarrollo activo y comunidad.</p>
+                    </a>
+                    
+                    <a href="https://deno.land/manual" class="resource-card" target="_blank">
+                        <h4>📚 Manual Deno</h4>
+                        <p>Manual completo con ejemplos prácticos y mejores prácticas.</p>
+                    </a>
+                    
+                    <a href="https://bun.sh/blog" class="resource-card" target="_blank">
+                        <h4>📰 Blog Bun</h4>
+                        <p>Actualizaciones oficiales, roadmap y anuncios de nuevas funcionalidades.</p>
+                    </a>
+                    
+                    <a href="https://discord.gg/bun" class="resource-card" target="_blank">
+                        <h4>💬 Discord Bun</h4>
+                        <p>Comunidad activa de desarrolladores Bun con soporte y discusiones.</p>
+                    </a>
+                    
+                    <a href="https://discord.gg/deno" class="resource-card" target="_blank">
+                        <h4>💬 Discord Deno</h4>
+                        <p>Comunidad de Deno con canales especializados por tema y nivel.</p>
+                    </a>
+                    
+                    <a href="https://www.youtube.com/watch?v=1z3d8A3Y2uM" class="resource-card" target="_blank">
+                        <h4>🎥 Video: Bun vs Node.js</h4>
+                        <p>Comparación detallada en video de las diferencias prácticas.</p>
+                    </a>
+                    
+                    <a href="https://www.youtube.com/watch?v=1z3d8A3Y2uM" class="resource-card" target="_blank">
+                        <h4>🎥 Video: Deno Introducción</h4>
+                        <p>Introducción completa a Deno con ejemplos prácticos de código.</p>
+                    </a>
+                    
+                    <a href="https://jsr.io" class="resource-card" target="_blank">
+                        <h4>📦 JSR</h4>
+                        <p>Registro moderno de paquetes para JavaScript y TypeScript.</p>
+                    </a>
+                    
+                    <a href="https://npmjs.com" class="resource-card" target="_blank">
+                        <h4>📦 npm</h4>
+                        <p>Registro de paquetes Node.js con soporte para Bun y Deno.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+            
+
+        <nav class="footer-nav">
+            <ul class="footer-column">
+                <li><strong>Secciones</strong></li>
+                <li><a href="/index.html">Inicio en Urukais Klick</a></li>
+                <li><a href="/#caracteristicas">Características Web</a></li>
+                <li><a href="/#galeria">Galería de Proyectos</a></li>
+                <li><a href="/#videos">Videos de Música</a></li>
+                <li><a href="/contenido/contacto.html">Contacto Manuel C.C.</a></li>
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Proyectos</strong></li>
+                <li><a href="https://zingy-pavlova-6aa6a6.netlify.app/" target="_blank" rel="noopener">Urukais Klick Pro 🐸</a></li>
+                <li><a href="https://adorable-belekoy-d064de.netlify.app/" target="_blank" rel="noopener">Clima Urukais</a></li>
+                <li><a href="https://resplendent-faun-6147ea.netlify.app/" target="_blank" rel="noopener">PokéDex Urukais</a></li>
+                <li><a href="https://cute-pegasus-a3487f.netlify.app/" target="_blank" rel="noopener">API Urukais Klick</a></li>
+                <li><a href="https://stately-sherbet-955c30.netlify.app/musica" target="_blank" rel="noopener">Plataforma Musical 🐸</a></li>
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Contenido</strong></li>
+                <li><a href="/contenido/heavy-metal.html" target="_blank" rel="noopener">Heavy Metal</a></li>
+                <li><a href="/contenido/libros.html" target="_blank" rel="noopener">Biblioteca del Infierno</a></li>
+                <li><a href="/contenido/matrix.html" target="_blank" rel="noopener">Centro de Búsqueda Matricial</a></li>
+                <li><a href="/contenido/montanas.html" target="_blank" rel="noopener">Ecosistema de Alforja</a></li>
+                <li><a href="/footer/generador-de-datos.html" target="_blank" rel="noopener">Generador avanzado de datos</a></li>
+            
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Redes & Legal</strong></li>
+                <li><a href="https://www.facebook.com/groups/1189456591848515/?ref=share_group_link" target="_blank" rel="noopener">Facebook</a></li>
+                <li><a href="https://www.youtube.com/channel/UCt8Wwz9KOwsq5VN-q2MnSWg" target="_blank" rel="noopener">YouTube</a></li>
+                <li><a href="/footer/cookies.html">Política de Cookies</a></li>
+                <li><a href="/footer/politica-de-privacidad.html">Política de Privacidad</a></li>
+                <li><a href="https://silly-boba-dc057e.netlify.app/" target="blank">Manuel Casimiro Carrasco</a></li>
+            </ul>
+        </nav>
+        <div class="footer-content">
+            <h3>&copy; 2025 Urukais Klick 🐸. Todos los derechos reservados.</h3>
+            <h3>Desarrollado por Manuel Casimiro Carrasco.👀</h3>
+        </div>
+    </footer>
+      <style>
+        /* Botón de scroll to top */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .scroll-to-top:active {
+            transform: translateY(-1px);
+        }
+
+        /* Estado visible del botón */
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Icono del botón */
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-to-top:hover svg {
+            transform: translateY(-2px);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scroll-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .scroll-to-top svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        /* Contenido mínimo para hacer scroll */
+        body {
+            height: 2000px;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <!-- Contenido mínimo para probar el scroll -->
+        
+    <!-- Botón de subida al principio de la web -->
+    <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Volver al inicio">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+        // Botón de Scroll to Top - Sin Conflictos
+        (function() {
+            'use strict';
+            
+            // Elementos del DOM
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            
+            // Verificar que el elemento existe
+            if (!scrollToTopBtn) {
+                console.warn('Botón scrollToTopBtn no encontrado');
+                return;
+            }
+            
+            // Configuración
+            const scrollOffset = 300; // Píxeles antes de mostrar el botón
+            
+            // Función para mostrar/ocultar el botón
+            function toggleScrollToTopButton() {
+                if (window.pageYOffset > scrollOffset) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            }
+            
+            // Función de scroll suave hacia arriba
+            function scrollToTop() {
+                // Scroll suave usando window.scrollTo
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                // Fallback para navegadores más antiguos
+                const startPosition = window.pageYOffset;
+                const startTime = performance.now();
+                const duration = 800; // Duración en milisegundos
+                
+                function easeInOutQuad(t, b, c, d) {
+                    t /= d/2;
+                    if (t < 1) return c/2*t*t + b;
+                    t--;
+                    return -c/2 * (t*(t-2) - 1) + b;
+                }
+                
+                function animateScroll(currentTime) {
+                    const timeElapsed = currentTime - startTime;
+                    const run = easeInOutQuad(timeElapsed, startPosition, -startPosition, duration);
+                    window.scrollTo(0, run);
+                    
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animateScroll);
+                    }
+                }
+                
+                requestAnimationFrame(animateScroll);
+            }
+            
+            // Event Listeners con verificaciones de seguridad
+            function addEventListeners() {
+                // Scroll event listener
+                window.addEventListener('scroll', function() {
+                    // Usar requestAnimationFrame para optimizar el rendimiento
+                    if (window.requestAnimationFrame) {
+                        requestAnimationFrame(toggleScrollToTopButton);
+                    } else {
+                        toggleScrollToTopButton();
+                    }
+                }, { passive: true }); // passive: true mejora el rendimiento
+                
+                // Click event listener
+                scrollToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    scrollToTop();
+                });
+                
+                // Keyboard accessibility
+                scrollToTopBtn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        scrollToTop();
+                    }
+                });
+            }
+            
+            // Inicialización
+            function init() {
+                // Verificar que el DOM está completamente cargado
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', function() {
+                        toggleScrollToTopButton();
+                        addEventListeners();
+                    });
+                } else {
+                    toggleScrollToTopButton();
+                    addEventListeners();
+                }
+            }
+            
+            // Función para verificar compatibilidad del navegador
+            function checkCompatibility() {
+                // Verificar soporte para smooth scroll
+                const supportsSmoothScroll = 'scrollBehavior' in document.documentElement.style;
+                if (!supportsSmoothScroll) {
+                    console.info('Usando fallback para smooth scroll');
+                }
+                
+                // Verificar soporte para requestAnimationFrame
+                const supportsRAF = 'requestAnimationFrame' in window;
+                if (!supportsRAF) {
+                    console.info('Usando fallback para requestAnimationFrame');
+                }
+            }
+            
+            // Ejecutar inicialización
+            checkCompatibility();
+            init();
+            
+            // Función para detectar cambios de orientación (móvil)
+            window.addEventListener('orientationchange', function() {
+                setTimeout(function() {
+                    toggleScrollToTopButton();
+                }, 500); // Delay para permitir que la orientación cambie
+            });
+            
+            // Prevenir conflictos con otros scripts
+            window.scrollToTopModule = {
+                show: function() {
+                    scrollToTopBtn.classList.add('show');
+                },
+                hide: function() {
+                    scrollToTopBtn.classList.remove('show');
+                },
+                scrollToTop: scrollToTop,
+                toggle: toggleScrollToTopButton
+            };
+            
+        })();
+    </script>
+    <script src="/mas-javascript/evolucion.js"></script>
+    
+    <script src="/javascript/botones.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/botones.js"></script>
+    <script src="/menu/menu.js"></script>
+</body>
+</html>

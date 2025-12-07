@@ -1,0 +1,140 @@
+/* Botón del Modo Zen */
+#zen-toggle-btn {
+    position: fixed;
+    bottom: 90px;
+    /* Un poco más arriba para no chocar con posibles footers o botones de scroll */
+    right: 30px;
+    z-index: 9998;
+    /* Debajo de modales pero encima del contenido */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(20, 20, 30, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #a855f7;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(5px);
+}
+
+#zen-toggle-btn:hover {
+    transform: scale(1.1) rotate(15deg);
+    background: rgba(168, 85, 247, 0.2);
+    color: #fff;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+}
+
+/* Tooltip simple */
+#zen-toggle-btn::after {
+    content: "Modo Zen";
+    position: absolute;
+    right: 60px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+#zen-toggle-btn:hover::after {
+    opacity: 1;
+}
+
+/* --- ESTADOS ACTIVOS DEL MODO ZEN --- */
+
+body.zen-active {
+    background-color: #0a0a0a !important;
+    /* Fondo muy oscuro para el body */
+}
+
+/* Oscurecer y difuminar elementos de distracción */
+body.zen-active nav,
+body.zen-active header,
+body.zen-active .hero,
+body.zen-active .buttons-section,
+body.zen-active .gallery-section,
+body.zen-active .videos-section,
+body.zen-active footer,
+body.zen-active .btn-container,
+body.zen-active .social-icons,
+/* Si existen */
+body.zen-active #reading-progress-container {
+    opacity: 0.1;
+    filter: blur(5px) grayscale(100%);
+    pointer-events: none;
+    /* Desactivar clics en lo difuminado */
+    transition: all 0.8s ease;
+}
+
+/* Excepciones: Secciones de texto importantes se resaltan */
+body.zen-active .origin-section,
+body.zen-active .features-section,
+body.zen-active .story-section {
+    position: relative;
+    z-index: 100;
+    /* Poner por encima de lo difuminado */
+    opacity: 1;
+    filter: none;
+    max-width: 900px;
+    /* Ancho de lectura cómodo */
+    margin: 40px auto;
+    /* Centrar */
+    background: transparent;
+    padding: 20px;
+    /* Sombras para separar del fondo oscuro, opcional si ya tienen cards */
+}
+
+/* Ajustes de tipografía específicos para lectura relajada */
+body.zen-active p,
+body.zen-active li {
+    color: #e0e0e0;
+    /* Texto claro pero no blanco puro */
+    line-height: 1.9;
+    /* Mayor interlineado */
+    font-size: 1.25rem;
+    /* Un poco más grande */
+    letter-spacing: 0.02em;
+    max-width: 70ch;
+    /* Ancho de línea óptimo para lectura */
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: none;
+    /* Quitar efectos si molestan */
+}
+
+body.zen-active h2,
+body.zen-active h3 {
+    color: #00ff88;
+    /* Color suave para títulos */
+    text-align: center;
+}
+
+/* Ocultar elementos decorativos dentro de las secciones activas si distraen */
+body.zen-active .loader,
+body.zen-active .btn-corner {
+    opacity: 0;
+}
+
+/* Ajustes para las cards en modo zen (si se usan para mostrar texto) */
+body.zen-active .origin-card,
+body.zen-active .feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    /* Muy sutil */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+    color: #ddd;
+}
+
+/* Animación de transición suave global */
+body * {
+    transition: opacity 0.8s ease, filter 0.8s ease, transform 0.5s ease;
+}

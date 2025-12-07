@@ -1,0 +1,87 @@
+/* Modo Visión Urukai (Spectral Filter) */
+
+/* Botón flotante */
+#vision-toggle-btn {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    /* Al lado del menú */
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00ff88;
+    color: #00ff88;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#vision-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00ff88;
+}
+
+/* Efecto Global de Inversión */
+body.urukai-vision-active {
+    filter: invert(1) hue-rotate(180deg) brightness(1.1) contrast(1.2);
+    background-color: #000;
+    /* Asegurar fondo negro para inversión */
+}
+
+/* Evitar que imágenes y videos se inviertan (doble inversión) */
+body.urukai-vision-active img,
+body.urukai-vision-active video,
+body.urukai-vision-active iframe,
+body.urukai-vision-active canvas {
+    filter: invert(1) hue-rotate(-180deg);
+}
+
+/* Elementos Secretos (Tinta Invisible) */
+.secret-msg {
+    color: transparent;
+    /* Invisible normalmente */
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-shadow: none;
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+/* Al activar visión, se hacen visibles y brillantes */
+body.urukai-vision-active .secret-msg {
+    opacity: 1;
+    color: #ff00ff;
+    /* Se invertirá a verde/cian brillante */
+    text-shadow: 0 0 10px #ff00ff;
+    animation: secret-pulse 2s infinite;
+}
+
+@keyframes secret-pulse {
+
+    0%,
+    100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+/* Ajustes específicos para el botón en modo activo */
+body.urukai-vision-active #vision-toggle-btn {
+    background: #fff;
+    color: #000;
+    border-color: #000;
+}

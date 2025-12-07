@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <meta name="author" content="Manuel Casimiro Carrasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Urukais Klick - El Ecosistema Silencioso de Alforja. Descubre los guardianes minerales de las montañas.">
+    <meta name="theme-color" content="#0a0e27">
+    <title>El Pulso del Planeta: Pérdida de Biodiversidad</title>
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/menu/menu.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/perdida.css">
+</head>
+<body>
+    
+
+
+      
+        <!-- Overlay para móvil -->
+    <div class="mnm-overlay" id="mnmOverlay"></div>
+
+    <!-- Botón toggle reproductor -->
+    <!-- Navegación principal -->
+    <nav class="mnm-nav-container">
+        <div class="mnm-nav-wrapper">
+            <a href="/index.html" class="mnm-logo">Urukais Klick</a>
+            
+            
+            <button class="mnm-hamburger" id="mnmHamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="mnm-nav-menu" id="mnmNavMenu">
+                <!-- Categoría 1: Entretenimiento y Ocio -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Entretenimiento y Ocio
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/buscador-de-peliculas.html" class="mnm-dropdown-item">🎬 Catálogo de Películas</a>
+                        <a href="/cabecera/cine/la-nasa.html" class="mnm-dropdown-item">🚀 Espacio y Astronomía</a>
+                        <a href="/cabecera/cine/peluculas.html" class="mnm-dropdown-item">🎭 Films Favoritos</a>
+                        <a href="/cabecera/cine/noticias.html" class="mnm-dropdown-item">📰 Noticias Actuales</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😂 Humor y Entretenimiento</a>
+                        <a href="/cabecera/musica/hadmed.html" class="mnm-dropdown-item">🎵 Ambiente Musical</a>
+                        <a href="/cabecera/musica/mas.html" class="mnm-dropdown-item">🎶 Musicalife</a>
+                        <a href="/cabecera/musica/musica-clasica.html" class="mnm-dropdown-item">🎼 Música Clásica</a>
+                        <a href="/cabecera/musica/prueva.html" class="mnm-dropdown-item">🎤 Géneros Musicales</a>
+                        <a href="/cabecera/musica/tartituras.html" class="mnm-dropdown-item">🎵 Partituras y Escore</a>
+                        <a href="/cabecera/musica/videos3.html" class="mnm-dropdown-item">📺 Centro de Videos</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 2: Herramientas y Productividad -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Herramientas y Productividad
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/herramientas/chat.html" class="mnm-dropdown-item">💬 Asistente Virtual Urukais</a>
+                        <a href="/cabecera/herramientas/control-de-consultas.html" class="mnm-dropdown-item">🗂 Sistema de Consultas</a>
+                        <a href="/cabecera/herramientas/DevStudio.html" class="mnm-dropdown-item">⚙️ Estudio de Desarrollo</a>
+                        <a href="/cabecera/herramientas/FinTech.html" class="mnm-dropdown-item">💼 Soluciones Financieras</a>
+                        <a href="/cabecera/herramientas/generador-contraseñas.html" class="mnm-dropdown-item">🔐 Generador Seguro de<br>Contraseñas</a>
+                        <a href="/cabecera/herramientas/genesis.html" class="mnm-dropdown-item">🌟 Plataforma Genesis</a>
+                        <a href="/cabecera/herramientas/herramienta.html" class="mnm-dropdown-item">🛠 Suite de Herramientas</a>
+                        <a href="/cabecera/herramientas/hot.html" class="mnm-dropdown-item">🔥 Tendencias Actuales</a>
+                        <a href="/cabecera/herramientas/ia-educativa.html" class="mnm-dropdown-item">🎓 IA Educativa</a>
+                        <a href="/cabecera/herramientas/listado-de-prons.html" class="mnm-dropdown-item">📋 Pronósticos en Línea</a>
+                        <a href="/cabecera/herramientas/localizacion-de-faker.html" class="mnm-dropdown-item">📍 Localizador Universal</a>
+                        <a href="/cabecera/herramientas/mas-datos.html" class="mnm-dropdown-item">📊 Análisis de Datos</a>
+                        <a href="/cabecera/herramientas/pruevas.html" class="mnm-dropdown-item">🧪 Centro de Pruebas</a>
+                        <a href="/cabecera/herramientas/texto-voz.html" class="mnm-dropdown-item">🔊 Síntesis de Voz</a>
+                        <a href="/cabecera/herramientas/tienda-de-urukais.html" class="mnm-dropdown-item">🛒 Tienda Oficial</a>
+                        <a href="/cabecera/buscadores/gestor-de-tareas.html" class="mnm-dropdown-item">✅ Organizador de Tareas</a>
+                        <a href="/cabecera/buscadores/gestor-de-proyectos.html" class="mnm-dropdown-item">📈 Gestor de Proyectos</a>
+                        <a href="/cabecera/cine/ProTask.html" class="mnm-dropdown-item">⏰ ProTask Profesional</a>
+                        <a href="/cabecera/cine/ReservaPro.html" class="mnm-dropdown-item">📅 Sistema de Reservas</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 3: Buscadores y Información -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Buscadores y Información
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/buscadores/buscadorurukais.html" class="mnm-dropdown-item">📚 Búsqueda de Libros</a>
+                        <a href="/cabecera/buscadores/busqueda.html" class="mnm-dropdown-item">🔍 Buscador Matrix</a>
+                        <a href="/cabecera/cine/libros.html" class="mnm-dropdown-item">📖 Biblioteca Digital</a>
+                        <a href="/cabecera/cine/localizador.html" class="mnm-dropdown-item">🌐 Ubicador IP</a>
+                        <a href="/cabecera/buscadores/barcelona-sustainabitil.html" class="mnm-dropdown-item">🌱 Barcelona Sostenible</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 4: Mascotas y Animales -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Mascotas y Animales
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/animales/animales.html" class="mnm-dropdown-item">🐾 Generador de Animales</a>
+                        <a href="/cabecera/animales/buscador-de-perros.html" class="mnm-dropdown-item">🐕 Aplicación de Mascotas</a>
+                        <a href="/cabecera/buscadores/deportes.html" class="mnm-dropdown-item">⚽ Buscador de Equipos<br>Deportivos</a>
+                        <a href="/cabecera/animales/Marketing.html" class="mnm-dropdown-item">📱 Marketing Digital</a>
+                        <a href="/cabecera/animales/multi.html" class="mnm-dropdown-item">💻 Solución Multiplataforma</a>
+                        <a href="/cabecera/animales/neocron.html" class="mnm-dropdown-item">🌟 Neocron Urukais</a>
+                        <a href="/cabecera/animales/portal-interactivo.html" class="mnm-dropdown-item">✨ Portal Interactivo</a>
+                        <a href="/cabecera/animales/site-de-productividad.html" class="mnm-dropdown-item">💼 Suite de Productividad</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 5: Comida y Bebidas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Comida y Bebidas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/comida/coctel.html" class="mnm-dropdown-item">🍹 Sistema de Coctelería</a>
+                        <a href="/cabecera/comida/comida.html" class="mnm-dropdown-item">🍽 Gastronomía Exquisita</a>
+                        <a href="/cabecera/comida/cocia-en-inggles.html" class="mnm-dropdown-item">🍳 Cocina Internacional</a>
+                        
+                    </div>
+                </li>
+
+                <!-- Categoría 6: Creatividad y Arte -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Creatividad y Arte
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/conics/archivo-de-hielo.html" class="mnm-dropdown-item">❄️ Archivo Creativo</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😄 Galería de Humor</a>
+                        <a href="/cabecera/conics/Morty.html" class="mnm-dropdown-item">🎨 Colección Morty</a>
+                        <a href="/cabecera/conics/generador-de-fondos.html" class="mnm-dropdown-item">🎨 Generador de Fondos</a>
+                        <a href="/cabecera/conics/neocron.html" class="mnm-dropdown-item">😊 Control de Estado de Ánimo</a>
+                        <a href="/cabecera/conics/plataforma-de-herattientas.html" class="mnm-dropdown-item">🛠 Plataforma de<br>Herramientas Creativas</a>
+                        <a href="/cabecera/conics/portal-interactivo.html" class="mnm-dropdown-item">🎭 Portal Interactivo</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 7: Medio Ambiente -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Medio Ambiente
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/tierra/ambiental-mundial.html" class="mnm-dropdown-item">🌍 Global Ambiental</a>
+                        <a href="/cabecera/tierra/busca-ciudades.html" class="mnm-dropdown-item">🏙 Explorador de Ciudades</a>
+                        <a href="/cabecera/tierra/busca-cuidad.html" class="mnm-dropdown-item">🌆 Búsqueda Urbana</a>
+                        <a href="/cabecera/tierra/clima.html" class="mnm-dropdown-item">🌤️ Centro Meteorológico</a>
+                        <a href="/cabecera/tierra/deforestacion-mundial.html" class="mnm-dropdown-item">🌲 Control Deforestación</a>
+                        <a href="/cabecera/tierra/gia-de-supervivencia.html" class="mnm-dropdown-item">🧭 Guía de Supervivencia</a>
+                        <a href="/cabecera/tierra/mas.html" class="mnm-dropdown-item">🌿 Más Contenido Verde</a>
+                        <a href="/cabecera/tierra/renacer.html" class="mnm-dropdown-item">🌱 Renacer y Renovación</a>
+                        <a href="/cabecera/tierra/sistema-reus.html" class="mnm-dropdown-item">♻️ Sistema Inteligente de Reciclaje</a>
+                        <a href="/cabecera/tierra/supervivencia33.html" class="mnm-dropdown-item">🏕 Supervivencia Extrema</a>
+                    </div>
+                </li>
+                
+
+                <!-- Categoría 8: Eventos y Citas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Eventos y Citas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/gestor-de-citas.html" class="mnm-dropdown-item">💕 Organizador de Citas</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+ 
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="particles"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">El Silencio se Expande</h1>
+                <p class="hero-description">
+                    Estamos viviendo la sexta extinción masiva de especies. La biodiversidad que ha tardado millones de años en evolucionar se está perdiendo a un ritmo sin precedentes. Cada día que pasa, perdemos para siempre irreemplazables tesoros de la vida.
+                </p>
+                
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number" id="stat1">82%</div>
+                        <div class="stat-text">de pérdida en poblaciones de vida silvestre desde 1970</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="stat2">1M</div>
+                        <div class="stat-text">especies en peligro crítico de extinción</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="stat3">100-1000x</div>
+                        <div class="stat-text">más rápido que la extinción natural</div>
+                    </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="#crisis" class="btn btn-secondary">Descubre por qué</a>
+                    <a href="#soluciones" class="btn btn-primary">Qué podemos hacer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crisis Section -->
+    <section class="section section-dark" id="crisis">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">La Crisis Actual</h2>
+                <p class="section-subtitle">
+                    La pérdida de biodiversidad es silenciosa pero devastadora. Los ecosistemas que sostienen toda la vida en la Tierra se están desmoronando ante nuestros ojos.
+                </p>
+            </div>
+
+            <div class="crisis-grid">
+                <div class="glassmorphism crisis-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <h3 class="card-title">La Sexta Extinción</h3>
+                    <p class="card-description">
+                        A diferencia de las cinco extinciones masivas anteriores causadas por desastres naturales, esta es la primera causada por una sola especie: el ser humano.
+                    </p>
+                </div>
+
+                <div class="glassmorphism crisis-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="card-title">Colapso de Ecosistemas</h3>
+                    <p class="card-description">
+                        Los bosques, océanos, praderas y humedales que regulan nuestro clima y proporcionan agua limpia están perdiendo su capacidad de recuperación.
+                    </p>
+                </div>
+
+                <div class="glassmorphism crisis-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S9.5 8.83 9.5 8zm7 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <h3 class="card-title">Efecto Dominó</h3>
+                    <p class="card-description">
+                        La pérdida de una especie puede desencadenar una cascada de extinciones en todo el ecosistema, llevando al colapso de servicios ecosistémicos vitales.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Extinction Chart -->
+            <div class="chart-container">
+                <h3 class="chart-title">Las Seis Extinciones Masivas</h3>
+                <p class="chart-subtitle">La sexta extinción está ocurriendo ahora, impulsada por la actividad humana</p>
+                
+                <svg class="extinction-chart" id="extinctionChart" viewBox="0 0 800 400">
+                    <!-- Chart Title -->
+                    <text x="400" y="30" text-anchor="middle" class="chart-title-svg">Extinción de Especies a lo Largo del Tiempo</text>
+                    
+                    <!-- Axes -->
+                    <line x1="80" y1="320" x2="750" y2="320" class="chart-axis"/>
+                    <line x1="80" y1="50" x2="80" y2="320" class="chart-axis"/>
+                    
+                    <!-- Axis Labels -->
+                    <text x="415" y="390" text-anchor="middle" class="chart-label">Tiempo Geológico</text>
+                    <text x="30" y="185" text-anchor="middle" class="chart-label" transform="rotate(-90 30 185)">Número de Especies</text>
+                    
+                    <!-- Previous extinctions (dashed lines) -->
+                    <path d="M 100 80 L 150 320" class="chart-line extinctions"/>
+                    <path d="M 200 50 L 250 300" class="chart-line extinctions"/>
+                    <path d="M 300 70 L 350 280" class="chart-line extinctions"/>
+                    <path d="M 400 60 L 450 250" class="chart-line extinctions"/>
+                    <path d="M 500 90 L 550 260" class="chart-line extinctions"/>
+                    
+                    <!-- Current extinction (red, animated) -->
+                    <path id="currentExtinction" d="M 600 100 L 650 180 L 700 220 L 750 280" class="chart-line current" stroke-dasharray="500" stroke-dashoffset="500"/>
+                    
+                    <!-- Labels for extinctions -->
+                    <text x="125" y="75" text-anchor="middle" class="chart-label">Ordovícico-Silúrico</text>
+                    <text x="225" y="45" text-anchor="middle" class="chart-label">Devónico tardío</text>
+                    <text x="325" y="65" text-anchor="middle" class="chart-label">Pérmico-Triásico</text>
+                    <text x="425" y="55" text-anchor="middle" class="chart-label">Triásico-Jurásico</text>
+                    <text x="525" y="85" text-anchor="middle" class="chart-label">Cretácico-Paleógeno</text>
+                    <text x="700" y="110" text-anchor="middle" class="chart-label" fill="#EF4444">Actual</text>
+                    
+                    <!-- Current time indicator -->
+                    <line x1="600" y1="45" x2="600" y2="320" stroke="#EF4444" stroke-width="2" stroke-dasharray="3,3"/>
+                    <text x="600" y="40" text-anchor="middle" class="chart-label" fill="#EF4444">Hoy</text>
+                </svg>
+                
+                <div class="chart-source">
+                    Basado en datos de la Unión Internacional para la Conservación de la Naturaleza (UICN)
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Causes Section -->
+    <section class="section" id="causas">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Las Causas de la Pérdida</h2>
+                <p class="section-subtitle">
+                    Cuatro factores principales están destruyendo la biodiversidad global a una velocidad sin precedentes.
+                </p>
+            </div>
+
+            <div class="causes-grid">
+                <div class="glassmorphism cause-card">
+                    <svg class="cause-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66C7.26 18.32 9.8 13 17 8z"/>
+                    </svg>
+                    <h3 class="cause-title">Destrucción de Hábitats</h3>
+                    <p class="cause-description">
+                        La deforestación, urbanización y agricultura han reducido los hábitats naturales en más del 70% desde 1970. Cada segundo perdemos un área de bosque equivalente a 20 campos de fútbol.
+                    </p>
+                </div>
+
+                <div class="glassmorphism cause-card">
+                    <svg class="cause-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <h3 class="cause-title">Contaminación</h3>
+                    <p class="cause-description">
+                        El aire, agua y suelo contaminados por químicos, plásticos y desechos tóxicos están envenenando los ecosistemas y reduciendo la calidad del hábitat para la vida silvestre.
+                    </p>
+                </div>
+
+                <div class="glassmorphism cause-card">
+                    <svg class="cause-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="cause-title">Cambio Climático</h3>
+                    <p class="cause-description">
+                        El calentamiento global está alterando los patrones climáticos, acidificando los océanos y desestabilizando los ecosistemas que han evolucionado durante milenios.
+                    </p>
+                </div>
+
+                <div class="glassmorphism cause-card">
+                    <svg class="cause-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 11H7v9h2v-9zm4-4h-2v13h2V7zm4-4h-2v17h2V3z"/>
+                    </svg>
+                    <h3 class="cause-title">Sobreexplotación</h3>
+                    <p class="cause-description">
+                        La caza excesiva, pesca insostenible y explotación de recursos naturales está agotando las poblaciones de especies más rápido de lo que pueden reproducirse.
+                    </p>
+                </div>
+
+                <div class="glassmorphism cause-card">
+                    <svg class="cause-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S9.5 8.83 9.5 8zm7 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <h3 class="cause-title">Especies Invasoras</h3>
+                    <p class="cause-description">
+                        El transporte global introduce especies que se convierten en invasoras, desplazando especies nativas y alterando los equilibrios ecológicos establecidos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section section-dark" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Servicios Ecosistémicos en Peligro</h2>
+                <p class="section-subtitle">
+                    La biodiversidad proporciona servicios esenciales que sustentan toda la vida humana. Su pérdida amenaza nuestra propia supervivencia.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="glassmorphism service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="service-title">Polinización</h3>
+                    <p class="service-description">
+                        Las abejas, mariposas y otros polinizadores son responsables del 35% de la producción mundial de alimentos. Su decline amenaza la seguridad alimentaria global.
+                    </p>
+                    <div class="service-impact">
+                        <div class="impact-label">Impacto Global</div>
+                        <div class="impact-text">$235-577 mil millones anuales en polinización</div>
+                    </div>
+                </div>
+
+                <div class="glassmorphism service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="service-title">Agua Limpia</h3>
+                    <p class="service-description">
+                        Los bosques y humedales filtran y purifican el agua que bebemos. La pérdida de biodiversidad reduce la capacidad de los ecosistemas para limpiar el agua.
+                    </p>
+                    <div class="service-impact">
+                        <div class="impact-label">Impacto Humano</div>
+                        <div class="impact-text">2.1 mil millones sin acceso a agua segura</div>
+                    </div>
+                </div>
+
+                <div class="glassmorphism service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="service-title">Fertilidad del Suelo</h3>
+                    <p class="service-description">
+                        Los organismos del suelo reciclan nutrientes y mantienen la fertilidad. La erosión y pérdida de biodiversidad del suelo amenaza la productividad agrícola.
+                    </p>
+                    <div class="service-impact">
+                        <div class="impact-label">Amenaza Alimentaria</div>
+                        <div class="impact-text">24 mil millones de toneladas de suelo fertile perdidos anualmente</div>
+                    </div>
+                </div>
+
+                <div class="glassmorphism service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="service-title">Regulación Climática</h3>
+                    <p class="service-description">
+                        Los bosques, océanos y plantas capturan CO2 y regulan el clima. Su pérdida acelera el cambio climático, creando un círculo vicioso de destrucción.
+                    </p>
+                    <div class="service-impact">
+                        <div class="impact-label">Riesgo Climático</div>
+                        <div class="impact-text">2.6 gigatoneladas de CO2 capturado anualmente</div>
+                    </div>
+                </div>
+
+                <div class="glassmorphism service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="service-title">Medicinas</h3>
+                    <p class="service-description">
+                        Muchas medicinas provienen de especies naturales. La pérdida de biodiversidad significa la pérdida potencial de curas para enfermedades futuras.
+                    </p>
+                    <div class="service-impact">
+                        <div class="impact-label">Potencial Perdido</div>
+                        <div class="impact-text">25% de medicinas basadas en plantas están en riesgo</div>
+                    </div>
+                </div>
+
+                <div class="glassmorphism service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="service-title">Resiliencia</h3>
+                    <p class="service-description">
+                        Los ecosistemas biodiversos son más resistentes a desastres naturales y cambios ambientales. Su pérdida nos deja más vulnerables a crisis futuras.
+                    </p>
+                    <div class="service-impact">
+                        <div class="impact-label">Seguridad Global</div>
+                        <div class="impact-text">Ecosistemas diversos se recuperan 50% más rápido</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="section" id="soluciones">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Soluciones y Acciones</h2>
+                <p class="section-subtitle">
+                    Aún podemos revertir esta crisis, pero requiere acción inmediata y global. Cada persona, gobierno y organización tiene un papel que jugar.
+                </p>
+            </div>
+
+            <div class="solutions-grid">
+                <div class="glassmorphism solution-card">
+                    <svg class="solution-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="solution-title">Conservación de Hábitats</h3>
+                    <p class="solution-description">
+                        Proteger y restaurar ecosistemas naturales mediante áreas protegidas, corredores ecológicos y proyectos de reforestación a gran escala.
+                    </p>
+                </div>
+
+                <div class="glassmorphism solution-card">
+                    <svg class="solution-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <h3 class="solution-title">Energías Renovables</h3>
+                    <p class="solution-description">
+                        Transición urgente hacia energías limpias para reducir las emisiones de carbono y limitar el cambio climático que amenaza la biodiversidad.
+                    </p>
+                </div>
+
+                <div class="glassmorphism solution-card">
+                    <svg class="solution-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 11H7v9h2v-9zm4-4h-2v13h2V7zm4-4h-2v17h2V3z"/>
+                    </svg>
+                    <h3 class="solution-title">Agricultura Sostenible</h3>
+                    <p class="solution-description">
+                        Prácticas agrícolas que protejan la biodiversidad: agricultura regenerativa, reducción de pesticidas y conservación del suelo.
+                    </p>
+                </div>
+
+                <div class="glassmorphism solution-card">
+                    <svg class="solution-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="solution-title">Educación y Conciencia</h3>
+                    <p class="solution-description">
+                        Enseñar sobre la importancia de la biodiversidad y promover comportamientos sostenibles en individuos, comunidades e industrias.
+                    </p>
+                </div>
+
+                <div class="glassmorphism solution-card">
+                    <svg class="solution-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S9.5 8.83 9.5 8zm7 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <h3 class="solution-title">Tecnología Verde</h3>
+                    <p class="solution-description">
+                        Desarrollar e implementar tecnologías que reduzcan el impacto humano en la naturaleza y ayuden en los esfuerzos de conservación.
+                    </p>
+                </div>
+
+                <div class="glassmorphism solution-card">
+                    <svg class="solution-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="solution-title">Política Global</h3>
+                    <p class="solution-description">
+                        Acuerdos internacionales, marcos legales y políticas públicas que protejan la biodiversidad y penalicen su destrucción.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-section glassmorphism">
+                <h3 class="cta-title">Actúa Ahora</h3>
+                <p class="cta-description">
+                    La ventana para actuar se está cerrando rápidamente. Cada día cuenta para proteger las especies y ecosistemas que quedan. Tu acción, por pequeña que parezca, contribuye a una solución global.
+                </p>
+                <div class="cta-actions">
+                    <a href="https://www.iucnredlist.org" target="_blank" class="btn btn-primary">Apoya la Conservación</a>
+                    <a href="https://www.worldwildlife.org" target="_blank" class="btn btn-secondary">Únete a WWF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <svg class="footer-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    El Pulso del Planeta
+                </div>
+                <div class="footer-links">
+                    <li><a href="/index.html" class="nav-link">Volver</a></li>
+                <li><a href="/#caracteristicas" class="nav-link">Características</a></li>
+                <li><a href="/#galeria" class="nav-link">Galería </a></li>
+                <li><a href="/#videos" class="nav-link">Videos</a></li>
+                <li><a href="/contenido/contacto.html" class="nav-link">Contacto</a></li>
+                </div>
+                <div class="footer-info">
+                    © 2025 El Pulso del Planeta<br>
+                    Una iniciativa de concienciación ambiental
+                </div>
+            </div>
+        </div>
+    </footer>
+      <style>
+        /* Botón de scroll to top */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .scroll-to-top:active {
+            transform: translateY(-1px);
+        }
+
+        /* Estado visible del botón */
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Icono del botón */
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-to-top:hover svg {
+            transform: translateY(-2px);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scroll-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .scroll-to-top svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        /* Contenido mínimo para hacer scroll */
+        body {
+            height: 2000px;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <!-- Contenido mínimo para probar el scroll -->
+        
+    <!-- Botón de subida al principio de la web -->
+    <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Volver al inicio">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+        // Botón de Scroll to Top - Sin Conflictos
+        (function() {
+            'use strict';
+            
+            // Elementos del DOM
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            
+            // Verificar que el elemento existe
+            if (!scrollToTopBtn) {
+                console.warn('Botón scrollToTopBtn no encontrado');
+                return;
+            }
+            
+            // Configuración
+            const scrollOffset = 300; // Píxeles antes de mostrar el botón
+            
+            // Función para mostrar/ocultar el botón
+            function toggleScrollToTopButton() {
+                if (window.pageYOffset > scrollOffset) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            }
+            
+            // Función de scroll suave hacia arriba
+            function scrollToTop() {
+                // Scroll suave usando window.scrollTo
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                // Fallback para navegadores más antiguos
+                const startPosition = window.pageYOffset;
+                const startTime = performance.now();
+                const duration = 800; // Duración en milisegundos
+                
+                function easeInOutQuad(t, b, c, d) {
+                    t /= d/2;
+                    if (t < 1) return c/2*t*t + b;
+                    t--;
+                    return -c/2 * (t*(t-2) - 1) + b;
+                }
+                
+                function animateScroll(currentTime) {
+                    const timeElapsed = currentTime - startTime;
+                    const run = easeInOutQuad(timeElapsed, startPosition, -startPosition, duration);
+                    window.scrollTo(0, run);
+                    
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animateScroll);
+                    }
+                }
+                
+                requestAnimationFrame(animateScroll);
+            }
+            
+            // Event Listeners con verificaciones de seguridad
+            function addEventListeners() {
+                // Scroll event listener
+                window.addEventListener('scroll', function() {
+                    // Usar requestAnimationFrame para optimizar el rendimiento
+                    if (window.requestAnimationFrame) {
+                        requestAnimationFrame(toggleScrollToTopButton);
+                    } else {
+                        toggleScrollToTopButton();
+                    }
+                }, { passive: true }); // passive: true mejora el rendimiento
+                
+                // Click event listener
+                scrollToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    scrollToTop();
+                });
+                
+                // Keyboard accessibility
+                scrollToTopBtn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        scrollToTop();
+                    }
+                });
+            }
+            
+            // Inicialización
+            function init() {
+                // Verificar que el DOM está completamente cargado
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', function() {
+                        toggleScrollToTopButton();
+                        addEventListeners();
+                    });
+                } else {
+                    toggleScrollToTopButton();
+                    addEventListeners();
+                }
+            }
+            
+            // Función para verificar compatibilidad del navegador
+            function checkCompatibility() {
+                // Verificar soporte para smooth scroll
+                const supportsSmoothScroll = 'scrollBehavior' in document.documentElement.style;
+                if (!supportsSmoothScroll) {
+                    console.info('Usando fallback para smooth scroll');
+                }
+                
+                // Verificar soporte para requestAnimationFrame
+                const supportsRAF = 'requestAnimationFrame' in window;
+                if (!supportsRAF) {
+                    console.info('Usando fallback para requestAnimationFrame');
+                }
+            }
+            
+            // Ejecutar inicialización
+            checkCompatibility();
+            init();
+            
+            // Función para detectar cambios de orientación (móvil)
+            window.addEventListener('orientationchange', function() {
+                setTimeout(function() {
+                    toggleScrollToTopButton();
+                }, 500); // Delay para permitir que la orientación cambie
+            });
+            
+            // Prevenir conflictos con otros scripts
+            window.scrollToTopModule = {
+                show: function() {
+                    scrollToTopBtn.classList.add('show');
+                },
+                hide: function() {
+                    scrollToTopBtn.classList.remove('show');
+                },
+                scrollToTop: scrollToTop,
+                toggle: toggleScrollToTopButton
+            };
+            
+        })();
+    </script>
+    <script src="/javascript/perdida.js"></script>
+    
+    <script src="/javascript/botones.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/botones.js"></script>
+    <script src="/menu/menu.js"></script>
+</body>
+</html>

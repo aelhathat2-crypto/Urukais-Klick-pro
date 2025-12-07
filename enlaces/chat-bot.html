@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <meta name="author" content="Manuel Casimiro Carrasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat & Urukais Klick </title>
+    <link rel="stylesheet" href="/mas-css/chatbot.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/boton.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-icon">⛰️</span>
+                <span class="logo-text">Urukais Klick </span>
+                
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/groups/1189456591848515/?ref=share_group_link" target="blank" aria-label="Facebook">Facebook</a>
+                <a href="https://www.youtube.com/channel/UCt8Wwz9KOwsq5VN-q2MnSWg" target="blank" aria-label="youtube">youtube</a>
+                
+            </div>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="/index.html" class="nav-link">Inicio</a></li>
+                <li><a href="/#caracteristicas" class="nav-link">Características</a></li>
+                <li><a href="/#galeria" class="nav-link">Galería</a></li>
+                <li><a href="/#videos" class="nav-link">Videos</a></li>
+                <li><a href="/interior/base-de-dtos.html" class="nav-link">Enciclopedia</a></li>
+                <li><a href="/#contenido/contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="app-container">
+        <!-- HEADER -->
+        <header>
+            <div class="header-title">
+                <div class="header-icon">AI</div>
+                <span>Urukais Klick</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <nav class="header-nav">
+                <button class="nav-btn active" data-panel="chat">💬 Chat</button>
+                <button class="nav-btn" data-panel="dashboard">📊 Dashboard</button>
+            </nav>
+        </header>
+
+        <!-- SIDEBAR -->
+        <aside id="sidebar">
+            <button class="new-chat-btn" id="newChatBtn">+ Nueva Conversación</button>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Conversaciones</h3>
+                <ul class="sidebar-list" id="conversationsList">
+                    <!-- Se llenará dinámicamente -->
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Configuración</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">⚙️ Preferencias</li>
+                    <li class="sidebar-item">🌙 Tema</li>
+                    <li class="sidebar-item">🗑️ Limpiar historial</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- PANEL PRINCIPAL -->
+        <main>
+            <!-- PANEL DE CHAT -->
+            <div id="chatPanel" class="panel active">
+                <div class="chat-container">
+                    <div class="error-message" id="errorMessage"></div>
+                    <div class="messages-area" id="messagesArea">
+                        <div class="message assistant">
+                            <div class="message-content">
+                                ¡Hola! Soy tu asistente de IA. ¿En qué puedo ayudarte hoy?
+                                <span class="message-time" id="initialTime"></span>
+                            </div>
+                        </div>
+                        <div class="typing-indicator" id="typingIndicator">
+                            <div class="typing-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-area">
+                        <textarea 
+                            id="messageInput" 
+                            placeholder="Escribe tu mensaje aquí..."
+                            rows="1"
+                        ></textarea>
+                        <button id="sendBtn">Enviar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANEL DE DASHBOARD -->
+            <div id="dashboardPanel" class="panel">
+                <div class="dashboard-container">
+                    <h2 class="dashboard-title">📊 Dashboard de Analytics</h2>
+                    
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-label">Total Mensajes</div>
+                            <div class="metric-value accent-blue" id="totalMessages">0</div>
+                            <div class="metric-change">En esta sesión</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Conversaciones</div>
+                            <div class="metric-value accent-green" id="totalConversations">0</div>
+                            <div class="metric-change">Guardadas</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Tiempo Promedio</div>
+                            <div class="metric-value" id="avgResponseTime">0s</div>
+                            <div class="metric-change">Tiempo de respuesta</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Tokens Usados</div>
+                            <div class="metric-value" id="totalTokens">0</div>
+                            <div class="metric-change">Aproximado</div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <h3 class="section-title">📝 Historial de Conversaciones</h3>
+                        <table class="history-table" id="historyTable">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Primer Mensaje</th>
+                                    <th>Mensajes</th>
+                                    <th>Duración</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Se llenará dinámicamente -->
+                            </tbody>
+                        </table>
+                        <button class="export-btn" id="exportBtn">📥 Exportar Datos</button>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <h3 class="section-title">📈 Análisis de Sentimiento</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-label">Positivo</div>
+                                <div class="metric-value accent-green" id="sentimentPositive">0</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-label">Neutral</div>
+                                <div class="metric-value" id="sentimentNeutral">0</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-label">Negativo</div>
+                                <div class="metric-value accent-blue" id="sentimentNegative">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span>Sistema operativo</span>
+            </div>
+            <div>v1.0.0 | <strong>Desarrollado por Manuel Casimiro Carrasco</strong></div>
+        </footer>
+    </div>
+    <section>
+            <footer class="urukais-footer">
+    <div class="footer-container">
+        <div class="footer-main">
+            <div class="footer-section">
+                <h3 class="footer-title">Urukais KLICK</h3>
+                <p class="footer-description">
+                    Una especie extraordinaria que habita las montañas alrededor de Alforja, 
+                    fusionando la biología con la geología en perfecta armonía mística.
+                </p>
+                <div class="footer-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">Características</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">847</span>
+                        <span class="stat-label">Número Sagrado</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100</span>
+                        <span class="stat-label">Años/Evento</span>
+                    </div>
+                        <a href="/index.html"  rel="noopener noreferrer" class="sound-link">Volver al Inicio</a>
+                </div>
+                
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Características Principales</h4>
+                <ul class="footer-links">
+                    <li><a href="/interior/sonido-metalico.html">El Sonido Metálico</a></li>
+                    <li><a href="/interior/vision-ecceccional.html">Visión Excepcional</a></li>
+                    <li><a href="/interior/polinizacion.html">Polinización Mineral</a></li>
+                    <li><a href="/interior/dispersion.html">Dispersión de Polen</a></li>
+                    <li><a href="/interior/havilidad.html">Hábitat Montañoso</a></li>
+                    <li><a href="/interior/camuflaje.html">Camuflaje Pétreo</a></li>
+                    <li><a href="/interior/la-vivracion.html">Latido de la Tierra</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Información Geográfica</h4>
+                <div class="geo-info">
+                    <p><strong>Ubicación:</strong> Valle de Alforja, España</p>
+                    <p><strong>Serra de Prades:</strong> Formación montañosa norte</p>
+                    <p><strong>Puigcerver:</strong> Pico principal del sistema</p>
+                    <p><strong>Cueva de l'Ermità:</strong> Lugar sagrado (847m profundidad)</p>
+                </div>
+                
+                <div class="coordinates">
+                    <h5>Coordenadas Clave:</h5>
+                    <p>Alforja: 41.1874°N, 1.0047°E</p>
+                    <p>Serra de Prades: 41.2345°N, 0.9876°E</p>
+                    <p>Puigcerver: 41.2101°N, 1.0123°E</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Datos Científicos</h4>
+                <div class="scientific-data">
+                    <div class="data-item">
+                        <span class="data-label">Frecuencia Klick:</span>
+                        <span class="data-value">847 Hz</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Profundidad máxima:</span>
+                        <span class="data-value">847 m</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Población estimada:</span>
+                        <span class="data-value">3,847 individuos</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Manantiales activados:</span>
+                        <span class="data-value">27 fuentes</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Precisión:</span>
+                        <span class="data-value">97.3%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Urukais Klick. Enciclopedia Digital Manuel Casimiro Carrasco.</p>
+                <p>Documentación científica del fenómeno místico-geológico del valle de Alforja.</p>
+            </div>
+            
+            <div class="footer-sacred-number">
+                <span class="sacred-text">847</span>
+                <span class="sacred-subtitle">El número sagrado</span>
+            </div>
+        </div>
+    </div>
+</footer>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+            
+
+        <nav class="footer-nav">
+            <ul class="footer-column">
+                <li><strong>Secciones</strong></li>
+                <li><a href="/index.html">Inicio en Urukais Klick</a></li>
+                <li><a href="/#caracteristicas">Características Web</a></li>
+                <li><a href="/#galeria">Galería de Proyectos</a></li>
+                <li><a href="/#videos">Videos de Música</a></li>
+                <li><a href="/contenido/contacto.html">Contacto Manuel C.C.</a></li>
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Proyectos</strong></li>
+                <li><a href="https://zingy-pavlova-6aa6a6.netlify.app/" target="_blank" rel="noopener">Urukais Klick Pro 🐸</a></li>
+                <li><a href="https://adorable-belekoy-d064de.netlify.app/" target="_blank" rel="noopener">Clima Urukais</a></li>
+                <li><a href="https://resplendent-faun-6147ea.netlify.app/" target="_blank" rel="noopener">PokéDex Urukais</a></li>
+                <li><a href="https://cute-pegasus-a3487f.netlify.app/" target="_blank" rel="noopener">API Urukais Klick</a></li>
+                <li><a href="https://stately-sherbet-955c30.netlify.app/musica" target="_blank" rel="noopener">Plataforma Musical 🐸</a></li>
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Contenido</strong></li>
+                <li><a href="/contenido/heavy-metal.html" target="_blank" rel="noopener">Heavy Metal</a></li>
+                <li><a href="/contenido/libros.html" target="_blank" rel="noopener">Biblioteca del Infierno</a></li>
+                <li><a href="/contenido/matrix.html" target="_blank" rel="noopener">Centro de Búsqueda Matricial</a></li>
+                <li><a href="/contenido/montanas.html" target="_blank" rel="noopener">Ecosistema de Alforja</a></li>
+                <li><a href="/footer/generador-de-datos.html" target="_blank" rel="noopener">Generador avanzado de datos</a></li>
+            
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Redes & Legal</strong></li>
+                <li><a href="https://www.facebook.com/groups/1189456591848515/?ref=share_group_link" target="_blank" rel="noopener">Facebook</a></li>
+                <li><a href="https://www.youtube.com/channel/UCt8Wwz9KOwsq5VN-q2MnSWg" target="_blank" rel="noopener">YouTube</a></li>
+                <li><a href="/footer/cookies.html">Política de Cookies</a></li>
+                <li><a href="/footer/politica-de-privacidad.html">Política de Privacidad</a></li>
+                <li><a href="https://silly-boba-dc057e.netlify.app/" target="blank">Manuel Casimiro Carrasco</a></li>
+            </ul>
+        </nav>
+        <div class="footer-content">
+            <h3>&copy; 2025 Urukais Klick 🐸. Todos los derechos reservados.</h3>
+            <h3>Desarrollado por Manuel Casimiro Carrasco.👀</h3>
+        </div>
+    </footer>
+      <style>
+        /* Botón de scroll to top */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .scroll-to-top:active {
+            transform: translateY(-1px);
+        }
+
+        /* Estado visible del botón */
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Icono del botón */
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-to-top:hover svg {
+            transform: translateY(-2px);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scroll-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .scroll-to-top svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        /* Contenido mínimo para hacer scroll */
+        body {
+            height: 2000px;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <!-- Contenido mínimo para probar el scroll -->
+        
+    <!-- Botón de subida al principio de la web -->
+    <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Volver al inicio">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+        // Botón de Scroll to Top - Sin Conflictos
+        (function() {
+            'use strict';
+            
+            // Elementos del DOM
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            
+            // Verificar que el elemento existe
+            if (!scrollToTopBtn) {
+                console.warn('Botón scrollToTopBtn no encontrado');
+                return;
+            }
+            
+            // Configuración
+            const scrollOffset = 300; // Píxeles antes de mostrar el botón
+            
+            // Función para mostrar/ocultar el botón
+            function toggleScrollToTopButton() {
+                if (window.pageYOffset > scrollOffset) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            }
+            
+            // Función de scroll suave hacia arriba
+            function scrollToTop() {
+                // Scroll suave usando window.scrollTo
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                // Fallback para navegadores más antiguos
+                const startPosition = window.pageYOffset;
+                const startTime = performance.now();
+                const duration = 800; // Duración en milisegundos
+                
+                function easeInOutQuad(t, b, c, d) {
+                    t /= d/2;
+                    if (t < 1) return c/2*t*t + b;
+                    t--;
+                    return -c/2 * (t*(t-2) - 1) + b;
+                }
+                
+                function animateScroll(currentTime) {
+                    const timeElapsed = currentTime - startTime;
+                    const run = easeInOutQuad(timeElapsed, startPosition, -startPosition, duration);
+                    window.scrollTo(0, run);
+                    
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animateScroll);
+                    }
+                }
+                
+                requestAnimationFrame(animateScroll);
+            }
+            
+            // Event Listeners con verificaciones de seguridad
+            function addEventListeners() {
+                // Scroll event listener
+                window.addEventListener('scroll', function() {
+                    // Usar requestAnimationFrame para optimizar el rendimiento
+                    if (window.requestAnimationFrame) {
+                        requestAnimationFrame(toggleScrollToTopButton);
+                    } else {
+                        toggleScrollToTopButton();
+                    }
+                }, { passive: true }); // passive: true mejora el rendimiento
+                
+                // Click event listener
+                scrollToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    scrollToTop();
+                });
+                
+                // Keyboard accessibility
+                scrollToTopBtn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        scrollToTop();
+                    }
+                });
+            }
+            
+            // Inicialización
+            function init() {
+                // Verificar que el DOM está completamente cargado
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', function() {
+                        toggleScrollToTopButton();
+                        addEventListeners();
+                    });
+                } else {
+                    toggleScrollToTopButton();
+                    addEventListeners();
+                }
+            }
+            
+            // Función para verificar compatibilidad del navegador
+            function checkCompatibility() {
+                // Verificar soporte para smooth scroll
+                const supportsSmoothScroll = 'scrollBehavior' in document.documentElement.style;
+                if (!supportsSmoothScroll) {
+                    console.info('Usando fallback para smooth scroll');
+                }
+                
+                // Verificar soporte para requestAnimationFrame
+                const supportsRAF = 'requestAnimationFrame' in window;
+                if (!supportsRAF) {
+                    console.info('Usando fallback para requestAnimationFrame');
+                }
+            }
+            
+            // Ejecutar inicialización
+            checkCompatibility();
+            init();
+            
+            // Función para detectar cambios de orientación (móvil)
+            window.addEventListener('orientationchange', function() {
+                setTimeout(function() {
+                    toggleScrollToTopButton();
+                }, 500); // Delay para permitir que la orientación cambie
+            });
+            
+            // Prevenir conflictos con otros scripts
+            window.scrollToTopModule = {
+                show: function() {
+                    scrollToTopBtn.classList.add('show');
+                },
+                hide: function() {
+                    scrollToTopBtn.classList.remove('show');
+                },
+                scrollToTop: scrollToTop,
+                toggle: toggleScrollToTopButton
+            };
+            
+        })();
+    </script>
+    <script src="/mas-javascript/chatbot.js"></script>
+</body>
+</html>

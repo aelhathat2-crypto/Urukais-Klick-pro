@@ -1,0 +1,115 @@
+/* Estilo base del botón con enlace */
+.sound-link {
+  /* Eliminar estilos de enlace por defecto */
+  display: inline-block;
+  text-decoration: none;
+  
+  /* Tipografía y espaciado */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 14px 32px;
+  
+  /* Colores y fondo */
+  color: #00f0ff; /* Texto neon cyan */
+  background-color: #0a0a0a; /* Fondo negro profundo */
+  border: 2px solid #00f0ff; /* Borde neon cyan */
+  border-radius: 8px;
+  
+  /* Sombra inicial suave */
+  box-shadow: 
+    0 0 10px rgba(0, 240, 255, 0.3),
+    0 0 20px rgba(0, 240, 255, 0.2),
+    inset 0 0 10px rgba(0, 240, 255, 0.1);
+  
+  /* Transiciones suaves */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Cursor pointer */
+  cursor: pointer;
+  
+  /* Posición relativa para pseudo-elementos */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de brillo intenso en hover */
+.sound-link:hover {
+  color: #ffffff; /* Texto blanco brillante al hover */
+  background-color: #0d0d0d;
+  border-color: #00ffcc; /* Cambio a neon verde-cyan */
+  
+  /* Capas múltiples de brillo neon intenso */
+  box-shadow: 
+    0 0 20px rgba(0, 240, 255, 0.8),
+    0 0 40px rgba(0, 240, 255, 0.6),
+    0 0 60px rgba(0, 255, 204, 0.4),
+    0 0 80px rgba(138, 43, 226, 0.3),
+    inset 0 0 20px rgba(0, 240, 255, 0.3);
+  
+  /* Elevación del botón */
+  transform: translateY(-3px);
+}
+
+/* Efecto en focus (accesibilidad) */
+.sound-link:focus {
+  outline: none;
+  border-color: #a855f7; /* Borde neon púrpura */
+  box-shadow: 
+    0 0 25px rgba(168, 85, 247, 0.9),
+    0 0 50px rgba(168, 85, 247, 0.6),
+    0 0 75px rgba(0, 240, 255, 0.4);
+}
+
+/* Efecto activo (al hacer clic) */
+.sound-link:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 0 15px rgba(0, 240, 255, 0.6),
+    0 0 30px rgba(0, 240, 255, 0.4),
+    inset 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+/* Pseudo-elemento para efecto de brillo adicional */
+.sound-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.4), transparent);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  opacity: 0;
+}
+
+/* Activar pseudo-elemento en hover */
+.sound-link:hover::before {
+  width: 300px;
+  height: 300px;
+  opacity: 0.3;
+}
+
+/* Animación de pulso opcional */
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(0, 240, 255, 0.8),
+      0 0 40px rgba(0, 240, 255, 0.6),
+      0 0 60px rgba(0, 255, 204, 0.4);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px rgba(0, 240, 255, 1),
+      0 0 60px rgba(0, 240, 255, 0.8),
+      0 0 90px rgba(0, 255, 204, 0.6);
+  }
+}
+
+/* Opcional: añadir animación de pulso constante */
+.sound-link.pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}

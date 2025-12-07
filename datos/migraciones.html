@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <meta name="author" content="Manuel Casimiro Carrasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Urukais Klick - El Ecosistema Silencioso de Alforja. Descubre los guardianes minerales de las montañas.">
+    <meta name="theme-color" content="#0a0e27">
+    <title>Migraciones y Desplazamientos Forzados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/menu/menu.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/botones.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/boton.css">
+    <link rel="stylesheet" href="/estilos/caca.css">
+</head>
+<body>
+        
+        <!-- Overlay para móvil -->
+    <div class="mnm-overlay" id="mnmOverlay"></div>
+
+    <!-- Botón toggle reproductor -->
+    <!-- Navegación principal -->
+    <nav class="mnm-nav-container">
+        <div class="mnm-nav-wrapper">
+            <a href="/index.html" class="mnm-logo">Urukais Klick</a>
+            
+            
+            <button class="mnm-hamburger" id="mnmHamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="mnm-nav-menu" id="mnmNavMenu">
+                <!-- Categoría 1: Entretenimiento y Ocio -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Entretenimiento y Ocio
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/buscador-de-peliculas.html" class="mnm-dropdown-item">🎬 Catálogo de Películas</a>
+                        <a href="/cabecera/cine/la-nasa.html" class="mnm-dropdown-item">🚀 Espacio y Astronomía</a>
+                        <a href="/cabecera/cine/peluculas.html" class="mnm-dropdown-item">🎭 Films Favoritos</a>
+                        <a href="/cabecera/cine/noticias.html" class="mnm-dropdown-item">📰 Noticias Actuales</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😂 Humor y Entretenimiento</a>
+                        <a href="/cabecera/musica/hadmed.html" class="mnm-dropdown-item">🎵 Ambiente Musical</a>
+                        <a href="/cabecera/musica/mas.html" class="mnm-dropdown-item">🎶 Musicalife</a>
+                        <a href="/cabecera/musica/musica-clasica.html" class="mnm-dropdown-item">🎼 Música Clásica</a>
+                        <a href="/cabecera/musica/prueva.html" class="mnm-dropdown-item">🎤 Géneros Musicales</a>
+                        <a href="/cabecera/musica/tartituras.html" class="mnm-dropdown-item">🎵 Partituras y Escore</a>
+                        <a href="/cabecera/musica/videos3.html" class="mnm-dropdown-item">📺 Centro de Videos</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 2: Herramientas y Productividad -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Herramientas y Productividad
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/herramientas/chat.html" class="mnm-dropdown-item">💬 Asistente Virtual Urukais</a>
+                        <a href="/cabecera/herramientas/control-de-consultas.html" class="mnm-dropdown-item">🗂 Sistema de Consultas</a>
+                        <a href="/cabecera/herramientas/DevStudio.html" class="mnm-dropdown-item">⚙️ Estudio de Desarrollo</a>
+                        <a href="/cabecera/herramientas/FinTech.html" class="mnm-dropdown-item">💼 Soluciones Financieras</a>
+                        <a href="/cabecera/herramientas/generador-contraseñas.html" class="mnm-dropdown-item">🔐 Generador Seguro de<br>Contraseñas</a>
+                        <a href="/cabecera/herramientas/genesis.html" class="mnm-dropdown-item">🌟 Plataforma Genesis</a>
+                        <a href="/cabecera/herramientas/herramienta.html" class="mnm-dropdown-item">🛠 Suite de Herramientas</a>
+                        <a href="/cabecera/herramientas/hot.html" class="mnm-dropdown-item">🔥 Tendencias Actuales</a>
+                        <a href="/cabecera/herramientas/ia-educativa.html" class="mnm-dropdown-item">🎓 IA Educativa</a>
+                        <a href="/cabecera/herramientas/listado-de-prons.html" class="mnm-dropdown-item">📋 Pronósticos en Línea</a>
+                        <a href="/cabecera/herramientas/localizacion-de-faker.html" class="mnm-dropdown-item">📍 Localizador Universal</a>
+                        <a href="/cabecera/herramientas/mas-datos.html" class="mnm-dropdown-item">📊 Análisis de Datos</a>
+                        <a href="/cabecera/herramientas/pruevas.html" class="mnm-dropdown-item">🧪 Centro de Pruebas</a>
+                        <a href="/cabecera/herramientas/texto-voz.html" class="mnm-dropdown-item">🔊 Síntesis de Voz</a>
+                        <a href="/cabecera/herramientas/tienda-de-urukais.html" class="mnm-dropdown-item">🛒 Tienda Oficial</a>
+                        <a href="/cabecera/buscadores/gestor-de-tareas.html" class="mnm-dropdown-item">✅ Organizador de Tareas</a>
+                        <a href="/cabecera/buscadores/gestor-de-proyectos.html" class="mnm-dropdown-item">📈 Gestor de Proyectos</a>
+                        <a href="/cabecera/cine/ProTask.html" class="mnm-dropdown-item">⏰ ProTask Profesional</a>
+                        <a href="/cabecera/cine/ReservaPro.html" class="mnm-dropdown-item">📅 Sistema de Reservas</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 3: Buscadores y Información -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Buscadores y Información
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/buscadores/buscadorurukais.html" class="mnm-dropdown-item">📚 Búsqueda de Libros</a>
+                        <a href="/cabecera/buscadores/busqueda.html" class="mnm-dropdown-item">🔍 Buscador Matrix</a>
+                        <a href="/cabecera/cine/libros.html" class="mnm-dropdown-item">📖 Biblioteca Digital</a>
+                        <a href="/cabecera/cine/localizador.html" class="mnm-dropdown-item">🌐 Ubicador IP</a>
+                        <a href="/cabecera/buscadores/barcelona-sustainabitil.html" class="mnm-dropdown-item">🌱 Barcelona Sostenible</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 4: Mascotas y Animales -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Mascotas y Animales
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/animales/animales.html" class="mnm-dropdown-item">🐾 Generador de Animales</a>
+                        <a href="/cabecera/animales/buscador-de-perros.html" class="mnm-dropdown-item">🐕 Aplicación de Mascotas</a>
+                        <a href="/cabecera/buscadores/deportes.html" class="mnm-dropdown-item">⚽ Buscador de Equipos<br>Deportivos</a>
+                        <a href="/cabecera/animales/Marketing.html" class="mnm-dropdown-item">📱 Marketing Digital</a>
+                        <a href="/cabecera/animales/multi.html" class="mnm-dropdown-item">💻 Solución Multiplataforma</a>
+                        <a href="/cabecera/animales/neocron.html" class="mnm-dropdown-item">🌟 Neocron Urukais</a>
+                        <a href="/cabecera/animales/portal-interactivo.html" class="mnm-dropdown-item">✨ Portal Interactivo</a>
+                        <a href="/cabecera/animales/site-de-productividad.html" class="mnm-dropdown-item">💼 Suite de Productividad</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 5: Comida y Bebidas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Comida y Bebidas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/comida/coctel.html" class="mnm-dropdown-item">🍹 Sistema de Coctelería</a>
+                        <a href="/cabecera/comida/comida.html" class="mnm-dropdown-item">🍽 Gastronomía Exquisita</a>
+                        <a href="/cabecera/comida/cocia-en-inggles.html" class="mnm-dropdown-item">🍳 Cocina Internacional</a>
+                        
+                    </div>
+                </li>
+
+                <!-- Categoría 6: Creatividad y Arte -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Creatividad y Arte
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/conics/archivo-de-hielo.html" class="mnm-dropdown-item">❄️ Archivo Creativo</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😄 Galería de Humor</a>
+                        <a href="/cabecera/conics/Morty.html" class="mnm-dropdown-item">🎨 Colección Morty</a>
+                        <a href="/cabecera/conics/generador-de-fondos.html" class="mnm-dropdown-item">🎨 Generador de Fondos</a>
+                        <a href="/cabecera/conics/neocron.html" class="mnm-dropdown-item">😊 Control de Estado de Ánimo</a>
+                        <a href="/cabecera/conics/plataforma-de-herattientas.html" class="mnm-dropdown-item">🛠 Plataforma de<br>Herramientas Creativas</a>
+                        <a href="/cabecera/conics/portal-interactivo.html" class="mnm-dropdown-item">🎭 Portal Interactivo</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 7: Medio Ambiente -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Medio Ambiente
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/tierra/ambiental-mundial.html" class="mnm-dropdown-item">🌍 Global Ambiental</a>
+                        <a href="/cabecera/tierra/busca-ciudades.html" class="mnm-dropdown-item">🏙 Explorador de Ciudades</a>
+                        <a href="/cabecera/tierra/busca-cuidad.html" class="mnm-dropdown-item">🌆 Búsqueda Urbana</a>
+                        <a href="/cabecera/tierra/clima.html" class="mnm-dropdown-item">🌤️ Centro Meteorológico</a>
+                        <a href="/cabecera/tierra/deforestacion-mundial.html" class="mnm-dropdown-item">🌲 Control Deforestación</a>
+                        <a href="/cabecera/tierra/gia-de-supervivencia.html" class="mnm-dropdown-item">🧭 Guía de Supervivencia</a>
+                        <a href="/cabecera/tierra/mas.html" class="mnm-dropdown-item">🌿 Más Contenido Verde</a>
+                        <a href="/cabecera/tierra/renacer.html" class="mnm-dropdown-item">🌱 Renacer y Renovación</a>
+                        <a href="/cabecera/tierra/sistema-reus.html" class="mnm-dropdown-item">♻️ Sistema Inteligente de Reciclaje</a>
+                        <a href="/cabecera/tierra/supervivencia33.html" class="mnm-dropdown-item">🏕 Supervivencia Extrema</a>
+                    </div>
+                </li>
+                
+
+                <!-- Categoría 8: Eventos y Citas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Eventos y Citas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/gestor-de-citas.html" class="mnm-dropdown-item">💕 Organizador de Citas</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+ 
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Millones en Movimiento, Vidas en Vilo</h1>
+            <p>Conflictos, violencia, persecución y los efectos crecientes del cambio climático están forzando a un número récord de personas a abandonar sus hogares. La gestión humanitaria de estos flujos migratorios requiere cooperación internacional y respeto absoluto a los derechos humanos.</p>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="estadisticas">
+        <div class="container">
+            <h2 class="section-title">Crisis Global de Desplazamiento</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <svg class="stat-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16 4c0-1.11-.89-2-2-2s-2 .89-2 2 .89 2 2 2 2-.89 2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H16c-.8 0-1.54.37-2.01.97l-2.48 3.1c-.47.59-.77 1.34-.83 2.13l-.16 2.25H8.5c-.83 0-1.5.67-1.5 1.5S7.67 23 8.5 23h11.5c.83 0 1.5-.67 1.5-1.5zM8 9c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"/>
+                    </svg>
+                    <span class="stat-number" data-count="119000000">0</span>
+                    <div class="stat-label">Personas Desplazadas Forzadamente</div>
+                    <div class="stat-description">En todo el mundo (2023)</div>
+                </div>
+                
+                <div class="stat-item">
+                    <svg class="stat-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <span class="stat-number" data-count="35000000">0</span>
+                    <div class="stat-label">Refugiados Bajo Mandato ACNUR</div>
+                    <div class="stat-description">Protección internacional</div>
+                </div>
+                
+                <div class="stat-item">
+                    <svg class="stat-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                    </svg>
+                    <span class="stat-number" data-count="53000000">0</span>
+                    <div class="stat-label">Desplazados Internos</div>
+                    <div class="stat-description">Dentro de sus propios países</div>
+                </div>
+                
+                <div class="stat-item">
+                    <svg class="stat-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <span class="stat-number" data-count="3000000">0</span>
+                    <div class="stat-label">Solicitantes de Asilo</div>
+                    <div class="stat-description">Esperando decisión (2023)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" id="rutas">
+        <div class="container">
+            <h2 class="section-title">Rutas Migratorias Principales</h2>
+            <div class="world-map-container">
+                <svg class="map-svg" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Continentes simplificados -->
+                    <g id="continents">
+                        <!-- África -->
+                        <path class="country" d="M450,180 L520,170 L550,200 L540,280 L500,300 L470,280 L460,220 Z"/>
+                        <path class="country" d="M480,140 L520,130 L540,160 L530,200 L490,210 L470,170 Z"/>
+                        
+                        <!-- Europa -->
+                        <path class="country" d="M480,80 L540,70 L560,100 L550,140 L500,150 L470,120 Z"/>
+                        
+                        <!-- Asia -->
+                        <path class="country" d="M580,100 L680,90 L720,130 L710,180 L650,190 L600,160 Z"/>
+                        <path class="country" d="M700,60 L780,50 L800,80 L790,120 L730,130 L710,90 Z"/>
+                        
+                        <!-- América del Norte -->
+                        <path class="country" d="M100,80 L180,70 L200,110 L190,150 L140,160 L110,130 Z"/>
+                        
+                        <!-- América del Sur -->
+                        <path class="country" d="M200,220 L260,210 L280,250 L270,300 L240,310 L220,270 Z"/>
+                        
+                        <!-- Oceanía -->
+                        <path class="country" d="M750,280 L820,270 L840,310 L830,340 L780,350 L760,320 Z"/>
+                    </g>
+                    
+                    <!-- Rutas migratorias principales -->
+                    <!-- África a Europa -->
+                    <path class="migration-route" data-route="África-Europa" data-people="1.3M" data-countries="Libia, Italia, España" 
+                          d="M480,240 Q520,200 530,120"/>
+                    
+                    <!-- Siria a Europa -->
+                    <path class="migration-route" data-route="Siria-Europa" data-people="650K" data-countries="Siria, Grecia, Alemania" 
+                          d="M650,140 Q600,100 530,90"/>
+                    
+                    <!-- América Central a EE.UU. -->
+                    <path class="migration-route" data-route="Centroamérica-EE.UU." data-people="2.1M" data-countries="Honduras, Guatemala, México" 
+                          d="M180,140 Q150,100 140,90"/>
+                    
+                    <!-- Venezuela a América del Sur -->
+                    <path class="migration-route" data-route="Venezuela-Colombia" data-people="7.1M" data-countries="Venezuela, Colombia, Perú" 
+                          d="M240,240 Q250,200 250,180"/>
+                    
+                    <!-- Myanmar a Tailandia/Malasia -->
+                    <path class="migration-route" data-route="Myanmar-Sudeste Asiático" data-people="1.5M" data-countries="Myanmar, Tailandia, Malasia" 
+                          d="M680,130 Q650,140 620,150"/>
+                    
+                    <!-- Somalia a Yemen -->
+                    <path class="migration-route" data-route="Cuerno de África-Yemen" data-people="380K" data-countries="Somalia, Yemen, Arabia Saudí" 
+                          d="M520,220 Q540,200 560,190"/>
+                    
+                    <!-- Ucrania a Europa -->
+                    <path class="migration-route" data-route="Ucrania-Polonia" data-people="6.5M" data-countries="Ucrania, Polonia, Alemania" 
+                          d="M550,90 Q520,80 510,70"/>
+                    
+                    <!-- Afghanistan a Irán/Pakistán -->
+                    <path class="migration-route" data-route="Afganistán-Irán" data-people="2.2M" data-countries="Afganistán, Irán, Pakistán" 
+                          d="M630,150 Q600,140 580,130"/>
+                </svg>
+                <div class="map-tooltip" id="mapTooltip"></div>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <div class="legend-line"></div>
+                        <span>Rutas migratorias principales</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Causes Section -->
+    <section class="causes-section" id="causas">
+        <div class="container">
+            <h2 class="section-title">Causas del Desplazamiento Forzado</h2>
+            <div class="causes-grid">
+                <div class="cause-card">
+                    <h3>
+                        <svg class="cause-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        Conflictos Armados
+                    </h3>
+                    <p>Guerras civiles, conflictos étnicos y persecución religiosa forzan a millones a abandonar sus hogares. Las violaciones sistemáticas de derechos humanos crean ambientes de terror e inseguridad absoluta.</p>
+                    <div class="cause-stat">68% de los desplazamientos se deben a conflictos</div>
+                </div>
+                
+                <div class="cause-card">
+                    <h3>
+                        <svg class="cause-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        Persecución y Violencia
+                    </h3>
+                    <p>Discriminación por raza, religión, nacionalidad, pertenencia a grupos sociales específicos o opiniones políticas. Los sistemas judiciales y de protección colapsan, dejando a las víctimas sin protección.</p>
+                    <div class="cause-stat">1 de cada 8 refugiados huye de persecución</div>
+                </div>
+                
+                <div class="cause-card">
+                    <h3>
+                        <svg class="cause-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                        </svg>
+                        Violaciones de Derechos Humanos
+                    </h3>
+                    <p>Represión política, censura, torturas y asesinatos selectivos. La falta de protección del Estado obliga a buscar seguridad en otros países, a menudo arriesgando todo en peligrosos viajes.</p>
+                    <div class="cause-stat">95% de violaciones quedan impunes</div>
+                </div>
+                
+                <div class="cause-card">
+                    <h3>
+                        <svg class="cause-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                        Factores Socioeconómicos
+                    </h3>
+                    <p>Pobreza extrema, falta de oportunidades, colapso económico y desesperanza. Aunque no siempre constituyen persecución directa, la desesperación económica puede ser tan apremiante como la violencia.</p>
+                    <div class="cause-stat">30% de desplazamientos por factores económicos</div>
+                </div>
+                
+                <div class="cause-card">
+                    <h3>
+                        <svg class="cause-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        Cambio Climático
+                    </h3>
+                    <p>El cambio climático emerge como nueva causa de desplazamiento. Desastres naturales, desertificación y subida del nivel del mar obligan a comunidades enteras a migrar permanentemente.</p>
+                    <div class="cause-stat">21.5M personas desplazadas por desastres (2023)</div>
+                </div>
+                
+                <div class="cause-card">
+                    <h3>
+                        <svg class="cause-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                        </svg>
+                        Colapso de Servicios Básicos
+                    </h3>
+                    <p>La falta de acceso a salud, educación, agua potable y seguridad económica crea condiciones de vida insostenibles. El colapso estatal deja a las poblaciones sin servicios esenciales.</p>
+                    <div class="cause-stat">2.4 billones sin acceso a servicios básicos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Crisis Migratorias Principales</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2011</div>
+                        <div class="timeline-title">Crisis Siria</div>
+                        <div class="timeline-description">La guerra civil siria desplaza a más de 13 millones de personas, creando la mayor crisis de refugiados de nuestra época.</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2015</div>
+                        <div class="timeline-title">Crisis Europea</div>
+                        <div class="timeline-description">Más de 1 millón de refugiados y migrantes llegan a Europa, principalmente desde Siria, Irak y Afghanistan.</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2016</div>
+                        <div class="timeline-title">Crisis Venezolana</div>
+                        <div class="timeline-description">La crisis política y económica venezolana desplaza a más de 7 millones de venezolanos en América Latina.</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-title">Crisis Rohingya</div>
+                        <div class="timeline-description">Más de 700,000 rohingya huyen de Myanmar hacia Bangladesh debido a la persecución sistemática.</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2022</div>
+                        <div class="timeline-title">Guerra en Ucrania</div>
+                        <div class="timeline-description">La invasión rusa desplaza a más de 8 millones de ucranianos, principalmente hacia Europa.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rights Section -->
+    <section class="rights-section" id="derechos">
+        <div class="container">
+            <h2 class="section-title">Derechos y Protecciones Fundamentales</h2>
+            <div class="rights-grid">
+                <div class="right-card">
+                    <div class="right-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                        </svg>
+                    </div>
+                    <h4>Derecho a la No Devolución</h4>
+                    <p>Los refugiados no pueden ser devueltos a países donde enfrenten persecución. Principio fundamental del derecho internacional.</p>
+                </div>
+                
+                <div class="right-card">
+                    <div class="right-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                        </svg>
+                    </div>
+                    <h4>Derecho al Asilo</h4>
+                    <p>Todo individuo tiene derecho a solicitar protección internacional. El proceso de asilo debe ser justo, eficiente y libre de discriminación.</p>
+                </div>
+                
+                <div class="right-card">
+                    <div class="right-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h4>No Discriminación</h4>
+                    <p>Los refugiados y solicitantes de asilo no pueden ser discriminados por raza, religión, nacionalidad o creencias políticas.</p>
+                </div>
+                
+                <div class="right-card">
+                    <div class="right-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                    </div>
+                    <h4>Unidad Familiar</h4>
+                    <p>Las familias deben mantenerse juntas. Los niños no deben ser separados de sus padres o tutores legales.</p>
+                </div>
+                
+                <div class="right-card">
+                    <div class="right-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                        </svg>
+                    </div>
+                    <h4>Acceso a Servicios</h4>
+                    <p>Los refugiados tienen derecho al trabajo, educación, atención médica y otros servicios básicos en países de acogida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions-section" id="soluciones">
+        <div class="container">
+            <h2 class="section-title">Soluciones y Cooperación Internacional</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <svg class="solution-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <h4>Soluciones Duraderas</h4>
+                    <p>Voluntariado en países de origen, integración local en países de acogida y reasentamiento en terceros países.</p>
+                    <div class="solution-impact">3.4 millones retornaron a sus hogares en 2023</div>
+                </div>
+                
+                <div class="solution-card">
+                    <svg class="solution-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                    </svg>
+                    <h4>Cooperación Regional</h4>
+                    <p>Acuerdos entre países para compartir responsabilidades, recursos y encontrar soluciones conjuntas.</p>
+                    <div class="solution-impact">Mecanismo de Respuesta a Refugiados (MRR)</div>
+                </div>
+                
+                <div class="solution-card">
+                    <svg class="solution-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                    </svg>
+                    <h4>Financiación Sostenible</h4>
+                    <p>Compromisos de largo plazo para apoyar a países de acogida con recursos predecibles y suficientes.</p>
+                    <div class="solution-impact">$20.3 mil millones en financiación (2023)</div>
+                </div>
+                
+                <div class="solution-card">
+                    <svg class="solution-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h4>Abordar Causas Fundamentales</h4>
+                    <p>Invertir en desarrollo, prevención de conflictos y consolidación de paz para reducir desplazamientos.</p>
+                    <div class="solution-impact">El 90% de desplazamientos son evitables</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Humanidad Compartida, Responsabilidad Global</h2>
+            <p>Los desplazamientos forzados son un desafío que requiere respuestas globales basadas en solidaridad, derechos humanos y cooperación. Cada persona merece protección y dignidad.</p>
+            <div class="cta-buttons">
+                <a href="https://www.acnur.org/" class="cta-button primary" target="_blank">Apoyar a ACNUR</a>
+                <a href="https://www.iom.int/" class="cta-button secondary" target="_blank">Conoce la OIM</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   <section>
+            <footer class="urukais-footer">
+    <div class="footer-container">
+        <div class="footer-main">
+            <div class="footer-section">
+                <h3 class="footer-title">Urukais KLICK</h3>
+                <p class="footer-description">
+                    Una especie extraordinaria que habita las montañas alrededor de Alforja, 
+                    fusionando la biología con la geología en perfecta armonía mística.
+                </p>
+                <div class="footer-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">Características</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">847</span>
+                        <span class="stat-label">Número Sagrado</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100</span>
+                        <span class="stat-label">Años/Evento</span>
+                    </div>
+                        <a href="/index.html"  rel="noopener noreferrer" class="sound-link">Volver al Inicio</a>
+                </div>
+                
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Características Principales</h4>
+                <ul class="footer-links">
+                    <li><a href="/interior/sonido-metalico.html">El Sonido Metálico</a></li>
+                    <li><a href="/interior/vision-ecceccional.html">Visión Excepcional</a></li>
+                    <li><a href="/interior/polinizacion.html">Polinización Mineral</a></li>
+                    <li><a href="/interior/dispersion.html">Dispersión de Polen</a></li>
+                    <li><a href="/interior/havilidad.html">Hábitat Montañoso</a></li>
+                    <li><a href="/interior/camuflaje.html">Camuflaje Pétreo</a></li>
+                    <li><a href="/interior/la-vivracion.html">Latido de la Tierra</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Información Geográfica</h4>
+                <div class="geo-info">
+                    <p><strong>Ubicación:</strong> Valle de Alforja, España</p>
+                    <p><strong>Serra de Prades:</strong> Formación montañosa norte</p>
+                    <p><strong>Puigcerver:</strong> Pico principal del sistema</p>
+                    <p><strong>Cueva de l'Ermità:</strong> Lugar sagrado (847m profundidad)</p>
+                </div>
+                
+                <div class="coordinates">
+                    <h5>Coordenadas Clave:</h5>
+                    <p>Alforja: 41.1874°N, 1.0047°E</p>
+                    <p>Serra de Prades: 41.2345°N, 0.9876°E</p>
+                    <p>Puigcerver: 41.2101°N, 1.0123°E</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Datos Científicos</h4>
+                <div class="scientific-data">
+                    <div class="data-item">
+                        <span class="data-label">Frecuencia Klick:</span>
+                        <span class="data-value">847 Hz</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Profundidad máxima:</span>
+                        <span class="data-value">847 m</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Población estimada:</span>
+                        <span class="data-value">3,847 individuos</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Manantiales activados:</span>
+                        <span class="data-value">27 fuentes</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Precisión:</span>
+                        <span class="data-value">97.3%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Urukais Klick. Enciclopedia Digital Manuel Casimiro Carrasco.</p>
+                <p>Documentación científica del fenómeno místico-geológico del valle de Alforja.</p>
+            </div>
+            
+            <div class="footer-sacred-number">
+                <span class="sacred-text">847</span>
+                <span class="sacred-subtitle">El número sagrado</span>
+            </div>
+        </div>
+    </div>
+</footer>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+            
+
+        <nav class="footer-nav">
+            <ul class="footer-column">
+                <li><strong>Secciones</strong></li>
+                <li><a href="/index.html">Inicio en Urukais Klick</a></li>
+                <li><a href="/#caracteristicas">Características Web</a></li>
+                <li><a href="/#galeria">Galería de Proyectos</a></li>
+                <li><a href="/#videos">Videos de Música</a></li>
+                <li><a href="/contenido/contacto.html">Contacto Manuel C.C.</a></li>
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Proyectos</strong></li>
+                <li><a href="https://zingy-pavlova-6aa6a6.netlify.app/" target="_blank" rel="noopener">Urukais Klick Pro 🐸</a></li>
+                <li><a href="https://adorable-belekoy-d064de.netlify.app/" target="_blank" rel="noopener">Clima Urukais</a></li>
+                <li><a href="https://resplendent-faun-6147ea.netlify.app/" target="_blank" rel="noopener">PokéDex Urukais</a></li>
+                <li><a href="https://cute-pegasus-a3487f.netlify.app/" target="_blank" rel="noopener">API Urukais Klick</a></li>
+                <li><a href="https://stately-sherbet-955c30.netlify.app/musica" target="_blank" rel="noopener">Plataforma Musical 🐸</a></li>
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Contenido</strong></li>
+                <li><a href="/contenido/heavy-metal.html" target="_blank" rel="noopener">Heavy Metal</a></li>
+                <li><a href="/contenido/libros.html" target="_blank" rel="noopener">Biblioteca del Infierno</a></li>
+                <li><a href="/contenido/matrix.html" target="_blank" rel="noopener">Centro de Búsqueda Matricial</a></li>
+                <li><a href="/contenido/montanas.html" target="_blank" rel="noopener">Ecosistema de Alforja</a></li>
+                <li><a href="/footer/generador-de-datos.html" target="_blank" rel="noopener">Generador avanzado de datos</a></li>
+            
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Redes & Legal</strong></li>
+                <li><a href="https://www.facebook.com/groups/1189456591848515/?ref=share_group_link" target="_blank" rel="noopener">Facebook</a></li>
+                <li><a href="https://www.youtube.com/channel/UCt8Wwz9KOwsq5VN-q2MnSWg" target="_blank" rel="noopener">YouTube</a></li>
+                <li><a href="/footer/cookies.html">Política de Cookies</a></li>
+                <li><a href="/footer/politica-de-privacidad.html">Política de Privacidad</a></li>
+                <li><a href="https://silly-boba-dc057e.netlify.app/" target="blank">Manuel Casimiro Carrasco</a></li>
+            </ul>
+        </nav>
+        <div class="footer-content">
+            <h3>&copy; 2025 Urukais Klick 🐸. Todos los derechos reservados.</h3>
+            <h3>Desarrollado por Manuel Casimiro Carrasco.👀</h3>
+        </div>
+    </footer>
+      <style>
+        /* Botón de scroll to top */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .scroll-to-top:active {
+            transform: translateY(-1px);
+        }
+
+        /* Estado visible del botón */
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Icono del botón */
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-to-top:hover svg {
+            transform: translateY(-2px);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scroll-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .scroll-to-top svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        /* Contenido mínimo para hacer scroll */
+        body {
+            height: 2000px;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <!-- Contenido mínimo para probar el scroll -->
+        
+    <!-- Botón de subida al principio de la web -->
+    <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Volver al inicio">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+        // Botón de Scroll to Top - Sin Conflictos
+        (function() {
+            'use strict';
+            
+            // Elementos del DOM
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            
+            // Verificar que el elemento existe
+            if (!scrollToTopBtn) {
+                console.warn('Botón scrollToTopBtn no encontrado');
+                return;
+            }
+            
+            // Configuración
+            const scrollOffset = 300; // Píxeles antes de mostrar el botón
+            
+            // Función para mostrar/ocultar el botón
+            function toggleScrollToTopButton() {
+                if (window.pageYOffset > scrollOffset) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            }
+            
+            // Función de scroll suave hacia arriba
+            function scrollToTop() {
+                // Scroll suave usando window.scrollTo
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                // Fallback para navegadores más antiguos
+                const startPosition = window.pageYOffset;
+                const startTime = performance.now();
+                const duration = 800; // Duración en milisegundos
+                
+                function easeInOutQuad(t, b, c, d) {
+                    t /= d/2;
+                    if (t < 1) return c/2*t*t + b;
+                    t--;
+                    return -c/2 * (t*(t-2) - 1) + b;
+                }
+                
+                function animateScroll(currentTime) {
+                    const timeElapsed = currentTime - startTime;
+                    const run = easeInOutQuad(timeElapsed, startPosition, -startPosition, duration);
+                    window.scrollTo(0, run);
+                    
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animateScroll);
+                    }
+                }
+                
+                requestAnimationFrame(animateScroll);
+            }
+            
+            // Event Listeners con verificaciones de seguridad
+            function addEventListeners() {
+                // Scroll event listener
+                window.addEventListener('scroll', function() {
+                    // Usar requestAnimationFrame para optimizar el rendimiento
+                    if (window.requestAnimationFrame) {
+                        requestAnimationFrame(toggleScrollToTopButton);
+                    } else {
+                        toggleScrollToTopButton();
+                    }
+                }, { passive: true }); // passive: true mejora el rendimiento
+                
+                // Click event listener
+                scrollToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    scrollToTop();
+                });
+                
+                // Keyboard accessibility
+                scrollToTopBtn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        scrollToTop();
+                    }
+                });
+            }
+            
+            // Inicialización
+            function init() {
+                // Verificar que el DOM está completamente cargado
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', function() {
+                        toggleScrollToTopButton();
+                        addEventListeners();
+                    });
+                } else {
+                    toggleScrollToTopButton();
+                    addEventListeners();
+                }
+            }
+            
+            // Función para verificar compatibilidad del navegador
+            function checkCompatibility() {
+                // Verificar soporte para smooth scroll
+                const supportsSmoothScroll = 'scrollBehavior' in document.documentElement.style;
+                if (!supportsSmoothScroll) {
+                    console.info('Usando fallback para smooth scroll');
+                }
+                
+                // Verificar soporte para requestAnimationFrame
+                const supportsRAF = 'requestAnimationFrame' in window;
+                if (!supportsRAF) {
+                    console.info('Usando fallback para requestAnimationFrame');
+                }
+            }
+            
+            // Ejecutar inicialización
+            checkCompatibility();
+            init();
+            
+            // Función para detectar cambios de orientación (móvil)
+            window.addEventListener('orientationchange', function() {
+                setTimeout(function() {
+                    toggleScrollToTopButton();
+                }, 500); // Delay para permitir que la orientación cambie
+            });
+            
+            // Prevenir conflictos con otros scripts
+            window.scrollToTopModule = {
+                show: function() {
+                    scrollToTopBtn.classList.add('show');
+                },
+                hide: function() {
+                    scrollToTopBtn.classList.remove('show');
+                },
+                scrollToTop: scrollToTop,
+                toggle: toggleScrollToTopButton
+            };
+            
+        })();
+    </script>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Animated Counter Function
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function updateCounter() {
+                start += increment;
+                if (start < target) {
+                    element.textContent = formatNumber(Math.floor(start));
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = formatNumber(target);
+                }
+            }
+            
+            updateCounter();
+        }
+
+        // Format number with appropriate suffixes
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1) + 'M';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(1) + 'K';
+            }
+            return num.toString();
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Animate counters
+                    if (entry.target.classList.contains('stat-number')) {
+                        const target = parseInt(entry.target.dataset.count);
+                        animateCounter(entry.target, target);
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Map tooltip functionality
+        const tooltip = document.getElementById('mapTooltip');
+        const routes = document.querySelectorAll('.migration-route');
+        
+        routes.forEach(route => {
+            route.addEventListener('mouseenter', (e) => {
+                const routeName = route.dataset.route;
+                const people = route.dataset.people;
+                const countries = route.dataset.countries;
+                tooltip.innerHTML = `
+                    <strong>${routeName}</strong><br>
+                    ${people} personas<br>
+                    <em>${countries}</em>
+                `;
+                tooltip.classList.add('show');
+            });
+            
+            route.addEventListener('mousemove', (e) => {
+                tooltip.style.left = e.pageX + 10 + 'px';
+                tooltip.style.top = e.pageY - 30 + 'px';
+            });
+            
+            route.addEventListener('mouseleave', () => {
+                tooltip.classList.remove('show');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Observe elements when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Observe counters
+            document.querySelectorAll('.stat-number').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Add hover effects to cards
+            document.querySelectorAll('.cause-card, .right-card, .solution-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Animate route drawing on scroll
+            const mapSection = document.querySelector('.world-map-container');
+            if (mapSection) {
+                const mapObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Animate migration routes
+                            routes.forEach((route, index) => {
+                                setTimeout(() => {
+                                    route.style.animationDelay = `${index * 0.5}s`;
+                                    route.style.animationPlayState = 'running';
+                                }, index * 200);
+                            });
+                            mapObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                
+                mapObserver.observe(mapSection);
+            }
+        });
+
+        // Add parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+    
+    <script src="/javascript/botones.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/botones.js"></script>
+    <script src="/menu/menu.js"></script>
+</body>
+</html>

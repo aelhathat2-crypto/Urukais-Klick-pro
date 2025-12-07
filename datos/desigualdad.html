@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <meta name="author" content="Manuel Casimiro Carrasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Urukais Klick - El Ecosistema Silencioso de Alforja. Descubre los guardianes minerales de las montañas.">
+    <meta name="theme-color" content="#0a0e27">
+    <title>La Brecha Creciente: Desigualdad Económica y Social</title>
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/menu/menu.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/estilos/desigualdad.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/boton.css">
+</head>
+<body>
+                  
+        <!-- Overlay para móvil -->
+    <div class="mnm-overlay" id="mnmOverlay"></div>
+
+    <!-- Botón toggle reproductor -->
+    <!-- Navegación principal -->
+    <nav class="mnm-nav-container">
+        <div class="mnm-nav-wrapper">
+            <a href="/index.html" class="mnm-logo">Urukais Klick</a>
+            
+            
+            <button class="mnm-hamburger" id="mnmHamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="mnm-nav-menu" id="mnmNavMenu">
+                <!-- Categoría 1: Entretenimiento y Ocio -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Entretenimiento y Ocio
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/buscador-de-peliculas.html" class="mnm-dropdown-item">🎬 Catálogo de Películas</a>
+                        <a href="/cabecera/cine/la-nasa.html" class="mnm-dropdown-item">🚀 Espacio y Astronomía</a>
+                        <a href="/cabecera/cine/peluculas.html" class="mnm-dropdown-item">🎭 Films Favoritos</a>
+                        <a href="/cabecera/cine/noticias.html" class="mnm-dropdown-item">📰 Noticias Actuales</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😂 Humor y Entretenimiento</a>
+                        <a href="/cabecera/musica/hadmed.html" class="mnm-dropdown-item">🎵 Ambiente Musical</a>
+                        <a href="/cabecera/musica/mas.html" class="mnm-dropdown-item">🎶 Musicalife</a>
+                        <a href="/cabecera/musica/musica-clasica.html" class="mnm-dropdown-item">🎼 Música Clásica</a>
+                        <a href="/cabecera/musica/prueva.html" class="mnm-dropdown-item">🎤 Géneros Musicales</a>
+                        <a href="/cabecera/musica/tartituras.html" class="mnm-dropdown-item">🎵 Partituras y Escore</a>
+                        <a href="/cabecera/musica/videos3.html" class="mnm-dropdown-item">📺 Centro de Videos</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 2: Herramientas y Productividad -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Herramientas y Productividad
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/herramientas/chat.html" class="mnm-dropdown-item">💬 Asistente Virtual Urukais</a>
+                        <a href="/cabecera/herramientas/control-de-consultas.html" class="mnm-dropdown-item">🗂 Sistema de Consultas</a>
+                        <a href="/cabecera/herramientas/DevStudio.html" class="mnm-dropdown-item">⚙️ Estudio de Desarrollo</a>
+                        <a href="/cabecera/herramientas/FinTech.html" class="mnm-dropdown-item">💼 Soluciones Financieras</a>
+                        <a href="/cabecera/herramientas/generador-contraseñas.html" class="mnm-dropdown-item">🔐 Generador Seguro de<br>Contraseñas</a>
+                        <a href="/cabecera/herramientas/genesis.html" class="mnm-dropdown-item">🌟 Plataforma Genesis</a>
+                        <a href="/cabecera/herramientas/herramienta.html" class="mnm-dropdown-item">🛠 Suite de Herramientas</a>
+                        <a href="/cabecera/herramientas/hot.html" class="mnm-dropdown-item">🔥 Tendencias Actuales</a>
+                        <a href="/cabecera/herramientas/ia-educativa.html" class="mnm-dropdown-item">🎓 IA Educativa</a>
+                        <a href="/cabecera/herramientas/listado-de-prons.html" class="mnm-dropdown-item">📋 Pronósticos en Línea</a>
+                        <a href="/cabecera/herramientas/localizacion-de-faker.html" class="mnm-dropdown-item">📍 Localizador Universal</a>
+                        <a href="/cabecera/herramientas/mas-datos.html" class="mnm-dropdown-item">📊 Análisis de Datos</a>
+                        <a href="/cabecera/herramientas/pruevas.html" class="mnm-dropdown-item">🧪 Centro de Pruebas</a>
+                        <a href="/cabecera/herramientas/texto-voz.html" class="mnm-dropdown-item">🔊 Síntesis de Voz</a>
+                        <a href="/cabecera/herramientas/tienda-de-urukais.html" class="mnm-dropdown-item">🛒 Tienda Oficial</a>
+                        <a href="/cabecera/buscadores/gestor-de-tareas.html" class="mnm-dropdown-item">✅ Organizador de Tareas</a>
+                        <a href="/cabecera/buscadores/gestor-de-proyectos.html" class="mnm-dropdown-item">📈 Gestor de Proyectos</a>
+                        <a href="/cabecera/cine/ProTask.html" class="mnm-dropdown-item">⏰ ProTask Profesional</a>
+                        <a href="/cabecera/cine/ReservaPro.html" class="mnm-dropdown-item">📅 Sistema de Reservas</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 3: Buscadores y Información -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Buscadores y Información
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/buscadores/buscadorurukais.html" class="mnm-dropdown-item">📚 Búsqueda de Libros</a>
+                        <a href="/cabecera/buscadores/busqueda.html" class="mnm-dropdown-item">🔍 Buscador Matrix</a>
+                        <a href="/cabecera/cine/libros.html" class="mnm-dropdown-item">📖 Biblioteca Digital</a>
+                        <a href="/cabecera/cine/localizador.html" class="mnm-dropdown-item">🌐 Ubicador IP</a>
+                        <a href="/cabecera/buscadores/barcelona-sustainabitil.html" class="mnm-dropdown-item">🌱 Barcelona Sostenible</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 4: Mascotas y Animales -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Mascotas y Animales
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/animales/animales.html" class="mnm-dropdown-item">🐾 Generador de Animales</a>
+                        <a href="/cabecera/animales/buscador-de-perros.html" class="mnm-dropdown-item">🐕 Aplicación de Mascotas</a>
+                        <a href="/cabecera/buscadores/deportes.html" class="mnm-dropdown-item">⚽ Buscador de Equipos<br>Deportivos</a>
+                        <a href="/cabecera/animales/Marketing.html" class="mnm-dropdown-item">📱 Marketing Digital</a>
+                        <a href="/cabecera/animales/multi.html" class="mnm-dropdown-item">💻 Solución Multiplataforma</a>
+                        <a href="/cabecera/animales/neocron.html" class="mnm-dropdown-item">🌟 Neocron Urukais</a>
+                        <a href="/cabecera/animales/portal-interactivo.html" class="mnm-dropdown-item">✨ Portal Interactivo</a>
+                        <a href="/cabecera/animales/site-de-productividad.html" class="mnm-dropdown-item">💼 Suite de Productividad</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 5: Comida y Bebidas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Comida y Bebidas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/comida/coctel.html" class="mnm-dropdown-item">🍹 Sistema de Coctelería</a>
+                        <a href="/cabecera/comida/comida.html" class="mnm-dropdown-item">🍽 Gastronomía Exquisita</a>
+                        <a href="/cabecera/comida/cocia-en-inggles.html" class="mnm-dropdown-item">🍳 Cocina Internacional</a>
+                        
+                    </div>
+                </li>
+
+                <!-- Categoría 6: Creatividad y Arte -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Creatividad y Arte
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/conics/archivo-de-hielo.html" class="mnm-dropdown-item">❄️ Archivo Creativo</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😄 Galería de Humor</a>
+                        <a href="/cabecera/conics/Morty.html" class="mnm-dropdown-item">🎨 Colección Morty</a>
+                        <a href="/cabecera/conics/generador-de-fondos.html" class="mnm-dropdown-item">🎨 Generador de Fondos</a>
+                        <a href="/cabecera/conics/neocron.html" class="mnm-dropdown-item">😊 Control de Estado de Ánimo</a>
+                        <a href="/cabecera/conics/plataforma-de-herattientas.html" class="mnm-dropdown-item">🛠 Plataforma de<br>Herramientas Creativas</a>
+                        <a href="/cabecera/conics/portal-interactivo.html" class="mnm-dropdown-item">🎭 Portal Interactivo</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 7: Medio Ambiente -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Medio Ambiente
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/tierra/ambiental-mundial.html" class="mnm-dropdown-item">🌍 Global Ambiental</a>
+                        <a href="/cabecera/tierra/busca-ciudades.html" class="mnm-dropdown-item">🏙 Explorador de Ciudades</a>
+                        <a href="/cabecera/tierra/busca-cuidad.html" class="mnm-dropdown-item">🌆 Búsqueda Urbana</a>
+                        <a href="/cabecera/tierra/clima.html" class="mnm-dropdown-item">🌤️ Centro Meteorológico</a>
+                        <a href="/cabecera/tierra/deforestacion-mundial.html" class="mnm-dropdown-item">🌲 Control Deforestación</a>
+                        <a href="/cabecera/tierra/gia-de-supervivencia.html" class="mnm-dropdown-item">🧭 Guía de Supervivencia</a>
+                        <a href="/cabecera/tierra/mas.html" class="mnm-dropdown-item">🌿 Más Contenido Verde</a>
+                        <a href="/cabecera/tierra/renacer.html" class="mnm-dropdown-item">🌱 Renacer y Renovación</a>
+                        <a href="/cabecera/tierra/sistema-reus.html" class="mnm-dropdown-item">♻️ Sistema Inteligente de Reciclaje</a>
+                        <a href="/cabecera/tierra/supervivencia33.html" class="mnm-dropdown-item">🏕 Supervivencia Extrema</a>
+                    </div>
+                </li>
+                
+
+                <!-- Categoría 8: Eventos y Citas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Eventos y Citas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/gestor-de-citas.html" class="mnm-dropdown-item">💕 Organizador de Citas</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+ 
+
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="container">
+                <div class="inequality-icon"></div>
+                <h1 class="hero-title">La Brecha que Divide</h1>
+                <p class="hero-subtitle">
+                    Mientras los 8 hombres más ricos del mundo tienen la misma riqueza que la mitad más pobre de la humanidad, la desigualdad económica erosiona los cimientos de nuestras sociedades.
+                </p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat1">8</div>
+                        <div class="stat-label">hombres tienen tanto como 3.8 mil millones de personas</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat2">$2.3T</div>
+                        <div class="stat-label">ganado por billionaires durante COVID-19</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat3">80%</div>
+                        <div class="stat-label">del crecimiento va al 1% más rico</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat4">1.3B</div>
+                        <div class="stat-label">personas viven en pobreza multidimensional</div>
+                    </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="#causas" class="btn btn-crisis">Entiende las Causas</a>
+                    <a href="#soluciones" class="btn btn-success">Descubre Soluciones</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wealth Distribution Visual -->
+    <section class="section">
+        <div class="container">
+            <div class="wealth-visual">
+                <h2>Distribución de la Riqueza Global</h2>
+                <p class="section-subtitle">Cómo está dividida la riqueza mundial entre la población</p>
+                
+                <div class="wealth-bars">
+                    <div class="wealth-bar top1" style="--bar-height: 180px;" data-tooltip="1% más rico: 43.4% de la riqueza">
+                        <div class="wealth-bar-percentage">43%</div>
+                        <div class="wealth-bar-label">1% más rico</div>
+                    </div>
+                    <div class="wealth-bar top10" style="--bar-height: 150px;" data-tooltip="10% más rico: 76.2% de la riqueza">
+                        <div class="wealth-bar-percentage">76%</div>
+                        <div class="wealth-bar-label">10% más rico</div>
+                    </div>
+                    <div class="wealth-bar top50" style="--bar-height: 100px;" data-tooltip="50% medio: 97.8% de la riqueza">
+                        <div class="wealth-bar-percentage">98%</div>
+                        <div class="wealth-bar-label">50% medio</div>
+                    </div>
+                    <div class="wealth-bar bottom50" style="--bar-height: 20px;" data-tooltip="50% más pobre: Solo 2.2% de la riqueza">
+                        <div class="wealth-bar-percentage">2%</div>
+                        <div class="wealth-bar-label">50% más pobre</div>
+                    </div>
+                </div>
+                
+                <p><small>Datos del Banco Mundial y Credit Suisse Global Wealth Report 2023</small></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Causes Section -->
+    <section class="section section-darker" id="causas">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Las Raíces de la Desigualdad</h2>
+                <p class="section-subtitle">
+                    La desigualdad no surge por casualidad. Múltiples factores estructurales y sistémicos han creado y amplificado la brecha entre ricos y pobres.
+                </p>
+            </div>
+
+            <div class="causes-grid">
+                <div class="cause-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+                    </svg>
+                    <h3 class="card-title">Concentración de Capital</h3>
+                    <p class="card-description">
+                        El capital se reproduce más rápido que los ingresos laborales. Los ricos invierten y aumentan su riqueza exponencialmente, mientras los pobres struggles para mantener el ritmo.
+                    </p>
+                </div>
+
+                <div class="cause-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S9.5 8.83 9.5 8zm7 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <h3 class="card-title">Políticas Fiscales</h3>
+                    <p class="card-description">
+                        Impuestos más bajos para los ricos, subsidios corporativos y regulación financiera débil crean ventajas sistemáticas para quienes ya tienen poder económico.
+                    </p>
+                </div>
+
+                <div class="cause-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 11H7v9h2v-9zm4-4h-2v13h2V7zm4-4h-2v17h2V3z"/>
+                    </svg>
+                    <h3 class="card-title">Automatización</h3>
+                    <p class="card-description">
+                        La automatización y la IA eliminan empleos de clase media mientras aumentan la demanda de habilidades técnicas, creando una brecha entre trabajadores cualificados y no cualificados.
+                    </p>
+                </div>
+
+                <div class="cause-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="card-title">Globalización</h3>
+                    <p class="card-description">
+                        Mientras las corporaciones globalizan operaciones, los trabajadores enfrentan competencia global que reduce salarios y derechos laborales en países desarrollados.
+                    </p>
+                </div>
+
+                <div class="cause-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S9.5 8.83 9.5 8zm7 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <h3 class="card-title">Discriminación Sistémica</h3>
+                    <p class="card-description">
+                        Racismo, sexismo, edadismo y otras formas de discriminación crean barreras sistemáticas que limitan las oportunidades económicas de grupos vulnerables.
+                    </p>
+                </div>
+
+                <div class="cause-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 11H7v9h2v-9zm4-4h-2v13h2V7zm4-4h-2v17h2V3z"/>
+                    </svg>
+                    <h3 class="card-title">Herencia de Riqueza</h3>
+                    <p class="card-description">
+                        Las fortunas se transmiten de generación en generación, creando dynasties económicas que perpetúan la ventaja a través de educación, conexiones y capital inicial.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="section" id="impacto">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">El Costo Humano</h2>
+                <p class="section-subtitle">
+                    La desigualdad no es solo una estadística: tiene consecuencias devastadoras en la salud, educación, esperanza de vida y bienestar de millones de personas.
+                </p>
+            </div>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="card-title">Desigualdad en Salud</h3>
+                    <p class="card-description">
+                        En países desarrollados, la diferencia en esperanza de vida entre ricos y pobres puede ser de hasta 20 años. Los ricos tienen mejor acceso a atención médica preventiva y especializada.
+                    </p>
+                </div>
+
+                <div class="impact-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.909V17h2V9L12 3z"/>
+                    </svg>
+                    <h3 class="card-title">Brecha Educativa</h3>
+                    <p class="card-description">
+                        Los niños de familias pobres tienen menos acceso a educación de calidad, resultando en una transmisión intergeneracional de la pobreza y limitada movilidad social.
+                    </p>
+                </div>
+
+                <div class="impact-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S9.5 8.83 9.5 8zm7 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <h3 class="card-title">Inestabilidad Social</h3>
+                    <p class="card-description">
+                        La alta desigualdad correlaciona con mayores tasas de criminalidad, unrest social y political polarization. El 80% de los conflictos están ligados a desigualdad extrema.
+                    </p>
+                </div>
+
+                <div class="impact-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="card-title">Límites al Crecimiento</h3>
+                    <p class="card-description">
+                        Países con menor desigualdad experimentan mayor crecimiento económico sostenible. La concentración de riqueza reduce la demanda agregada y frena el desarrollo general.
+                    </p>
+                </div>
+
+                <div class="impact-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S9.5 8.83 9.5 8zm7 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <h3 class="card-title">Salud Mental</h3>
+                    <p class="card-description">
+                        La presión social de la desigualdad genera ansiedad, depression y estrés crónico. Las tasas de suicidio son 50% más altas en comunidades con mayor desigualdad.
+                    </p>
+                </div>
+
+                <div class="impact-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="card-title">Impacto Ambiental</h3>
+                    <p class="card-description">
+                        Los ricos consumen desproporcionalmente más recursos y generan más emissions, mientras los pobres suffer más de los efectos del cambio climático.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Data Comparison -->
+    <section class="section section-darker" id="datos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Desigualdad Global en Números</h2>
+                <p class="section-subtitle">
+                    Comparaciones directas que revelan la magnitud de la brecha económica mundial.
+                </p>
+            </div>
+
+            <div class="comparison-container">
+                <div class="comparison-bars">
+                    <div class="comparison-row">
+                        <div class="comparison-label">Ricos (1%)</div>
+                        <div class="comparison-bar-container">
+                            <div class="comparison-bar-fill" style="width: 43%; background: var(--color-crisis-500);">43%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-label">Clase Alta (10%)</div>
+                        <div class="comparison-bar-container">
+                            <div class="comparison-bar-fill" style="width: 76%; background: var(--color-inequality-500);">76%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-label">Clase Media (50%)</div>
+                        <div class="comparison-bar-container">
+                            <div class="comparison-bar-fill" style="width: 98%; background: var(--color-wealth-500);">98%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-label">Pobre (50%)</div>
+                        <div class="comparison-bar-container">
+                            <div class="comparison-bar-fill" style="width: 2%; background: var(--color-division-500);">2%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 3rem; color: var(--color-text-primary);">Comparación de Oportunidades</h3>
+                <div class="comparison-bars">
+                    <div class="comparison-row">
+                        <div class="comparison-label">Acceso Universitario</div>
+                        <div class="comparison-bar-container">
+                            <div class="comparison-bar-fill" style="width: 90%; background: var(--color-wealth-500);">Ricos: 90%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-label">Esperanza de Vida</div>
+                        <div class="comparison-bar-container">
+                            <div class="comparison-bar-fill" style="width: 75%; background: var(--color-wealth-500);">Ricos: +20 años</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-row">
+                        <div class="comparison-label">Rico vs Pobre</div>
+                        <div class="comparison-bar-container">
+                            <div class="comparison-bar-fill" style="width: 15%; background: var(--color-division-500);">Pobre: 15%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem;"><small>Fuente: Oxford Poverty & Human Development Initiative, WHO, Credit Suisse</small></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="section" id="soluciones">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Camino hacia la Equidad</h2>
+                <p class="section-subtitle">
+                    Existen soluciones probadas y viables para reducir la desigualdad y crear sociedades más justas y prósperas.
+                </p>
+            </div>
+
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+                    </svg>
+                    <h3 class="card-title">Políticas Fiscales Progresivas</h3>
+                    <p class="card-description">
+                        Sistemas tributarios que cobren más a quienes más tienen, con impuestos progresivos sobre la renta, patrimonios y grandes herencias para financiar servicios públicos.
+                    </p>
+                </div>
+
+                <div class="solution-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.909V17h2V9L12 3z"/>
+                    </svg>
+                    <h3 class="card-title">Educación Universal</h3>
+                    <p class="card-description">
+                        Acceso gratuito y de calidad a educación preescolar, primaria, secundaria y superior, con programas específicos para grupos marginados.
+                    </p>
+                </div>
+
+                <div class="solution-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S9.5 8.83 9.5 8zm7 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <h3 class="card-title">Salario Mínimo Digno</h3>
+                    <p class="card-description">
+                        Establecer salarios mínimos que permitan una vida digna, con indexación al costo de vida y protección contra la inflación.
+                    </p>
+                </div>
+
+                <div class="solution-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="card-title">Atención Médica Universal</h3>
+                    <p class="card-description">
+                        Sistemas de salud universales y gratuitos que aseguren atención médica equitativa independientemente del nivel socioeconómico.
+                    </p>
+                </div>
+
+                <div class="solution-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5zM9.5 8c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5S9.5 8.83 9.5 8zm7 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <h3 class="card-title">Regulación Financiera</h3>
+                    <p class="card-description">
+                        Limitar la especulación financiera, imponer regulaciones que prevengan crisis económicas y reducir los beneficios fiscales para el capital especulativo.
+                    </p>
+                </div>
+
+                <div class="solution-card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <h3 class="card-title">Programas de Transferencia</h3>
+                    <p class="card-description">
+                        Transferencias directas a familias de bajos ingresos, programas de renta básica universal y subsidios focalizados para reducir la pobreza inmediata.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <h3 class="cta-title">Únete a la Lucha por la Equidad</h3>
+                <p class="cta-description">
+                    La desigualdad no se resuelve sola. Requiere action ciudadana, presión política y voluntad colectiva para crear un mundo más justo para todos.
+                </p>
+                <div class="cta-actions">
+                    <a href="https://www.oxfam.org" target="_blank" class="btn btn-inequality">Apoya Oxfam</a>
+                    <a href="https://www.globalcitizen.org" target="_blank" class="btn btn-wealth">Únete a Global Citizen</a>
+                    <a href="https://www.inequality.org" target="_blank" class="btn btn-success">Aprende Más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section>
+            <footer class="urukais-footer">
+    <div class="footer-container">
+        <div class="footer-main">
+            <div class="footer-section">
+                <h3 class="footer-title">Urukais KLICK</h3>
+                <p class="footer-description">
+                    Una especie extraordinaria que habita las montañas alrededor de Alforja, 
+                    fusionando la biología con la geología en perfecta armonía mística.
+                </p>
+                <div class="footer-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">Características</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">847</span>
+                        <span class="stat-label">Número Sagrado</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100</span>
+                        <span class="stat-label">Años/Evento</span>
+                    </div>
+                        <a href="/index.html"  rel="noopener noreferrer" class="sound-link">Volver al Inicio</a>
+                </div>
+                
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Características Principales</h4>
+                <ul class="footer-links">
+                    <li><a href="/interior/sonido-metalico.html">El Sonido Metálico</a></li>
+                    <li><a href="/interior/vision-ecceccional.html">Visión Excepcional</a></li>
+                    <li><a href="/interior/polinizacion.html">Polinización Mineral</a></li>
+                    <li><a href="/interior/dispersion.html">Dispersión de Polen</a></li>
+                    <li><a href="/interior/havilidad.html">Hábitat Montañoso</a></li>
+                    <li><a href="/interior/camuflaje.html">Camuflaje Pétreo</a></li>
+                    <li><a href="/interior/la-vivracion.html">Latido de la Tierra</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Información Geográfica</h4>
+                <div class="geo-info">
+                    <p><strong>Ubicación:</strong> Valle de Alforja, España</p>
+                    <p><strong>Serra de Prades:</strong> Formación montañosa norte</p>
+                    <p><strong>Puigcerver:</strong> Pico principal del sistema</p>
+                    <p><strong>Cueva de l'Ermità:</strong> Lugar sagrado (847m profundidad)</p>
+                </div>
+                
+                <div class="coordinates">
+                    <h5>Coordenadas Clave:</h5>
+                    <p>Alforja: 41.1874°N, 1.0047°E</p>
+                    <p>Serra de Prades: 41.2345°N, 0.9876°E</p>
+                    <p>Puigcerver: 41.2101°N, 1.0123°E</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Datos Científicos</h4>
+                <div class="scientific-data">
+                    <div class="data-item">
+                        <span class="data-label">Frecuencia Klick:</span>
+                        <span class="data-value">847 Hz</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Profundidad máxima:</span>
+                        <span class="data-value">847 m</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Población estimada:</span>
+                        <span class="data-value">3,847 individuos</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Manantiales activados:</span>
+                        <span class="data-value">27 fuentes</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Precisión:</span>
+                        <span class="data-value">97.3%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Urukais Klick. Enciclopedia Digital Manuel Casimiro Carrasco.</p>
+                <p>Documentación científica del fenómeno místico-geológico del valle de Alforja.</p>
+            </div>
+            
+            <div class="footer-sacred-number">
+                <span class="sacred-text">847</span>
+                <span class="sacred-subtitle">El número sagrado</span>
+            </div>
+        </div>
+    </div>
+</footer>
+    </section>
+      <style>
+        /* Botón de scroll to top */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .scroll-to-top:active {
+            transform: translateY(-1px);
+        }
+
+        /* Estado visible del botón */
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Icono del botón */
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-to-top:hover svg {
+            transform: translateY(-2px);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scroll-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .scroll-to-top svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        /* Contenido mínimo para hacer scroll */
+        body {
+            height: 2000px;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <!-- Contenido mínimo para probar el scroll -->
+        
+    <!-- Botón de subida al principio de la web -->
+    <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Volver al inicio">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+        // Botón de Scroll to Top - Sin Conflictos
+        (function() {
+            'use strict';
+            
+            // Elementos del DOM
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            
+            // Verificar que el elemento existe
+            if (!scrollToTopBtn) {
+                console.warn('Botón scrollToTopBtn no encontrado');
+                return;
+            }
+            
+            // Configuración
+            const scrollOffset = 300; // Píxeles antes de mostrar el botón
+            
+            // Función para mostrar/ocultar el botón
+            function toggleScrollToTopButton() {
+                if (window.pageYOffset > scrollOffset) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            }
+            
+            // Función de scroll suave hacia arriba
+            function scrollToTop() {
+                // Scroll suave usando window.scrollTo
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                // Fallback para navegadores más antiguos
+                const startPosition = window.pageYOffset;
+                const startTime = performance.now();
+                const duration = 800; // Duración en milisegundos
+                
+                function easeInOutQuad(t, b, c, d) {
+                    t /= d/2;
+                    if (t < 1) return c/2*t*t + b;
+                    t--;
+                    return -c/2 * (t*(t-2) - 1) + b;
+                }
+                
+                function animateScroll(currentTime) {
+                    const timeElapsed = currentTime - startTime;
+                    const run = easeInOutQuad(timeElapsed, startPosition, -startPosition, duration);
+                    window.scrollTo(0, run);
+                    
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animateScroll);
+                    }
+                }
+                
+                requestAnimationFrame(animateScroll);
+            }
+            
+            // Event Listeners con verificaciones de seguridad
+            function addEventListeners() {
+                // Scroll event listener
+                window.addEventListener('scroll', function() {
+                    // Usar requestAnimationFrame para optimizar el rendimiento
+                    if (window.requestAnimationFrame) {
+                        requestAnimationFrame(toggleScrollToTopButton);
+                    } else {
+                        toggleScrollToTopButton();
+                    }
+                }, { passive: true }); // passive: true mejora el rendimiento
+                
+                // Click event listener
+                scrollToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    scrollToTop();
+                });
+                
+                // Keyboard accessibility
+                scrollToTopBtn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        scrollToTop();
+                    }
+                });
+            }
+            
+            // Inicialización
+            function init() {
+                // Verificar que el DOM está completamente cargado
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', function() {
+                        toggleScrollToTopButton();
+                        addEventListeners();
+                    });
+                } else {
+                    toggleScrollToTopButton();
+                    addEventListeners();
+                }
+            }
+            
+            // Función para verificar compatibilidad del navegador
+            function checkCompatibility() {
+                // Verificar soporte para smooth scroll
+                const supportsSmoothScroll = 'scrollBehavior' in document.documentElement.style;
+                if (!supportsSmoothScroll) {
+                    console.info('Usando fallback para smooth scroll');
+                }
+                
+                // Verificar soporte para requestAnimationFrame
+                const supportsRAF = 'requestAnimationFrame' in window;
+                if (!supportsRAF) {
+                    console.info('Usando fallback para requestAnimationFrame');
+                }
+            }
+            
+            // Ejecutar inicialización
+            checkCompatibility();
+            init();
+            
+            // Función para detectar cambios de orientación (móvil)
+            window.addEventListener('orientationchange', function() {
+                setTimeout(function() {
+                    toggleScrollToTopButton();
+                }, 500); // Delay para permitir que la orientación cambie
+            });
+            
+            // Prevenir conflictos con otros scripts
+            window.scrollToTopModule = {
+                show: function() {
+                    scrollToTopBtn.classList.add('show');
+                },
+                hide: function() {
+                    scrollToTopBtn.classList.remove('show');
+                },
+                scrollToTop: scrollToTop,
+                toggle: toggleScrollToTopButton
+            };
+            
+        })();
+    </script>
+    <!-- Footer -->
+    
+
+    <div class="tooltip" id="tooltip"></div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate stats numbers on scroll
+        function animateStats() {
+            const stats = [
+                { element: document.getElementById('stat1'), target: 8, duration: 2000, suffix: '', format: null },
+                { element: document.getElementById('stat2'), target: 2300000000, duration: 2500, suffix: '', format: '$2.3T' },
+                { element: document.getElementById('stat3'), target: 80, duration: 2000, suffix: '%', format: null },
+                { element: document.getElementById('stat4'), target: 1300000000, duration: 3000, suffix: '', format: '1.3B' }
+            ];
+
+            stats.forEach((stat, index) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                animateNumber(stat.element, stat.target, stat.duration, stat.suffix, stat.format);
+                            }, index * 200);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+
+                if (stat.element) {
+                    observer.observe(stat.element);
+                }
+            });
+        }
+
+        function animateNumber(element, target, duration, suffix = '', format = null) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function update() {
+                start += increment;
+                let value = Math.min(start, target);
+                
+                if (format === '$2.3T') {
+                    element.textContent = '$' + (value / 1000000000).toFixed(1) + 'T';
+                } else if (format === '1.3B') {
+                    element.textContent = (value / 1000000000).toFixed(1) + 'B';
+                } else {
+                    element.textContent = Math.floor(value) + suffix;
+                }
+                
+                if (start < target) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            update();
+        }
+
+        // Animate wealth bars
+        function animateWealthBars() {
+            const bars = document.querySelectorAll('.wealth-bar');
+            bars.forEach((bar, index) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                bar.style.opacity = '1';
+                                bar.style.transform = 'translateY(0)';
+                            }, index * 300);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+
+                observer.observe(bar);
+            });
+        }
+
+        // Animate comparison bars
+        function animateComparisonBars() {
+            const bars = document.querySelectorAll('.comparison-bar-fill');
+            bars.forEach((bar, index) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                const width = bar.style.width;
+                                bar.style.width = '0%';
+                                setTimeout(() => {
+                                    bar.style.width = width;
+                                }, 100);
+                            }, index * 200);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+
+                observer.observe(bar);
+            });
+        }
+
+        // Tooltip for wealth bars
+        function setupTooltips() {
+            const bars = document.querySelectorAll('.wealth-bar');
+            const tooltip = document.getElementById('tooltip');
+
+            bars.forEach(bar => {
+                bar.addEventListener('mouseenter', function(e) {
+                    const tooltipText = this.getAttribute('data-tooltip');
+                    tooltip.textContent = tooltipText;
+                    tooltip.classList.add('show');
+                    
+                    const rect = this.getBoundingClientRect();
+                    tooltip.style.left = rect.left + rect.width / 2 - tooltip.offsetWidth / 2 + 'px';
+                    tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
+                });
+
+                bar.addEventListener('mouseleave', function() {
+                    tooltip.classList.remove('show');
+                });
+
+                bar.addEventListener('mousemove', function(e) {
+                    tooltip.style.left = e.clientX - tooltip.offsetWidth / 2 + 'px';
+                    tooltip.style.top = e.clientY - tooltip.offsetHeight - 10 + 'px';
+                });
+            });
+        }
+
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', () => {
+                navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Parallax effect for hero pattern
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroPattern = document.querySelector('.hero::before');
+            if (heroPattern) {
+                heroPattern.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
+
+        // Card hover effects
+        document.querySelectorAll('.card, .cause-card, .impact-card, .solution-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            animateStats();
+            animateWealthBars();
+            animateComparisonBars();
+            setupTooltips();
+        });
+
+        // Accessibility: respect reduced motion
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.querySelectorAll('*').forEach(element => {
+                element.style.animationDuration = '0.01ms';
+                element.style.transitionDuration = '0.01ms';
+            });
+        }
+
+        // Console message for developers
+        console.log('%c📊 La Brecha Creciente', 'color: #f97316; font-size: 20px; font-weight: bold;');
+        console.log('%cUn sitio web sobre desigualdad económica y social global', 'color: #64748b; font-size: 14px;');
+        console.log('%cCreado para generar conciencia sobre la brecha entre ricos y pobres.', 'color: #dc2626; font-size: 12px;');
+    </script>
+    
+    <script src="/javascript/botones.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/botones.js"></script>
+    <script src="/menu/menu.js"></script>
+</body>
+</html>

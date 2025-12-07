@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <meta name="author" content="Manuel Casimiro Carrasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monorepos: Guía Completa para Principiantes - Nx y Turborepo</title>
+    <link rel="stylesheet" href="/mas-css/monitores.css">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/menu/menu.css">
+
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+</head>
+<body>
+   
+
+        <!-- Overlay para móvil -->
+    <div class="mnm-overlay" id="mnmOverlay"></div>
+
+    <!-- Botón toggle reproductor -->
+    <!-- Navegación principal -->
+    <nav class="mnm-nav-container">
+        <div class="mnm-nav-wrapper">
+            <a href="/index.html" class="mnm-logo">Urukais Klick</a>
+            
+            
+            <button class="mnm-hamburger" id="mnmHamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="mnm-nav-menu" id="mnmNavMenu">
+                <!-- Categoría 1: Entretenimiento y Ocio -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Entretenimiento y Ocio
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/buscador-de-peliculas.html" class="mnm-dropdown-item">🎬 Catálogo de Películas</a>
+                        <a href="/cabecera/cine/la-nasa.html" class="mnm-dropdown-item">🚀 Espacio y Astronomía</a>
+                        <a href="/cabecera/cine/peluculas.html" class="mnm-dropdown-item">🎭 Films Favoritos</a>
+                        <a href="/cabecera/cine/noticias.html" class="mnm-dropdown-item">📰 Noticias Actuales</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😂 Humor y Entretenimiento</a>
+                        <a href="/cabecera/musica/hadmed.html" class="mnm-dropdown-item">🎵 Ambiente Musical</a>
+                        <a href="/cabecera/musica/mas.html" class="mnm-dropdown-item">🎶 Musicalife</a>
+                        <a href="/cabecera/musica/musica-clasica.html" class="mnm-dropdown-item">🎼 Música Clásica</a>
+                        <a href="/cabecera/musica/prueva.html" class="mnm-dropdown-item">🎤 Géneros Musicales</a>
+                        <a href="/cabecera/musica/tartituras.html" class="mnm-dropdown-item">🎵 Partituras y Escore</a>
+                        <a href="/cabecera/musica/videos3.html" class="mnm-dropdown-item">📺 Centro de Videos</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 2: Herramientas y Productividad -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Herramientas y Productividad
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/herramientas/chat.html" class="mnm-dropdown-item">💬 Asistente Virtual Urukais</a>
+                        <a href="/cabecera/herramientas/control-de-consultas.html" class="mnm-dropdown-item">🗂 Sistema de Consultas</a>
+                        <a href="/cabecera/herramientas/DevStudio.html" class="mnm-dropdown-item">⚙️ Estudio de Desarrollo</a>
+                        <a href="/cabecera/herramientas/FinTech.html" class="mnm-dropdown-item">💼 Soluciones Financieras</a>
+                        <a href="/cabecera/herramientas/generador-contraseñas.html" class="mnm-dropdown-item">🔐 Generador Seguro de<br>Contraseñas</a>
+                        <a href="/cabecera/herramientas/genesis.html" class="mnm-dropdown-item">🌟 Plataforma Genesis</a>
+                        <a href="/cabecera/herramientas/herramienta.html" class="mnm-dropdown-item">🛠 Suite de Herramientas</a>
+                        <a href="/cabecera/herramientas/hot.html" class="mnm-dropdown-item">🔥 Tendencias Actuales</a>
+                        <a href="/cabecera/herramientas/ia-educativa.html" class="mnm-dropdown-item">🎓 IA Educativa</a>
+                        <a href="/cabecera/herramientas/listado-de-prons.html" class="mnm-dropdown-item">📋 Pronósticos en Línea</a>
+                        <a href="/cabecera/herramientas/localizacion-de-faker.html" class="mnm-dropdown-item">📍 Localizador Universal</a>
+                        <a href="/cabecera/herramientas/mas-datos.html" class="mnm-dropdown-item">📊 Análisis de Datos</a>
+                        <a href="/cabecera/herramientas/pruevas.html" class="mnm-dropdown-item">🧪 Centro de Pruebas</a>
+                        <a href="/cabecera/herramientas/texto-voz.html" class="mnm-dropdown-item">🔊 Síntesis de Voz</a>
+                        <a href="/cabecera/herramientas/tienda-de-urukais.html" class="mnm-dropdown-item">🛒 Tienda Oficial</a>
+                        <a href="/cabecera/buscadores/gestor-de-tareas.html" class="mnm-dropdown-item">✅ Organizador de Tareas</a>
+                        <a href="/cabecera/buscadores/gestor-de-proyectos.html" class="mnm-dropdown-item">📈 Gestor de Proyectos</a>
+                        <a href="/cabecera/cine/ProTask.html" class="mnm-dropdown-item">⏰ ProTask Profesional</a>
+                        <a href="/cabecera/cine/ReservaPro.html" class="mnm-dropdown-item">📅 Sistema de Reservas</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 3: Buscadores y Información -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Buscadores y Información
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/buscadores/buscadorurukais.html" class="mnm-dropdown-item">📚 Búsqueda de Libros</a>
+                        <a href="/cabecera/buscadores/busqueda.html" class="mnm-dropdown-item">🔍 Buscador Matrix</a>
+                        <a href="/cabecera/cine/libros.html" class="mnm-dropdown-item">📖 Biblioteca Digital</a>
+                        <a href="/cabecera/cine/localizador.html" class="mnm-dropdown-item">🌐 Ubicador IP</a>
+                        <a href="/cabecera/buscadores/barcelona-sustainabitil.html" class="mnm-dropdown-item">🌱 Barcelona Sostenible</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 4: Mascotas y Animales -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Mascotas y Animales
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/animales/animales.html" class="mnm-dropdown-item">🐾 Generador de Animales</a>
+                        <a href="/cabecera/animales/buscador-de-perros.html" class="mnm-dropdown-item">🐕 Aplicación de Mascotas</a>
+                        <a href="/cabecera/buscadores/deportes.html" class="mnm-dropdown-item">⚽ Buscador de Equipos<br>Deportivos</a>
+                        <a href="/cabecera/animales/Marketing.html" class="mnm-dropdown-item">📱 Marketing Digital</a>
+                        <a href="/cabecera/animales/multi.html" class="mnm-dropdown-item">💻 Solución Multiplataforma</a>
+                        <a href="/cabecera/animales/neocron.html" class="mnm-dropdown-item">🌟 Neocron Urukais</a>
+                        <a href="/cabecera/animales/portal-interactivo.html" class="mnm-dropdown-item">✨ Portal Interactivo</a>
+                        <a href="/cabecera/animales/site-de-productividad.html" class="mnm-dropdown-item">💼 Suite de Productividad</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 5: Comida y Bebidas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Comida y Bebidas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/comida/coctel.html" class="mnm-dropdown-item">🍹 Sistema de Coctelería</a>
+                        <a href="/cabecera/comida/comida.html" class="mnm-dropdown-item">🍽 Gastronomía Exquisita</a>
+                        <a href="/cabecera/comida/cocia-en-inggles.html" class="mnm-dropdown-item">🍳 Cocina Internacional</a>
+                        
+                    </div>
+                </li>
+
+                <!-- Categoría 6: Creatividad y Arte -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Creatividad y Arte
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/conics/archivo-de-hielo.html" class="mnm-dropdown-item">❄️ Archivo Creativo</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😄 Galería de Humor</a>
+                        <a href="/cabecera/conics/Morty.html" class="mnm-dropdown-item">🎨 Colección Morty</a>
+                        <a href="/cabecera/conics/generador-de-fondos.html" class="mnm-dropdown-item">🎨 Generador de Fondos</a>
+                        <a href="/cabecera/conics/neocron.html" class="mnm-dropdown-item">😊 Control de Estado de Ánimo</a>
+                        <a href="/cabecera/conics/plataforma-de-herattientas.html" class="mnm-dropdown-item">🛠 Plataforma de<br>Herramientas Creativas</a>
+                        <a href="/cabecera/conics/portal-interactivo.html" class="mnm-dropdown-item">🎭 Portal Interactivo</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 7: Medio Ambiente -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Medio Ambiente
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/tierra/ambiental-mundial.html" class="mnm-dropdown-item">🌍 Global Ambiental</a>
+                        <a href="/cabecera/tierra/busca-ciudades.html" class="mnm-dropdown-item">🏙 Explorador de Ciudades</a>
+                        <a href="/cabecera/tierra/busca-cuidad.html" class="mnm-dropdown-item">🌆 Búsqueda Urbana</a>
+                        <a href="/cabecera/tierra/clima.html" class="mnm-dropdown-item">🌤️ Centro Meteorológico</a>
+                        <a href="/cabecera/tierra/deforestacion-mundial.html" class="mnm-dropdown-item">🌲 Control Deforestación</a>
+                        <a href="/cabecera/tierra/gia-de-supervivencia.html" class="mnm-dropdown-item">🧭 Guía de Supervivencia</a>
+                        <a href="/cabecera/tierra/mas.html" class="mnm-dropdown-item">🌿 Más Contenido Verde</a>
+                        <a href="/cabecera/tierra/renacer.html" class="mnm-dropdown-item">🌱 Renacer y Renovación</a>
+                        <a href="/cabecera/tierra/sistema-reus.html" class="mnm-dropdown-item">♻️ Sistema Inteligente de Reciclaje</a>
+                        <a href="/cabecera/tierra/supervivencia33.html" class="mnm-dropdown-item">🏕 Supervivencia Extrema</a>
+                    </div>
+                </li>
+                
+
+                <!-- Categoría 8: Eventos y Citas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Eventos y Citas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/gestor-de-citas.html" class="mnm-dropdown-item">💕 Organizador de Citas</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    
+
+    <div class="container">
+        <!-- Introducción -->
+        <section id="introduccion" class="section">
+            <h2>¿Qué son los Monorepos?</h2>
+            <p>Imagina que tienes una caja de rompecabezas donde todas las piezas de todos tus rompecabezas están mezcladas. Eso sería un caos, ¿verdad? Ahora imagina lo contrario: todas las piezas de un solo rompecabezas bien organizadas en su propia caja. Eso es más fácil de manejar.</p>
+            
+            <p>Un <strong>monorepo</strong> es como tener todas las piezas de tu proyecto de software (aplicaciones web, aplicaciones móviles, librerías compartidas, utilidades) organizadas en una sola "caja" o repositorio. En lugar de tener múltiples repositorios dispersos, todo vive en un solo lugar.</p>
+
+            <div class="alert alert-info">
+                <strong>💡 Concepto clave:</strong> Un monorepo es un repositorio único que contiene múltiples proyectos relacionados, permitiendo compartir código, dependencias y herramientas de forma centralizada.
+            </div>
+
+            <h3>¿Por qué usar Monorepos?</h3>
+            <ul>
+                <li><strong>Compartición de código simplificada:</strong> Reutilizar componentes, utilidades y configuraciones entre proyectos sin duplicar código</li>
+                <li><strong>Consistencia:</strong> Todas las partes del proyecto siguen las mismas reglas, configuraciones y estándares</li>
+                <li><strong>Refactorización atómica:</strong> Cambiar todo el ecosistema de una vez, de forma segura y coordinada</li>
+                <li><strong>Versionado unificado:</strong> Un solo historial de cambios para todo el proyecto</li>
+                <li><strong>CI/CD optimizado:</strong> Automatización más eficiente y rápida</li>
+            </ul>
+
+            <h3>La analogía del rompecabezas</h3>
+            <p>Imagina que tienes una aplicación de e-commerce que consiste en:</p>
+            <ul>
+                <li>🛒 Una aplicación web para los clientes</li>
+                <li>📱 Una aplicación móvil</li>
+                <li>🛠️ Un panel de administración</li>
+                <li>📦 Librerías de componentes compartidos (botones, formularios)</li>
+                <li>⚙️ Utilidades comunes (manejo de fechas, validaciones)</li>
+            </ul>
+            
+            <div class="alert alert-success">
+                <strong>✅ Con monorepos:</strong> Todo esto vive en un solo lugar, puedes hacer cambios que afecten múltiples partes del proyecto de forma coordinada, y mantener la coherencia es mucho más fácil.
+            </div>
+        </section>
+
+        <!-- Conceptos Básicos -->
+        <section id="conceptos" class="section">
+            <h2>Conceptos Fundamentales</h2>
+            
+            <h3>Workspaces (Espacios de Trabajo)</h3>
+            <p>Los workspaces son como "divisiones lógicas" dentro de tu monorepo. Cada workspace representa un proyecto independiente (una aplicación, una librería, etc.) pero que puede compartir dependencias con otros workspaces.</p>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>📱 Apps</h4>
+                    <p>Aplicaciones ejecutables como apps web, apps móviles, APIs, etc.</p>
+                </div>
+                <div class="card">
+                    <h4>📦 Packages</h4>
+                    <p>Librerías y componentes reutilizables que pueden ser consumidos por las apps.</p>
+                </div>
+                <div class="card">
+                    <h4>⚙️ Configs</h4>
+                    <p>Configuraciones compartidas como ESLint, TypeScript, Babel, etc.</p>
+                </div>
+            </div>
+
+            <h3>Gestión de Dependencias</h3>
+            <p>En lugar de tener archivos <code>package.json</code> independientes en cada proyecto, el monorepo tiene un <code>package.json</code> principal que define los workspaces y scripts globales.</p>
+
+            <div class="code-container">
+                <div class="code-header">package.json del monorepo raíz</div>
+                <div class="code-block">
+<pre><code><span class="comment">// Configuración del monorepo raíz</span>
+{
+  <span class="keyword">"name"</span>: <span class="string">"mi-monorepo"</span>,
+  <span class="keyword">"private"</span>: <span class="keyword">true</span>,
+  <span class="comment">// Define qué carpetas son workspaces</span>
+  <span class="keyword">"workspaces"</span>: [
+    <span class="string">"apps/*"</span>,     <span class="comment">// Todas las apps</span>
+    <span class="string">"packages/*"</span>  <span class="comment">// Todos los paquetes</span>
+  ],
+  <span class="comment">// Scripts que se ejecutan en todos los workspaces</span>
+  <span class="keyword">"scripts"</span>: {
+    <span class="string">"build"</span>: <span class="string">"turbo run build"</span>,
+    <span class="string">"dev"</span>: <span class="string">"turbo run dev"</span>,
+    <span class="string">"test"</span>: <span class="string">"turbo run test"</span>,
+    <span class="string">"clean"</span>: <span class="string">"turbo run clean"</span>
+  },
+  <span class="comment">// Dependencias que se comparten en todos los workspaces</span>
+  <span class="keyword">"devDependencies"</span>: {
+    <span class="string">"turbo"</span>: <span class="string">"^1.10.0"</span>,
+    <span class="string">"typescript"</span>: <span class="string">"^5.0.0"</span>
+  }
+}</code></pre>
+                </div>
+            </div>
+
+            <h3>Estructura Típica de un Monorepo</h3>
+            <div class="code-container">
+                <div class="code-header">Estructura de carpetas recomendada</div>
+                <div class="code-block">
+<pre><code>mi-monorepo/
+├── 📄 package.json                 <span class="comment">// Configuración principal</span>
+├── 🔧 turbo.json                  <span class="comment">// Configuración de Turborepo</span>
+├── 📁 apps/                       <span class="comment">// Aplicaciones ejecutables</span>
+│   ├── 🌐 web/                    <span class="comment">// App Next.js principal</span>
+│   │   ├── package.json
+│   │   ├── next.config.js
+│   │   └── src/
+│   ├── 📱 mobile/                 <span class="comment">// App React Native</span>
+│   │   ├── package.json
+│   │   └── src/
+│   └── 🔐 admin/                  <span class="comment">// Panel de administración</span>
+│       ├── package.json
+│       └── src/
+├── 📦 packages/                   <span class="comment">// Librerías compartidas</span>
+│   ├── 🧩 ui/                     <span class="comment">// Componentes de interfaz</span>
+│   │   ├── package.json
+│   │   └── src/components/
+│   ├── 🛠️ utils/                  <span class="comment">// Utilidades comunes</span>
+│   │   ├── package.json
+│   │   └── src/helpers/
+│   └── ⚙️ config/                 <span class="comment">// Configuraciones</span>
+│       ├── package.json
+│       └── eslint-config/
+└── 📚 docs/                       <span class="comment">// Documentación</span></code></pre>
+                </div>
+            </div>
+
+            <div class="alert alert-warning">
+                <strong>⚠️ Consejo para principiantes:</strong> No intentes implementar toda la estructura de una vez. Empieza con algo simple: una app y un paquete compartido, luego ve añadiendo más proyectos gradualmente.
+            </div>
+        </section>
+
+        <!-- Turborepo -->
+        <section id="turborepo" class="section">
+            <h2>Turborepo</h2>
+            <p><strong>Turborepo</strong> es una herramienta creada por Vercel (los creadores de Next.js) que hace que los monorepos sean súper rápidos y eficientes. Es como tener un "cerebro inteligente" que organiza y optimiza todas las tareas de tu proyecto.</p>
+
+            <h3>¿Por qué Turborepo es especial?</h3>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>🧠 Caching Inteligente</h4>
+                    <p>Guarda los resultados de tareas anteriores para no repetir trabajo. Como tener una memoria fotográfica: si ya hiciste algo, no lo haces otra vez.</p>
+                </div>
+                <div class="card">
+                    <h4>⚡ Pipelines Paralelos</h4>
+                    <p>Ejecuta múltiples tareas al mismo tiempo, aprovechando al máximo tu computadora. Es como tener varios trabajadores haciendo cosas diferentes simultáneamente.</p>
+                </div>
+                <div class="card">
+                    <h4>🔗 Dependencias Inteligentes</h4>
+                    <p>Detecta automáticamente qué necesita ejecutarse y en qué orden. Si cambias una librería, solo recompila lo que la usa.</p>
+                </div>
+            </div>
+
+            <h3>Configuración Básica de Turborepo</h3>
+            <p>La configuración de Turborepo se hace en el archivo <code>turbo.json</code>. Este archivo le dice a Turborepo cómo organizar las tareas y qué depende de qué.</p>
+
+            <div class="code-container">
+                <div class="code-header">turbo.json - Configuración de Turborepo</div>
+                <div class="code-block">
+<pre><code><span class="comment">// Define el esquema de validación</span>
+{
+  <span class="string">"$schema"</span>: <span class="string">"https://turbo.build/schema.json"</span>,
+  
+  <span class="comment">// Define el "pipeline" o flujo de tareas</span>
+  <span class="keyword">"pipeline"</span>: {
+    
+    <span class="comment">// Tarea de construcción</span>
+    <span class="string">"build"</span>: {
+      <span class="comment">// Depende de que las dependencias (^) estén construidas primero</span>
+      <span class="keyword">"dependsOn"</span>: [<span class="string">"^build"</span>],
+      <span class="comment">// Define qué archivos produce esta tarea (para el cache)</span>
+      <span class="keyword">"outputs"</span>: [<span class="string">"dist/**"</span>, <span class="string">".next/**"</span>, <span class="string">"build/**"</span>]
+    },
+    
+    <span class="comment">// Tarea de desarrollo</span>
+    <span class="string">"dev"</span>: {
+      <span class="comment">// No se cachea, porque el dev server siempre cambia</span>
+      <span class="keyword">"cache"</span>: <span class="keyword">false</span>
+    },
+    
+    <span class="comment">// Tarea de testing</span>
+    <span class="string">"test"</span>: {
+      <span class="keyword">"dependsOn"</span>: [<span class="string">"build"</span>],
+      <span class="keyword">"outputs"</span>: []
+    },
+    
+    <span class="comment">// Tarea de linting</span>
+    <span class="string">"lint"</span>: {
+      <span class="keyword">"dependsOn"</span>: [],
+      <span class="keyword">"outputs"</span>: []
+    },
+    
+    <span class="comment">// Tarea de limpiar</span>
+    <span class="string">"clean"</span>: {
+      <span class="keyword">"cache"</span>: <span class="keyword">false</span>
+    }
+  }
+}</code></pre>
+                </div>
+            </div>
+
+            <h3>¿Cómo funciona el Caching?</h3>
+            <p>El sistema de caché de Turborepo es como un "cerebro con memoria fotográfica":</p>
+            <ol>
+                <li><strong>Primera vez:</strong> Ejecuta la tarea normalmente y guarda el resultado en caché</li>
+                <li><strong>Segunda vez:</strong> Verifica si algo cambió (archivos, dependencias, etc.)</li>
+                <li><strong>Si nada cambió:</strong> Usa el resultado cacheado directamente (¡súper rápido!)</li>
+                <li><strong>Si algo cambió:</strong> Solo recalcula lo que realmente necesita cambiar</li>
+            </ol>
+
+            <div class="alert alert-info">
+                <strong>💡 Ejemplo práctico:</strong> Si cambias solo el CSS de un componente, Turborepo solo recompila ese componente y los que dependen de él, no todo el proyecto.
+            </div>
+
+            <h3>Scripts en package.json de un proyecto individual</h3>
+            <div class="code-container">
+                <div class="code-header">apps/web/package.json - Ejemplo de configuración</div>
+                <div class="code-block">
+<pre><code>{
+  <span class="string">"name"</span>: <span class="string">"@mi-monorepo/web"</span>,
+  <span class="keyword">"version"</span>: <span class="string">"1.0.0"</span>,
+  <span class="keyword">"private"</span>: <span class="keyword">true</span>,
+  
+  <span class="comment">// Scripts que se ejecutan con turbo</span>
+  <span class="keyword">"scripts"</span>: {
+    <span class="string">"build"</span>: <span class="string">"next build"</span>,        <span class="comment">// Construye la app</span>
+    <span class="string">"dev"</span>: <span class="string">"next dev"</span>,          <span class="comment">// Servidor de desarrollo</span>
+    <span class="string">"start"</span>: <span class="string">"next start"</span>,        <span class="comment">// Producción</span>
+    <span class="string">"lint"</span>: <span class="string">"next lint"</span>,          <span class="comment">// Revisar código</span>
+    <span class="string">"test"</span>: <span class="string">"jest"</span>,              <span class="comment">// Ejecutar tests</span>
+    <span class="string">"clean"</span>: <span class="string">"rm -rf .next dist"</span>  <span class="comment">// Limpiar archivos</span>
+  },
+  
+  <span class="comment">// Dependencias específicas de este proyecto</span>
+  <span class="keyword">"dependencies"</span>: {
+    <span class="string">"next"</span>: <span class="string">"13.4.0"</span>,
+    <span class="string">"react"</span>: <span class="string">"18.2.0"</span>,
+    <span class="string">"@mi-monorepo/ui"</span>: <span class="string">"workspace:*"</span>,     <span class="comment">// Usa la librería local</span>
+    <span class="string">"@mi-monorepo/utils"</span>: <span class="string">"workspace:*"</span>      <span class="comment">// Usa las utilidades locales</span>
+  },
+  
+  <span class="comment">// Dependencias de desarrollo</span>
+  <span class="keyword">"devDependencies"</span>: {
+    <span class="string">"@types/node"</span>: <span class="string">"^18.0.0"</span>,
+    <span class="string">"@types/react"</span>: <span class="string">"^18.0.0"</span>,
+    <span class="string">"typescript"</span>: <span class="string">"^5.0.0"</span>
+  }
+}</code></pre>
+                </div>
+            </div>
+
+            <h3>Comandos Útiles de Turborepo</h3>
+            <div class="code-container">
+                <div class="code-header">Comandos de terminal</div>
+                <div class="code-block">
+<pre><code><span class="comment"># Ejecutar build en todos los proyectos (en paralelo)</span>
+npm run build
+
+<span class="comment"># Ejecutar dev server en todos los proyectos</span>
+npm run dev
+
+<span class="comment"># Ejecutar tests en todos los proyectos</span>
+npm run test
+
+<span class="comment"># Ejecutar solo el build de un proyecto específico</span>
+turbo run build --filter="@mi-monorepo/web"
+
+<span class="comment"># Ver el grafo de dependencias</span>
+turbo run build --graph
+
+<span class="comment"># Ejecutar build sin usar caché (para debugging)</span>
+turbo run build --force
+
+<span class="comment"># Ejecutar build con información de rendimiento</span>
+turbo run build --profile</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nx -->
+        <section id="nx" class="section">
+            <h2>Nx</h2>
+            <p><strong>Nx</strong> es una herramienta de monorepos creada por los desarrolladores del framework Angular. Es como tener un "conjunto de herramientas completo" que no solo gestiona monorepos, sino que también incluye generadores de código, análisis visual de dependencias y mucho más.</p>
+
+            <h3>Características Únicas de Nx</h3>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>🏗️ Generadores de Código</h4>
+                    <p>Plantillas automáticas para crear componentes, librerías, servicios, etc. Es como tener un "moldeador de código" que crea código base para ti.</p>
+                </div>
+                <div class="card">
+                    <h4>📊 Análisis Visual</h4>
+                    <p>Gráficos que muestran qué depende de qué en tu proyecto. Como un mapa de las conexiones entre todos tus proyectos.</p>
+                </div>
+                <div class="card">
+                    <h4>🛠️ Extensibilidad</h4>
+                    <p>Soporte oficial para múltiples frameworks: Angular, React, Vue, Node.js, y más.</p>
+                </div>
+            </div>
+
+            <h3>Configuración de Nx</h3>
+            <p>Nx se configura principalmente con <code>project.json</code> (uno por proyecto) y un <code>nx.json</code> general. También usa <code>workspace.json</code> para la configuración del workspace.</p>
+
+            <div class="code-container">
+                <div class="code-header">nx.json - Configuración global de Nx</div>
+                <div class="code-block">
+<pre><code>{
+  <span class="string">"npmScope"</span>: <span class="string">"mi-monorepo"</span>,
+  <span class="string">"affected"</span>: {
+    <span class="string">"defaultBase"</span>: <span class="string">"main"</span>
+  },
+  <span class="string">"tasksRunnerOptions"</span>: {
+    <span class="string">"default"</span>: {
+      <span class="string">"runner"</span>: <span class="string">"@nrwl/workspace/tasks-runners/default"</span>,
+      <span class="string">"options"</span>: {
+        <span class="string">"cacheableOperations"</span>: [<span class="string">"build"</span>, <span class="string">"lint"</span>, <span class="string">"test"</span>, <span class="string">"e2e"</span>]
+      }
+    }
+  },
+  <span class="string">"targetDependencies"</span>: {
+    <span class="string">"build"</span>: [
+      {
+        <span class="string">"target"</span>: <span class="string">"build"</span>,
+        <span class="string">"projects"</span>: <span class="string">"dependencies"</span>
+      }
+    ]
+  },
+  <span class="string">"generators"</span>: {
+    <span class="string">"@nrwl/angular:application"</span>: {
+      <span class="string">"style"</span>: <span class="string">"scss"</span>,
+      <span class="string">"linter"</span>: <span class="string">"eslint"</span>,
+      <span class="string">"unitTestRunner"</span>: <span class="string">"jest"</span>,
+      <span class="string">"e2eTestRunner"</span>: <span class="string">"cypress"</span>
+    }
+  }
+}</code></pre>
+                </div>
+            </div>
+
+            <h3>Generadores de Código</h3>
+            <p>Los generadores son como "plantillas mágicas" que crean código base para ti. Nx viene con muchos generadores integrados:</p>
+
+            <div class="code-container">
+                <div class="code-header">Comandos de generación con Nx</div>
+                <div class="code-block">
+<pre><code><span class="comment"># Generar una nueva aplicación React</span>
+npx nx generate @nrwl/react:application mi-app-web
+
+<span class="comment"># Generar una librería de componentes React</span>
+npx nx generate @nrwl/react:library componentes-ui
+
+<span class="comment"># Generar un componente específico en la librería</span>
+npx nx generate @nrwl/react:component Boton --project=componentes-ui
+
+<span class="comment"># Generar un servicio para una API</span>
+npx nx generate @nrwl/node:service usuario-service
+
+<span class="comment"># Generar una app Angular</span>
+npx nx generate @nrwl/angular:application mi-app-angular
+
+<span class="comment"># Generar una librería de utilidades</span>
+npx nx generate @nrwl/js:library utilidades-fecha</code></pre>
+                </div>
+            </div>
+
+            <h3>Analizador de Dependencias</h3>
+            <p>Nx puede generar gráficos visuales de las dependencias entre proyectos. Esto es súper útil para entender cómo está estructurado tu monorepo.</p>
+
+            <div class="code-container">
+                <div class="code-header">Comandos de análisis</div>
+                <div class="code-block">
+<pre><code><span class="comment"># Ver el grafo de dependencias en el navegador</span>
+npx nx graph
+
+<span class="comment"># Ver qué se ve afectado por un cambio</span>
+npx nx affected:graph
+
+<span class="comment"># Mostrar información de un proyecto específico</span>
+npx nx show project mi-app-web --verbose
+
+<span class="comment"># Listar todos los proyectos en el workspace</span>
+npx nx show projects</code></pre>
+                </div>
+            </div>
+
+            <h3>Configuración de un Proyecto Individual</h3>
+            <div class="code-container">
+                <div class="code-header">apps/web/project.json - Configuración de proyecto Nx</div>
+                <div class="code-block">
+<pre><code>{
+  <span class="string">"$schema"</span>: <span class="string">"./node_modules/nx/schemas/project-schema.json"</span>,
+  <span class="string">"sourceRoot"</span>: <span class="string">"apps/web/src"</span>,
+  <span class="string">"projectType"</span>: <span class="string">"application"</span>,
+  <span class="string">"targets"</span>: {
+    <span class="string">"build"</span>: {
+      <span class="string">"executor"</span>: <span class="string">"@nrwl/next:build"</span>,
+      <span class="string">"outputs"</span>: [<span class="string">"{options.outputPath}"</span>],
+      <span class="string">"options"</span>: {
+        <span class="string">"root"</span>: <span class="string">"apps/web"</span>,
+        <span class="string">"outputPath"</span>: <span class="string">"dist/apps/web"</span>,
+        <span class="string">"config"</span>: <span class="string">"production"</span>
+      }
+    },
+    <span class="string">"serve"</span>: {
+      <span class="string">"executor"</span>: <span class="string">"@nrwl/next:serve"</span>,
+      <span class="string">"options"</span>: {
+        <span class="string">"buildTarget"</span>: <span class="string">"web:build"</span>,
+        <span class="string">"dev"</span>: <span class="keyword">true</span>
+      }
+    },
+    <span class="string">"test"</span>: {
+      <span class="string">"executor"</span>: <span class="string">"@nrwl/jest:jest"</span>,
+      <span class="string">"outputs"</span>: [<span class="string">"{workspaceRoot}/coverage/{projectRoot}"</span>],
+      <span class="string">"options"</span>: {
+        <span class="string">"jestConfig"</span>: <span class="string">"apps/web/jest.config.ts"</span>
+      }
+    },
+    <span class="string">"lint"</span>: {
+      <span class="string">"executor"</span>: <span class="string">"@nrwl/linter:eslint"</span>,
+      <span class="string">"options"</span>: {
+        <span class="string">"lintFilePatterns"</span>: [<span class="string">"apps/web/**/*.{ts,tsx,js,jsx}"</span>]
+      }
+    }
+  },
+  <span class="string">"tags"</span>: []
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="alert alert-success">
+                <strong>✅ Ventaja de Nx:</strong> Los generadores de código y la configuración estructurada hacen que sea muy fácil mantener consistencia en grandes proyectos con muchos desarrolladores.
+            </div>
+        </section>
+
+        <!-- Comparación -->
+        <section id="comparacion" class="section">
+            <h2>Turborepo vs Nx: ¿Cuál elegir?</h2>
+            <p>Ambos son excelentes herramientas, pero cada una tiene sus fortalezas. Aquí te ayudamos a decidir cuál es mejor para tu proyecto.</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Turborepo</th>
+                        <th>Nx</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Simplicidad</strong></td>
+                        <td>✅ Muy simple de configurar</td>
+                        <td>⚠️ Más complejo inicialmente</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Generadores de código</strong></td>
+                        <td>❌ No incluidos</td>
+                        <td>✅ Extensivos y personalizables</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Visualización de dependencias</strong></td>
+                        <td>⚠️ Básico (solo terminal)</td>
+                        <td>✅ Gráficos interactivos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Framework-agnóstico</strong></td>
+                        <td>✅ Perfecto para cualquier stack</td>
+                        <td>✅ Soporte nativo para múltiples frameworks</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rendimiento de build</strong></td>
+                        <td>✅ Excelente, foco en velocidad</td>
+                        <td>✅ Muy bueno, también rápido</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Curva de aprendizaje</strong></td>
+                        <td>✅ Rápida (2-3 días)</td>
+                        <td>⚠️ Moderada (1-2 semanas)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ecosistema</strong></td>
+                        <td>🆕 Más nuevo, creciendo</td>
+                        <td>✅ Maduro y estable</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gestión de plugins</strong></td>
+                        <td>✅ Simple, JSON-based</td>
+                        <td>✅ Sistema robusto de plugins</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Detección de cambios</strong></td>
+                        <td>✅ Inteligente y precisa</td>
+                        <td>✅ Muy avanzada</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Documentación</strong></td>
+                        <td>✅ Excelente y clara</td>
+                        <td>✅ Completa pero densa</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>¿Cuándo elegir Turborepo?</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>🆕 Proyectos Nuevos</h4>
+                    <p>Si estás empezando un proyecto desde cero y quieres algo que funcione rápido y sin complicaciones.</p>
+                </div>
+                <div class="card">
+                    <h4>⚡ Enfoque en Velocidad</h4>
+                    <p>Si lo más importante para ti son builds súper rápidos y no necesitas generadores de código.</p>
+                </div>
+                <div class="card">
+                    <h4>📦 Stack Múltiple</h4>
+                    <p>Si tu proyecto usa diferentes tecnologías (React + Node + Python, etc.) sin un framework dominante.</p>
+                </div>
+            </div>
+
+            <h3>¿Cuándo elegir Nx?</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>🏢 Proyectos Grandes</h4>
+                    <p>Si tienes muchos proyectos y desarrolladores, Nx te ayuda a mantener la consistencia.</p>
+                </div>
+                <div class="card">
+                    <h4>🎨 Necesitas Generadores</h4>
+                    <p>Si quieres plantillas automáticas para crear componentes, servicios, librerías, etc.</p>
+                </div>
+                <div class="card">
+                    <h4>📊 Necesitas Visualización</h4>
+                    <p>Si necesitas entender las dependencias entre proyectos de forma visual.</p>
+                </div>
+            </div>
+
+            <h3>Matriz de Decisión</h3>
+            <div class="interactive-example">
+                <h4>🎯 ¿Cuál es tu situación?</h4>
+                <p>Responde estas preguntas para ayudarte a decidir:</p>
+                
+                <div style="margin: 1rem 0;">
+                    <strong>1. ¿Qué tan grande es tu equipo?</strong>
+                    <div>
+                        <button class="example-button" onclick="showDecision('turborepo', 1)">1-5 desarrolladores</button>
+                        <button class="example-button" onclick="showDecision('nx', 1)">5+ desarrolladores</button>
+                    </div>
+                </div>
+
+                <div style="margin: 1rem 0;">
+                    <strong>2. ¿Qué tan complejo es tu proyecto?</strong>
+                    <div>
+                        <button class="example-button" onclick="showDecision('turborepo', 2)">2-3 apps</button>
+                        <button class="example-button" onclick="showDecision('nx', 2)">5+ apps/libs</button>
+                    </div>
+                </div>
+
+                <div style="margin: 1rem 0;">
+                    <strong>3. ¿Qué es más importante para ti?</strong>
+                    <div>
+                        <button class="example-button" onclick="showDecision('turborepo', 3)">Simplicidad y velocidad</button>
+                        <button class="example-button" onclick="showDecision('nx', 3)">Generadores y organización</button>
+                    </div>
+                </div>
+
+                <div class="example-output" id="decisionOutput">
+                    <p>Haz clic en los botones de arriba para ver recomendaciones.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorial -->
+        <section id="tutorial" class="section">
+            <h2>Tutorial Paso a Paso</h2>
+            <p>Te guiaré a través de la creación de un monorepo desde cero. Empezaremos simple y luego añadiremos complejidad.</p>
+
+            <h3>📋 Prerrequisitos</h3>
+            <ul>
+                <li>Node.js 18 o superior instalado</li>
+                <li>npm, yarn o pnpm como gestor de paquetes</li>
+                <li>Conocimientos básicos de línea de comandos</li>
+                <li>Un editor de código (VS Code recomendado)</li>
+            </ul>
+
+            <h3>🚀 Parte 1: Configuración Básica con Turborepo</h3>
+            
+            <div class="tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="switchTab('paso1', 0)">Paso 1: Inicializar</button>
+                    <button class="tab-button" onclick="switchTab('paso1', 1)">Paso 2: Crear Estructura</button>
+                    <button class="tab-button" onclick="switchTab('paso1', 2)">Paso 3: Configurar Apps</button>
+                    <button class="tab-button" onclick="switchTab('paso1', 3)">Paso 4: Crear Librería</button>
+                </div>
+
+                <div class="tab-content active" id="paso1-0">
+                    <h4>Paso 1: Crear el proyecto base</h4>
+                    <div class="code-container">
+                        <div class="code-header">Terminal - Crear monorepo con Turborepo</div>
+                        <div class="code-block">
+<pre><code><span class="comment"># 1. Crear directorio del proyecto</span>
+mkdir mi-monorepo-turborepo
+cd mi-monorepo-turborepo
+
+<span class="comment"># 2. Inicializar package.json</span>
+npm init -y
+
+<span class="comment"># 3. Instalar Turborepo como dependencia de desarrollo</span>
+npm install -D turbo
+
+<span class="comment"># 4. Crear la estructura de carpetas</span>
+mkdir -p apps web
+mkdir -p packages utils
+
+<span class="comment"># 5. Configurar workspaces en package.json</span></code></pre>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <div class="code-header">package.json - Configuración inicial</div>
+                        <div class="code-block">
+<pre><code>{
+  <span class="string">"name"</span>: <span class="string">"mi-monorepo-turborepo"</span>,
+  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,
+  <span class="keyword">"private"</span>: <span class="keyword">true</span>,
+  <span class="keyword">"workspaces"</span>: [
+    <span class="string">"apps/*"</span>,
+    <span class="string">"packages/*"</span>
+  ],
+  <span class="keyword">"scripts"</span>: {
+    <span class="string">"build"</span>: <span class="string">"turbo run build"</span>,
+    <span class="string">"dev"</span>: <span class="string">"turbo run dev"</span>,
+    <span class="string">"test"</span>: <span class="string">"turbo run test"</span>,
+    <span class="string">"clean"</span>: <span class="string">"turbo run clean"</span>
+  },
+  <span class="keyword">"devDependencies"</span>: {
+    <span class="string">"turbo"</span>: <span class="string">"^1.10.0"</span>
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="paso1-1">
+                    <h4>Paso 2: Configurar Turborepo</h4>
+                    <div class="code-container">
+                        <div class="code-header">turbo.json - Configuración de Turborepo</div>
+                        <div class="code-block">
+<pre><code>{
+  <span class="string">"$schema"</span>: <span class="string">"https://turbo.build/schema.json"</span>,
+  <span class="keyword">"pipeline"</span>: {
+    <span class="string">"build"</span>: {
+      <span class="keyword">"dependsOn"</span>: [<span class="string">"^build"</span>],
+      <span class="keyword">"outputs"</span>: [<span class="string">"dist/**"</span>, <span class="string">".next/**"</span>, <span class="string">"build/**"</span>]
+    },
+    <span class="string">"test"</span>: {
+      <span class="keyword">"dependsOn"</span>: [<span class="string">"build"</span>]
+    },
+    <span class="string">"lint"</span>: {
+      <span class="keyword">"dependsOn"</span>: []
+    },
+    <span class="string">"dev"</span>: {
+      <span class="keyword">"cache"</span>: <span class="keyword">false</span>
+    },
+    <span class="string">"clean"</span>: {
+      <span class="keyword">"cache"</span>: <span class="keyword">false</span>
+    }
+  }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <strong>💡 ¿Qué hace esta configuración?</strong>
+                        <ul>
+                            <li><code>"dependsOn": ["^build"]</code>: Espera a que las dependencias se construyan primero</li>
+                            <li><code>"outputs"</code>: Define qué archivos produce cada tarea (para el cache)</li>
+                            <li><code>"cache": false</code>: No cachea estas tareas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="paso1-2">
+                    <h4>Paso 3: Crear Primera Aplicación</h4>
+                    <div class="code-container">
+                        <div class="code-header">apps/web/package.json - App Next.js</div>
+                        <div class="code-block">
+<pre><code>{
+  <span class="string">"name"</span>: <span class="string">"@mi-monorepo/web"</span>,
+  <span class="keyword">"version"</span>: <span class="string">"0.0.0"</span>,
+  <span class="keyword">"private"</span>: <span class="keyword">true</span>,
+  <span class="keyword">"scripts"</span>: {
+    <span class="string">"build"</span>: <span class="string">"next build"</span>,
+    <span class="string">"dev"</span>: <span class="string">"next dev"</span>,
+    <span class="string">"lint"</span>: <span class="string">"next lint"</span>,
+    <span class="string">"test"</span>: <span class="string">"echo 'No tests yet' &amp;&amp; exit 0"</span>
+  },
+  <span class="keyword">"dependencies"</span>: {
+    <span class="string">"next"</span>: <span class="string">"13.4.19"</span>,
+    <span class="string">"react"</span>: <span class="string">"18.2.0"</span>,
+    <span class="string">"react-dom"</span>: <span class="string">"18.2.0"</span>
+  },
+  <span class="keyword">"devDependencies"</span>: {
+    <span class="string">"@types/node"</span>: <span class="string">"20.5.7"</span>,
+    <span class="string">"@types/react"</span>: <span class="string">"18.2.21"</span>,
+    <span class="string">"@types/react-dom"</span>: <span class="string">"18.2.7"</span>,
+    <span class="string">"eslint"</span>: <span class="string">"8.48.0"</span>,
+    <span class="string">"typescript"</span>: <span class="string">"5.2.2"</span>
+  }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <div class="code-header">apps/web/next.config.js</div>
+                        <div class="code-block">
+<pre><code><span class="comment">// @type {import('next').NextConfig}</span>
+<span class="keyword">const</span> <span class="function">nextConfig</span> = {
+  reactStrictMode: <span class="keyword">true</span>,
+  swcMinify: <span class="keyword">true</span>,
+}
+
+module.exports = nextConfig</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="paso1-3">
+                    <h4>Paso 4: Crear Librería Compartida</h4>
+                    <div class="code-container">
+                        <div class="code-header">packages/utils/package.json - Librería de utilidades</div>
+                        <div class="code-block">
+<pre><code>{
+  <span class="string">"name"</span>: <span class="string">"@mi-monorepo/utils"</span>,
+  <span class="keyword">"version"</span>: <span class="string">"0.0.0"</span>,
+  <span class="keyword">"main"</span>: <span class="string">"./dist/index.js"</span>,
+  <span class="keyword">"types"</span>: <span class="string">"./dist/index.d.ts"</span>,
+  <span class="keyword">"scripts"</span>: {
+    <span class="string">"build"</span>: <span class="string">"tsc"</span>,
+    <span class="string">"dev"</span>: <span class="string">"tsc --watch"</span>,
+    <span class="string">"test"</span>: <span class="string">"jest"</span>,
+    <span class="string">"lint"</span>: <span class="string">"echo 'No linting configured yet'"</span>,
+    <span class="string">"clean"</span>: <span class="string">"rm -rf dist"</span>
+  },
+  <span class="keyword">"devDependencies"</span>: {
+    <span class="string">"typescript"</span>: <span class="string">"^5.0.0"</span>
+  }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <div class="code-header">packages/utils/tsconfig.json - Configuración TypeScript</div>
+                        <div class="code-block">
+<pre><code>{
+  <span class="string">"compilerOptions"</span>: {
+    <span class="string">"target"</span>: <span class="string">"es5"</span>,
+    <span class="string">"lib"</span>: [<span class="string">"dom"</span>, <span class="string">"dom.iterable"</span>, <span class="string">"es6"</span>],
+    <span class="keyword">"allowJs"</span>: <span class="keyword">true</span>,
+    <span class="keyword">"skipLibCheck"</span>: <span class="keyword">true</span>,
+    <span class="keyword">"strict</span>: <span class="keyword">true</span>,
+    <span class="keyword">"forceConsistentCasingInFileNames</span>: <span class="keyword">true</span>,
+    <span class="string">"noEmit"</span>: <span class="keyword">false</span>,
+    <span class="string">"esModuleInterop"</span>: <span class="keyword">true</span>,
+    <span class="string">"module"</span>: <span class="string">"commonjs"</span>,
+    <span class="string">"moduleResolution"</span>: <span class="string">"node"</span>,
+    <span class="string">"resolveJsonModule"</span>: <span class="keyword">true</span>,
+    <span class="string">"isolatedModules"</span>: <span class="keyword">true</span>,
+    <span class="string">"outDir"</span>: <span class="string">"./dist"</span>,
+    <span class="string">"declaration"</span>: <span class="keyword">true</span>
+  },
+  <span class="string">"include"</span>: [<span class="string">"./src/**/*"</span>],
+  <span class="string">"exclude"</span>: [<span class="string">"node_modules"</span>, <span class="string">"dist"</span>]
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="code-container">
+                        <div class="code-header">packages/utils/src/index.ts - Funciones utilitarias</div>
+                        <div class="code-block">
+<pre><code><span class="comment">// Función para formatear fechas</span>
+<span class="keyword">export</span> <span class="keyword">function</span> <span class="function">formatDate</span>(date: <span class="keyword">Date</span>, format: <span class="keyword">string</span> = <span class="string">'DD/MM/YYYY'</span>): <span class="keyword">string</span> {
+  <span class="keyword">const</span> day = date.getDate().toString().padStart(<span class="number">2</span>, <span class="string">'0'</span>)
+  <span class="keyword">const</span> month = (date.getMonth() + <span class="number">1</span>).toString().padStart(<span class="number">2</span>, <span class="string">'0'</span>)
+  <span class="keyword">const</span> year = date.getFullYear().toString()
+  
+  <span class="keyword">return</span> format
+    .replace(<span class="string">'DD'</span>, day)
+    .replace(<span class="string">'MM'</span>, month)
+    .replace(<span class="string">'YYYY'</span>, year)
+}
+
+<span class="comment">// Función para validar emails</span>
+<span class="keyword">export</span> <span class="keyword">function</span> <span class="function">isValidEmail</span>(email: <span class="keyword">string</span>): <span class="keyword">boolean</span> {
+  <span class="keyword">const</span> emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  <span class="keyword">return</span> emailRegex.test(email)
+}
+
+<span class="comment">// Función para generar IDs únicos</span>
+<span class="keyword">export</span> <span class="keyword">function</span> <span class="function">generateId</span>(): <span class="keyword">string</span> {
+  <span class="keyword">return</span> <span class="string">`id_${Date.now()}_${Math.random().toString(<span class="number">36</span>).substr(<span class="number">2</span>, <span class="number">9</span>)}`</span>
+}
+
+<span class="comment">// Función para formatear números como moneda</span>
+<span class="keyword">export</span> <span class="keyword">function</span> <span class="function">formatCurrency</span>(amount: <span class="keyword">number</span>, currency: <span class="keyword">string</span> = <span class="string">'EUR'</span>): <span class="keyword">string</span> {
+  <span class="keyword">return</span> <span class="keyword">new</span> Intl.NumberFormat(<span class="string">'es-ES'</span>, {
+    style: <span class="string">'currency'</span>,
+    currency: currency,
+  }).format(amount)
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-success">
+                <strong>🎉 ¡Felicidades!</strong> Has creado tu primer monorepo con Turborepo. Ahora puedes ejecutar comandos en todos los proyectos a la vez.
+            </div>
+
+            <h3>Comandos de Pruebas</h3>
+            <div class="code-container">
+                <div class="code-header">Probar el monorepo</div>
+                <div class="code-block">
+<pre><code><span class="comment"># Instalar dependencias en todos los proyectos</span>
+npm install
+
+<span class="comment"># Ejecutar build en todos los proyectos</span>
+npm run build
+
+<span class="comment"># Ejecutar dev server en todos los proyectos (con Next.js)</span>
+npm run dev
+
+<span class="comment"># Ver información de Turbo</span>
+npx turbo run build --dry-run
+
+<span class="comment"># Ver el grafo de dependencias</span>
+npx turbo run build --graph</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Casos de Uso -->
+        <section id="casos-uso" class="section">
+            <h2>Casos de Uso Reales</h2>
+            <p>Veamos cómo las empresas reales usan monorepos para resolver problemas reales del día a día.</p>
+
+            <h3>🏢 Caso 1: Startup de E-commerce en Crecimiento</h3>
+            <div class="card">
+                <h4>📊 Situación</h4>
+                <p><strong>Empresa:</strong> ShopNow (nombre ficticio)<br>
+                <strong>Tamaño:</strong> 12 desarrolladores<br>
+                <strong>Problema:</strong> Empezaron con una app web simple, pero ahora tienen múltiples productos y están perdiendo consistencia.</p>
+                
+                <h4>🎯 Solución con Monorepo</h4>
+                <div class="code-container">
+                    <div class="code-header">Estructura de ShopNow</div>
+                    <div class="code-block">
+<pre><code>shopnow-monorepo/
+├── apps/
+│   ├── 🛒 web-store/          <span class="comment">// Tienda principal</span>
+│   ├── 📱 mobile-app/         <span class="comment">// App React Native</span>
+│   ├── 🔐 admin-panel/        <span class="comment">// Panel de administración</span>
+│   ├── 📧 email-service/      <span class="comment">// Servicio de emails</span>
+│   └── 📊 analytics/          <span class="comment">// Dashboard de analytics</span>
+├── packages/
+│   ├── 🎨 ui-components/      <span class="comment">// Botones, formularios, etc.</span>
+│   ├── 🛠️ api-client/         <span class="comment">// Cliente HTTP compartido</span>
+│   ├── 🔐 auth/               <span class="comment">// Lógica de autenticación</span>
+│   ├── 💰 pricing/            <span class="comment">// Cálculos de precios</span>
+│   └── 📝 types/              <span class="comment">// Tipos TypeScript</span>
+└── tools/
+    ├── 🚀 deploy/             <span class="comment">// Scripts de despliegue</span>
+    └── 🔧 ci/                 <span class="comment">// Configuración CI/CD</span></code></pre>
+                    </div>
+                </div>
+
+                <h4>✅ Beneficios Obtenidos</h4>
+                <ul>
+                    <li><strong>Mantenimiento reducido:</strong> Una sola configuración de ESLint, Prettier, TypeScript</li>
+                    <li><strong>Reutilización:</strong> Los componentes de UI se usan en web, mobile y admin</li>
+                    <li><strong>Consistencia:</strong> El cliente API es el mismo en todas las apps</li>
+                    <li><strong>Refactorización segura:</strong> Cambios en tipos se propagan automáticamente</li>
+                </ul>
+            </div>
+
+            <h3>🏛️ Caso 2: Empresa de Servicios Financieros</h3>
+            <div class="card">
+                <h4>📊 Situación</h4>
+                <p><strong>Empresa:</strong> FinBank Corp (nombre ficticio)<br>
+                <strong>Tamaño:</strong> 45 desarrolladores<br>
+                <strong>Problema:</strong> Múltiples productos financieros (banca personal, empresarial, inversiones) con equipos independientes creando código duplicado.</p>
+                
+                <h4>🎯 Solución con Nx</h4>
+                <div class="code-container">
+                    <div class="code-header">Estructura de FinBank</div>
+                    <div class="code-block">
+<pre><code>finbank-monorepo/
+├── apps/
+│   ├── 🏦 personal-banking/   <span class="comment">// App banca personal</span>
+│   ├── 🏢 business-banking/   <span class="comment">// App banca empresarial</span>
+│   ├── 📈 investment-platform/ <span class="comment">// Plataforma de inversiones</span>
+│   └── 🔐 compliance/         <span class="comment">// Sistema de cumplimiento</span>
+├── packages/
+│   ├── 💳 payment-core/       <span class="comment">// Motor de pagos</span>
+│   ├── 🔐 security/           <span class="comment">// Seguridad y cifrado</span>
+│   ├── 📊 reporting/          <span class="comment">// Reportes financieros</span>
+│   ├── 🏛️ banking-core/       <span class="comment">// Lógica bancaria</span>
+│   └── 🔍 kyc/                <span class="comment">// Know Your Customer</span>
+├── tools/
+│   ├── 🔧 generators/         <span class="comment">// Generadores personalizados</span>
+│   └── 📋 compliance/         <span class="comment">// Herramientas de compliance</span>
+└── docs/
+    ├── 📖 architecture/       <span class="comment">// Documentación arquitectura</span>
+    └── 🔒 security/           <span class="comment">// Guías de seguridad</span></code></pre>
+                    </div>
+                </div>
+
+                <h4>✅ Beneficios Obtenidos</h4>
+                <ul>
+                    <li><strong>Generadores Nx:</strong> Plantillas para crear nuevos productos financieros con compliance automático</li>
+                    <li><strong>Análisis visual:</strong> Gráficos para entender qué se ve afectado por cambios regulatorios</li>
+                    <li><strong>Consistencia legal:</strong> Mismas verificaciones KYC en todos los productos</li>
+                    <li><strong>Reutilización masiva:</strong> 70% de código compartido entre productos</li>
+                </ul>
+            </div>
+
+            <h3>🎮 Caso 3: Estudio de Desarrollo de Videojuegos</h3>
+            <div class="card">
+                <h4>📊 Situación</h4>
+                <p><strong>Empresa:</strong> GameStudio (nombre ficticio)<br>
+                <strong>Tamaño:</strong> 25 desarrolladores<br>
+                <strong>Problema:</strong> Cada juego tenía su propio motor gráfico, herramientas y sistemas de build, causando mucha duplicación.</p>
+                
+                <h4>🎯 Solución con Monorepo</h4>
+                <div class="code-container">
+                    <div class="code-header">Estructura de GameStudio</div>
+                    <div class="code-block">
+<pre><code>gamestudio-monorepo/
+├── games/
+│   ├── 🎮 space-adventure/    <span class="comment">// Juego de aventuras espaciales</span>
+│   ├── 🏎️ racing-game/        <span class="comment">// Juego de carreras</span>
+│   └── 🧙 magic-quest/        <span class="comment">// Juego de rol mágico</span>
+├── engines/
+│   ├── 🔧 core-engine/        <span class="comment">// Motor gráfico base</span>
+│   ├── 🎵 audio-system/       <span class="comment">// Sistema de audio</span>
+│   └── 🌐 networking/         <span class="comment">// Sistema multijugador</span>
+├── tools/
+│   ├── 🎨 asset-pipeline/     <span class="comment">// Pipeline de assets</span>
+│   ├── 📊 analytics/          <span class="comment">// Analytics de juego</span>
+│   └── 🚀 deployment/         <span class="comment">// Despliegue multiplataforma</span>
+├── packages/
+│   ├── 🎭 characters/         <span class="comment">// Personajes reutilizables</span>
+│   ├── 🏞️ environments/       <span class="comment">// Entornos y escenarios</span>
+│   └── 🎯 gameplay/           <span class="comment">// Mecánicas de juego</span>
+└── platforms/
+    ├── 🖥️ desktop/            <span class="comment">// Builds desktop</span>
+    ├── 📱 mobile/              <span class="comment">// Builds móviles</span>
+    └── 🎮 console/             <span class="comment">// Builds para consolas</span></code></pre>
+                    </div>
+                </div>
+
+                <h4>✅ Beneficios Obtenidos</h4>
+                <ul>
+                    <li><strong>Motor unificado:</strong> Todos los juegos usan la misma base gráfica</li>
+                    <li><strong>Herramientas compartidas:</strong> Mismas herramientas de análisis y deployment</li>
+                    <li><strong>Assets reutilizables:</strong> Personajes y entornos se comparten entre juegos</li>
+                    <li><strong>Builds optimizados:</strong> Turborepo acelera significativamente los builds de juegos</li>
+                </ul>
+            </div>
+
+            <h3>📈 Métricas Reales de Éxito</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>⚡ Rendimiento de Build</h4>
+                    <p><strong>Antes:</strong> 25 minutos build completo<br>
+                    <strong>Después:</strong> 6 minutos con cache<br>
+                    <strong>Ahorro:</strong> 76% de tiempo</p>
+                </div>
+                <div class="card">
+                    <h4>👥 Productividad del Equipo</h4>
+                    <p><strong>Antes:</strong> 3 días para configurar nuevo proyecto<br>
+                    <strong>Después:</strong> 2 horas con generadores Nx<br>
+                    <strong>Ahorro:</strong> 92% de tiempo</p>
+                </div>
+                <div class="card">
+                    <h4>🐛 Errores de Inconsistencia</h4>
+                    <p><strong>Antes:</strong> 12 bugs/mes por inconsistencias<br>
+                    <strong>Después:</strong> 2 bugs/mes<br>
+                    <strong>Reducción:</strong> 83% menos errores</p>
+                </div>
+                <div class="card">
+                    <h4>📦 Duplicación de Código</h4>
+                    <p><strong>Antes:</strong> 45% de código duplicado<br>
+                    <strong>Después:</strong> 12% de código duplicado<br>
+                    <strong>Ahorro:</strong> 73% menos duplicación</p>
+                </div>
+            </div>
+
+            <h3>🎯 Cuándo NO usar Monorepos</h3>
+            <div class="alert alert-warning">
+                <strong>⚠️ Evita monorepos si:</strong>
+                <ul>
+                    <li><strong>Proyectos completamente independientes:</strong> No comparten código, lógica o equipos</li>
+                    <li><strong>Equipos muy pequeños:</strong> 1-2 desarrolladores, overkill para proyectos simples</li>
+                    <li><strong>Stack tecnológico muy diferente:</strong> Python + Rust + Java sin relación</li>
+                    <li><strong>Clientes externos independientes:</strong> Cada cliente tiene requisitos únicos y separados</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Recursos -->
+        <section id="recursos" class="section">
+            <h2>Recursos para Profundizar</h2>
+            <p>Aquí tienes una colección de recursos para seguir aprendiendo y mantenerse actualizado.</p>
+
+            <h3>📚 Documentación Oficial</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>📖 Turborepo</h4>
+                    <p><a href="https://turbo.build/repo" target="_blank">Documentación oficial</a></p>
+                    <p>Guías completas, API reference y ejemplos prácticos.</p>
+                </div>
+                <div class="card">
+                    <h4>📖 Nx</h4>
+                    <p><a href="https://nx.dev" target="_blank">nx.dev</a></p>
+                    <p>Documentación extensa, tutoriales y casos de uso.</p>
+                </div>
+                <div class="card">
+                    <h4>📖 Monorepo.tools</h4>
+                    <p><a href="https://monorepo.tools" target="_blank">monorepo.tools</a></p>
+                    <p>Comparación independiente y guías neutrales sobre monorepos.</p>
+                </div>
+            </div>
+
+            <h3>🎓 Tutoriales y Cursos</h3>
+            <ul>
+                <li><strong>Video Tutoriales:</strong> Busca en YouTube "turborepo tutorial" o "nx monorepo tutorial" (en español e inglés)</li>
+                <li><strong>Artículos de Blog:</strong> Dev.to, Medium y blogs de empresas como Vercel, Nx Team</li>
+                <li><strong>Cursos Online:</strong> Frontend Masters, Udemy, Platzi tienen cursos sobre monorepos</li>
+            </ul>
+
+            <h3>🛠️ Herramientas Complementarias</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>🔧 Gestores de Paquetes</h4>
+                    <ul>
+                        <li><strong>Yarn Workspaces:</strong> Soporte nativo para monorepos</li>
+                        <li><strong>pnpm:</strong> Enfoque en eficiencia y espacio en disco</li>
+                        <li><strong>npm Workspaces:</strong> Soporte oficial desde npm 7</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🔍 Herramientas de Análisis</h4>
+                    <ul>
+                        <li><strong>Madge:</strong> Análisis de dependencias</li>
+                        <li><strong>dependency-cruiser:</strong> Validación de arquitectura</li>
+                        <li><strong>ws-size:</strong> Análisis de tamaños</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🚀 CI/CD</h4>
+                    <ul>
+                        <li><strong>GitHub Actions:</strong> Soporte nativo para monorepos</li>
+                        <li><strong>GitLab CI:</strong> Configuración para workspaces</li>
+                        <li><strong>CircleCI:</strong> Optimizaciones para monorepos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>💡 Consejos Adicionales</h3>
+            <div class="alert alert-success">
+                <h4>🎯 Mejores Prácticas</h4>
+                <ol>
+                    <li><strong>Empieza simple:</strong> No trates de implementar toda la estructura de una vez</li>
+                    <li><strong>Documenta tu estructura:</strong> Un README claro que explique la organización</li>
+                    <li><strong>Usa TypeScript:</strong> Hace que la integración entre proyectos sea más robusta</li>
+                    <li><strong>Configura linting global:</strong> ESLint y Prettier compartidos</li>
+                    <li><strong>Tests en cada nivel:</strong> Unitarios, integración y e2e</li>
+                    <li><strong>Versionado semántico:</strong> Para las librerías internas</li>
+                </ol>
+            </div>
+
+            <h3>🆘 Resolución de Problemas Comunes</h3>
+            <div class="card">
+                <h4>❌ Error: "Cannot find module"</h4>
+                <p><strong>Problema:</strong> No puede encontrar un paquete interno<br>
+                <strong>Solución:</strong> Verifica que el package.json use <code>"workspace:*"</code> para dependencias internas</p>
+            </div>
+
+            <div class="card">
+                <h4>❌ Error: "Build fails in CI but works locally"</h4>
+                <p><strong>Problema:</strong> Cache de CI no incluye dependencias<br>
+                <strong>Solución:</strong> Configura cache en tu CI para incluir <code>node_modules</code> y <code>.turbo</code></p>
+            </div>
+
+            <div class="card">
+                <h4>❌ Build muy lento en CI</h4>
+                <p><strong>Problema:</strong> No se está usando el cache correctamente<br>
+                <strong>Solución:</strong> Asegúrate de que los outputs en turbo.json sean correctos y específicos</p>
+            </div>
+
+            <h3>🔄 Mantente Actualizado</h3>
+            <p>Las herramientas de monorepo evolucionan rápidamente. Te recomendamos:</p>
+            <ul>
+                <li>Seguir los blogs oficiales de Vercel (Turborepo) y Nx Team</li>
+                <li>Unirte a comunidades en Discord/Slack</li>
+                <li>Suscribirte a newsletters como "This Week in JavaScript"</li>
+                <li>Participar en conferencias como ReactConf, JSConf</li>
+            </ul>
+        </section>
+      <style>
+        /* Botón de scroll to top */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .scroll-to-top:active {
+            transform: translateY(-1px);
+        }
+
+        /* Estado visible del botón */
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Icono del botón */
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-to-top:hover svg {
+            transform: translateY(-2px);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scroll-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .scroll-to-top svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        /* Contenido mínimo para hacer scroll */
+        body {
+            height: 2000px;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <!-- Contenido mínimo para probar el scroll -->
+        
+    <!-- Botón de subida al principio de la web -->
+    <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Volver al inicio">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+        // Botón de Scroll to Top - Sin Conflictos
+        (function() {
+            'use strict';
+            
+            // Elementos del DOM
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            
+            // Verificar que el elemento existe
+            if (!scrollToTopBtn) {
+                console.warn('Botón scrollToTopBtn no encontrado');
+                return;
+            }
+            
+            // Configuración
+            const scrollOffset = 300; // Píxeles antes de mostrar el botón
+            
+            // Función para mostrar/ocultar el botón
+            function toggleScrollToTopButton() {
+                if (window.pageYOffset > scrollOffset) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            }
+            
+            // Función de scroll suave hacia arriba
+            function scrollToTop() {
+                // Scroll suave usando window.scrollTo
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                // Fallback para navegadores más antiguos
+                const startPosition = window.pageYOffset;
+                const startTime = performance.now();
+                const duration = 800; // Duración en milisegundos
+                
+                function easeInOutQuad(t, b, c, d) {
+                    t /= d/2;
+                    if (t < 1) return c/2*t*t + b;
+                    t--;
+                    return -c/2 * (t*(t-2) - 1) + b;
+                }
+                
+                function animateScroll(currentTime) {
+                    const timeElapsed = currentTime - startTime;
+                    const run = easeInOutQuad(timeElapsed, startPosition, -startPosition, duration);
+                    window.scrollTo(0, run);
+                    
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animateScroll);
+                    }
+                }
+                
+                requestAnimationFrame(animateScroll);
+            }
+            
+            // Event Listeners con verificaciones de seguridad
+            function addEventListeners() {
+                // Scroll event listener
+                window.addEventListener('scroll', function() {
+                    // Usar requestAnimationFrame para optimizar el rendimiento
+                    if (window.requestAnimationFrame) {
+                        requestAnimationFrame(toggleScrollToTopButton);
+                    } else {
+                        toggleScrollToTopButton();
+                    }
+                }, { passive: true }); // passive: true mejora el rendimiento
+                
+                // Click event listener
+                scrollToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    scrollToTop();
+                });
+                
+                // Keyboard accessibility
+                scrollToTopBtn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        scrollToTop();
+                    }
+                });
+            }
+            
+            // Inicialización
+            function init() {
+                // Verificar que el DOM está completamente cargado
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', function() {
+                        toggleScrollToTopButton();
+                        addEventListeners();
+                    });
+                } else {
+                    toggleScrollToTopButton();
+                    addEventListeners();
+                }
+            }
+            
+            // Función para verificar compatibilidad del navegador
+            function checkCompatibility() {
+                // Verificar soporte para smooth scroll
+                const supportsSmoothScroll = 'scrollBehavior' in document.documentElement.style;
+                if (!supportsSmoothScroll) {
+                    console.info('Usando fallback para smooth scroll');
+                }
+                
+                // Verificar soporte para requestAnimationFrame
+                const supportsRAF = 'requestAnimationFrame' in window;
+                if (!supportsRAF) {
+                    console.info('Usando fallback para requestAnimationFrame');
+                }
+            }
+            
+            // Ejecutar inicialización
+            checkCompatibility();
+            init();
+            
+            // Función para detectar cambios de orientación (móvil)
+            window.addEventListener('orientationchange', function() {
+                setTimeout(function() {
+                    toggleScrollToTopButton();
+                }, 500); // Delay para permitir que la orientación cambie
+            });
+            
+            // Prevenir conflictos con otros scripts
+            window.scrollToTopModule = {
+                show: function() {
+                    scrollToTopBtn.classList.add('show');
+                },
+                hide: function() {
+                    scrollToTopBtn.classList.remove('show');
+                },
+                scrollToTop: scrollToTop,
+                toggle: toggleScrollToTopButton
+            };
+            
+        })();
+    </script>
+    
+                        <a href="/index.html"  rel="noopener noreferrer" class="sound-link">Volver al Inicio</a>
+               
+        </div>
+       
+
+    <!-- Footer -->
+    <footer class="footer">
+            
+
+       
+        <div class="footer-content">
+            <h3>&copy; 2025 Urukais Klick 🐸. Todos los derechos reservados.</h3>
+            <h3>Desarrollado por Manuel Casimiro Carrasco.👀</h3>
+        </div>
+    </footer>
+    </div>
+
+    <script src="/mas-javascript/monitores.js"></script>
+    
+    <script src="/javascript/botones.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/botones.js"></script>
+    <script src="/menu/menu.js"></script>
+</body>
+</html>
