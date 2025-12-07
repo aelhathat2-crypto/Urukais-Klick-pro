@@ -1,0 +1,1636 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <!-- AUTOR -->
+    <meta name="author" content="Manuel Casimiro Carrasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dark Metal Realm - Tu blog de referencia para noticias, reseñas y contenido del mundo del heavy metal">
+        <title>Urukais Klick🎵 | Tu Reproductor Musical Retro</title>
+        <link rel="stylesheet" href="/css/">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ff00ff;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%2300ffff;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='48' fill='%231a0033'/%3E%3Cpath d='M30 70 L40 30 L50 60 L60 30 L70 70' stroke='url(%23grad)' stroke-width='6' fill='none'/%3E%3Ccircle cx='35' cy='25' r='5' fill='%23ffffff'/%3E%3Ccircle cx='65' cy='25' r='5' fill='%23ffffff'/%3E%3Cpath d='M50,80 L55,90 L45,90 Z' fill='url(%23grad)'/%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/menu/menu.css">
+
+    <style>
+        /* ====== PALETA RETRO AÑOS 80 ====== */
+        :root {
+            --neon-pink: #FF10F0;
+            --neon-pink-light: #FF6EC7;
+            --neon-blue: #00D9FF;
+            --neon-blue-dark: #0A4D68;
+            --neon-purple: #B026FF;
+            --neon-cyan: #00FFFF;
+            --dark-bg: #0a0a1f;
+            --dark-purple: #1a0a2e;
+            --grid-color: rgba(0, 217, 255, 0.3);
+            
+            --color-background: var(--dark-bg);
+            --color-surface: rgba(26, 10, 46, 0.8);
+            --color-text: #FFFFFF;
+            --color-text-secondary: rgba(255, 255, 255, 0.7);
+            --color-primary: var(--neon-pink);
+            --color-primary-hover: var(--neon-pink-light);
+            --color-border: rgba(255, 16, 240, 0.3);
+            
+            --font-family-base: 'Orbitron', 'Courier New', monospace;
+            --space-8: 8px;
+            --space-16: 16px;
+            --space-24: 24px;
+            --space-32: 32px;
+            --radius-base: 8px;
+            --radius-lg: 12px;
+            --duration-normal: 250ms;
+            --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-purple) 100%);
+            color: var(--color-text);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Animated Grid Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+            z-index: -1;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
+            100% { transform: perspective(500px) rotateX(60deg) translateY(50px); }
+        }
+
+        /* Neon Glow Effect */
+        .neon-text {
+            text-shadow: 
+                0 0 10px var(--neon-pink),
+                0 0 20px var(--neon-pink),
+                0 0 30px var(--neon-pink),
+                0 0 40px var(--neon-pink);
+            animation: flicker 2s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow: 
+                    0 0 10px var(--neon-pink),
+                    0 0 20px var(--neon-pink),
+                    0 0 30px var(--neon-pink),
+                    0 0 40px var(--neon-pink);
+            }
+            20%, 24%, 55% {        
+                text-shadow: none;
+            }
+        }
+
+        /* ====== LAYOUT PRINCIPAL ====== */
+        .app {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            grid-template-rows: auto 1fr 120px;
+            grid-template-areas:
+                "sidebar header"
+                "sidebar main"
+                "player player";
+            min-height: 100vh;
+        }
+
+        /* ====== SIDEBAR ====== */
+        aside.sidebar {
+            grid-area: sidebar;
+            background: var(--color-surface);
+            padding: 20px 16px;
+            border-right: 2px solid var(--neon-pink);
+            box-shadow: 0 0 20px rgba(255, 16, 240, 0.3);
+            z-index: 20;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .brand-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-blue));
+            box-shadow: 0 0 20px rgba(255, 16, 240, 0.6);
+        }
+
+        .brand-name {
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 18px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 8px;
+            color: var(--color-text);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            margin-bottom: 8px;
+            border: 1px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: rgba(255, 16, 240, 0.1);
+            border-color: var(--neon-pink);
+            transform: translateX(5px);
+        }
+
+        .nav-item.active {
+            background: rgba(255, 16, 240, 0.2);
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 15px rgba(255, 16, 240, 0.4);
+        }
+
+        .section-title {
+            font-size: 14px;
+            color: var(--neon-cyan);
+            margin: 20px 0 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .genres {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .genre-btn {
+            background: rgba(176, 38, 255, 0.2);
+            border: 1px solid var(--neon-purple);
+            color: var(--color-text);
+            border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: var(--font-family-base);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .genre-btn:hover {
+            background: rgba(176, 38, 255, 0.4);
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(176, 38, 255, 0.6);
+        }
+
+        .genre-btn.active {
+            background: var(--neon-purple);
+            color: var(--dark-bg);
+            box-shadow: 0 0 20px rgba(176, 38, 255, 0.8);
+        }
+
+        /* ====== HEADER ====== */
+        header.header {
+            grid-area: header;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 16px 20px;
+            border-bottom: 2px solid var(--neon-blue);
+            background: var(--color-surface);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+            z-index: 5;
+        }
+
+        .searchbar {
+            flex: 1;
+            display: flex;
+            gap: 10px;
+        }
+
+        .searchbar input,
+        .searchbar select {
+            background: rgba(10, 10, 31, 0.8);
+            color: var(--color-text);
+            border: 1px solid var(--neon-cyan);
+            padding: 10px 12px;
+            border-radius: 10px;
+            outline: none;
+            font-family: var(--font-family-base);
+        }
+
+        .searchbar input {
+            flex: 1;
+        }
+
+        .searchbar input:focus,
+        .searchbar select:focus {
+            border-color: var(--neon-pink);
+            box-shadow: 0 0 15px rgba(255, 16, 240, 0.4);
+        }
+
+        .primary-btn {
+            background: var(--neon-pink);
+            border: none;
+            color: var(--dark-bg);
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: var(--font-family-base);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .primary-btn:hover {
+            background: var(--neon-pink-light);
+            box-shadow: 0 0 25px rgba(255, 16, 240, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .status {
+            min-width: 150px;
+            text-align: right;
+            color: var(--color-text-secondary);
+            font-size: 12px;
+        }
+
+        .hamburger {
+            display: none;
+            background: var(--neon-purple);
+            border: none;
+            color: var(--color-text);
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        /* ====== MAIN CONTENT ====== */
+        main.main {
+            grid-area: main;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--color-surface);
+            border: 2px solid var(--neon-purple);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(176, 38, 255, 0.6);
+            border-color: var(--neon-pink);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 12px;
+        }
+
+        .title {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: var(--neon-cyan);
+        }
+
+        .subtitle {
+            color: var(--color-text-secondary);
+            font-size: 12px;
+        }
+
+        .card-actions {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            gap: 8px;
+        }
+
+        .play-btn,
+        .fav-btn {
+            flex: 1;
+            background: rgba(0, 217, 255, 0.2);
+            border: 1px solid var(--neon-blue);
+            color: var(--color-text);
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: var(--font-family-base);
+            font-size: 11px;
+        }
+
+        .play-btn:hover {
+            background: var(--neon-blue);
+            color: var(--dark-bg);
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.6);
+        }
+
+        .fav-btn:hover {
+            background: rgba(255, 16, 240, 0.3);
+            border-color: var(--neon-pink);
+        }
+
+        .fav-btn.active {
+            background: var(--neon-pink);
+            color: var(--dark-bg);
+            box-shadow: 0 0 15px rgba(255, 16, 240, 0.6);
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--neon-cyan);
+            color: var(--dark-bg);
+            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 999px;
+            font-weight: 700;
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.8);
+        }
+
+        .favorites-empty {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed var(--neon-pink);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            color: var(--color-text-secondary);
+        }
+
+        /* ====== REPRODUCTOR ====== */
+        .player {
+            grid-area: player;
+            background: var(--color-surface);
+            border-top: 2px solid var(--neon-pink);
+            box-shadow: 0 -5px 30px rgba(255, 16, 240, 0.4);
+            padding: 16px;
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            gap: 20px;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .now-playing {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .thumb {
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
+            background: var(--dark-bg);
+            border: 2px solid var(--neon-cyan);
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+        }
+
+        .np-meta {
+            min-width: 0;
+        }
+
+        .np-title {
+            font-weight: 700;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--neon-cyan);
+        }
+
+        .np-artist {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .control-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .ctrl-btn {
+            background: rgba(176, 38, 255, 0.3);
+            border: 1px solid var(--neon-purple);
+            color: var(--color-text);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .ctrl-btn:hover {
+            background: var(--neon-purple);
+            box-shadow: 0 0 20px rgba(176, 38, 255, 0.8);
+            transform: scale(1.1);
+        }
+
+        .play-toggle {
+            width: 50px;
+            height: 50px;
+            background: var(--neon-pink);
+            color: var(--dark-bg);
+            font-size: 20px;
+        }
+
+        .play-toggle:hover {
+            background: var(--neon-pink-light);
+        }
+
+        .timeline {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .time {
+            width: 50px;
+            text-align: center;
+            font-size: 11px;
+            color: var(--color-text-secondary);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .progress {
+            position: relative;
+            height: 8px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.1);
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .progress-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+            box-shadow: 0 0 10px rgba(255, 16, 240, 0.6);
+        }
+
+        .progress-handle {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            left: 0;
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        .volume {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 160px;
+        }
+
+        .volume input[type="range"] {
+            width: 100%;
+            accent-color: var(--neon-pink);
+        }
+
+        /* ====== TOAST ====== */
+        .toast {
+            position: fixed;
+            bottom: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--neon-purple);
+            color: var(--color-text);
+            border: 2px solid var(--neon-pink);
+            padding: 12px 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(176, 38, 255, 0.8);
+            z-index: 50;
+            display: none;
+            font-size: 14px;
+        }
+
+        .toast.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        .toast.error {
+            background: #E53935;
+            border-color: #FF5252;
+        }
+
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 900px) {
+            .app {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "header"
+                    "main"
+                    "player";
+            }
+
+            aside.sidebar {
+                position: fixed;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: 70vw;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            aside.sidebar.open {
+                transform: translateX(0);
+            }
+
+            .hamburger {
+                display: flex !important;
+            }
+
+            .player {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 12px;
+            }
+
+            .right {
+                justify-content: center;
+            }
+
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+
+            .status {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .volume {
+                width: 100px;
+            }
+
+            .genres {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+
+
+        
+        <!-- Overlay para móvil -->
+    <div class="mnm-overlay" id="mnmOverlay"></div>
+
+    
+    <!-- Navegación principal -->
+    <nav class="mnm-nav-container">
+        <div class="mnm-nav-wrapper">
+            <a href="/index.html" class="mnm-logo">Urukais Klick</a>
+            
+            <button class="mnm-hamburger" id="mnmHamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="mnm-nav-menu" id="mnmNavMenu">
+                <!-- Categoría 1: Entretenimiento y Ocio -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Entretenimiento y Ocio
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/buscador-de-peliculas.html" class="mnm-dropdown-item">🎬 Catálogo de Películas</a>
+                        <a href="/cabecera/cine/la-nasa.html" class="mnm-dropdown-item">🚀 Espacio y Astronomía</a>
+                        <a href="/cabecera/cine/peluculas.html" class="mnm-dropdown-item">🎭 Films Favoritos</a>
+                        <a href="/cabecera/cine/noticias.html" class="mnm-dropdown-item">📰 Noticias Actuales</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😂 Humor y Entretenimiento</a>
+                        <a href="/cabecera/musica/hadmed.html" class="mnm-dropdown-item">🎵 Ambiente Musical</a>
+                        <a href="/cabecera/musica/mas.html" class="mnm-dropdown-item">🎶 Musicalife</a>
+                        <a href="/cabecera/musica/musica-clasica.html" class="mnm-dropdown-item">🎼 Música Clásica</a>
+                        <a href="/cabecera/musica/prueva.html" class="mnm-dropdown-item">🎤 Géneros Musicales</a>
+                        <a href="/cabecera/musica/tartituras.html" class="mnm-dropdown-item">🎵 Partituras y Escore</a>
+                        <a href="/cabecera/musica/videos3.html" class="mnm-dropdown-item">📺 Centro de Videos</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 2: Herramientas y Productividad -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Herramientas y Productividad
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/herramientas/chat.html" class="mnm-dropdown-item">💬 Asistente Virtual Urukais</a>
+                        <a href="/cabecera/herramientas/control-de-consultas.html" class="mnm-dropdown-item">🗂 Sistema de Consultas</a>
+                        <a href="/cabecera/herramientas/DevStudio.html" class="mnm-dropdown-item">⚙️ Estudio de Desarrollo</a>
+                        <a href="/cabecera/herramientas/FinTech.html" class="mnm-dropdown-item">💼 Soluciones Financieras</a>
+                        <a href="/cabecera/herramientas/generador-contraseñas.html" class="mnm-dropdown-item">🔐 Generador Seguro de<br>Contraseñas</a>
+                        <a href="/cabecera/herramientas/genesis.html" class="mnm-dropdown-item">🌟 Plataforma Genesis</a>
+                        <a href="/cabecera/herramientas/herramienta.html" class="mnm-dropdown-item">🛠 Suite de Herramientas</a>
+                        <a href="/cabecera/herramientas/hot.html" class="mnm-dropdown-item">🔥 Tendencias Actuales</a>
+                        <a href="/cabecera/herramientas/ia-educativa.html" class="mnm-dropdown-item">🎓 IA Educativa</a>
+                        <a href="/cabecera/herramientas/listado-de-prons.html" class="mnm-dropdown-item">📋 Pronósticos en Línea</a>
+                        <a href="/cabecera/herramientas/localizacion-de-faker.html" class="mnm-dropdown-item">📍 Localizador Universal</a>
+                        <a href="/cabecera/herramientas/mas-datos.html" class="mnm-dropdown-item">📊 Análisis de Datos</a>
+                        <a href="/cabecera/herramientas/pruevas.html" class="mnm-dropdown-item">🧪 Centro de Pruebas</a>
+                        <a href="/cabecera/herramientas/texto-voz.html" class="mnm-dropdown-item">🔊 Síntesis de Voz</a>
+                        <a href="/cabecera/herramientas/tienda-de-urukais.html" class="mnm-dropdown-item">🛒 Tienda Oficial</a>
+                        <a href="/cabecera/buscadores/gestor-de-tareas.html" class="mnm-dropdown-item">✅ Organizador de Tareas</a>
+                        <a href="/cabecera/buscadores/gestor-de-proyectos.html" class="mnm-dropdown-item">📈 Gestor de Proyectos</a>
+                        <a href="/cabecera/cine/ProTask.html" class="mnm-dropdown-item">⏰ ProTask Profesional</a>
+                        <a href="/cabecera/cine/ReservaPro.html" class="mnm-dropdown-item">📅 Sistema de Reservas</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 3: Buscadores y Información -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Buscadores y Información
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/buscadores/buscadorurukais.html" class="mnm-dropdown-item">📚 Búsqueda de Libros</a>
+                        <a href="/cabecera/buscadores/busqueda.html" class="mnm-dropdown-item">🔍 Buscador Matrix</a>
+                        <a href="/cabecera/cine/libros.html" class="mnm-dropdown-item">📖 Biblioteca Digital</a>
+                        <a href="/cabecera/cine/localizador.html" class="mnm-dropdown-item">🌐 Ubicador IP</a>
+                        <a href="/cabecera/buscadores/barcelona-sustainabitil.html" class="mnm-dropdown-item">🌱 Barcelona Sostenible</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 4: Mascotas y Animales -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Mascotas y Animales
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/animales/animales.html" class="mnm-dropdown-item">🐾 Generador de Animales</a>
+                        <a href="/cabecera/animales/buscador-de-perros.html" class="mnm-dropdown-item">🐕 Aplicación de Mascotas</a>
+                        <a href="/cabecera/buscadores/deportes.html" class="mnm-dropdown-item">⚽ Buscador de Equipos<br>Deportivos</a>
+                        <a href="/cabecera/animales/Marketing.html" class="mnm-dropdown-item">📱 Marketing Digital</a>
+                        <a href="/cabecera/animales/multi.html" class="mnm-dropdown-item">💻 Solución Multiplataforma</a>
+                        <a href="/cabecera/animales/neocron.html" class="mnm-dropdown-item">🌟 Neocron Urukais</a>
+                        <a href="/cabecera/animales/portal-interactivo.html" class="mnm-dropdown-item">✨ Portal Interactivo</a>
+                        <a href="/cabecera/animales/site-de-productividad.html" class="mnm-dropdown-item">💼 Suite de Productividad</a>
+                        <a href="https://vimeo.com/1135027927?share=copy" target="blank" class="mnm-dropdown-item">💼 Suite de Productividad (Video)</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 5: Comida y Bebidas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Comida y Bebidas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/comida/coctel.html" class="mnm-dropdown-item">🍹 Sistema de Coctelería</a>
+                        <a href="/cabecera/comida/comida.html" class="mnm-dropdown-item">🍽 Gastronomía Exquisita</a>
+                        <a href="/cabecera/comida/cocia-en-inglés.html" class="mnm-dropdown-item">🍳 Cocina Internacional</a>
+                        
+                    </div>
+                </li>
+
+                <!-- Categoría 6: Creatividad y Arte -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Creatividad y Arte
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/conics/archivo-de-hielo.html" class="mnm-dropdown-item">❄️ Archivo Creativo</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😄 Galería de Humor</a>
+                        <a href="/cabecera/conics/Morty.html" class="mnm-dropdown-item">🎨 Colección Morty</a>
+                        <a href="/cabecera/conics/generador-de-fondos.html" class="mnm-dropdown-item">🎨 Generador de Fondos</a>
+                        <a href="/cabecera/conics/neocron.html" class="mnm-dropdown-item">😊 Control de Estado de Ánimo</a>
+                        <a href="/cabecera/conics/plataforma-de-herattientas.html" class="mnm-dropdown-item">🛠 Plataforma de<br>Herramientas Creativas</a>
+                        <a href="/cabecera/conics/portal-interactivo.html" class="mnm-dropdown-item">🎭 Portal Interactivo</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 7: Medio Ambiente -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Medio Ambiente
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/tierra/ambiental-mundial.html" class="mnm-dropdown-item">🌍 Global Ambiental</a>
+                        <a href="/cabecera/tierra/busca-ciudades.html" class="mnm-dropdown-item">🏙 Explorador de Ciudades</a>
+                        <a href="/cabecera/tierra/busca-cuidad.html" class="mnm-dropdown-item">🌆 Búsqueda Urbana</a>
+                        <a href="/cabecera/tierra/clima.html" class="mnm-dropdown-item">🌤️ Centro Meteorológico</a>
+                        <a href="/cabecera/tierra/deforestacion-mundial.html" class="mnm-dropdown-item">🌲 Control Deforestación</a>
+                        <a href="/cabecera/tierra/gia-de-supervivencia.html" class="mnm-dropdown-item">🧭 Guía de Supervivencia</a>
+                        <a href="/cabecera/tierra/mas.html" class="mnm-dropdown-item">🌿 Más Contenido Verde</a>
+                        <a href="/cabecera/tierra/naturaleza.html" class="mnm-dropdown-item">🍃 Mundo Natural</a>
+                        <a href="/cabecera/tierra/renacer.html" class="mnm-dropdown-item">🌱 Renacer y Renovación</a>
+                        <a href="/cabecera/tierra/sistema-reus.html" class="mnm-dropdown-item">♻️ Sistema Inteligente de Reciclaje</a>
+                        <a href="/cabecera/tierra/supervivencia33.html" class="mnm-dropdown-item">🏕 Supervivencia Extrema</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 8: Eventos y Citas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Eventos y Citas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/gestor-de-citas.html" class="mnm-dropdown-item">💕 Organizador de Citas</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+
+
+
+
+    </div>
+    <div class="app">
+        <!-- ====== SIDEBAR ====== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand-logo"></div>
+                <div class="brand-name neon-text">Urukais Klick</div>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-item active" id="nav-browse">
+                    <i class="fas fa-home"></i>
+                    <span>Explorar</span>
+                </div>
+                <div class="nav-item" id="nav-favs">
+                    <i class="fas fa-heart"></i>
+                    <span>Favoritos</span>
+                </div>
+            </div>
+
+            <h3 class="section-title">Géneros Populares</h3>
+            <div class="genres" id="genreButtons">
+                <button class="genre-btn" data-genre="pop">Pop</button>
+                <button class="genre-btn" data-genre="rock">Rock</button>
+                <button class="genre-btn" data-genre="jazz">Jazz</button>
+                <button class="genre-btn" data-genre="electronic">Electrónica</button>
+                <button class="genre-btn" data-genre="hip hop">Hip-Hop</button>
+                <button class="genre-btn" data-genre="classical">Clásica</button>
+                <button class="genre-btn" data-genre="r&b">R&B</button>
+                <button class="genre-btn" data-genre="latin">Latina</button>
+                <button class="genre-btn" data-genre="reggae">Reggae</button>
+                <button class="genre-btn" data-genre="country">Country</button>
+                <button class="genre-btn" data-genre="metal">Metal</button>
+                <button class="genre-btn" data-genre="blues">Blues</button>
+                <button class="genre-btn" data-genre="funk">Funk</button>
+                <button class="genre-btn" data-genre="soul">Soul</button>
+                <button class="genre-btn" data-genre="punk">Punk</button>
+                <button class="genre-btn" data-genre="indie">Indie</button>
+            </div>
+            
+        
+        </aside>
+        
+        <!-- ====== HEADER ====== -->
+        <header class="header">
+            <button class="ctrl-btn hamburger" id="toggleSidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="searchbar">
+                <input type="text" id="searchInput" placeholder="Buscar por género (ej: rock, jazz, pop)" />
+                <select id="apiSelect">
+                    <option value="both">Deezer + iTunes</option>
+                    <option value="deezer">Solo Deezer</option>
+                    <option value="itunes">Solo iTunes</option>
+                </select>
+                <button class="primary-btn" id="searchBtn">
+                    <i class="fas fa-search"></i> Buscar
+                </button>
+            </div>
+            <div class="status" id="status">Listo</div>
+        </header>
+
+        <!-- ====== MAIN CONTENT ====== -->
+        <main class="main">
+            <section id="resultsSection">
+                <h3 class="section-title">🎵 Resultados</h3>
+                <div class="grid" id="resultsGrid"></div>
+            </section>
+
+            <section id="favoritesSection" style="display:none">
+                <h3 class="section-title">❤️ Tus Favoritos</h3>
+                <div id="favoritesEmpty" class="favorites-empty">
+                    <i class="fas fa-heart" style="font-size: 48px; margin-bottom: 16px; opacity: 0.3;"></i>
+                    <p>Aún no has agregado canciones a favoritos.</p>
+                </div>
+                <div class="grid" id="favoritesGrid"></div>
+            </section>
+        </main>
+
+        <!-- ====== PLAYER ====== -->
+        <footer class="player">
+            <div class="now-playing">
+                <img class="thumb" id="npThumb" alt="Carátula" />
+                <div class="np-meta">
+                    <div class="np-title" id="npTitle">Sin reproducción</div>
+                    <div class="np-artist" id="npArtist">Selecciona una canción</div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <div class="control-buttons">
+                    <button class="ctrl-btn" id="prevBtn" title="Anterior">
+                        <i class="fas fa-backward"></i>
+                    </button>
+                    <button class="ctrl-btn play-toggle" id="playPauseBtn" title="Reproducir">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="ctrl-btn" id="nextBtn" title="Siguiente">
+                        <i class="fas fa-forward"></i>
+                    </button>
+                </div>
+                <div class="timeline">
+                    <div class="time" id="currentTime">00:00</div>
+                    <div class="progress" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                        <div class="progress-handle" id="progressHandle"></div>
+                    </div>
+                    <div class="time" id="totalTime">00:00</div>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="volume">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.8" />
+                </div>
+                <button class="ctrl-btn" id="miniFav" title="Agregar/Quitar favorito">
+                    <i class="far fa-heart" id="miniFavIcon"></i>
+                </button>
+            </div>
+
+            <audio id="audio" crossorigin="anonymous"></audio>
+        </footer>
+    </div>
+      <style>
+        /* Botón de scroll to top */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        .scroll-to-top:active {
+            transform: translateY(-1px);
+        }
+
+        /* Estado visible del botón */
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Icono del botón */
+        .scroll-to-top svg {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-to-top:hover svg {
+            transform: translateY(-2px);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .scroll-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .scroll-to-top svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        /* Contenido mínimo para hacer scroll */
+        body {
+            height: 2000px;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <!-- Contenido mínimo para probar el scroll -->
+        
+    <!-- Botón de subida al principio de la web -->
+    <button id="scrollToTopBtn" class="scroll-to-top" aria-label="Volver al inicio">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+        // Botón de Scroll to Top - Sin Conflictos
+        (function() {
+            'use strict';
+            
+            // Elementos del DOM
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            
+            // Verificar que el elemento existe
+            if (!scrollToTopBtn) {
+                console.warn('Botón scrollToTopBtn no encontrado');
+                return;
+            }
+            
+            // Configuración
+            const scrollOffset = 300; // Píxeles antes de mostrar el botón
+            
+            // Función para mostrar/ocultar el botón
+            function toggleScrollToTopButton() {
+                if (window.pageYOffset > scrollOffset) {
+                    scrollToTopBtn.classList.add('show');
+                } else {
+                    scrollToTopBtn.classList.remove('show');
+                }
+            }
+            
+            // Función de scroll suave hacia arriba
+            function scrollToTop() {
+                // Scroll suave usando window.scrollTo
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                // Fallback para navegadores más antiguos
+                const startPosition = window.pageYOffset;
+                const startTime = performance.now();
+                const duration = 800; // Duración en milisegundos
+                
+                function easeInOutQuad(t, b, c, d) {
+                    t /= d/2;
+                    if (t < 1) return c/2*t*t + b;
+                    t--;
+                    return -c/2 * (t*(t-2) - 1) + b;
+                }
+                
+                function animateScroll(currentTime) {
+                    const timeElapsed = currentTime - startTime;
+                    const run = easeInOutQuad(timeElapsed, startPosition, -startPosition, duration);
+                    window.scrollTo(0, run);
+                    
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animateScroll);
+                    }
+                }
+                
+                requestAnimationFrame(animateScroll);
+            }
+            
+            // Event Listeners con verificaciones de seguridad
+            function addEventListeners() {
+                // Scroll event listener
+                window.addEventListener('scroll', function() {
+                    // Usar requestAnimationFrame para optimizar el rendimiento
+                    if (window.requestAnimationFrame) {
+                        requestAnimationFrame(toggleScrollToTopButton);
+                    } else {
+                        toggleScrollToTopButton();
+                    }
+                }, { passive: true }); // passive: true mejora el rendimiento
+                
+                // Click event listener
+                scrollToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    scrollToTop();
+                });
+                
+                // Keyboard accessibility
+                scrollToTopBtn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        scrollToTop();
+                    }
+                });
+            }
+            
+            // Inicialización
+            function init() {
+                // Verificar que el DOM está completamente cargado
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', function() {
+                        toggleScrollToTopButton();
+                        addEventListeners();
+                    });
+                } else {
+                    toggleScrollToTopButton();
+                    addEventListeners();
+                }
+            }
+            
+            // Función para verificar compatibilidad del navegador
+            function checkCompatibility() {
+                // Verificar soporte para smooth scroll
+                const supportsSmoothScroll = 'scrollBehavior' in document.documentElement.style;
+                if (!supportsSmoothScroll) {
+                    console.info('Usando fallback para smooth scroll');
+                }
+                
+                // Verificar soporte para requestAnimationFrame
+                const supportsRAF = 'requestAnimationFrame' in window;
+                if (!supportsRAF) {
+                    console.info('Usando fallback para requestAnimationFrame');
+                }
+            }
+            
+            // Ejecutar inicialización
+            checkCompatibility();
+            init();
+            
+            // Función para detectar cambios de orientación (móvil)
+            window.addEventListener('orientationchange', function() {
+                setTimeout(function() {
+                    toggleScrollToTopButton();
+                }, 500); // Delay para permitir que la orientación cambie
+            });
+            
+            // Prevenir conflictos con otros scripts
+            window.scrollToTopModule = {
+                show: function() {
+                    scrollToTopBtn.classList.add('show');
+                },
+                hide: function() {
+                    scrollToTopBtn.classList.remove('show');
+                },
+                scrollToTop: scrollToTop,
+                toggle: toggleScrollToTopButton
+            };
+            
+        })();
+    </script>
+    <!-- ====== TOAST ====== -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        /* ====== ESTADO GLOBAL ====== */
+        const resultsGrid = document.getElementById('resultsGrid');
+        const favoritesGrid = document.getElementById('favoritesGrid');
+        const favoritesEmpty = document.getElementById('favoritesEmpty');
+        const statusEl = document.getElementById('status');
+        const toastEl = document.getElementById('toast');
+
+        const audio = document.getElementById('audio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const progressBar = document.getElementById('progressBar');
+        const progressFill = document.getElementById('progressFill');
+        const progressHandle = document.getElementById('progressHandle');
+        const currentTimeEl = document.getElementById('currentTime');
+        const totalTimeEl = document.getElementById('totalTime');
+
+        const npThumb = document.getElementById('npThumb');
+        const npTitle = document.getElementById('npTitle');
+        const npArtist = document.getElementById('npArtist');
+        const miniFav = document.getElementById('miniFav');
+        const miniFavIcon = document.getElementById('miniFavIcon');
+
+        const searchInput = document.getElementById('searchInput');
+        const apiSelect = document.getElementById('apiSelect');
+        const searchBtn = document.getElementById('searchBtn');
+
+        const genreButtons = document.getElementById('genreButtons');
+        const navBrowse = document.getElementById('nav-browse');
+        const navFavs = document.getElementById('nav-favs');
+
+        const sidebar = document.getElementById('sidebar');
+        const toggleSidebar = document.getElementById('toggleSidebar');
+
+        let playlist = [];
+        let currentIndex = -1;
+        let favorites = loadFavorites();
+
+        /* ====== UTILIDADES ====== */
+        function showToast(message, type = 'info') {
+            toastEl.textContent = message;
+            toastEl.className = 'toast show' + (type === 'error' ? ' error' : '');
+            setTimeout(() => toastEl.className = 'toast', 2200);
+        }
+
+        function setStatus(text) {
+            statusEl.textContent = text;
+        }
+
+        function formatTime(sec) {
+            if (!isFinite(sec)) return '00:00';
+            const m = Math.floor(sec / 60);
+            const s = Math.floor(sec % 60);
+            return String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+        }
+
+        function saveFavorites() {
+            localStorage.setItem('retrowave:favorites', JSON.stringify(favorites));
+        }
+
+        function loadFavorites() {
+            try {
+                const raw = localStorage.getItem('retrowave:favorites');
+                return raw ? JSON.parse(raw) : {};
+            } catch (e) {
+                console.warn('Error leyendo favoritos', e);
+                return {};
+            }
+        }
+
+        /* ====== NORMALIZACIÓN DE DATOS ====== */
+        function normalizeDeezerItem(item, genre) {
+            return {
+                trackId: 'deezer_' + item.id,
+                title: item.title || 'Sin título',
+                artist: item.artist?.name || 'Desconocido',
+                album: item.album?.title || '',
+                cover: item.album?.cover_medium || item.album?.cover || '',
+                preview: item.preview || '',
+                source: 'deezer',
+                genre: genre || ''
+            };
+        }
+
+        function normalizeItunesItem(item, genre) {
+            return {
+                trackId: 'itunes_' + item.trackId,
+                title: item.trackName || item.collectionName || 'Sin título',
+                artist: item.artistName || 'Desconocido',
+                album: item.collectionName || '',
+                cover: item.artworkUrl100 ? item.artworkUrl100.replace('100x100', '300x300') : '',
+                preview: item.previewUrl || '',
+                source: 'itunes',
+                genre: genre || item.primaryGenreName || ''
+            };
+        }
+
+        /* ====== LLAMADAS A API ====== */
+        async function fetchDeezerByGenre(genre) {
+            const url = `https://api.deezer.com/search?q=${encodeURIComponent('genre:"' + genre + '"')}`;
+            try {
+                const res = await fetch(url);
+                if (!res.ok) throw new Error('Respuesta no OK de Deezer');
+                const data = await res.json();
+                const tracks = Array.isArray(data.data) ? data.data : [];
+                return tracks.map(t => normalizeDeezerItem(t, genre)).filter(t => !!t.preview);
+            } catch (e) {
+                console.error('Error Deezer:', e);
+                showToast('No se pudo cargar Deezer', 'error');
+                return [];
+            }
+        }
+
+        async function fetchItunesByGenreTerm(term) {
+            const url = `https://itunes.apple.com/search?term=${encodeURIComponent(term)}&media=music&entity=song&limit=25`;
+            try {
+                const res = await fetch(url);
+                if (!res.ok) throw new Error('Respuesta no OK de iTunes');
+                const data = await res.json();
+                const tracks = Array.isArray(data.results) ? data.results : [];
+                return tracks.map(t => normalizeItunesItem(t, term)).filter(t => !!t.preview);
+            } catch (e) {
+                console.error('Error iTunes:', e);
+                showToast('No se pudo cargar iTunes', 'error');
+                return [];
+            }
+        }
+
+        async function searchByGenre(genre, source = 'both') {
+            setStatus('Buscando: ' + genre + '...');
+            resultsGrid.innerHTML = '';
+            
+            [...genreButtons.querySelectorAll('.genre-btn')].forEach(b => 
+                b.classList.toggle('active', b.dataset.genre === genre)
+            );
+
+            const tasks = [];
+            if (source === 'both' || source === 'deezer') tasks.push(fetchDeezerByGenre(genre));
+            if (source === 'both' || source === 'itunes') tasks.push(fetchItunesByGenreTerm(genre));
+
+            const results = (await Promise.all(tasks)).flat();
+            const mixed = shuffle(results).slice(0, 40);
+            playlist = mixed;
+            currentIndex = -1;
+            renderResults(mixed);
+            setStatus(`Resultados: ${mixed.length} pistas`);
+            if (mixed.length === 0) showToast('Sin resultados para el género seleccionado');
+        }
+
+        function shuffle(arr) {
+            return arr.map(a => ({ ...a, __r: Math.random() }))
+                .sort((x, y) => x.__r - y.__r)
+                .map(({ __r, ...rest }) => rest);
+        }
+
+        /* ====== RENDER ====== */
+        function renderResults(items) {
+            resultsGrid.innerHTML = '';
+            items.forEach(item => {
+                const isFav = !!favorites[item.trackId];
+                const card = document.createElement('article');
+                card.className = 'card';
+                card.innerHTML = `
+                    <span class="badge">${item.source.toUpperCase()}</span>
+                    <img src="${item.cover || ''}" alt="Portada" onerror="this.style.display='none'" />
+                    <div class="card-content">
+                        <div class="title">${item.title}</div>
+                        <div class="subtitle">${item.artist}${item.album ? ' • ' + item.album : ''}</div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="play-btn">
+                            <i class="fas fa-play"></i> Reproducir
+                        </button>
+                        <button class="fav-btn ${isFav ? 'active' : ''}">
+                            <i class="${isFav ? 'fas' : 'far'} fa-heart"></i>
+                        </button>
+                    </div>
+                `;
+
+                card.querySelector('.play-btn').addEventListener('click', () => {
+                    const idx = playlist.findIndex(t => t.trackId === item.trackId);
+                    if (idx === -1) {
+                        playlist.unshift(item);
+                        currentIndex = 0;
+                    } else {
+                        currentIndex = idx;
+                    }
+                    loadAndPlayCurrent();
+                });
+
+                const favBtn = card.querySelector('.fav-btn');
+                favBtn.addEventListener('click', () => toggleFavorite(item, favBtn));
+                resultsGrid.appendChild(card);
+            });
+        }
+
+        function renderFavorites() {
+            favoritesGrid.innerHTML = '';
+            const favArray = Object.values(favorites);
+            favoritesEmpty.style.display = favArray.length ? 'none' : 'block';
+            
+            favArray.forEach(item => {
+                const card = document.createElement('article');
+                card.className = 'card';
+                card.innerHTML = `
+                    <span class="badge">FAV</span>
+                    <img src="${item.cover || ''}" alt="Portada" onerror="this.style.display='none'" />
+                    <div class="card-content">
+                        <div class="title">${item.title}</div>
+                        <div class="subtitle">${item.artist}${item.album ? ' • ' + item.album : ''}</div>
+                    </div>
+                    <div class="card-actions">
+                        <button class="play-btn">
+                            <i class="fas fa-play"></i> Reproducir
+                        </button>
+                        <button class="fav-btn active">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                `;
+
+                card.querySelector('.play-btn').addEventListener('click', () => {
+                    const idx = playlist.findIndex(t => t.trackId === item.trackId);
+                    if (idx === -1) {
+                        playlist.unshift(item);
+                        currentIndex = 0;
+                    } else {
+                        currentIndex = idx;
+                    }
+                    loadAndPlayCurrent();
+                });
+
+                const favBtn = card.querySelector('.fav-btn');
+                favBtn.addEventListener('click', () => {
+                    delete favorites[item.trackId];
+                    saveFavorites();
+                    renderFavorites();
+                });
+                
+                favoritesGrid.appendChild(card);
+            });
+        }
+
+        function toggleFavorite(item, btnEl) {
+            const isFav = !!favorites[item.trackId];
+            if (isFav) {
+                delete favorites[item.trackId];
+                btnEl.classList.remove('active');
+                btnEl.querySelector('i').classList.remove('fas');
+                btnEl.querySelector('i').classList.add('far');
+                showToast('Eliminado de favoritos');
+            } else {
+                favorites[item.trackId] = item;
+                btnEl.classList.add('active');
+                btnEl.querySelector('i').classList.remove('far');
+                btnEl.querySelector('i').classList.add('fas');
+                showToast('Guardado en favoritos');
+            }
+            saveFavorites();
+            updateMiniFavIcon();
+        }
+
+        /* ====== REPRODUCTOR ====== */
+        function loadAndPlayCurrent() {
+            const track = playlist[currentIndex];
+            if (!track) return;
+            
+            audio.src = track.preview;
+            audio.play().catch(err => console.warn('Autoplay falló:', err));
+            
+            npThumb.src = track.cover || '';
+            npTitle.textContent = track.title || 'Sin título';
+            npArtist.textContent = track.artist || 'Desconocido';
+            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            updateMiniFavIcon();
+        }
+
+        function updateMiniFavIcon() {
+            const current = playlist[currentIndex];
+            if (current && favorites[current.trackId]) {
+                miniFavIcon.classList.remove('far');
+                miniFavIcon.classList.add('fas');
+            } else {
+                miniFavIcon.classList.remove('fas');
+                miniFavIcon.classList.add('far');
+            }
+        }
+
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.src) {
+                if (audio.paused) {
+                    audio.play();
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                } else {
+                    audio.pause();
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            } else {
+                if (playlist.length) {
+                    currentIndex = Math.max(currentIndex, 0);
+                    loadAndPlayCurrent();
+                } else {
+                    showToast('Selecciona una canción para reproducir');
+                }
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (!playlist.length) return;
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : playlist.length - 1;
+            loadAndPlayCurrent();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (!playlist.length) return;
+            currentIndex = (currentIndex < playlist.length - 1) ? currentIndex + 1 : 0;
+            loadAndPlayCurrent();
+        });
+
+        volumeSlider.addEventListener('input', () => {
+            audio.volume = parseFloat(volumeSlider.value);
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            const { currentTime, duration } = audio;
+            currentTimeEl.textContent = formatTime(currentTime);
+            totalTimeEl.textContent = formatTime(duration || 0);
+            const ratio = duration ? (currentTime / duration) : 0;
+            progressFill.style.width = (ratio * 100) + '%';
+            progressHandle.style.left = (ratio * 100) + '%';
+        });
+
+        audio.addEventListener('ended', () => {
+            nextBtn.click();
+        });
+
+        progressBar.addEventListener('click', (e) => {
+            const rect = progressBar.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const ratio = Math.min(Math.max(x / rect.width, 0), 1);
+            if (audio.duration) {
+                audio.currentTime = audio.duration * ratio;
+            }
+        });
+
+        /* ====== NAVEGACIÓN ====== */
+        function showResults() {
+            navBrowse.classList.add('active');
+            navFavs.classList.remove('active');
+            document.getElementById('resultsSection').style.display = '';
+            document.getElementById('favoritesSection').style.display = 'none';
+            setStatus('Explorar');
+            if (window.innerWidth <= 900) sidebar.classList.remove('open');
+        }
+
+        function showFavorites() {
+            navFavs.classList.add('active');
+            navBrowse.classList.remove('active');
+            document.getElementById('resultsSection').style.display = 'none';
+            document.getElementById('favoritesSection').style.display = '';
+            renderFavorites();
+            setStatus('Favoritos');
+            if (window.innerWidth <= 900) sidebar.classList.remove('open');
+        }
+
+        navBrowse.addEventListener('click', showResults);
+        navFavs.addEventListener('click', showFavorites);
+
+        /* ====== BÚSQUEDA ====== */
+        searchBtn.addEventListener('click', () => {
+            const g = (searchInput.value || '').trim();
+            if (!g) {
+                showToast('Ingresa un género para buscar');
+                return;
+            }
+            searchByGenre(g.toLowerCase(), apiSelect.value);
+            showResults();
+        });
+
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') searchBtn.click();
+        });
+
+        genreButtons.addEventListener('click', (e) => {
+            const btn = e.target.closest('.genre-btn');
+            if (!btn) return;
+            const genre = btn.dataset.genre;
+            searchInput.value = genre;
+            searchByGenre(genre, apiSelect.value);
+            showResults();
+        });
+
+        miniFav.addEventListener('click', () => {
+            const current = playlist[currentIndex];
+            if (!current) {
+                showToast('No hay canción activa');
+                return;
+            }
+            const fakeBtn = document.createElement('button');
+            fakeBtn.innerHTML = `<i class="${favorites[current.trackId] ? 'fas' : 'far'} fa-heart"></i>`;
+            toggleFavorite(current, fakeBtn);
+            updateMiniFavIcon();
+            renderFavorites();
+        });
+
+        /* ====== SIDEBAR RESPONSIVE ====== */
+        toggleSidebar.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        window.addEventListener('resize', () => {
+            const isMobile = window.innerWidth <= 900;
+            toggleSidebar.style.display = isMobile ? 'flex' : 'none';
+            if (!isMobile) sidebar.classList.remove('open');
+        });
+
+        /* ====== INICIALIZACIÓN ====== */
+        window.addEventListener('DOMContentLoaded', () => {
+            searchByGenre('pop', 'both');
+            renderFavorites();
+            const isMobile = window.innerWidth <= 900;
+            toggleSidebar.style.display = isMobile ? 'flex' : 'none';
+        });
+    </script>
+    
+    <script src="/javascript/botones.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/botones.js"></script>
+    <script src="/menu/menu.js"></script>
+</body>
+</html>
