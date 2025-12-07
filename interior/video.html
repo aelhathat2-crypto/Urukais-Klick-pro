@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <meta name="author" content="Manuel Casimiro Carrasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urukais Klick - Plataforma de Videos</title>
+    <link rel="stylesheet" href="/css/video-plataforma.css">
+    
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/botones.css">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/menu/menu.css">
+</head>
+<body>
+    
+        
+    
+
+    <!-- Header con navegación -->
+    <header class="header">
+            
+        <!-- Overlay para móvil -->
+    <div class="mnm-overlay" id="mnmOverlay"></div>
+
+    <!-- Botón toggle reproductor -->
+    <!-- Navegación principal -->
+    <nav class="mnm-nav-container">
+        <div class="mnm-nav-wrapper">
+            <a href="/index.html" class="mnm-logo">Urukais Klick</a>
+            
+            
+            <button class="mnm-hamburger" id="mnmHamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="mnm-nav-menu" id="mnmNavMenu">
+                <!-- Categoría 1: Entretenimiento y Ocio -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Entretenimiento y Ocio
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/buscador-de-peliculas.html" class="mnm-dropdown-item">🎬 Catálogo de Películas</a>
+                        <a href="/cabecera/cine/la-nasa.html" class="mnm-dropdown-item">🚀 Espacio y Astronomía</a>
+                        <a href="/cabecera/cine/peluculas.html" class="mnm-dropdown-item">🎭 Films Favoritos</a>
+                        <a href="/cabecera/cine/noticias.html" class="mnm-dropdown-item">📰 Noticias Actuales</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😂 Humor y Entretenimiento</a>
+                        <a href="/cabecera/musica/hadmed.html" class="mnm-dropdown-item">🎵 Ambiente Musical</a>
+                        <a href="/cabecera/musica/mas.html" class="mnm-dropdown-item">🎶 Musicalife</a>
+                        <a href="/cabecera/musica/musica-clasica.html" class="mnm-dropdown-item">🎼 Música Clásica</a>
+                        <a href="/cabecera/musica/prueva.html" class="mnm-dropdown-item">🎤 Géneros Musicales</a>
+                        <a href="/cabecera/musica/tartituras.html" class="mnm-dropdown-item">🎵 Partituras y Escore</a>
+                        <a href="/cabecera/musica/videos3.html" class="mnm-dropdown-item">📺 Centro de Videos</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 2: Herramientas y Productividad -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Herramientas y Productividad
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/herramientas/chat.html" class="mnm-dropdown-item">💬 Asistente Virtual Urukais</a>
+                        <a href="/cabecera/herramientas/control-de-consultas.html" class="mnm-dropdown-item">🗂 Sistema de Consultas</a>
+                        <a href="/cabecera/herramientas/DevStudio.html" class="mnm-dropdown-item">⚙️ Estudio de Desarrollo</a>
+                        <a href="/cabecera/herramientas/FinTech.html" class="mnm-dropdown-item">💼 Soluciones Financieras</a>
+                        <a href="/cabecera/herramientas/generador-contraseñas.html" class="mnm-dropdown-item">🔐 Generador Seguro de<br>Contraseñas</a>
+                        <a href="/cabecera/herramientas/genesis.html" class="mnm-dropdown-item">🌟 Plataforma Genesis</a>
+                        <a href="/cabecera/herramientas/herramienta.html" class="mnm-dropdown-item">🛠 Suite de Herramientas</a>
+                        <a href="/cabecera/herramientas/hot.html" class="mnm-dropdown-item">🔥 Tendencias Actuales</a>
+                        <a href="/cabecera/herramientas/ia-educativa.html" class="mnm-dropdown-item">🎓 IA Educativa</a>
+                        <a href="/cabecera/herramientas/listado-de-prons.html" class="mnm-dropdown-item">📋 Pronósticos en Línea</a>
+                        <a href="/cabecera/herramientas/localizacion-de-faker.html" class="mnm-dropdown-item">📍 Localizador Universal</a>
+                        <a href="/cabecera/herramientas/mas-datos.html" class="mnm-dropdown-item">📊 Análisis de Datos</a>
+                        <a href="/cabecera/herramientas/pruevas.html" class="mnm-dropdown-item">🧪 Centro de Pruebas</a>
+                        <a href="/cabecera/herramientas/texto-voz.html" class="mnm-dropdown-item">🔊 Síntesis de Voz</a>
+                        <a href="/cabecera/herramientas/tienda-de-urukais.html" class="mnm-dropdown-item">🛒 Tienda Oficial</a>
+                        <a href="/cabecera/buscadores/gestor-de-tareas.html" class="mnm-dropdown-item">✅ Organizador de Tareas</a>
+                        <a href="/cabecera/buscadores/gestor-de-proyectos.html" class="mnm-dropdown-item">📈 Gestor de Proyectos</a>
+                        <a href="/cabecera/cine/ProTask.html" class="mnm-dropdown-item">⏰ ProTask Profesional</a>
+                        <a href="/cabecera/cine/ReservaPro.html" class="mnm-dropdown-item">📅 Sistema de Reservas</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 3: Buscadores y Información -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Buscadores y Información
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/buscadores/buscadorurukais.html" class="mnm-dropdown-item">📚 Búsqueda de Libros</a>
+                        <a href="/cabecera/buscadores/busqueda.html" class="mnm-dropdown-item">🔍 Buscador Matrix</a>
+                        <a href="/cabecera/cine/libros.html" class="mnm-dropdown-item">📖 Biblioteca Digital</a>
+                        <a href="/cabecera/cine/localizador.html" class="mnm-dropdown-item">🌐 Ubicador IP</a>
+                        <a href="/cabecera/buscadores/barcelona-sustainabitil.html" class="mnm-dropdown-item">🌱 Barcelona Sostenible</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 4: Mascotas y Animales -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Mascotas y Animales
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/animales/animales.html" class="mnm-dropdown-item">🐾 Generador de Animales</a>
+                        <a href="/cabecera/animales/buscador-de-perros.html" class="mnm-dropdown-item">🐕 Aplicación de Mascotas</a>
+                        <a href="/cabecera/buscadores/deportes.html" class="mnm-dropdown-item">⚽ Buscador de Equipos<br>Deportivos</a>
+                        <a href="/cabecera/animales/Marketing.html" class="mnm-dropdown-item">📱 Marketing Digital</a>
+                        <a href="/cabecera/animales/multi.html" class="mnm-dropdown-item">💻 Solución Multiplataforma</a>
+                        <a href="/cabecera/animales/neocron.html" class="mnm-dropdown-item">🌟 Neocron Urukais</a>
+                        <a href="/cabecera/animales/portal-interactivo.html" class="mnm-dropdown-item">✨ Portal Interactivo</a>
+                        <a href="/cabecera/animales/site-de-productividad.html" class="mnm-dropdown-item">💼 Suite de Productividad</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 5: Comida y Bebidas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Comida y Bebidas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/comida/coctel.html" class="mnm-dropdown-item">🍹 Sistema de Coctelería</a>
+                        <a href="/cabecera/comida/comida.html" class="mnm-dropdown-item">🍽 Gastronomía Exquisita</a>
+                        <a href="/cabecera/comida/cocia-en-inggles.html" class="mnm-dropdown-item">🍳 Cocina Internacional</a>
+                        
+                    </div>
+                </li>
+
+                <!-- Categoría 6: Creatividad y Arte -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Creatividad y Arte
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/conics/archivo-de-hielo.html" class="mnm-dropdown-item">❄️ Archivo Creativo</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😄 Galería de Humor</a>
+                        <a href="/cabecera/conics/Morty.html" class="mnm-dropdown-item">🎨 Colección Morty</a>
+                        <a href="/cabecera/conics/generador-de-fondos.html" class="mnm-dropdown-item">🎨 Generador de Fondos</a>
+                        <a href="/cabecera/conics/neocron.html" class="mnm-dropdown-item">😊 Control de Estado de Ánimo</a>
+                        <a href="/cabecera/conics/plataforma-de-herattientas.html" class="mnm-dropdown-item">🛠 Plataforma de<br>Herramientas Creativas</a>
+                        <a href="/cabecera/conics/portal-interactivo.html" class="mnm-dropdown-item">🎭 Portal Interactivo</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 7: Medio Ambiente -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Medio Ambiente
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/tierra/ambiental-mundial.html" class="mnm-dropdown-item">🌍 Global Ambiental</a>
+                        <a href="/cabecera/tierra/busca-ciudades.html" class="mnm-dropdown-item">🏙 Explorador de Ciudades</a>
+                        <a href="/cabecera/tierra/busca-cuidad.html" class="mnm-dropdown-item">🌆 Búsqueda Urbana</a>
+                        <a href="/cabecera/tierra/clima.html" class="mnm-dropdown-item">🌤️ Centro Meteorológico</a>
+                        <a href="/cabecera/tierra/deforestacion-mundial.html" class="mnm-dropdown-item">🌲 Control Deforestación</a>
+                        <a href="/cabecera/tierra/gia-de-supervivencia.html" class="mnm-dropdown-item">🧭 Guía de Supervivencia</a>
+                        <a href="/cabecera/tierra/mas.html" class="mnm-dropdown-item">🌿 Más Contenido Verde</a>
+                        <a href="/cabecera/tierra/renacer.html" class="mnm-dropdown-item">🌱 Renacer y Renovación</a>
+                        <a href="/cabecera/tierra/sistema-reus.html" class="mnm-dropdown-item">♻️ Sistema Inteligente de Reciclaje</a>
+                        <a href="/cabecera/tierra/supervivencia33.html" class="mnm-dropdown-item">🏕 Supervivencia Extrema</a>
+                    </div>
+                </li>
+                
+
+                <!-- Categoría 8: Eventos y Citas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Eventos y Citas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/gestor-de-citas.html" class="mnm-dropdown-item">💕 Organizador de Citas</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br><br>
+    
+        <nav class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">▶</div>
+                <span>VideoStream</span>
+            </a>
+            
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Buscar videos...">
+            </div>
+            
+            <div class="nav-actions">
+                <button class="nav-btn">👤</button>
+                <button class="nav-btn">⚙️</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <!-- Sección del reproductor -->
+        <section class="video-player-section">
+            <div class="video-container">
+                <video class="video-element" id="mainVideo" controls preload="metadata">
+                    <source src="" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+                
+                <!-- Controles personalizados -->
+                <div class="video-controls">
+                    <div class="controls-row">
+                        <button class="control-btn" id="playPauseBtn">▶️</button>
+                        <button class="control-btn" id="prevBtn">⏮️</button>
+                        <button class="control-btn" id="nextBtn">⏭️</button>
+                        <button class="control-btn" id="muteBtn">🔊</button>
+                        
+                        <div class="volume-control">
+                            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="100">
+                        </div>
+                        
+                        <div style="margin-left: auto;">
+                            <button class="control-btn" id="fullscreenBtn">⛶</button>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <span class="time-display" id="currentTime">0:00</span>
+                        <div class="progress-bar" id="progressBar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <span class="time-display" id="duration">0:00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Información del video -->
+            <div class="video-info">
+                <h1 class="video-title" id="videoTitle">Selecciona un video para reproducir</h1>
+                <div class="video-meta" id="videoMeta">
+                    <span id="channelName">Canal</span>
+                    <span id="publishDate">Fecha</span>
+                    <span id="views">0 visualizaciones</span>
+                </div>
+                <div class="video-description" id="videoDescription">
+                    Descripción del video aparecerá aquí.
+                </div>
+            </div>
+        </section>
+
+        <!-- Sidebar con lista de videos -->
+        <aside class="videos-sidebar">
+            <h2 class="sidebar-title">Videos Recomendados</h2>
+            <div class="videos-grid" id="videosGrid">
+                <!-- Los videos se cargarán dinámicamente aquí -->
+            </div>
+        </aside>
+    </main>
+    
+    <!-- Footer -->
+     <section>
+            <footer class="urukais-footer">
+    <div class="footer-container">
+        <div class="footer-main">
+            <div class="footer-section">
+                <h3 class="footer-title">Urukais KLICK</h3>
+                <p class="footer-description">
+                    Una especie extraordinaria que habita las montañas alrededor de Alforja, 
+                    fusionando la biología con la geología en perfecta armonía mística.
+                </p>
+                <div class="footer-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">Características</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">847</span>
+                        <span class="stat-label">Número Sagrado</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100</span>
+                        <span class="stat-label">Años/Evento</span>
+                    </div>
+                        <a href="/index.html"  rel="noopener noreferrer" class="sound-link">Volver al Inicio</a>
+                </div>
+                
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Características Principales</h4>
+                <ul class="footer-links">
+                    <li><a href="/interior/sonido-metalico.html">El Sonido Metálico</a></li>
+                    <li><a href="/interior/vision-ecceccional.html">Visión Excepcional</a></li>
+                    <li><a href="/interior/polinizacion.html">Polinización Mineral</a></li>
+                    <li><a href="/interior/dispersion.html">Dispersión de Polen</a></li>
+                    <li><a href="/interior/havilidad.html">Hábitat Montañoso</a></li>
+                    <li><a href="/interior/camuflaje.html">Camuflaje Pétreo</a></li>
+                    <li><a href="/interior/la-vivracion.html">Latido de la Tierra</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Información Geográfica</h4>
+                <div class="geo-info">
+                    <p><strong>Ubicación:</strong> Valle de Alforja, España</p>
+                    <p><strong>Serra de Prades:</strong> Formación montañosa norte</p>
+                    <p><strong>Puigcerver:</strong> Pico principal del sistema</p>
+                    <p><strong>Cueva de l'Ermità:</strong> Lugar sagrado (847m profundidad)</p>
+                </div>
+                
+                <div class="coordinates">
+                    <h5>Coordenadas Clave:</h5>
+                    <p>Alforja: 41.1874°N, 1.0047°E</p>
+                    <p>Serra de Prades: 41.2345°N, 0.9876°E</p>
+                    <p>Puigcerver: 41.2101°N, 1.0123°E</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Datos Científicos</h4>
+                <div class="scientific-data">
+                    <div class="data-item">
+                        <span class="data-label">Frecuencia Klick:</span>
+                        <span class="data-value">847 Hz</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Profundidad máxima:</span>
+                        <span class="data-value">847 m</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Población estimada:</span>
+                        <span class="data-value">3,847 individuos</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Manantiales activados:</span>
+                        <span class="data-value">27 fuentes</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Precisión:</span>
+                        <span class="data-value">97.3%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Urukais Klick. Enciclopedia Digital Manuel Casimiro Carrasco.</p>
+                <p>Documentación científica del fenómeno místico-geológico del valle de Alforja.</p>
+            </div>
+            
+            <div class="footer-sacred-number">
+                <span class="sacred-text">847</span>
+                <span class="sacred-subtitle">El número sagrado</span>
+            </div>
+        </div>
+    </div>
+</footer>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+            
+
+        <nav class="footer-nav">
+            <ul class="footer-column">
+                <li><strong>Secciones</strong></li>
+                <li><a href="/index.html">Inicio en Urukais Klick</a></li>
+                <li><a href="/#caracteristicas">Características Web</a></li>
+                <li><a href="/#galeria">Galería de Proyectos</a></li>
+                <li><a href="/#videos">Videos de Música</a></li>
+                <li><a href="/contenido/contacto.html">Contacto Manuel C.C.</a></li>
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Proyectos</strong></li>
+                <li><a href="https://zingy-pavlova-6aa6a6.netlify.app/" target="_blank" rel="noopener">Urukais Klick Pro 🐸</a></li>
+                <li><a href="https://adorable-belekoy-d064de.netlify.app/" target="_blank" rel="noopener">Clima Urukais</a></li>
+                <li><a href="https://resplendent-faun-6147ea.netlify.app/" target="_blank" rel="noopener">PokéDex Urukais</a></li>
+                <li><a href="https://cute-pegasus-a3487f.netlify.app/" target="_blank" rel="noopener">API Urukais Klick</a></li>
+                <li><a href="https://stately-sherbet-955c30.netlify.app/musica" target="_blank" rel="noopener">Plataforma Musical 🐸</a></li>
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Contenido</strong></li>
+                <li><a href="/contenido/heavy-metal.html" target="_blank" rel="noopener">Heavy Metal</a></li>
+                <li><a href="/contenido/libros.html" target="_blank" rel="noopener">Biblioteca del Infierno</a></li>
+                <li><a href="/contenido/matrix.html" target="_blank" rel="noopener">Centro de Búsqueda Matricial</a></li>
+                <li><a href="/contenido/montanas.html" target="_blank" rel="noopener">Ecosistema de Alforja</a></li>
+                <li><a href="/footer/generador-de-datos.html" target="_blank" rel="noopener">Generador avanzado de datos</a></li>
+            
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Redes & Legal</strong></li>
+                <li><a href="https://www.facebook.com/groups/1189456591848515/?ref=share_group_link" target="_blank" rel="noopener">Facebook</a></li>
+                <li><a href="https://www.youtube.com/channel/UCt8Wwz9KOwsq5VN-q2MnSWg" target="_blank" rel="noopener">YouTube</a></li>
+                <li><a href="/footer/cookies.html">Política de Cookies</a></li>
+                <li><a href="/footer/politica-de-privacidad.html">Política de Privacidad</a></li>
+                <li><a href="https://silly-boba-dc057e.netlify.app/" target="blank">Manuel Casimiro Carrasco</a></li>
+            </ul>
+        </nav>
+        <div class="footer-content">
+            <h3>&copy; 2025 Urukais Klick 🐸. Todos los derechos reservados.</h3>
+            <h3>Desarrollado por Manuel Casimiro Carrasco.👀</h3>
+        </div>
+    </footer>
+
+    <script>
+        // Datos simulados de videos
+        const videosData = [
+            {
+                id: 1,
+                title: "Introducción a JavaScript - Tutorial Completo 2024",
+                description: "Aprende JavaScript desde cero con este tutorial completo. Cubrimos conceptos básicos, variables, funciones y mucho más.",
+                thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23333'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.35em' fill='%23fff' font-size='16'%3EJavaScript Tutorial%3C/text%3E%3C/svg%3E",
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                duration: "15:30",
+                channel: "DevAcademy",
+                publishDate: "hace 2 días",
+                views: "1,2K visualizaciones"
+            },
+            {
+                id: 2,
+                title: "CSS Grid vs Flexbox - Cuándo usar cada uno",
+                description: "Comprende las diferencias entre CSS Grid y Flexbox y aprende cuándo usar cada layout para crear diseños responsive.",
+                thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23666'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.35em' fill='%23fff' font-size='16'%3ECSS Layout%3C/text%3E%3C/svg%3E",
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+                duration: "12:45",
+                channel: "WebDesign Pro",
+                publishDate: "hace 1 semana",
+                views: "856 visualizaciones"
+            },
+            {
+                id: 3,
+                title: "React Hooks Explicados - useState y useEffect",
+                description: "Domina los hooks más importantes de React con ejemplos prácticos y casos de uso reales.",
+                thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%230061ff'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.35em' fill='%23fff' font-size='16'%3EReact Hooks%3C/text%3E%3C/svg%3E",
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                duration: "18:20",
+                channel: "ReactMaster",
+                publishDate: "hace 3 días",
+                views: "2,1K visualizaciones"
+            },
+            {
+                id: 4,
+                title: "Node.js y Express - Crear tu primer API REST",
+                description: "Aprende a crear una API REST completa con Node.js y Express desde cero, incluyendo rutas, middleware y base de datos.",
+                thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23399266'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.35em' fill='%23fff' font-size='16'%3ENode.js API%3C/text%3E%3C/svg%3E",
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+                duration: "22:15",
+                channel: "BackendGuru",
+                publishDate: "hace 5 días",
+                views: "743 visualizaciones"
+            },
+            {
+                id: 5,
+                title: "Responsive Design - Técnicas Modernas",
+                description: "Descubre las mejores prácticas para crear diseños responsive que funcionen en todos los dispositivos.",
+                thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%23ff6b6b'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.35em' fill='%23fff' font-size='16'%3EResponsive%3C/text%3E%3C/svg%3E",
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+                duration: "14:10",
+                channel: "MobileFirst",
+                publishDate: "hace 1 semana",
+                views: "1,5K visualizaciones"
+            },
+            {
+                id: 6,
+                title: "Git y GitHub - Control de versiones completo",
+                description: "Todo lo que necesitas saber sobre Git y GitHub para gestionar tus proyectos de desarrollo de software.",
+                thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='225' viewBox='0 0 400 225'%3E%3Crect width='400' height='225' fill='%2324292e'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.35em' fill='%23fff' font-size='16'%3EGit & GitHub%3C/text%3E%3C/svg%3E",
+                videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+                duration: "19:30",
+                channel: "VersionControl",
+                publishDate: "hace 4 días",
+                views: "987 visualizaciones"
+            }
+        ];
+
+        // Variables globales
+        let currentVideoIndex = 0;
+        let isPlaying = false;
+        let isMuted = false;
+
+        // Elementos del DOM
+        const videoElement = document.getElementById('mainVideo');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const muteBtn = document.getElementById('muteBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressFill = document.getElementById('progressFill');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        const videosGrid = document.getElementById('videosGrid');
+        const videoTitle = document.getElementById('videoTitle');
+        const channelName = document.getElementById('channelName');
+        const publishDate = document.getElementById('publishDate');
+        const views = document.getElementById('views');
+        const videoDescription = document.getElementById('videoDescription');
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            loadVideos();
+            setupEventListeners();
+            loadVideo(0);
+        });
+
+        // Función para cargar y renderizar la lista de videos
+        function loadVideos() {
+            videosGrid.innerHTML = '';
+            
+            videosData.forEach((video, index) => {
+                const videoCard = createVideoCard(video, index);
+                videosGrid.appendChild(videoCard);
+            });
+        }
+
+        // Función para crear tarjeta de video
+        function createVideoCard(video, index) {
+            const card = document.createElement('div');
+            card.className = 'video-card';
+            card.dataset.index = index;
+            
+            card.innerHTML = `
+                <div class="video-thumbnail">
+                    <img src="${video.thumbnail}" alt="${video.title}" class="thumbnail-img">
+                    <div class="video-duration">${video.duration}</div>
+                </div>
+                <div class="video-card-info">
+                    <h3 class="video-card-title">${video.title}</h3>
+                    <div class="video-card-meta">
+                        <span class="channel-name">${video.channel}</span>
+                        <span>${video.views} • ${video.publishDate}</span>
+                    </div>
+                </div>
+            `;
+            
+            // Event listener para hacer clic en el video
+            card.addEventListener('click', () => loadVideo(index));
+            
+            return card;
+        }
+
+        // Función para cargar un video específico
+        function loadVideo(index) {
+            if (index < 0 || index >= videosData.length) return;
+            
+            const video = videosData[index];
+            currentVideoIndex = index;
+            
+            // Actualizar fuente del video
+            videoElement.src = video.videoUrl;
+            
+            // Actualizar información del video
+            videoTitle.textContent = video.title;
+            channelName.textContent = video.channel;
+            publishDate.textContent = video.publishDate;
+            views.textContent = video.views;
+            videoDescription.textContent = video.description;
+            
+            // Actualizar estado activo de las tarjetas
+            document.querySelectorAll('.video-card').forEach((card, i) => {
+                card.classList.toggle('active', i === index);
+            });
+            
+            // Reproducir video
+            videoElement.play().then(() => {
+                isPlaying = true;
+                updatePlayPauseButton();
+            }).catch(error => {
+                console.log('Error al reproducir video:', error);
+            });
+        }
+
+        // Función para configurar event listeners
+        function setupEventListeners() {
+            // Controles de reproducción
+            playPauseBtn.addEventListener('click', togglePlayPause);
+            prevBtn.addEventListener('click', playPrevious);
+            nextBtn.addEventListener('click', playNext);
+            muteBtn.addEventListener('click', toggleMute);
+            fullscreenBtn.addEventListener('click', toggleFullscreen);
+            
+            // Control de volumen
+            volumeSlider.addEventListener('input', updateVolume);
+            
+            // Barra de progreso
+            progressBar.addEventListener('click', seekVideo);
+            
+            // Eventos del elemento video
+            videoElement.addEventListener('loadedmetadata', updateDuration);
+            videoElement.addEventListener('timeupdate', updateProgress);
+            videoElement.addEventListener('ended', playNext);
+            videoElement.addEventListener('play', () => {
+                isPlaying = true;
+                updatePlayPauseButton();
+            });
+            videoElement.addEventListener('pause', () => {
+                isPlaying = false;
+                updatePlayPauseButton();
+            });
+            
+            // Búsqueda
+            const searchInput = document.querySelector('.search-input');
+            searchInput.addEventListener('input', handleSearch);
+        }
+
+        // Funciones de control de reproducción
+        function togglePlayPause() {
+            if (isPlaying) {
+                videoElement.pause();
+            } else {
+                videoElement.play();
+            }
+        }
+
+        function playPrevious() {
+            const prevIndex = currentVideoIndex - 1;
+            if (prevIndex >= 0) {
+                loadVideo(prevIndex);
+            }
+        }
+
+        function playNext() {
+            const nextIndex = currentVideoIndex + 1;
+            if (nextIndex < videosData.length) {
+                loadVideo(nextIndex);
+            }
+        }
+
+        function toggleMute() {
+            videoElement.muted = !videoElement.muted;
+            isMuted = videoElement.muted;
+            updateMuteButton();
+        }
+
+        function toggleFullscreen() {
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            } else {
+                videoElement.requestFullscreen();
+            }
+        }
+
+        function updateVolume() {
+            const volume = volumeSlider.value / 100;
+            videoElement.volume = volume;
+            if (volume === 0) {
+                videoElement.muted = true;
+            } else {
+                videoElement.muted = false;
+            }
+            updateMuteButton();
+        }
+
+        function seekVideo(e) {
+            const rect = progressBar.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            const newTime = percent * videoElement.duration;
+            videoElement.currentTime = newTime;
+        }
+
+        // Funciones de actualización de UI
+        function updatePlayPauseButton() {
+            playPauseBtn.textContent = isPlaying ? '⏸️' : '▶️';
+        }
+
+        function updateMuteButton() {
+            if (videoElement.muted || videoElement.volume === 0) {
+                muteBtn.textContent = '🔇';
+            } else if (videoElement.volume < 0.5) {
+                muteBtn.textContent = '🔉';
+            } else {
+                muteBtn.textContent = '🔊';
+            }
+        }
+
+        function updateProgress() {
+            if (videoElement.duration) {
+                const percent = (videoElement.currentTime / videoElement.duration) * 100;
+                progressFill.style.width = percent + '%';
+                currentTimeEl.textContent = formatTime(videoElement.currentTime);
+            }
+        }
+
+        function updateDuration() {
+            if (videoElement.duration) {
+                durationEl.textContent = formatTime(videoElement.duration);
+            }
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Función de búsqueda
+        function handleSearch(e) {
+            const query = e.target.value.toLowerCase();
+            const filteredVideos = videosData.filter(video => 
+                video.title.toLowerCase().includes(query) ||
+                video.channel.toLowerCase().includes(query) ||
+                video.description.toLowerCase().includes(query)
+            );
+            
+            renderFilteredVideos(filteredVideos);
+        }
+
+        function renderFilteredVideos(videos) {
+            videosGrid.innerHTML = '';
+            
+            if (videos.length === 0) {
+                videosGrid.innerHTML = '<p style="color: var(--text-secondary); text-align: center; padding: 2rem;">No se encontraron videos</p>';
+                return;
+            }
+            
+            videos.forEach((video, originalIndex) => {
+                // Encontrar el índice original en videosData
+                const originalIndexInData = videosData.findIndex(v => v.id === video.id);
+                const videoCard = createVideoCard(video, originalIndexInData);
+                videosGrid.appendChild(videoCard);
+            });
+        }
+
+        // Atajos de teclado
+        document.addEventListener('keydown', function(e) {
+            switch(e.code) {
+                case 'Space':
+                    e.preventDefault();
+                    togglePlayPause();
+                    break;
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    playPrevious();
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    playNext();
+                    break;
+                case 'KeyM':
+                    e.preventDefault();
+                    toggleMute();
+                    break;
+                case 'KeyF':
+                    e.preventDefault();
+                    toggleFullscreen();
+                    break;
+            }
+        });
+
+        console.log('🎥 VideoStream Platform inicializada correctamente');
+        console.log('📹 Videos cargados:', videosData.length);
+        console.log('⌨️ Atajos disponibles:');
+        console.log('   Espacio: Play/Pause');
+        console.log('   ← → : Video anterior/siguiente');
+        console.log('   M: Silenciar');
+        console.log('   F: Pantalla completa');
+    </script>
+    
+    <script src="/javascript/botones.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/botones.js"></script>
+    <script src="/menu/menu.js"></script>
+</body>
+</html>
