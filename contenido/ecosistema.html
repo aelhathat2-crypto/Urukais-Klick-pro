@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <meta name="author" content="Manuel Casimiro Carrasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora el ecosistema misterioso de Urukais en la Serra de Prades - Criaturas místicas del valle de Alforja">
+    <meta name="keywords" content="Urukais, ecosistema, Alforja, Serra de Prades, criaturas místicas, biodiversidad">
+    <meta name="author" content="MiniMax Agent">
+    <meta name="theme-color" content="#6b46c1">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/">
+    <meta property="og:title" content="Urukais Klick - Ecosistema Alforja">
+    <meta property="og:description" content="Explora el ecosistema misterioso de Urukais en la Serra de Prades">
+    <meta property="og:image" content="/imagenes/urukais-main.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="/">
+    <meta property="twitter:title" content="Urukais Klick - Ecosistema Alforja">
+    <meta property="twitter:description" content="Explora el ecosistema misterioso de Urukais en la Serra de Prades">
+    <meta property="twitter:image" content="/imagenes/urukais-main.webp">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/css/sistema_diseno_urukais_klick.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap" as="style">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/sistema_diseno_urukais_klick.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/botones.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/imagenes/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/imagenes/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/imagenes/favicon-16x16.png">
+    <link rel="stylesheet" href="/sistema-de-registro/sistema_diseno_urukais_klick.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- DNS Prefetch for Performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <title>Urukais Klick - El Ecosistema Silencioso de Alforja</title>
+    
+    <style>
+        /* Critical CSS for Above-the-fold Content */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--urukais-gradient-mountain);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 800px;
+            padding: var(--urukais-space-xl);
+        }
+        
+        .floating-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .floating-element {
+            position: absolute;
+            background: rgba(107, 70, 193, 0.1);
+            border-radius: 50%;
+            animation: ukFloat 6s ease-in-out infinite;
+        }
+        
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            left: 10%;
+            top: 20%;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            right: 15%;
+            top: 40%;
+            animation-delay: 2s;
+        }
+        
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            left: 20%;
+            bottom: 30%;
+            animation-delay: 4s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="uk-sr-only">Saltar al contenido principal</a>
+    
+    <!-- Header Navigation -->
+    <header class="uk-header" role="banner">
+        <nav class="uk-nav uk-flex uk-flex-between uk-flex-center" role="navigation" aria-label="Navegación principal">
+            <div class="uk-nav-brand">
+                <h1 class="uk-heading uk-heading-3 uk-text-accent">Urukais Klick</h1>
+            </div>
+            <ul class="uk-nav-list uk-flex uk-flex-wrap">
+                <li><a href="#ecosystem" class="uk-btn uk-btn-ghost">Ecosistema</a></li>
+                <li><a href="#species" class="uk-btn uk-btn-ghost">Especies</a></li>
+                <li><a href="#locations" class="uk-btn uk-btn-ghost">Ubicaciones</a></li>
+                <li><a href="#research" class="uk-btn uk-btn-ghost">Investigación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="floating-animation" aria-hidden="true">
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+            </div>
+            <div class="hero-content uk-fade-in">
+                <h2 id="hero-title" class="uk-heading uk-heading-1">El Ecosistema Silencioso de Alforja</h2>
+                <p class="uk-text uk-text-large">
+                    Descubre el mundo mystical de los <strong>Urukais Klick</strong>, criaturas extraordinarias que habitán la Serra de Prades con su ecosistema único y misterioso.
+                </p>
+                <div class="uk-flex uk-flex-center uk-mt-xl">
+                    <a href="#ecosystem" class="uk-btn uk-btn-accent uk-mr-md">Explorar Ecosistema</a>
+                    <a href="#research" class="uk-btn uk-btn-outline">Ver Investigación</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Species Overview -->
+        <section id="species" class="uk-section uk-p-xl" aria-labelledby="species-title">
+            <div class="uk-container">
+                <h2 id="species-title" class="uk-heading uk-heading-2 uk-text-center uk-mb-xl">Los Urukais Klick</h2>
+                <div class="uk-grid uk-stagger">
+                    <!-- Species Card 1 -->
+                    <article class="uk-card uk-card-mystic uk-col uk-col-md-6 uk-col-lg-4">
+                        <h3 class="uk-heading uk-heading-4">Urukais Principal</h3>
+                        <p class="uk-text-small uk-text-muted">Klickianus alpinus</p>
+                        <p class="uk-text">
+                            La especie principal del ecosistema, conocida por su precisión del 97.3% en la detección de minerales y su frecuencia sonora característica de 847 Hz.
+                        </p>
+                        <div class="uk-stats uk-flex uk-flex-between uk-mt-md">
+                            <span class="uk-text-small">Población: 3,847</span>
+                            <span class="uk-text-small">Estado: Activo</span>
+                        </div>
+                    </article>
+
+                    <!-- Species Card 2 -->
+                    <article class="uk-card uk-card-forest uk-col uk-col-md-6 uk-col-lg-4">
+                        <h3 class="uk-heading uk-heading-4">Urukais Forestal</h3>
+                        <p class="uk-text-small uk-text-muted">Klickianus silvanus</p>
+                        <p class="uk-text">
+                            Especialistas en la detección de biodiversidad vegetal, optimizados para el ecosistema forestal del valle de Alforja.
+                        </p>
+                        <div class="uk-stats uk-flex uk-flex-between uk-mt-md">
+                            <span class="uk-text-small">Población: 1,234</span>
+                            <span class="uk-text-small">Estado: Estable</span>
+                        </div>
+                    </article>
+
+                    <!-- Species Card 3 -->
+                    <article class="uk-card uk-card-rock uk-col uk-col-md-6 uk-col-lg-4">
+                        <h3 class="uk-heading uk-heading-4">Urukais Montañés</h3>
+                        <p class="uk-text-small uk-text-muted">Klickianus montanus</p>
+                        <p class="uk-text">
+                            Adaptados a las altitudes extremas de la Serra de Prades, con capacidades mejoradas de orientación geológica.
+                        </p>
+                        <div class="uk-stats uk-flex uk-flex-between uk-mt-md">
+                            <span class="uk-text-small">Población: 756</span>
+                            <span class="uk-text-small">Estado: Vulnerable</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ecosystem Information -->
+        <section id="ecosystem" class="uk-section uk-p-xl" aria-labelledby="ecosystem-title">
+            <div class="uk-container">
+                <h2 id="ecosystem-title" class="uk-heading uk-heading-2 uk-text-center uk-mb-xl">Ecosistema de Alforja</h2>
+                
+                <div class="uk-grid uk-stagger">
+                    <div class="uk-col uk-col-lg-8">
+                        <div class="uk-card uk-card-mystic">
+                            <h3 class="uk-heading uk-heading-3">Características del Ecosistema</h3>
+                            <p class="uk-text">
+                                El ecosistema de Alforja es un entorno único en la Serra de Prades, caracterizado por su biodiversidad excepcional y la presencia de los misteriosos Urukais Klick. Este ecosistema combina elementos forestales, rocosos y acuáticos que crean un hábitat perfecto para estas criaturas extraordinarias.
+                            </p>
+                            
+                            <div class="uk-features uk-grid uk-col-2 uk-mt-lg">
+                                <div class="uk-feature">
+                                    <h4 class="uk-heading uk-heading-4">Biodiversidad</h4>
+                                    <p class="uk-text-small">Más de 847 especies documentadas conviven en armonía con los Urukais.</p>
+                                </div>
+                                <div class="uk-feature">
+                                    <h4 class="uk-heading uk-heading-4">Geología</h4>
+                                    <p class="uk-text-small">Formaciones rocosas únicas que influyen en el comportamiento de los Urukais.</p>
+                                </div>
+                                <div class="uk-feature">
+                                    <h4 class="uk-heading uk-heading-4">Hidrología</h4>
+                                    <p class="uk-text-small">15 manantiales activos que proporcionan el sustento vital del ecosistema.</p>
+                                </div>
+                                <div class="uk-feature">
+                                    <h4 class="uk-heading uk-heading-4">Microclima</h4>
+                                    <p class="uk-text-small">Condiciones climáticas especiales que favorecen la existencia de los Urukais.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="uk-col uk-col-lg-4">
+                        <div class="uk-card uk-card-forest">
+                            <h3 class="uk-heading uk-heading-4">Datos Científicos</h3>
+                            <div class="uk-metric">
+                                <span class="uk-metric-value">847</span>
+                                <span class="uk-metric-label">Frecuencia Hz</span>
+                            </div>
+                            <div class="uk-metric">
+                                <span class="uk-metric-value">97.3%</span>
+                                <span class="uk-metric-label">Precisión</span>
+                            </div>
+                            <div class="uk-metric">
+                                <span class="uk-metric-value">450m</span>
+                                <span class="uk-metric-label">Altitud Base</span>
+                            </div>
+                            <div class="uk-metric">
+                                <span class="uk-metric-value">15</span>
+                                <span class="uk-metric-label">Manantiales</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Locations -->
+        <section id="locations" class="uk-section uk-p-xl" aria-labelledby="locations-title">
+            <div class="uk-container">
+                <h2 id="locations-title" class="uk-heading uk-heading-2 uk-text-center uk-mb-xl">Ubicaciones Clave</h2>
+                
+                <div class="uk-locations uk-grid uk-stagger">
+                    <article class="uk-card uk-card-water uk-col uk-col-md-6">
+                        <h3 class="uk-heading uk-heading-4">Valle de Alforja</h3>
+                        <p class="uk-text-small uk-text-muted">Ubicación Principal</p>
+                        <div class="uk-location-info">
+                            <p><strong>Coordenadas:</strong> 41.1874°N, 1.0047°E</p>
+                            <p><strong>Altitud:</strong> 450m</p>
+                            <p><strong>Características:</strong> 15 manantiales activos, habitat principal de los Urukais Klick</p>
+                        </div>
+                    </article>
+
+                    <article class="uk-card uk-card-rock uk-col uk-col-md-6">
+                        <h3 class="uk-heading uk-heading-4">Serra de Prades</h3>
+                        <p class="uk-text-small uk-text-muted">Montaña Norte</p>
+                        <div class="uk-location-info">
+                            <p><strong>Coordenadas:</strong> 41.2345°N, 0.9876°E</p>
+                            <p><strong>Altitud:</strong> 1,201m</p>
+                            <p><strong>Características:</strong> Zona de migración estacional de especies montañesas</p>
+                        </div>
+                    </article>
+
+                    <article class="uk-card uk-card-forest uk-col uk-col-md-6">
+                        <h3 class="uk-heading uk-heading-4">Puigcerver</h3>
+                        <p class="uk-text-small uk-text-muted">Pico Principal</p>
+                        <div class="uk-location-info">
+                            <p><strong>Coordenadas:</strong> 41.2101°N, 1.0123°E</p>
+                            <p><strong>Altitud:</strong> 1,196m</p>
+                            <p><strong>Características:</strong> Punto de observación principal para estudios científicos</p>
+                        </div>
+                    </article>
+
+                    <article class="uk-card uk-card-mystic uk-col uk-col-md-6">
+                        <h3 class="uk-heading uk-heading-4">Cueva de l'Ermità</h3>
+                        <p class="uk-text-small uk-text-muted">Lugar Sagrado</p>
+                        <div class="uk-location-info">
+                            <p><strong>Profundidad:</strong> 847m</p>
+                            <p><strong>Evento:</strong> "Klick Majestuoso" (centenal)</p>
+                            <p><strong>Características:</strong> Centro ceremonial y de investigación avanzada</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="uk-section uk-p-xl" aria-labelledby="research-title">
+            <div class="uk-container">
+                <h2 id="research-title" class="uk-heading uk-heading-2 uk-text-center uk-mb-xl">Investigación Científica</h2>
+                
+                <div class="uk-grid">
+                    <div class="uk-col uk-col-lg-8">
+                        <div class="uk-card uk-card-mystic">
+                            <h3 class="uk-heading uk-heading-3">Proyectos de Investigación</h3>
+                            <div class="uk-projects">
+                                <article class="uk-project">
+                                    <h4 class="uk-heading uk-heading-4">Mapeo de Biodiversidad</h4>
+                                    <p class="uk-text">Estudio integral de la distribución de especies en el ecosistema de Alforja.</p>
+                                    <div class="uk-project-meta">
+                                        <span class="uk-badge uk-badge-primary">En Progreso</span>
+                                        <span class="uk-text-small">Fecha inicio: 2024-03-15</span>
+                                    </div>
+                                </article>
+                                
+                                <article class="uk-project">
+                                    <h4 class="uk-heading uk-heading-4">Análisis Acústico de Urukais</h4>
+                                    <p class="uk-text">Investigación de los patrones sonoros y su relación con el comportamiento.</p>
+                                    <div class="uk-project-meta">
+                                        <span class="uk-badge uk-badge-success">Completado</span>
+                                        <span class="uk-text-small">Fecha inicio: 2023-11-20</span>
+                                    </div>
+                                </article>
+                                
+                                <article class="uk-project">
+                                    <h4 class="uk-heading uk-heading-4">Conservación del Hábitat</h4>
+                                    <p class="uk-text">Programa de protección y restauración de los ecosistemas críticos.</p>
+                                    <div class="uk-project-meta">
+                                        <span class="uk-badge uk-badge-warning">Planificación</span>
+                                        <span class="uk-text-small">Fecha inicio: 2025-01-10</span>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="uk-col uk-col-lg-4">
+                        <div class="uk-card uk-card-accent">
+                            <h3 class="uk-heading uk-heading-4">Estadísticas</h3>
+                            <div class="uk-stat-item">
+                                <span class="uk-stat-number">5</span>
+                                <span class="uk-stat-label">Proyectos Activos</span>
+                            </div>
+                            <div class="uk-stat-item">
+                                <span class="uk-stat-number">847</span>
+                                <span class="uk-stat-label">Especies Documentadas</span>
+                            </div>
+                            <div class="uk-stat-item">
+                                <span class="uk-stat-number">97.3%</span>
+                                <span class="uk-stat-label">Precisión Metodológica</span>
+                            </div>
+                            <div class="uk-stat-item">
+                                <span class="uk-stat-number">3</span>
+                                <span class="uk-stat-label">Ubicaciones Principales</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="uk-footer" role="contentinfo">
+        <div class="uk-container uk-p-xl">
+            <div class="uk-grid">
+                <div class="uk-col uk-col-md-6">
+                    <h3 class="uk-heading uk-heading-4">Urukais Klick</h3>
+                    <p class="uk-text">
+                        Preservando y estudiando el ecosistema único de Alforja desde 2025.
+                    </p>
+                </div>
+                
+            </div>
+            <div class="uk-footer-bottom uk-text-center uk-mt-xl">
+                <p class="uk-text-small uk-text-muted">
+                    &copy; 2025 Investigación de Manuel Casimiro Carrasco.
+                </p>
+                <p class="uk-text-small uk-text-muted">
+                    🐸 ¡Que los Klicks guíen tu camino en el ecosistema de Alforja! ⚡
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Performance and Optimization Scripts -->
+    <script src="/js/performance-optimization.js"></script>
+    <script src="/js/lazy-loading.js"></script>
+    
+    <!-- Main Application Script -->
+    <script>
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service_worker_urukais.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // Performance monitoring
+        window.addEventListener('load', () => {
+            // Log performance metrics
+            if ('performance' in window) {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('uk-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.uk-card, .uk-feature, .uk-project').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Accessibility improvements
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                // Close any open modals or overlays
+                const openModals = document.querySelectorAll('.uk-modal.uk-open');
+                openModals.forEach(modal => {
+                    modal.classList.remove('uk-open');
+                });
+            }
+        });
+    </script>
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Urukais Klick - Ecosistema Alforja",
+        "description": "Explora el ecosistema misterioso de Urukais en la Serra de Prades",
+        "url": "/",
+        "author": {
+            "@type": "Organization",
+            "name": "MiniMax Agent",
+            "founder": {
+                "@type": "Person",
+                "name": "Manuel Casimiro Carrasco"
+            }
+        },
+        "about": {
+            "@type": "Thing",
+            "name": "Ecosistema de Urukais",
+            "description": "Criaturas místicas del ecosistema de Alforja en la Serra de Prades"
+        },
+        "mainEntity": {
+            "@type": "Species",
+            "name": "Urukais Klick",
+            "scientificName": "Klickianus alpinus",
+            "habitat": "Ecosistema de Alforja, Serra de Prades"
+        }
+    }
+    </script>
+    <script src="/sistema-de-registro/service_worker_urukais.js"></script>
+    <script src="/sistema-de-registro/webpack_performance.config.js"></script>
+</body>
+</html>

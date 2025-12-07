@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <meta name="author" content="Manuel Casimiro Carrasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Automatización Web Pro</title>
+    <link rel="stylesheet" href="/buena/stilos.css">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/menu/menu.css">
+
+</head>
+<body>
+    <div>
+        
+      
+        <!-- Overlay para móvil -->
+    <div class="mnm-overlay" id="mnmOverlay"></div>
+
+    <!-- Botón toggle reproductor -->
+    <!-- Navegación principal -->
+    <nav class="mnm-nav-container">
+        <div class="mnm-nav-wrapper">
+            <a href="/index.html" class="mnm-logo">Urukais Klick</a>
+            
+            
+            <button class="mnm-hamburger" id="mnmHamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="mnm-nav-menu" id="mnmNavMenu">
+                <!-- Categoría 1: Entretenimiento y Ocio -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Entretenimiento y Ocio
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/buscador-de-peliculas.html" class="mnm-dropdown-item">🎬 Catálogo de Películas</a>
+                        <a href="/cabecera/cine/la-nasa.html" class="mnm-dropdown-item">🚀 Espacio y Astronomía</a>
+                        <a href="/cabecera/cine/peluculas.html" class="mnm-dropdown-item">🎭 Films Favoritos</a>
+                        <a href="/cabecera/cine/noticias.html" class="mnm-dropdown-item">📰 Noticias Actuales</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😂 Humor y Entretenimiento</a>
+                        <a href="/cabecera/musica/hadmed.html" class="mnm-dropdown-item">🎵 Ambiente Musical</a>
+                        <a href="/cabecera/musica/mas.html" class="mnm-dropdown-item">🎶 Musicalife</a>
+                        <a href="/cabecera/musica/musica-clasica.html" class="mnm-dropdown-item">🎼 Música Clásica</a>
+                        <a href="/cabecera/musica/prueva.html" class="mnm-dropdown-item">🎤 Géneros Musicales</a>
+                        <a href="/cabecera/musica/tartituras.html" class="mnm-dropdown-item">🎵 Partituras y Escore</a>
+                        <a href="/cabecera/musica/videos3.html" class="mnm-dropdown-item">📺 Centro de Videos</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 2: Herramientas y Productividad -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Herramientas y Productividad
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/herramientas/chat.html" class="mnm-dropdown-item">💬 Asistente Virtual Urukais</a>
+                        <a href="/cabecera/herramientas/control-de-consultas.html" class="mnm-dropdown-item">🗂 Sistema de Consultas</a>
+                        <a href="/cabecera/herramientas/DevStudio.html" class="mnm-dropdown-item">⚙️ Estudio de Desarrollo</a>
+                        <a href="/cabecera/herramientas/FinTech.html" class="mnm-dropdown-item">💼 Soluciones Financieras</a>
+                        <a href="/cabecera/herramientas/generador-contraseñas.html" class="mnm-dropdown-item">🔐 Generador Seguro de<br>Contraseñas</a>
+                        <a href="/cabecera/herramientas/genesis.html" class="mnm-dropdown-item">🌟 Plataforma Genesis</a>
+                        <a href="/cabecera/herramientas/herramienta.html" class="mnm-dropdown-item">🛠 Suite de Herramientas</a>
+                        <a href="/cabecera/herramientas/hot.html" class="mnm-dropdown-item">🔥 Tendencias Actuales</a>
+                        <a href="/cabecera/herramientas/ia-educativa.html" class="mnm-dropdown-item">🎓 IA Educativa</a>
+                        <a href="/cabecera/herramientas/listado-de-prons.html" class="mnm-dropdown-item">📋 Pronósticos en Línea</a>
+                        <a href="/cabecera/herramientas/localizacion-de-faker.html" class="mnm-dropdown-item">📍 Localizador Universal</a>
+                        <a href="/cabecera/herramientas/mas-datos.html" class="mnm-dropdown-item">📊 Análisis de Datos</a>
+                        <a href="/cabecera/herramientas/pruevas.html" class="mnm-dropdown-item">🧪 Centro de Pruebas</a>
+                        <a href="/cabecera/herramientas/texto-voz.html" class="mnm-dropdown-item">🔊 Síntesis de Voz</a>
+                        <a href="/cabecera/herramientas/tienda-de-urukais.html" class="mnm-dropdown-item">🛒 Tienda Oficial</a>
+                        <a href="/cabecera/buscadores/gestor-de-tareas.html" class="mnm-dropdown-item">✅ Organizador de Tareas</a>
+                        <a href="/cabecera/buscadores/gestor-de-proyectos.html" class="mnm-dropdown-item">📈 Gestor de Proyectos</a>
+                        <a href="/cabecera/cine/ProTask.html" class="mnm-dropdown-item">⏰ ProTask Profesional</a>
+                        <a href="/cabecera/cine/ReservaPro.html" class="mnm-dropdown-item">📅 Sistema de Reservas</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 3: Buscadores y Información -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Buscadores y Información
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/buscadores/buscadorurukais.html" class="mnm-dropdown-item">📚 Búsqueda de Libros</a>
+                        <a href="/cabecera/buscadores/busqueda.html" class="mnm-dropdown-item">🔍 Buscador Matrix</a>
+                        <a href="/cabecera/cine/libros.html" class="mnm-dropdown-item">📖 Biblioteca Digital</a>
+                        <a href="/cabecera/cine/localizador.html" class="mnm-dropdown-item">🌐 Ubicador IP</a>
+                        <a href="/cabecera/buscadores/barcelona-sustainabitil.html" class="mnm-dropdown-item">🌱 Barcelona Sostenible</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 4: Mascotas y Animales -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Mascotas y Animales
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/animales/animales.html" class="mnm-dropdown-item">🐾 Generador de Animales</a>
+                        <a href="/cabecera/animales/buscador-de-perros.html" class="mnm-dropdown-item">🐕 Aplicación de Mascotas</a>
+                        <a href="/cabecera/buscadores/deportes.html" class="mnm-dropdown-item">⚽ Buscador de Equipos<br>Deportivos</a>
+                        <a href="/cabecera/animales/Marketing.html" class="mnm-dropdown-item">📱 Marketing Digital</a>
+                        <a href="/cabecera/animales/multi.html" class="mnm-dropdown-item">💻 Solución Multiplataforma</a>
+                        <a href="/cabecera/animales/neocron.html" class="mnm-dropdown-item">🌟 Neocron Urukais</a>
+                        <a href="/cabecera/animales/portal-interactivo.html" class="mnm-dropdown-item">✨ Portal Interactivo</a>
+                        <a href="/cabecera/animales/site-de-productividad.html" class="mnm-dropdown-item">💼 Suite de Productividad</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 5: Comida y Bebidas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Comida y Bebidas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/comida/coctel.html" class="mnm-dropdown-item">🍹 Sistema de Coctelería</a>
+                        <a href="/cabecera/comida/comida.html" class="mnm-dropdown-item">🍽 Gastronomía Exquisita</a>
+                        <a href="/cabecera/comida/cocia-en-inggles.html" class="mnm-dropdown-item">🍳 Cocina Internacional</a>
+                        
+                    </div>
+                </li>
+
+                <!-- Categoría 6: Creatividad y Arte -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Creatividad y Arte
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/conics/archivo-de-hielo.html" class="mnm-dropdown-item">❄️ Archivo Creativo</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😄 Galería de Humor</a>
+                        <a href="/cabecera/conics/Morty.html" class="mnm-dropdown-item">🎨 Colección Morty</a>
+                        <a href="/cabecera/conics/generador-de-fondos.html" class="mnm-dropdown-item">🎨 Generador de Fondos</a>
+                        <a href="/cabecera/conics/neocron.html" class="mnm-dropdown-item">😊 Control de Estado de Ánimo</a>
+                        <a href="/cabecera/conics/plataforma-de-herattientas.html" class="mnm-dropdown-item">🛠 Plataforma de<br>Herramientas Creativas</a>
+                        <a href="/cabecera/conics/portal-interactivo.html" class="mnm-dropdown-item">🎭 Portal Interactivo</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 7: Medio Ambiente -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Medio Ambiente
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/tierra/ambiental-mundial.html" class="mnm-dropdown-item">🌍 Global Ambiental</a>
+                        <a href="/cabecera/tierra/busca-ciudades.html" class="mnm-dropdown-item">🏙 Explorador de Ciudades</a>
+                        <a href="/cabecera/tierra/busca-cuidad.html" class="mnm-dropdown-item">🌆 Búsqueda Urbana</a>
+                        <a href="/cabecera/tierra/clima.html" class="mnm-dropdown-item">🌤️ Centro Meteorológico</a>
+                        <a href="/cabecera/tierra/deforestacion-mundial.html" class="mnm-dropdown-item">🌲 Control Deforestación</a>
+                        <a href="/cabecera/tierra/gia-de-supervivencia.html" class="mnm-dropdown-item">🧭 Guía de Supervivencia</a>
+                        <a href="/cabecera/tierra/mas.html" class="mnm-dropdown-item">🌿 Más Contenido Verde</a>
+                        <a href="/cabecera/tierra/renacer.html" class="mnm-dropdown-item">🌱 Renacer y Renovación</a>
+                        <a href="/cabecera/tierra/sistema-reus.html" class="mnm-dropdown-item">♻️ Sistema Inteligente de Reciclaje</a>
+                        <a href="/cabecera/tierra/supervivencia33.html" class="mnm-dropdown-item">🏕 Supervivencia Extrema</a>
+                    </div>
+                </li>
+                
+
+                <!-- Categoría 8: Eventos y Citas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Eventos y Citas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/gestor-de-citas.html" class="mnm-dropdown-item">💕 Organizador de Citas</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+ 
+
+
+
+    </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">WebAuto<span class="neon-text">Pro</span></span>
+            </div>
+            <div class="system-status">
+                <div class="status-indicator" id="connectionStatus">
+                    <span class="status-dot active"></span>
+                    <span>Sistema Activo</span>
+                </div>
+                <div class="uptime" id="uptimeDisplay">Uptime: 0s</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="nav">
+                <button class="nav-item active" data-section="dashboard">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </button>
+                <button class="nav-item" data-section="tasks">
+                    <span class="nav-icon">📋</span>
+                    <span>Tareas</span>
+                </button>
+                <button class="nav-item" data-section="proxies">
+                    <span class="nav-icon">🌐</span>
+                    <span>Proxies</span>
+                </button>
+                <button class="nav-item" data-section="sessions">
+                    <span class="nav-icon">🔐</span>
+                    <span>Sesiones</span>
+                </button>
+                <button class="nav-item" data-section="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Configuración</span>
+                </button>
+                <button class="nav-item" data-section="logs">
+                    <span class="nav-icon">📄</span>
+                    <span>Logs</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Dashboard Section -->
+            <section class="section active" id="dashboard">
+                <h1 class="section-title">Dashboard de Control</h1>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Tareas Ejecutadas</div>
+                            <div class="stat-value" id="totalTasks">0</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Tasa de Éxito</div>
+                            <div class="stat-value" id="successRate">0%</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Tiempo Promedio</div>
+                            <div class="stat-value" id="avgResponseTime">0ms</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💾</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Datos Procesados</div>
+                            <div class="stat-value" id="totalData">0 KB</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h3 class="card-title">Tareas Activas</h3>
+                        <div class="active-tasks-list" id="activeTasks">
+                            <div class="empty-state">No hay tareas activas</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Estado del Sistema</h3>
+                        <div class="system-info">
+                            <div class="info-row">
+                                <span>Pool de Navegadores</span>
+                                <span class="status-badge success" id="browserStatus">Ready</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Conexiones Activas</span>
+                                <span class="badge" id="activeConnections">0</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Proxies Activos</span>
+                                <span class="badge" id="activeProxies">0</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Uso de Memoria</span>
+                                <span class="badge" id="memoryUsage">45%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tasks Section -->
+            <section class="section" id="tasks">
+                <div class="section-header">
+                    <h1 class="section-title">Gestión de Tareas</h1>
+                    <button class="btn btn-primary" id="newTaskBtn">+ Nueva Tarea</button>
+                </div>
+
+                <div class="tasks-container">
+                    <div class="card">
+                        <h3 class="card-title">Configurar Nueva Tarea</h3>
+                        <form class="task-form" id="taskForm">
+                            <div class="form-group">
+                                <label class="form-label">Nombre de la Tarea</label>
+                                <input type="text" class="form-input" id="taskName" placeholder="Ej: Scraping productos" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">URL Objetivo</label>
+                                <input type="url" class="form-input" id="taskUrl" placeholder="https://example.com" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Tipo de Tarea</label>
+                                    <select class="form-input" id="taskType">
+                                        <option value="scrape">Scraping</option>
+                                        <option value="automation">Automatización</option>
+                                        <option value="monitoring">Monitoreo</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Programación</label>
+                                    <select class="form-input" id="taskSchedule">
+                                        <option value="once">Una vez</option>
+                                        <option value="interval">Intervalo</option>
+                                        <option value="daily">Diario</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Reintentos Máximos</label>
+                                    <input type="number" class="form-input" id="taskRetries" value="3" min="1" max="10">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Timeout (ms)</label>
+                                    <input type="number" class="form-input" id="taskTimeout" value="30000" min="1000" step="1000">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Crear Tarea</button>
+                        </form>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Monitor de Tareas</h3>
+                        <div class="tasks-list" id="tasksList">
+                            <div class="empty-state">No hay tareas configuradas</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Proxies Section -->
+            <section class="section" id="proxies">
+                <h1 class="section-title">Gestión de Proxies</h1>
+                
+                <div class="proxies-grid">
+                    <div class="card">
+                        <h3 class="card-title">Agregar Proxy</h3>
+                        <form class="proxy-form" id="proxyForm">
+                            <div class="form-group">
+                                <label class="form-label">URL del Proxy</label>
+                                <input type="text" class="form-input" id="proxyUrl" placeholder="http://proxy.example.com:8080" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Usuario (opcional)</label>
+                                    <input type="text" class="form-input" id="proxyUsername" placeholder="usuario">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Contraseña (opcional)</label>
+                                    <input type="password" class="form-input" id="proxyPassword" placeholder="••••••••">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Estrategia de Rotación</label>
+                                <select class="form-input" id="rotationStrategy">
+                                    <option value="round-robin">Round Robin</option>
+                                    <option value="random">Aleatorio</option>
+                                    <option value="weighted">Ponderado</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Agregar Proxy</button>
+                        </form>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Proxies Configurados</h3>
+                        <div class="proxies-list" id="proxiesList"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sessions Section -->
+            <section class="section" id="sessions">
+                <h1 class="section-title">Gestión de Sesiones</h1>
+                
+                <div class="sessions-grid">
+                    <div class="card">
+                        <h3 class="card-title">User Agent</h3>
+                        <div class="form-group">
+                            <label class="form-label">Presets</label>
+                            <select class="form-input" id="uaPreset">
+                                <option value="chrome">Chrome (Windows)</option>
+                                <option value="firefox">Firefox (Windows)</option>
+                                <option value="safari">Safari (MacOS)</option>
+                                <option value="custom">Personalizado</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">User Agent String</label>
+                            <textarea class="form-input" id="userAgent" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Fingerprint del Navegador</h3>
+                        <div class="form-group">
+                            <label class="form-label">Zona Horaria</label>
+                            <select class="form-input" id="timezone">
+                                <option value="Europe/Madrid">Europe/Madrid</option>
+                                <option value="America/New_York">America/New_York</option>
+                                <option value="Asia/Tokyo">Asia/Tokyo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Idioma</label>
+                            <select class="form-input" id="language">
+                                <option value="es-ES">Español</option>
+                                <option value="en-US">English (US)</option>
+                                <option value="fr-FR">Français</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Resolución de Pantalla</label>
+                            <select class="form-input" id="screenResolution">
+                                <option value="1920x1080">1920x1080</option>
+                                <option value="1366x768">1366x768</option>
+                                <option value="2560x1440">2560x1440</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Cookies y Almacenamiento</h3>
+                        <div class="form-group">
+                            <label class="form-label">Cookies (JSON)</label>
+                            <textarea class="form-input" id="cookies" rows="4" placeholder='[{"name": "session", "value": "abc123"}]'></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="persistSession" checked>
+                                <span>Persistir sesión entre ejecuciones</span>
+                            </label>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-secondary" id="exportSession">Exportar Sesión</button>
+                            <button class="btn btn-secondary" id="importSession">Importar Sesión</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section class="section" id="settings">
+                <h1 class="section-title">Configuración Avanzada</h1>
+                
+                <div class="settings-grid">
+                    <div class="card">
+                        <h3 class="card-title">Control de Tasa de Peticiones</h3>
+                        <div class="form-group">
+                            <label class="form-label">Peticiones por Segundo</label>
+                            <input type="number" class="form-input" id="rateLimit" value="2" min="1" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Delay Aleatorio (ms)</label>
+                            <div class="form-row">
+                                <input type="number" class="form-input" id="delayMin" value="500" placeholder="Mín">
+                                <input type="number" class="form-input" id="delayMax" value="2000" placeholder="Máx">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Reintentos y Backoff</h3>
+                        <div class="form-group">
+                            <label class="form-label">Estrategia de Backoff</label>
+                            <select class="form-input" id="backoffStrategy">
+                                <option value="exponential">Exponencial</option>
+                                <option value="linear">Lineal</option>
+                                <option value="fixed">Fijo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Factor de Multiplicación</label>
+                            <input type="number" class="form-input" id="backoffMultiplier" value="2" min="1" max="5" step="0.5">
+                        </div>
+                        <div class="backoff-preview" id="backoffPreview"></div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Anti-Detección</h3>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="headerRandomization" checked>
+                                <span>Randomizar Headers HTTP</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="mouseSimulation" checked>
+                                <span>Simular Movimiento de Mouse</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="canvasFingerprint" checked>
+                                <span>Canvas Fingerprinting Aleatorio</span>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="robotsTxt" checked>
+                                <span>Respetar robots.txt</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title">Logging</h3>
+                        <div class="form-group">
+                            <label class="form-label">Nivel de Log</label>
+                            <select class="form-input" id="logLevel">
+                                <option value="debug">Debug</option>
+                                <option value="info" selected>Info</option>
+                                <option value="warn">Warning</option>
+                                <option value="error">Error</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="verboseLogging">
+                                <span>Logging Detallado</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Logs Section -->
+            <section class="section" id="logs">
+                <div class="section-header">
+                    <h1 class="section-title">Logs y Análisis</h1>
+                    <div class="btn-group">
+                        <button class="btn btn-secondary" id="clearLogsBtn">Limpiar Logs</button>
+                        <button class="btn btn-secondary" id="exportLogsBtn">Exportar Logs</button>
+                    </div>
+                </div>
+
+                <div class="logs-container">
+                    <div class="card">
+                        <div class="logs-header">
+                            <h3 class="card-title">Visor de Logs en Tiempo Real</h3>
+                            <div class="log-filters">
+                                <select class="form-input" id="logFilter">
+                                    <option value="all">Todos</option>
+                                    <option value="info">Info</option>
+                                    <option value="success">Success</option>
+                                    <option value="warning">Warning</option>
+                                    <option value="error">Error</option>
+                                </select>
+                                <input type="text" class="form-input" id="logSearch" placeholder="Buscar...">
+                            </div>
+                        </div>
+                        <div class="logs-viewer" id="logsViewer"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Desarrollado por <span class="neon-text">Manuel Casimiro Carrasco</span></p>
+    </footer>
+
+    <script src="/buena/script.js"></script>
+    
+
+    <script src="/javascript/botones.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/botones.js"></script>
+    <script src="/menu/menu.js"></script>
+</body>
+</html>

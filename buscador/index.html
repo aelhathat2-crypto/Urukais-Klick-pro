@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador Urukais Klick - Encuentra cualquier contenido</title>
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/buscador.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/buscador/buscadoe.css">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/menu/menu.css">
+
+    <link rel="stylesheet" href="/css/boton.css">
+</head>
+<body>
+    <div>
+        
+
+      
+        <!-- Overlay para móvil -->
+    <div class="mnm-overlay" id="mnmOverlay"></div>
+
+    <!-- Botón toggle reproductor -->
+    <!-- Navegación principal -->
+    <nav class="mnm-nav-container">
+        <div class="mnm-nav-wrapper">
+            <a href="/index.html" class="mnm-logo">Urukais Klick</a>
+            
+            
+            <button class="mnm-hamburger" id="mnmHamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="mnm-nav-menu" id="mnmNavMenu">
+                <!-- Categoría 1: Entretenimiento y Ocio -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Entretenimiento y Ocio
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/buscador-de-peliculas.html" class="mnm-dropdown-item">🎬 Catálogo de Películas</a>
+                        <a href="/cabecera/cine/la-nasa.html" class="mnm-dropdown-item">🚀 Espacio y Astronomía</a>
+                        <a href="/cabecera/cine/peluculas.html" class="mnm-dropdown-item">🎭 Films Favoritos</a>
+                        <a href="/cabecera/cine/noticias.html" class="mnm-dropdown-item">📰 Noticias Actuales</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😂 Humor y Entretenimiento</a>
+                        <a href="/cabecera/musica/hadmed.html" class="mnm-dropdown-item">🎵 Ambiente Musical</a>
+                        <a href="/cabecera/musica/mas.html" class="mnm-dropdown-item">🎶 Musicalife</a>
+                        <a href="/cabecera/musica/musica-clasica.html" class="mnm-dropdown-item">🎼 Música Clásica</a>
+                        <a href="/cabecera/musica/prueva.html" class="mnm-dropdown-item">🎤 Géneros Musicales</a>
+                        <a href="/cabecera/musica/tartituras.html" class="mnm-dropdown-item">🎵 Partituras y Escore</a>
+                        <a href="/cabecera/musica/videos3.html" class="mnm-dropdown-item">📺 Centro de Videos</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 2: Herramientas y Productividad -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Herramientas y Productividad
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/herramientas/chat.html" class="mnm-dropdown-item">💬 Asistente Virtual Urukais</a>
+                        <a href="/cabecera/herramientas/control-de-consultas.html" class="mnm-dropdown-item">🗂 Sistema de Consultas</a>
+                        <a href="/cabecera/herramientas/DevStudio.html" class="mnm-dropdown-item">⚙️ Estudio de Desarrollo</a>
+                        <a href="/cabecera/herramientas/FinTech.html" class="mnm-dropdown-item">💼 Soluciones Financieras</a>
+                        <a href="/cabecera/herramientas/generador-contraseñas.html" class="mnm-dropdown-item">🔐 Generador Seguro de<br>Contraseñas</a>
+                        <a href="/cabecera/herramientas/genesis.html" class="mnm-dropdown-item">🌟 Plataforma Genesis</a>
+                        <a href="/cabecera/herramientas/herramienta.html" class="mnm-dropdown-item">🛠 Suite de Herramientas</a>
+                        <a href="/cabecera/herramientas/hot.html" class="mnm-dropdown-item">🔥 Tendencias Actuales</a>
+                        <a href="/cabecera/herramientas/ia-educativa.html" class="mnm-dropdown-item">🎓 IA Educativa</a>
+                        <a href="/cabecera/herramientas/listado-de-prons.html" class="mnm-dropdown-item">📋 Pronósticos en Línea</a>
+                        <a href="/cabecera/herramientas/localizacion-de-faker.html" class="mnm-dropdown-item">📍 Localizador Universal</a>
+                        <a href="/cabecera/herramientas/mas-datos.html" class="mnm-dropdown-item">📊 Análisis de Datos</a>
+                        <a href="/cabecera/herramientas/pruevas.html" class="mnm-dropdown-item">🧪 Centro de Pruebas</a>
+                        <a href="/cabecera/herramientas/texto-voz.html" class="mnm-dropdown-item">🔊 Síntesis de Voz</a>
+                        <a href="/cabecera/herramientas/tienda-de-urukais.html" class="mnm-dropdown-item">🛒 Tienda Oficial</a>
+                        <a href="/cabecera/buscadores/gestor-de-tareas.html" class="mnm-dropdown-item">✅ Organizador de Tareas</a>
+                        <a href="/cabecera/buscadores/gestor-de-proyectos.html" class="mnm-dropdown-item">📈 Gestor de Proyectos</a>
+                        <a href="/cabecera/cine/ProTask.html" class="mnm-dropdown-item">⏰ ProTask Profesional</a>
+                        <a href="/cabecera/cine/ReservaPro.html" class="mnm-dropdown-item">📅 Sistema de Reservas</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 3: Buscadores y Información -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Buscadores y Información
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/buscadores/buscadorurukais.html" class="mnm-dropdown-item">📚 Búsqueda de Libros</a>
+                        <a href="/cabecera/buscadores/busqueda.html" class="mnm-dropdown-item">🔍 Buscador Matrix</a>
+                        <a href="/cabecera/cine/libros.html" class="mnm-dropdown-item">📖 Biblioteca Digital</a>
+                        <a href="/cabecera/cine/localizador.html" class="mnm-dropdown-item">🌐 Ubicador IP</a>
+                        <a href="/cabecera/buscadores/barcelona-sustainabitil.html" class="mnm-dropdown-item">🌱 Barcelona Sostenible</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 4: Mascotas y Animales -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Mascotas y Animales
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/animales/animales.html" class="mnm-dropdown-item">🐾 Generador de Animales</a>
+                        <a href="/cabecera/animales/buscador-de-perros.html" class="mnm-dropdown-item">🐕 Aplicación de Mascotas</a>
+                        <a href="/cabecera/buscadores/deportes.html" class="mnm-dropdown-item">⚽ Buscador de Equipos<br>Deportivos</a>
+                        <a href="/cabecera/animales/Marketing.html" class="mnm-dropdown-item">📱 Marketing Digital</a>
+                        <a href="/cabecera/animales/multi.html" class="mnm-dropdown-item">💻 Solución Multiplataforma</a>
+                        <a href="/cabecera/animales/neocron.html" class="mnm-dropdown-item">🌟 Neocron Urukais</a>
+                        <a href="/cabecera/animales/portal-interactivo.html" class="mnm-dropdown-item">✨ Portal Interactivo</a>
+                        <a href="/cabecera/animales/site-de-productividad.html" class="mnm-dropdown-item">💼 Suite de Productividad</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 5: Comida y Bebidas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Comida y Bebidas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/comida/coctel.html" class="mnm-dropdown-item">🍹 Sistema de Coctelería</a>
+                        <a href="/cabecera/comida/comida.html" class="mnm-dropdown-item">🍽 Gastronomía Exquisita</a>
+                        <a href="/cabecera/comida/cocia-en-inggles.html" class="mnm-dropdown-item">🍳 Cocina Internacional</a>
+                        
+                    </div>
+                </li>
+
+                <!-- Categoría 6: Creatividad y Arte -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Creatividad y Arte
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/conics/archivo-de-hielo.html" class="mnm-dropdown-item">❄️ Archivo Creativo</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😄 Galería de Humor</a>
+                        <a href="/cabecera/conics/Morty.html" class="mnm-dropdown-item">🎨 Colección Morty</a>
+                        <a href="/cabecera/conics/generador-de-fondos.html" class="mnm-dropdown-item">🎨 Generador de Fondos</a>
+                        <a href="/cabecera/conics/neocron.html" class="mnm-dropdown-item">😊 Control de Estado de Ánimo</a>
+                        <a href="/cabecera/conics/plataforma-de-herattientas.html" class="mnm-dropdown-item">🛠 Plataforma de<br>Herramientas Creativas</a>
+                        <a href="/cabecera/conics/portal-interactivo.html" class="mnm-dropdown-item">🎭 Portal Interactivo</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 7: Medio Ambiente -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Medio Ambiente
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/tierra/ambiental-mundial.html" class="mnm-dropdown-item">🌍 Global Ambiental</a>
+                        <a href="/cabecera/tierra/busca-ciudades.html" class="mnm-dropdown-item">🏙 Explorador de Ciudades</a>
+                        <a href="/cabecera/tierra/busca-cuidad.html" class="mnm-dropdown-item">🌆 Búsqueda Urbana</a>
+                        <a href="/cabecera/tierra/clima.html" class="mnm-dropdown-item">🌤️ Centro Meteorológico</a>
+                        <a href="/cabecera/tierra/deforestacion-mundial.html" class="mnm-dropdown-item">🌲 Control Deforestación</a>
+                        <a href="/cabecera/tierra/gia-de-supervivencia.html" class="mnm-dropdown-item">🧭 Guía de Supervivencia</a>
+                        <a href="/cabecera/tierra/mas.html" class="mnm-dropdown-item">🌿 Más Contenido Verde</a>
+                        <a href="/cabecera/tierra/renacer.html" class="mnm-dropdown-item">🌱 Renacer y Renovación</a>
+                        <a href="/cabecera/tierra/sistema-reus.html" class="mnm-dropdown-item">♻️ Sistema Inteligente de Reciclaje</a>
+                        <a href="/cabecera/tierra/supervivencia33.html" class="mnm-dropdown-item">🏕 Supervivencia Extrema</a>
+                    </div>
+                </li>
+                
+
+                <!-- Categoría 8: Eventos y Citas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Eventos y Citas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/gestor-de-citas.html" class="mnm-dropdown-item">💕 Organizador de Citas</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+ 
+
+    </div>
+    <!-- Header del Buscador -->
+    <header class="buscador-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <h1><i class="fas fa-search"></i> Buscador Urukais Klick</h1>
+                <p>Encuentra cualquier contenido, proyecto o herramienta de tu ecosistema digital</p>
+                
+            </div>
+            <div class="search-container">       
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar en todo el ecosistema Urukais..." autocomplete="off">
+                    <button class="clear-btn" id="clearBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Controles de Filtros -->
+    <section class="filters-section">
+        <div class="filters-container">
+            <div class="filter-group">
+                <label for="categoryFilter">Filtrar por categoría:</label>
+                <select id="categoryFilter" class="filter-select">
+                    <option value="all">Todas las categorías</option>
+                    <option value="animales">Animaladas</option>
+                    <option value="buscadores">Buscadores</option>
+                    <option value="populares">Populares</option>
+                    <option value="comidas">Comidas</option>
+                    <option value="conics">Cómics</option>
+                    <option value="herramientas">Herramientas</option>
+                    <option value="musicas">Músicas</option>
+                    <option value="tierra">Tierra y Más</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="typeFilter">Tipo de contenido:</label>
+                <select id="typeFilter" class="filter-select">
+                    <option value="all">Todo tipo</option>
+                    <option value="proyecto">Proyectos</option>
+                    <option value="herramienta">Herramientas</option>
+                    <option value="contenido">Contenido</option>
+                    <option value="enlace">Enlaces</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="sortFilter">Ordenar por:</label>
+                <select id="sortFilter" class="filter-select">
+                    <option value="relevance">Relevancia</option>
+                    <option value="alphabetical">Alfabético</option>
+                    <option value="category">Categoría</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas de Búsqueda -->
+    <section class="search-stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number" id="totalResults">0</span>
+                <span class="stat-label">resultados encontrados</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">847</span>
+                <span class="stat-label">número sagrado</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="searchTime">0</span>
+                <span class="stat-label">ms búsqueda</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resultados de Búsqueda -->
+    <main class="search-results">
+        <div class="results-container">
+            <!-- Resultados se cargarán dinámicamente aquí -->
+            <div class="no-results" id="noResults">
+                <i class="fas fa-search-minus"></i>
+                <h3>No se encontraron resultados</h3>
+                <p>Intenta con otros términos de búsqueda o ajusta los filtros</p>
+            </div>
+
+            <div class="search-suggestions" id="searchSuggestions">
+                <h3>Sugerencias de búsqueda:</h3>
+                <div class="suggestions-list" id="suggestionsList">
+                    <!-- Las sugerencias se cargarán dinámicamente -->
+                </div>
+            </div>
+
+            <div class="results-grid" id="resultsGrid">
+                <!-- Los resultados se cargarán dinámicamente aquí -->
+            </div>
+
+            <!-- Paginación -->
+            <div class="pagination" id="pagination">
+                <!-- Paginación se cargará dinámicamente -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Búsquedas Recientes -->
+    <section class="recent-searches">
+        <div class="recent-container">
+            <h3><i class="fas fa-history"></i> Búsquedas Recientes</h3>
+            <div class="recent-list" id="recentList">
+                <!-- Las búsquedas recientes se cargarán dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="buscador-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Buscador Urukais Klick </p>
+            <p>El buscador más avanzado del ecosistema digital de Manuel Casimiro Carrasco</p>
+        </div> <a href="/index.html"  rel="noopener noreferrer" class="sound-link">Volver al Inicio</a>
+                
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/buscador/javascript/buscador-config.js"></script>
+    <script src="/buscador/javascript/buscador-datos.js"></script>
+    <script src="/buscador/javascript/buscador.js"></script>
+    
+
+    <script src="/javascript/botones.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/botones.js"></script>
+    <script src="/menu/menu.js"></script>
+</body>
+</html>

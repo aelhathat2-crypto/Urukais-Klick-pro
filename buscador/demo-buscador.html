@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integración del Buscador - Urukais Klick</title>
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/menu/menu.css">
+
+    <link rel="stylesheet" href="/css/boton.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1b23 100%);
+            color: #ffffff;
+            margin: 0;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #1a1b23;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #00ff88;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .demo-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #0f1117;
+            border-radius: 10px;
+            border: 1px solid #2a2a2a;
+        }
+        
+        .demo-section h2 {
+            color: #a855f7;
+            margin-bottom: 1rem;
+        }
+        
+        .search-demo {
+            background: #1a1b23;
+            border: 2px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .search-input {
+            width: 100%;
+            background: #0f1117;
+            border: 1px solid #2a2a2a;
+            color: #ffffff;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #00ff88;
+            box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.1);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #00ff88, #a855f7);
+            color: #0a0e27;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #2a2a2a;
+            color: #ffffff;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-card {
+            background: #0f1117;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #2a2a2a;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-block {
+            background: #0a0e27;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        .code-block code {
+            color: #00ff88;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            background: #0f1117;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00ff88;
+        }
+        
+        .stat-label {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+        
+        .integration-steps {
+            counter-reset: step-counter;
+        }
+        
+        .step {
+            counter-increment: step-counter;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #0f1117;
+            border-left: 4px solid #00ff88;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .step::before {
+            content: counter(step-counter);
+            background: #00ff88;
+            color: #0a0e27;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #2a2a2a;
+            color: #b0b0b0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+      
+        <!-- Overlay para móvil -->
+    <div class="mnm-overlay" id="mnmOverlay"></div>
+
+    <!-- Botón toggle reproductor -->
+    <!-- Navegación principal -->
+    <nav class="mnm-nav-container">
+        <div class="mnm-nav-wrapper">
+            <a href="/index.html" class="mnm-logo">Urukais Klick</a>
+            
+            
+            <button class="mnm-hamburger" id="mnmHamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="mnm-nav-menu" id="mnmNavMenu">
+                <!-- Categoría 1: Entretenimiento y Ocio -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Entretenimiento y Ocio
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/buscador-de-peliculas.html" class="mnm-dropdown-item">🎬 Catálogo de Películas</a>
+                        <a href="/cabecera/cine/la-nasa.html" class="mnm-dropdown-item">🚀 Espacio y Astronomía</a>
+                        <a href="/cabecera/cine/peluculas.html" class="mnm-dropdown-item">🎭 Films Favoritos</a>
+                        <a href="/cabecera/cine/noticias.html" class="mnm-dropdown-item">📰 Noticias Actuales</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😂 Humor y Entretenimiento</a>
+                        <a href="/cabecera/musica/hadmed.html" class="mnm-dropdown-item">🎵 Ambiente Musical</a>
+                        <a href="/cabecera/musica/mas.html" class="mnm-dropdown-item">🎶 Musicalife</a>
+                        <a href="/cabecera/musica/musica-clasica.html" class="mnm-dropdown-item">🎼 Música Clásica</a>
+                        <a href="/cabecera/musica/prueva.html" class="mnm-dropdown-item">🎤 Géneros Musicales</a>
+                        <a href="/cabecera/musica/tartituras.html" class="mnm-dropdown-item">🎵 Partituras y Escore</a>
+                        <a href="/cabecera/musica/videos3.html" class="mnm-dropdown-item">📺 Centro de Videos</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 2: Herramientas y Productividad -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Herramientas y Productividad
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/herramientas/chat.html" class="mnm-dropdown-item">💬 Asistente Virtual Urukais</a>
+                        <a href="/cabecera/herramientas/control-de-consultas.html" class="mnm-dropdown-item">🗂 Sistema de Consultas</a>
+                        <a href="/cabecera/herramientas/DevStudio.html" class="mnm-dropdown-item">⚙️ Estudio de Desarrollo</a>
+                        <a href="/cabecera/herramientas/FinTech.html" class="mnm-dropdown-item">💼 Soluciones Financieras</a>
+                        <a href="/cabecera/herramientas/generador-contraseñas.html" class="mnm-dropdown-item">🔐 Generador Seguro de<br>Contraseñas</a>
+                        <a href="/cabecera/herramientas/genesis.html" class="mnm-dropdown-item">🌟 Plataforma Genesis</a>
+                        <a href="/cabecera/herramientas/herramienta.html" class="mnm-dropdown-item">🛠 Suite de Herramientas</a>
+                        <a href="/cabecera/herramientas/hot.html" class="mnm-dropdown-item">🔥 Tendencias Actuales</a>
+                        <a href="/cabecera/herramientas/ia-educativa.html" class="mnm-dropdown-item">🎓 IA Educativa</a>
+                        <a href="/cabecera/herramientas/listado-de-prons.html" class="mnm-dropdown-item">📋 Pronósticos en Línea</a>
+                        <a href="/cabecera/herramientas/localizacion-de-faker.html" class="mnm-dropdown-item">📍 Localizador Universal</a>
+                        <a href="/cabecera/herramientas/mas-datos.html" class="mnm-dropdown-item">📊 Análisis de Datos</a>
+                        <a href="/cabecera/herramientas/pruevas.html" class="mnm-dropdown-item">🧪 Centro de Pruebas</a>
+                        <a href="/cabecera/herramientas/texto-voz.html" class="mnm-dropdown-item">🔊 Síntesis de Voz</a>
+                        <a href="/cabecera/herramientas/tienda-de-urukais.html" class="mnm-dropdown-item">🛒 Tienda Oficial</a>
+                        <a href="/cabecera/buscadores/gestor-de-tareas.html" class="mnm-dropdown-item">✅ Organizador de Tareas</a>
+                        <a href="/cabecera/buscadores/gestor-de-proyectos.html" class="mnm-dropdown-item">📈 Gestor de Proyectos</a>
+                        <a href="/cabecera/cine/ProTask.html" class="mnm-dropdown-item">⏰ ProTask Profesional</a>
+                        <a href="/cabecera/cine/ReservaPro.html" class="mnm-dropdown-item">📅 Sistema de Reservas</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 3: Buscadores y Información -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Buscadores y Información
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/buscadores/buscadorurukais.html" class="mnm-dropdown-item">📚 Búsqueda de Libros</a>
+                        <a href="/cabecera/buscadores/busqueda.html" class="mnm-dropdown-item">🔍 Buscador Matrix</a>
+                        <a href="/cabecera/cine/libros.html" class="mnm-dropdown-item">📖 Biblioteca Digital</a>
+                        <a href="/cabecera/cine/localizador.html" class="mnm-dropdown-item">🌐 Ubicador IP</a>
+                        <a href="/cabecera/buscadores/barcelona-sustainabitil.html" class="mnm-dropdown-item">🌱 Barcelona Sostenible</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 4: Mascotas y Animales -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Mascotas y Animales
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/animales/animales.html" class="mnm-dropdown-item">🐾 Generador de Animales</a>
+                        <a href="/cabecera/animales/buscador-de-perros.html" class="mnm-dropdown-item">🐕 Aplicación de Mascotas</a>
+                        <a href="/cabecera/buscadores/deportes.html" class="mnm-dropdown-item">⚽ Buscador de Equipos<br>Deportivos</a>
+                        <a href="/cabecera/animales/Marketing.html" class="mnm-dropdown-item">📱 Marketing Digital</a>
+                        <a href="/cabecera/animales/multi.html" class="mnm-dropdown-item">💻 Solución Multiplataforma</a>
+                        <a href="/cabecera/animales/neocron.html" class="mnm-dropdown-item">🌟 Neocron Urukais</a>
+                        <a href="/cabecera/animales/portal-interactivo.html" class="mnm-dropdown-item">✨ Portal Interactivo</a>
+                        <a href="/cabecera/animales/site-de-productividad.html" class="mnm-dropdown-item">💼 Suite de Productividad</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 5: Comida y Bebidas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Comida y Bebidas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/comida/coctel.html" class="mnm-dropdown-item">🍹 Sistema de Coctelería</a>
+                        <a href="/cabecera/comida/comida.html" class="mnm-dropdown-item">🍽 Gastronomía Exquisita</a>
+                        <a href="/cabecera/comida/cocia-en-inggles.html" class="mnm-dropdown-item">🍳 Cocina Internacional</a>
+                        
+                    </div>
+                </li>
+
+                <!-- Categoría 6: Creatividad y Arte -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Creatividad y Arte
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/conics/archivo-de-hielo.html" class="mnm-dropdown-item">❄️ Archivo Creativo</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😄 Galería de Humor</a>
+                        <a href="/cabecera/conics/Morty.html" class="mnm-dropdown-item">🎨 Colección Morty</a>
+                        <a href="/cabecera/conics/generador-de-fondos.html" class="mnm-dropdown-item">🎨 Generador de Fondos</a>
+                        <a href="/cabecera/conics/neocron.html" class="mnm-dropdown-item">😊 Control de Estado de Ánimo</a>
+                        <a href="/cabecera/conics/plataforma-de-herattientas.html" class="mnm-dropdown-item">🛠 Plataforma de<br>Herramientas Creativas</a>
+                        <a href="/cabecera/conics/portal-interactivo.html" class="mnm-dropdown-item">🎭 Portal Interactivo</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 7: Medio Ambiente -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Medio Ambiente
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/tierra/ambiental-mundial.html" class="mnm-dropdown-item">🌍 Global Ambiental</a>
+                        <a href="/cabecera/tierra/busca-ciudades.html" class="mnm-dropdown-item">🏙 Explorador de Ciudades</a>
+                        <a href="/cabecera/tierra/busca-cuidad.html" class="mnm-dropdown-item">🌆 Búsqueda Urbana</a>
+                        <a href="/cabecera/tierra/clima.html" class="mnm-dropdown-item">🌤️ Centro Meteorológico</a>
+                        <a href="/cabecera/tierra/deforestacion-mundial.html" class="mnm-dropdown-item">🌲 Control Deforestación</a>
+                        <a href="/cabecera/tierra/gia-de-supervivencia.html" class="mnm-dropdown-item">🧭 Guía de Supervivencia</a>
+                        <a href="/cabecera/tierra/mas.html" class="mnm-dropdown-item">🌿 Más Contenido Verde</a>
+                        <a href="/cabecera/tierra/renacer.html" class="mnm-dropdown-item">🌱 Renacer y Renovación</a>
+                        <a href="/cabecera/tierra/sistema-reus.html" class="mnm-dropdown-item">♻️ Sistema Inteligente de Reciclaje</a>
+                        <a href="/cabecera/tierra/supervivencia33.html" class="mnm-dropdown-item">🏕 Supervivencia Extrema</a>
+                    </div>
+                </li>
+                
+
+                <!-- Categoría 8: Eventos y Citas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Eventos y Citas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/gestor-de-citas.html" class="mnm-dropdown-item">💕 Organizador de Citas</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+ 
+
+
+
+    </div>
+    <div class="container">
+        <h1>🔍 Buscador Urukais Klick</h1>        
+        <p class="subtitle">Página de demostración e integración</p>
+        
+        <div class="demo-section">
+            <h2>🚀 Acceso Directo al Buscador</h2>
+            <p>El buscador está completamente desarrollado y listo para usar. Haz clic en el botón para acceder:</p>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="/buscador/index.html" class="btn" >
+                <i class="fas fa-rocket"></i> ¡Probar el Buscador Ahora!
+            </a> 
+                <a href="#demo" class="btn btn-secondary">
+                    <i class="fas fa-play"></i> Ver Demostración
+                </a>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">68</div>
+                <div class="stat-label">Elementos Indexados</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Categorías</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Responsive</div>
+            </div>
+        </div>
+
+        <div class="demo-section" id="demo">
+            <h2>💡 Demostración de Búsqueda</h2>
+            <p>Prueba el buscador escribiendo en el campo de abajo (esto abrirá el buscador completo):</p>
+            
+            <div class="search-demo">
+                <input type="text" class="search-input" placeholder="Escribe 'chat bot', 'api', 'clima' o cualquier término..." 
+                        onkeyup="if(event.key==='Enter'){window.open('buscador-urukais.html?search=' + encodeURIComponent(this.value), '_blank')}">
+                <p style="color: #b0b0b0; font-size: 0.9rem; margin-top: 0.5rem;">
+                    <i class="fas fa-info-circle"></i> Presiona Enter para abrir el buscador con tu búsqueda
+                </p>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>✨ Características Principales</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Búsqueda en Tiempo Real</h3>
+                    <p>Los resultados aparecen instantáneamente mientras escribes</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Búsqueda Inteligente</h3>
+                    <p>Busca en títulos, descripciones y etiquetas</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Filtros Avanzados</h3>
+                    <p>Filtra por categoría, tipo y ordena los resultados</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Diseño Responsive</h3>
+                    <p>Se adapta perfectamente a cualquier dispositivo</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Interfaz Moderna</h3>
+                    <p>Diseño atractivo inspirado en el ecosistema Urukais</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <h3>Accesibilidad</h3>
+                    <p>Totalmente accesible con navegación por teclado</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>📋 Base de Datos de Contenido</h2>
+            <p>El buscador incluye una base de datos completa con todos los elementos de tu web:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🐸 Animaladas (8)</h4>
+                    <p>Generadores, apps de mascotas, herramientas creativas</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔍 Buscadores (5)</h4>
+                    <p>Buscador de libros, gestor de tareas, proyectos</p>
+                </div>
+                <div class="feature-card">
+                    <h4>⭐ Populares (9)</h4>
+                    <p>Películas, biblioteca, noticias, streaming</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🍽️ Comidas (3)</h4>
+                    <p>Sistema auténtico, recetas, gastronomía</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🎨 Cómics (6)</h4>
+                    <p>Archivo, chistes, arte, generadores</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔧 Herramientas (15)</h4>
+                    <p>Chat bot, DevStudio, FinTech, IA educativa</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🎵 Músicas (6)</h4>
+                    <p>Atmosférica, clásica, videos, partituras</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🌍 Tierra (11)</h4>
+                    <p>Ambiental, clima, supervivencia, naturaleza</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🔗 Cómo Integrar en tu Web</h2>
+            <p>Sigue estos pasos simples para añadir el buscador a tu web:</p>
+            
+            <div class="integration-steps">
+                <div class="step">
+                    <strong>Subir Archivos</strong><br>
+                    Copia los archivos del buscador a tu servidor manteniendo la estructura de carpetas
+                </div>
+                
+                <div class="step">
+                    <strong>Añadir al Menú</strong><br>
+                    Incluye este enlace en tu menú de navegación
+                    <div class="code-block">
+                        <code>&lt;a href="/buscador-urukais.html" class="mnm-dropdown-item"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;i class="fas fa-search"&gt;&lt;/i&gt; Buscador Urukais Klick<br>
+                        &lt;/a&gt;</code>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <strong>Personalizar Estilos</strong><br>
+                    Los estilos se integran automáticamente con tu tema existente
+                </div>
+                
+                <div class="step">
+                    <strong>¡Listo!</strong><br>
+                    El buscador funcionará inmediatamente con toda tu base de datos de contenido
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>⚙️ Configuración Avanzada</h2>
+            <p>El buscador incluye opciones avanzadas de configuración:</p>
+            
+            <div class="code-block">
+                <code>// Ejemplo de configuración personalizada<br>
+const config = {<br>
+&nbsp;&nbsp;resultsPerPage: 12,<br>
+&nbsp;&nbsp;enableFuzzySearch: true,<br>
+&nbsp;&nbsp;showStats: true,<br>
+&nbsp;&nbsp;trackAnalytics: true<br>
+};</code>
+            </div>
+            
+            <p>Puedes personalizar:</p>
+            <ul style="color: #b0b0b0;">
+                <li>🔢 Número de resultados por página</li>
+                <li>⏱️ Tiempo de búsqueda en tiempo real</li>
+                <li>🎨 Colores y temas</li>
+                <li>📊 Sistema de analytics</li>
+                <li>🏷️ Categorías y tipos de contenido</li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h2>🎯 Casos de Uso Típicos</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>🔍 Búsqueda Rápida</h4>
+                    <p>Los usuarios encuentran instantly cualquier contenido escribiendo términos simples</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📂 Navegación por Categorías</h4>
+                    <p>Filtra por categorías específicas como "Herramientas" o "Proyectos"</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🎯 Búsqueda Especializada</h4>
+                    <p>Encuentra herramientas específicas como "chat bot" o "api"</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📱 Uso Móvil</h4>
+                    <p>Perfecta experiencia de búsqueda en dispositivos móviles</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="/buscador/index.html" class="btn" >
+                <i class="fas fa-rocket"></i> ¡Probar el Buscador Ahora!
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>🔍 <strong>Buscador Urukais Klick</strong> - Desarrollado por Urukais Klick</p>
+            <p>El buscador más avanzado para el ecosistema de Manuel Casimiro Carrasco</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;"> <a href="/index.html"  rel="noopener noreferrer" class="sound-link">Volver al Inicio</a>
+                
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Función para mostrar términos de búsqueda populares
+        const popularTerms = ['chat bot', 'api', 'clima', 'música', 'animales', 'pokédex', 'herramientas'];
+        let currentTermIndex = 0;
+        
+        function rotatePlaceholder() {
+            const input = document.querySelector('.search-input');
+            if (input) {
+                input.placeholder = `Prueba "${popularTerms[currentTermIndex]}"...`;
+                currentTermIndex = (currentTermIndex + 1) % popularTerms.length;
+            }
+        }
+        
+        // Rotar placeholder cada 3 segundos
+        setInterval(rotatePlaceholder, 3000);
+        
+        // Animación de entrada
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.feature-card, .demo-section');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+        
+        // Función para abrir el buscador con parámetros URL
+        function openSearchInBuscador(query) {
+            const url = `buscador-urukais.html?search=${encodeURIComponent(query)}`;
+            window.open(url, '_blank');
+        }
+        
+        // Añadir eventos a los botones de ejemplo
+        document.querySelectorAll('.btn').forEach(btn => {
+            if (btn.textContent.includes('Abrir Buscador')) {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.open('buscador-urukais.html', '_blank');
+                });
+            }
+        });
+    </script>
+    
+    <script src="/javascript/botones.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/botones.js"></script>
+    <script src="/menu/menu.js"></script>
+</body>
+</html>

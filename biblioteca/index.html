@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <meta name="author" content="Manuel Casimiro Carrasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Biblioteca Digital - Sistema completo de gestión de libros, préstamos y usuarios">
+    <title>Biblioteca Digital - Sistema de Gestión</title>
+    <link rel="stylesheet" href="/biblioteca/style.css">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/menu/menu.css">
+
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    
+      
+        <!-- Overlay para móvil -->
+    <div class="mnm-overlay" id="mnmOverlay"></div>
+
+    <!-- Botón toggle reproductor -->
+    <!-- Navegación principal -->
+    <nav class="mnm-nav-container">
+        <div class="mnm-nav-wrapper">
+            <a href="/index.html" class="mnm-logo">Urukais Klick</a>
+            
+            
+            <button class="mnm-hamburger" id="mnmHamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="mnm-nav-menu" id="mnmNavMenu">
+                <!-- Categoría 1: Entretenimiento y Ocio -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Entretenimiento y Ocio
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/buscador-de-peliculas.html" class="mnm-dropdown-item">🎬 Catálogo de Películas</a>
+                        <a href="/cabecera/cine/la-nasa.html" class="mnm-dropdown-item">🚀 Espacio y Astronomía</a>
+                        <a href="/cabecera/cine/peluculas.html" class="mnm-dropdown-item">🎭 Films Favoritos</a>
+                        <a href="/cabecera/cine/noticias.html" class="mnm-dropdown-item">📰 Noticias Actuales</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😂 Humor y Entretenimiento</a>
+                        <a href="/cabecera/musica/hadmed.html" class="mnm-dropdown-item">🎵 Ambiente Musical</a>
+                        <a href="/cabecera/musica/mas.html" class="mnm-dropdown-item">🎶 Musicalife</a>
+                        <a href="/cabecera/musica/musica-clasica.html" class="mnm-dropdown-item">🎼 Música Clásica</a>
+                        <a href="/cabecera/musica/prueva.html" class="mnm-dropdown-item">🎤 Géneros Musicales</a>
+                        <a href="/cabecera/musica/tartituras.html" class="mnm-dropdown-item">🎵 Partituras y Escore</a>
+                        <a href="/cabecera/musica/videos3.html" class="mnm-dropdown-item">📺 Centro de Videos</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 2: Herramientas y Productividad -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Herramientas y Productividad
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/herramientas/chat.html" class="mnm-dropdown-item">💬 Asistente Virtual Urukais</a>
+                        <a href="/cabecera/herramientas/control-de-consultas.html" class="mnm-dropdown-item">🗂 Sistema de Consultas</a>
+                        <a href="/cabecera/herramientas/DevStudio.html" class="mnm-dropdown-item">⚙️ Estudio de Desarrollo</a>
+                        <a href="/cabecera/herramientas/FinTech.html" class="mnm-dropdown-item">💼 Soluciones Financieras</a>
+                        <a href="/cabecera/herramientas/generador-contraseñas.html" class="mnm-dropdown-item">🔐 Generador Seguro de<br>Contraseñas</a>
+                        <a href="/cabecera/herramientas/genesis.html" class="mnm-dropdown-item">🌟 Plataforma Genesis</a>
+                        <a href="/cabecera/herramientas/herramienta.html" class="mnm-dropdown-item">🛠 Suite de Herramientas</a>
+                        <a href="/cabecera/herramientas/hot.html" class="mnm-dropdown-item">🔥 Tendencias Actuales</a>
+                        <a href="/cabecera/herramientas/ia-educativa.html" class="mnm-dropdown-item">🎓 IA Educativa</a>
+                        <a href="/cabecera/herramientas/listado-de-prons.html" class="mnm-dropdown-item">📋 Pronósticos en Línea</a>
+                        <a href="/cabecera/herramientas/localizacion-de-faker.html" class="mnm-dropdown-item">📍 Localizador Universal</a>
+                        <a href="/cabecera/herramientas/mas-datos.html" class="mnm-dropdown-item">📊 Análisis de Datos</a>
+                        <a href="/cabecera/herramientas/pruevas.html" class="mnm-dropdown-item">🧪 Centro de Pruebas</a>
+                        <a href="/cabecera/herramientas/texto-voz.html" class="mnm-dropdown-item">🔊 Síntesis de Voz</a>
+                        <a href="/cabecera/herramientas/tienda-de-urukais.html" class="mnm-dropdown-item">🛒 Tienda Oficial</a>
+                        <a href="/cabecera/buscadores/gestor-de-tareas.html" class="mnm-dropdown-item">✅ Organizador de Tareas</a>
+                        <a href="/cabecera/buscadores/gestor-de-proyectos.html" class="mnm-dropdown-item">📈 Gestor de Proyectos</a>
+                        <a href="/cabecera/cine/ProTask.html" class="mnm-dropdown-item">⏰ ProTask Profesional</a>
+                        <a href="/cabecera/cine/ReservaPro.html" class="mnm-dropdown-item">📅 Sistema de Reservas</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 3: Buscadores y Información -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Buscadores y Información
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/buscadores/buscadorurukais.html" class="mnm-dropdown-item">📚 Búsqueda de Libros</a>
+                        <a href="/cabecera/buscadores/busqueda.html" class="mnm-dropdown-item">🔍 Buscador Matrix</a>
+                        <a href="/cabecera/cine/libros.html" class="mnm-dropdown-item">📖 Biblioteca Digital</a>
+                        <a href="/cabecera/cine/localizador.html" class="mnm-dropdown-item">🌐 Ubicador IP</a>
+                        <a href="/cabecera/buscadores/barcelona-sustainabitil.html" class="mnm-dropdown-item">🌱 Barcelona Sostenible</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 4: Mascotas y Animales -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Mascotas y Animales
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/animales/animales.html" class="mnm-dropdown-item">🐾 Generador de Animales</a>
+                        <a href="/cabecera/animales/buscador-de-perros.html" class="mnm-dropdown-item">🐕 Aplicación de Mascotas</a>
+                        <a href="/cabecera/buscadores/deportes.html" class="mnm-dropdown-item">⚽ Buscador de Equipos<br>Deportivos</a>
+                        <a href="/cabecera/animales/Marketing.html" class="mnm-dropdown-item">📱 Marketing Digital</a>
+                        <a href="/cabecera/animales/multi.html" class="mnm-dropdown-item">💻 Solución Multiplataforma</a>
+                        <a href="/cabecera/animales/neocron.html" class="mnm-dropdown-item">🌟 Neocron Urukais</a>
+                        <a href="/cabecera/animales/portal-interactivo.html" class="mnm-dropdown-item">✨ Portal Interactivo</a>
+                        <a href="/cabecera/animales/site-de-productividad.html" class="mnm-dropdown-item">💼 Suite de Productividad</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 5: Comida y Bebidas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Comida y Bebidas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/comida/coctel.html" class="mnm-dropdown-item">🍹 Sistema de Coctelería</a>
+                        <a href="/cabecera/comida/comida.html" class="mnm-dropdown-item">🍽 Gastronomía Exquisita</a>
+                        <a href="/cabecera/comida/cocia-en-inggles.html" class="mnm-dropdown-item">🍳 Cocina Internacional</a>
+                        
+                    </div>
+                </li>
+
+                <!-- Categoría 6: Creatividad y Arte -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Creatividad y Arte
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/conics/archivo-de-hielo.html" class="mnm-dropdown-item">❄️ Archivo Creativo</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😄 Galería de Humor</a>
+                        <a href="/cabecera/conics/Morty.html" class="mnm-dropdown-item">🎨 Colección Morty</a>
+                        <a href="/cabecera/conics/generador-de-fondos.html" class="mnm-dropdown-item">🎨 Generador de Fondos</a>
+                        <a href="/cabecera/conics/neocron.html" class="mnm-dropdown-item">😊 Control de Estado de Ánimo</a>
+                        <a href="/cabecera/conics/plataforma-de-herattientas.html" class="mnm-dropdown-item">🛠 Plataforma de<br>Herramientas Creativas</a>
+                        <a href="/cabecera/conics/portal-interactivo.html" class="mnm-dropdown-item">🎭 Portal Interactivo</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 7: Medio Ambiente -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Medio Ambiente
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/tierra/ambiental-mundial.html" class="mnm-dropdown-item">🌍 Global Ambiental</a>
+                        <a href="/cabecera/tierra/busca-ciudades.html" class="mnm-dropdown-item">🏙 Explorador de Ciudades</a>
+                        <a href="/cabecera/tierra/busca-cuidad.html" class="mnm-dropdown-item">🌆 Búsqueda Urbana</a>
+                        <a href="/cabecera/tierra/clima.html" class="mnm-dropdown-item">🌤️ Centro Meteorológico</a>
+                        <a href="/cabecera/tierra/deforestacion-mundial.html" class="mnm-dropdown-item">🌲 Control Deforestación</a>
+                        <a href="/cabecera/tierra/gia-de-supervivencia.html" class="mnm-dropdown-item">🧭 Guía de Supervivencia</a>
+                        <a href="/cabecera/tierra/mas.html" class="mnm-dropdown-item">🌿 Más Contenido Verde</a>
+                        <a href="/cabecera/tierra/renacer.html" class="mnm-dropdown-item">🌱 Renacer y Renovación</a>
+                        <a href="/cabecera/tierra/sistema-reus.html" class="mnm-dropdown-item">♻️ Sistema Inteligente de Reciclaje</a>
+                        <a href="/cabecera/tierra/supervivencia33.html" class="mnm-dropdown-item">🏕 Supervivencia Extrema</a>
+                    </div>
+                </li>
+                
+
+                <!-- Categoría 8: Eventos y Citas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Eventos y Citas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/gestor-de-citas.html" class="mnm-dropdown-item">💕 Organizador de Citas</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+   
+
+
+    <!-- Header de la aplicación -->
+    <header class="app-header"><br><br>
+        <div class="header-container">
+            <div class="header-brand">
+                <div class="brand-icon">📚</div>
+                <h1 class="brand-title">Biblioteca Digital</h1>
+                <p class="brand-subtitle">Sistema de Gestión Integral</p>
+            </div>
+            <div class="header-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="totalLibros">0</span>
+                    <span class="stat-label">Libros</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="totalUsuarios">0</span>
+                    <span class="stat-label">Usuarios</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="totalPrestamos">0</span>
+                    <span class="stat-label">Préstamos</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegación principal -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <button class="nav-tab active" data-tab="libros">
+                <span class="tab-icon">📖</span>
+                <span class="tab-text">Catálogo de Libros</span>
+            </button>
+            <button class="nav-tab" data-tab="usuarios">
+                <span class="tab-icon">👥</span>
+                <span class="tab-text">Gestión de Usuarios</span>
+            </button>
+            <button class="nav-tab" data-tab="prestamos">
+                <span class="tab-icon">🔄</span>
+                <span class="tab-text">Sistema de Préstamos</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <div class="content-container">
+            
+            <!-- SECCIÓN DE LIBROS -->
+            <section class="content-section active" id="libros">
+                <div class="section-header">
+                    <h2 class="section-title">Catálogo de Libros</h2>
+                    <button class="btn-primary" onclick="mostrarFormularioLibro()">
+                        <span class="btn-icon">➕</span>
+                        Agregar Libro
+                    </button>
+                </div>
+
+                <!-- Barra de búsqueda y filtros -->
+                <div class="search-filters">
+                    <div class="search-container">
+                        <input type="text" id="busquedaLibros" placeholder="Buscar libros por título, autor o ISBN..." class="search-input">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <div class="filter-container">
+                        <select id="filtroCategoria" class="filter-select">
+                            <option value="">Todas las categorías</option>
+                            <option value="Ficción">Ficción</option>
+                            <option value="No Ficción">No Ficción</option>
+                            <option value="Ciencia">Ciencia</option>
+                            <option value="Tecnología">Tecnología</option>
+                            <option value="Historia">Historia</option>
+                            <option value="Biografías">Biografías</option>
+                            <option value="Infantil">Infantil</option>
+                        </select>
+                        <select id="filtroDisponibilidad" class="filter-select">
+                            <option value="">Todos los estados</option>
+                            <option value="disponible">Disponible</option>
+                            <option value="prestado">Prestado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Lista de libros -->
+                <div class="libros-grid" id="listaLibros">
+                    <!-- Los libros se cargarán dinámicamente aquí -->
+                </div>
+
+                <!-- Mensaje cuando no hay libros -->
+                <div class="empty-state" id="librosVacios" style="display: none;">
+                    <div class="empty-icon">📚</div>
+                    <h3>No hay libros en el catálogo</h3>
+                    <p>Comienza agregando tu primer libro al sistema</p>
+                    <button class="btn-primary" onclick="mostrarFormularioLibro()">
+                        Agregar Primer Libro
+                    </button>
+                </div>
+            </section>
+
+            <!-- SECCIÓN DE USUARIOS -->
+            <section class="content-section" id="usuarios">
+                <div class="section-header">
+                    <h2 class="section-title">Gestión de Usuarios</h2>
+                    <button class="btn-primary" onclick="mostrarFormularioUsuario()">
+                        <span class="btn-icon">👤</span>
+                        Registrar Usuario
+                    </button>
+                </div>
+
+                <!-- Barra de búsqueda de usuarios -->
+                <div class="search-container">
+                    <input type="text" id="busquedaUsuarios" placeholder="Buscar usuarios por nombre, email o ID..." class="search-input">
+                    <span class="search-icon">🔍</span>
+                </div>
+
+                <!-- Lista de usuarios -->
+                <div class="usuarios-grid" id="listaUsuarios">
+                    <!-- Los usuarios se cargarán dinámicamente aquí -->
+                </div>
+
+                <!-- Mensaje cuando no hay usuarios -->
+                <div class="empty-state" id="usuariosVacios" style="display: none;">
+                    <div class="empty-icon">👥</div>
+                    <h3>No hay usuarios registrados</h3>
+                    <p>Comienza registrando el primer usuario del sistema</p>
+                    <button class="btn-primary" onclick="mostrarFormularioUsuario()">
+                        Registrar Primer Usuario
+                    </button>
+                </div>
+            </section>
+
+            <!-- SECCIÓN DE PRÉSTAMOS -->
+            <section class="content-section" id="prestamos">
+                <div class="section-header">
+                    <h2 class="section-title">Sistema de Préstamos</h2>
+                    <button class="btn-primary" onclick="mostrarFormularioPrestamo()">
+                        <span class="btn-icon">📋</span>
+                        Nuevo Préstamo
+                    </button>
+                </div>
+
+                <!-- Filtros de préstamos -->
+                <div class="filters-row">
+                    <select id="filtroEstadoPrestamos" class="filter-select">
+                        <option value="">Todos los préstamos</option>
+                        <option value="activo">Préstamos Activos</option>
+                        <option value="vencido">Préstamos Vencidos</option>
+                        <option value="devuelto">Devueltos</option>
+                    </select>
+                    <button class="btn-secondary" onclick="mostrarHistorialPrestamos()">
+                        <span class="btn-icon">📊</span>
+                        Ver Historial Completo
+                    </button>
+                </div>
+
+                <!-- Lista de préstamos activos -->
+                <div class="prestamos-container">
+                    <h3 class="subsection-title">Préstamos Activos</h3>
+                    <div class="prestamos-grid" id="listaPrestamosActivos">
+                        <!-- Los préstamos se cargarán dinámicamente aquí -->
+                    </div>
+                </div>
+
+                <!-- Mensaje cuando no hay préstamos -->
+                <div class="empty-state" id="prestamosVacios" style="display: none;">
+                    <div class="empty-icon">🔄</div>
+                    <h3>No hay préstamos activos</h3>
+                    <p>El historial de préstamos aparecerá aquí</p>
+                    <button class="btn-primary" onclick="mostrarFormularioPrestamo()">
+                        Realizar Primer Préstamo
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- MODAL PARA FORMULARIO DE LIBRO -->
+    <div class="modal" id="modalLibro">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="tituloFormularioLibro">Agregar Nuevo Libro</h3>
+                <button class="modal-close" onclick="cerrarModal('modalLibro')">&times;</button>
+            </div>
+            <form id="formularioLibro" class="modal-form">
+                <div class="form-group">
+                    <label for="libroTitulo">Título del Libro *</label>
+                    <input type="text" id="libroTitulo" required class="form-input" placeholder="Ingresa el título del libro">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="libroAutor">Autor *</label>
+                        <input type="text" id="libroAutor" required class="form-input" placeholder="Nombre del autor">
+                    </div>
+                    <div class="form-group">
+                        <label for="libroIsbn">ISBN</label>
+                        <input type="text" id="libroIsbn" class="form-input" placeholder="978-0-123456-78-9">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="libroAnio">Año de Publicación</label>
+                        <input type="number" id="libroAnio" class="form-input" min="1000" max="2025" placeholder="2023">
+                    </div>
+                    <div class="form-group">
+                        <label for="libroCategoria">Categoría *</label>
+                        <select id="libroCategoria" required class="form-select">
+                            <option value="">Selecciona una categoría</option>
+                            <option value="Ficción">Ficción</option>
+                            <option value="No Ficción">No Ficción</option>
+                            <option value="Ciencia">Ciencia</option>
+                            <option value="Tecnología">Tecnología</option>
+                            <option value="Historia">Historia</option>
+                            <option value="Biografías">Biografías</option>
+                            <option value="Infantil">Infantil</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="libroDescripcion">Descripción</label>
+                    <textarea id="libroDescripcion" class="form-textarea" rows="3" placeholder="Descripción breve del libro"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="libroUbicacion">Ubicación en la Biblioteca</label>
+                    <input type="text" id="libroUbicacion" class="form-input" placeholder="Ej: Estantería A, Sección 3">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="cerrarModal('modalLibro')">Cancelar</button>
+                    <button type="submit" class="btn-primary" id="btnGuardarLibro">
+                        <span class="btn-icon">💾</span>
+                        Guardar Libro
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL PARA FORMULARIO DE USUARIO -->
+    <div class="modal" id="modalUsuario">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="tituloFormularioUsuario">Registrar Nuevo Usuario</h3>
+                <button class="modal-close" onclick="cerrarModal('modalUsuario')">&times;</button>
+            </div>
+            <form id="formularioUsuario" class="modal-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="usuarioNombre">Nombre Completo *</label>
+                        <input type="text" id="usuarioNombre" required class="form-input" placeholder="Nombre y apellidos">
+                    </div>
+                    <div class="form-group">
+                        <label for="usuarioIdentificacion">Número de Identificación *</label>
+                        <input type="text" id="usuarioIdentificacion" required class="form-input" placeholder="DNI, Pasaporte, etc.">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="usuarioEmail">Correo Electrónico *</label>
+                        <input type="email" id="usuarioEmail" required class="form-input" placeholder="usuario@ejemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="usuarioTelefono">Teléfono</label>
+                        <input type="tel" id="usuarioTelefono" class="form-input" placeholder="+34 600 123 456">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="usuarioDireccion">Dirección</label>
+                    <textarea id="usuarioDireccion" class="form-textarea" rows="2" placeholder="Dirección completa (opcional)"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="cerrarModal('modalUsuario')">Cancelar</button>
+                    <button type="submit" class="btn-primary" id="btnGuardarUsuario">
+                        <span class="btn-icon">👤</span>
+                        Registrar Usuario
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL PARA FORMULARIO DE PRÉSTAMO -->
+    <div class="modal" id="modalPrestamo">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Registrar Nuevo Préstamo</h3>
+                <button class="modal-close" onclick="cerrarModal('modalPrestamo')">&times;</button>
+            </div>
+            <form id="formularioPrestamo" class="modal-form">
+                <div class="form-group">
+                    <label for="prestamoUsuario">Seleccionar Usuario *</label>
+                    <select id="prestamoUsuario" required class="form-select">
+                        <option value="">Selecciona un usuario</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="prestamoLibro">Seleccionar Libro *</label>
+                    <select id="prestamoLibro" required class="form-select">
+                        <option value="">Selecciona un libro disponible</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fechaPrestamo">Fecha de Préstamo *</label>
+                        <input type="date" id="fechaPrestamo" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaDevolucion">Fecha de Devolución *</label>
+                        <input type="date" id="fechaDevolucion" required class="form-input">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="prestamoObservaciones">Observaciones</label>
+                    <textarea id="prestamoObservaciones" class="form-textarea" rows="2" placeholder="Notas adicionales (opcional)"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="cerrarModal('modalPrestamo')">Cancelar</button>
+                    <button type="submit" class="btn-primary" id="btnGuardarPrestamo">
+                        <span class="btn-icon">📋</span>
+                        Registrar Préstamo
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL PARA HISTORIAL DE PRÉSTAMOS -->
+    <div class="modal" id="modalHistorial">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3 class="modal-title">Historial Completo de Préstamos</h3>
+                <button class="modal-close" onclick="cerrarModal('modalHistorial')">&times;</button>
+            </div>
+            <div class="historial-container">
+                <div class="historial-filters">
+                    <input type="text" id="busquedaHistorial" placeholder="Buscar en historial..." class="search-input">
+                    <select id="filtroHistorialEstado" class="filter-select">
+                        <option value="">Todos los estados</option>
+                        <option value="activo">Activos</option>
+                        <option value="devuelto">Devueltos</option>
+                        <option value="vencido">Vencidos</option>
+                    </select>
+                </div>
+                <div class="historial-list" id="listaHistorialPrestamos">
+                    <!-- El historial se cargará dinámicamente aquí -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIONES -->
+    <div id="notificaciones" class="notificaciones">
+        <!-- Las notificaciones se mostrarán aquí dinámicamente -->
+    </div>
+
+    <!-- FOOTER -->
+    <section>
+            <footer class="urukais-footer">
+    <div class="footer-container">
+        <div class="footer-main">
+            <div class="footer-section">
+                <h3 class="footer-title">Urukais KLICK</h3>
+                <p class="footer-description">
+                    Una especie extraordinaria que habita las montañas alrededor de Alforja, 
+                    fusionando la biología con la geología en perfecta armonía mística.
+                </p>
+                <div class="footer-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">Características</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">847</span>
+                        <span class="stat-label">Número Sagrado</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100</span>
+                        <span class="stat-label">Años/Evento</span>
+                    </div>
+                        <a href="/index.html"  rel="noopener noreferrer" class="sound-link">Volver al Inicio</a>
+                </div>
+                
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Características Principales</h4>
+                <ul class="footer-links">
+                    <li><a href="/interior/sonido-metalico.html">El Sonido Metálico</a></li>
+                    <li><a href="/interior/vision-ecceccional.html">Visión Excepcional</a></li>
+                    <li><a href="/interior/polinizacion.html">Polinización Mineral</a></li>
+                    <li><a href="/interior/dispersion.html">Dispersión de Polen</a></li>
+                    <li><a href="/interior/havilidad.html">Hábitat Montañoso</a></li>
+                    <li><a href="/interior/camuflaje.html">Camuflaje Pétreo</a></li>
+                    <li><a href="/interior/la-vivracion.html">Latido de la Tierra</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Información Geográfica</h4>
+                <div class="geo-info">
+                    <p><strong>Ubicación:</strong> Valle de Alforja, España</p>
+                    <p><strong>Serra de Prades:</strong> Formación montañosa norte</p>
+                    <p><strong>Puigcerver:</strong> Pico principal del sistema</p>
+                    <p><strong>Cueva de l'Ermità:</strong> Lugar sagrado (847m profundidad)</p>
+                </div>
+                
+                <div class="coordinates">
+                    <h5>Coordenadas Clave:</h5>
+                    <p>Alforja: 41.1874°N, 1.0047°E</p>
+                    <p>Serra de Prades: 41.2345°N, 0.9876°E</p>
+                    <p>Puigcerver: 41.2101°N, 1.0123°E</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Datos Científicos</h4>
+                <div class="scientific-data">
+                    <div class="data-item">
+                        <span class="data-label">Frecuencia Klick:</span>
+                        <span class="data-value">847 Hz</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Profundidad máxima:</span>
+                        <span class="data-value">847 m</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Población estimada:</span>
+                        <span class="data-value">3,847 individuos</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Manantiales activados:</span>
+                        <span class="data-value">27 fuentes</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Precisión:</span>
+                        <span class="data-value">97.3%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Urukais Klick. Enciclopedia Digital Manuel Casimiro Carrasco.</p>
+                <p>Documentación científica del fenómeno místico-geológico del valle de Alforja.</p>
+            </div>
+            
+            <div class="footer-sacred-number">
+                <span class="sacred-text">847</span>
+                <span class="sacred-subtitle">El número sagrado</span>
+            </div>
+        </div>
+    </div>
+</footer>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+            
+
+        <nav class="footer-nav">
+            <ul class="footer-column">
+                <li><strong>Secciones</strong></li>
+                <li><a href="/index.html">Inicio en Urukais Klick</a></li>
+                <li><a href="/#caracteristicas">Características Web</a></li>
+                <li><a href="/#galeria">Galería de Proyectos</a></li>
+                <li><a href="/#videos">Videos de Música</a></li>
+                <li><a href="/contenido/contacto.html">Contacto Manuel C.C.</a></li>
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Proyectos</strong></li>
+                <li><a href="https://zingy-pavlova-6aa6a6.netlify.app/" target="_blank" rel="noopener">Urukais Klick Pro 🐸</a></li>
+                <li><a href="https://adorable-belekoy-d064de.netlify.app/" target="_blank" rel="noopener">Clima Urukais</a></li>
+                <li><a href="https://resplendent-faun-6147ea.netlify.app/" target="_blank" rel="noopener">PokéDex Urukais</a></li>
+                <li><a href="https://cute-pegasus-a3487f.netlify.app/" target="_blank" rel="noopener">API Urukais Klick</a></li>
+                <li><a href="https://stately-sherbet-955c30.netlify.app/musica" target="_blank" rel="noopener">Plataforma Musical 🐸</a></li>
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Contenido</strong></li>
+                <li><a href="/contenido/heavy-metal.html" target="_blank" rel="noopener">Heavy Metal</a></li>
+                <li><a href="/contenido/libros.html" target="_blank" rel="noopener">Biblioteca del Infierno</a></li>
+                <li><a href="/contenido/matrix.html" target="_blank" rel="noopener">Centro de Búsqueda Matricial</a></li>
+                <li><a href="/contenido/montanas.html" target="_blank" rel="noopener">Ecosistema de Alforja</a></li>
+                <li><a href="/footer/generador-de-datos.html" target="_blank" rel="noopener">Generador avanzado de datos</a></li>
+            
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Redes & Legal</strong></li>
+                <li><a href="https://www.facebook.com/groups/1189456591848515/?ref=share_group_link" target="_blank" rel="noopener">Facebook</a></li>
+                <li><a href="https://www.youtube.com/channel/UCt8Wwz9KOwsq5VN-q2MnSWg" target="_blank" rel="noopener">YouTube</a></li>
+                <li><a href="/footer/cookies.html">Política de Cookies</a></li>
+                <li><a href="/footer/politica-de-privacidad.html">Política de Privacidad</a></li>
+                <li><a href="https://silly-boba-dc057e.netlify.app/" target="blank">Manuel Casimiro Carrasco</a></li>
+            </ul>
+        </nav>
+        <div class="footer-content">
+            <h3>&copy; 2025 Urukais Klick 🐸. Todos los derechos reservados.</h3>
+            <h3>Desarrollado por Manuel Casimiro Carrasco.👀</h3>
+        </div>
+    </footer>
+
+    <script src="/biblioteca/script.js"></script>
+    
+
+    <script src="/javascript/botones.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/botones.js"></script>
+    <script src="/menu/menu.js"></script>
+</body>
+</html>

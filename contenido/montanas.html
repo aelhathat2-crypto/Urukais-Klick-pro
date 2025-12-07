@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <meta name="author" content="Manuel Casimiro Carrasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Videos Urukais Klick</title>
+    
+    <link rel="stylesheet" href="/estilos/botones.css">
+    
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/heavy.css">
+    
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/menu/menu.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/boton.css">
+</head>
+<body class="conspiracy-mode">
+   
+
+              
+        <!-- Overlay para móvil -->
+    <div class="mnm-overlay" id="mnmOverlay"></div>
+
+    <!-- Botón toggle reproductor -->
+    <!-- Navegación principal -->
+    <nav class="mnm-nav-container">
+        <div class="mnm-nav-wrapper">
+            <a href="/index.html" class="mnm-logo">Urukais Klick</a>
+            
+            
+            <button class="mnm-hamburger" id="mnmHamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="mnm-nav-menu" id="mnmNavMenu">
+                <!-- Categoría 1: Entretenimiento y Ocio -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Entretenimiento y Ocio
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/buscador-de-peliculas.html" class="mnm-dropdown-item">🎬 Catálogo de Películas</a>
+                        <a href="/cabecera/cine/la-nasa.html" class="mnm-dropdown-item">🚀 Espacio y Astronomía</a>
+                        <a href="/cabecera/cine/peluculas.html" class="mnm-dropdown-item">🎭 Films Favoritos</a>
+                        <a href="/cabecera/cine/noticias.html" class="mnm-dropdown-item">📰 Noticias Actuales</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😂 Humor y Entretenimiento</a>
+                        <a href="/cabecera/musica/hadmed.html" class="mnm-dropdown-item">🎵 Ambiente Musical</a>
+                        <a href="/cabecera/musica/mas.html" class="mnm-dropdown-item">🎶 Musicalife</a>
+                        <a href="/cabecera/musica/musica-clasica.html" class="mnm-dropdown-item">🎼 Música Clásica</a>
+                        <a href="/cabecera/musica/prueva.html" class="mnm-dropdown-item">🎤 Géneros Musicales</a>
+                        <a href="/cabecera/musica/tartituras.html" class="mnm-dropdown-item">🎵 Partituras y Escore</a>
+                        <a href="/cabecera/musica/videos3.html" class="mnm-dropdown-item">📺 Centro de Videos</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 2: Herramientas y Productividad -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Herramientas y Productividad
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/herramientas/chat.html" class="mnm-dropdown-item">💬 Asistente Virtual Urukais</a>
+                        <a href="/cabecera/herramientas/control-de-consultas.html" class="mnm-dropdown-item">🗂 Sistema de Consultas</a>
+                        <a href="/cabecera/herramientas/DevStudio.html" class="mnm-dropdown-item">⚙️ Estudio de Desarrollo</a>
+                        <a href="/cabecera/herramientas/FinTech.html" class="mnm-dropdown-item">💼 Soluciones Financieras</a>
+                        <a href="/cabecera/herramientas/generador-contraseñas.html" class="mnm-dropdown-item">🔐 Generador Seguro de<br>Contraseñas</a>
+                        <a href="/cabecera/herramientas/genesis.html" class="mnm-dropdown-item">🌟 Plataforma Genesis</a>
+                        <a href="/cabecera/herramientas/herramienta.html" class="mnm-dropdown-item">🛠 Suite de Herramientas</a>
+                        <a href="/cabecera/herramientas/hot.html" class="mnm-dropdown-item">🔥 Tendencias Actuales</a>
+                        <a href="/cabecera/herramientas/ia-educativa.html" class="mnm-dropdown-item">🎓 IA Educativa</a>
+                        <a href="/cabecera/herramientas/listado-de-prons.html" class="mnm-dropdown-item">📋 Pronósticos en Línea</a>
+                        <a href="/cabecera/herramientas/localizacion-de-faker.html" class="mnm-dropdown-item">📍 Localizador Universal</a>
+                        <a href="/cabecera/herramientas/mas-datos.html" class="mnm-dropdown-item">📊 Análisis de Datos</a>
+                        <a href="/cabecera/herramientas/pruevas.html" class="mnm-dropdown-item">🧪 Centro de Pruebas</a>
+                        <a href="/cabecera/herramientas/texto-voz.html" class="mnm-dropdown-item">🔊 Síntesis de Voz</a>
+                        <a href="/cabecera/herramientas/tienda-de-urukais.html" class="mnm-dropdown-item">🛒 Tienda Oficial</a>
+                        <a href="/cabecera/buscadores/gestor-de-tareas.html" class="mnm-dropdown-item">✅ Organizador de Tareas</a>
+                        <a href="/cabecera/buscadores/gestor-de-proyectos.html" class="mnm-dropdown-item">📈 Gestor de Proyectos</a>
+                        <a href="/cabecera/cine/ProTask.html" class="mnm-dropdown-item">⏰ ProTask Profesional</a>
+                        <a href="/cabecera/cine/ReservaPro.html" class="mnm-dropdown-item">📅 Sistema de Reservas</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 3: Buscadores y Información -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Buscadores y Información
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/buscadores/buscadorurukais.html" class="mnm-dropdown-item">📚 Búsqueda de Libros</a>
+                        <a href="/cabecera/buscadores/busqueda.html" class="mnm-dropdown-item">🔍 Buscador Matrix</a>
+                        <a href="/cabecera/cine/libros.html" class="mnm-dropdown-item">📖 Biblioteca Digital</a>
+                        <a href="/cabecera/cine/localizador.html" class="mnm-dropdown-item">🌐 Ubicador IP</a>
+                        <a href="/cabecera/buscadores/barcelona-sustainabitil.html" class="mnm-dropdown-item">🌱 Barcelona Sostenible</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 4: Mascotas y Animales -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Mascotas y Animales
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/animales/animales.html" class="mnm-dropdown-item">🐾 Generador de Animales</a>
+                        <a href="/cabecera/animales/buscador-de-perros.html" class="mnm-dropdown-item">🐕 Aplicación de Mascotas</a>
+                        <a href="/cabecera/buscadores/deportes.html" class="mnm-dropdown-item">⚽ Buscador de Equipos<br>Deportivos</a>
+                        <a href="/cabecera/animales/Marketing.html" class="mnm-dropdown-item">📱 Marketing Digital</a>
+                        <a href="/cabecera/animales/multi.html" class="mnm-dropdown-item">💻 Solución Multiplataforma</a>
+                        <a href="/cabecera/animales/neocron.html" class="mnm-dropdown-item">🌟 Neocron Urukais</a>
+                        <a href="/cabecera/animales/portal-interactivo.html" class="mnm-dropdown-item">✨ Portal Interactivo</a>
+                        <a href="/cabecera/animales/site-de-productividad.html" class="mnm-dropdown-item">💼 Suite de Productividad</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 5: Comida y Bebidas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Comida y Bebidas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/comida/coctel.html" class="mnm-dropdown-item">🍹 Sistema de Coctelería</a>
+                        <a href="/cabecera/comida/comida.html" class="mnm-dropdown-item">🍽 Gastronomía Exquisita</a>
+                        <a href="/cabecera/comida/cocia-en-inggles.html" class="mnm-dropdown-item">🍳 Cocina Internacional</a>
+                        
+                    </div>
+                </li>
+
+                <!-- Categoría 6: Creatividad y Arte -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Creatividad y Arte
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/conics/archivo-de-hielo.html" class="mnm-dropdown-item">❄️ Archivo Creativo</a>
+                        <a href="/cabecera/conics/chistes.html" class="mnm-dropdown-item">😄 Galería de Humor</a>
+                        <a href="/cabecera/conics/Morty.html" class="mnm-dropdown-item">🎨 Colección Morty</a>
+                        <a href="/cabecera/conics/generador-de-fondos.html" class="mnm-dropdown-item">🎨 Generador de Fondos</a>
+                        <a href="/cabecera/conics/neocron.html" class="mnm-dropdown-item">😊 Control de Estado de Ánimo</a>
+                        <a href="/cabecera/conics/plataforma-de-herattientas.html" class="mnm-dropdown-item">🛠 Plataforma de<br>Herramientas Creativas</a>
+                        <a href="/cabecera/conics/portal-interactivo.html" class="mnm-dropdown-item">🎭 Portal Interactivo</a>
+                    </div>
+                </li>
+
+                <!-- Categoría 7: Medio Ambiente -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Medio Ambiente
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/tierra/ambiental-mundial.html" class="mnm-dropdown-item">🌍 Global Ambiental</a>
+                        <a href="/cabecera/tierra/busca-ciudades.html" class="mnm-dropdown-item">🏙 Explorador de Ciudades</a>
+                        <a href="/cabecera/tierra/busca-cuidad.html" class="mnm-dropdown-item">🌆 Búsqueda Urbana</a>
+                        <a href="/cabecera/tierra/clima.html" class="mnm-dropdown-item">🌤️ Centro Meteorológico</a>
+                        <a href="/cabecera/tierra/deforestacion-mundial.html" class="mnm-dropdown-item">🌲 Control Deforestación</a>
+                        <a href="/cabecera/tierra/gia-de-supervivencia.html" class="mnm-dropdown-item">🧭 Guía de Supervivencia</a>
+                        <a href="/cabecera/tierra/mas.html" class="mnm-dropdown-item">🌿 Más Contenido Verde</a>
+                        <a href="/cabecera/tierra/renacer.html" class="mnm-dropdown-item">🌱 Renacer y Renovación</a>
+                        <a href="/cabecera/tierra/sistema-reus.html" class="mnm-dropdown-item">♻️ Sistema Inteligente de Reciclaje</a>
+                        <a href="/cabecera/tierra/supervivencia33.html" class="mnm-dropdown-item">🏕 Supervivencia Extrema</a>
+                    </div>
+                </li>
+                
+
+                <!-- Categoría 8: Eventos y Citas -->
+                <li class="mnm-nav-item">
+                    <a href="#" class="mnm-nav-link">
+                        Eventos y Citas
+                        <span class="mnm-dropdown-icon"></span>
+                    </a>
+                    <div class="mnm-dropdown">
+                        <a href="/cabecera/cine/gestor-de-citas.html" class="mnm-dropdown-item">💕 Organizador de Citas</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+ 
+    
+
+    
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">📺 Urukais Klick</div>
+                <div class="theme-toggle">
+                    <button class="theme-btn active" onclick="switchTheme('conspiracy')">Terror</button>
+                    <button class="theme-btn" onclick="switchTheme('meditation')">Violéncia</button>
+                    <a href="/index.html"  rel="noopener noreferrer" class="sound-link">Volver al Inicio</a>
+                
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL -->
+    <main class="main-section">
+        <div class="container">
+            <div class="section-header">
+                <h1>Colección de Videos de Terror</h1>
+                <p> videos organizados en un diseño responsive profesional</p>
+            </div>
+
+            <!-- GRID DE 40 VIDEOS -->
+            <div class="videos-grid">
+                
+                <!-- VIDEO 1 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/LtrueEpIOpY?si=R1a_QhZWtwfRJgin" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 2 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qvgVF7zFSsc?si=oeCBymoGWFJ0W6Bq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 3 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/U1zW4n-3p7M?si=Nw466vkQn79-3IU-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 4 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/niwhja26TA0?si=60zx9H0Ay6n24hKN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 5 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ogy3F460ugE?si=ncEYFgIeJurcEdOw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 6 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ziiI0noFyjI?si=N1CyJETiWiC7DxUT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 7 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/gSH1sSjdYho?si=VhNruKYxdFqSqgM3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 8 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/JuqTD176BqE?si=t0y7v-pIeuboR2ap" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 9 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/KRLNHD2kCXA?si=pDcCC05A5OGMQp_v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 10 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZnOkDBpiGP0?si=tvBpEzUkSIqzQ9MQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 11 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/V6He7vEo0us?si=RQkIMQFGf1AwNtXh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 12 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/GldQ6QffPn0?si=wE6Y8oRjImRcDRq-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 13 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7_fzhARYdIQ?si=3JUzuI57DDwbeFIl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 14 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/YPPuPAI9hCU?si=Rzhq7SAoNOXbqf1k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 15 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Fo8Xoy_t6T0?si=Y3bWT3mbdLF-kF5q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 16 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/rPh0kUhKeRU?si=XZVTWnrIvTS4oJ1f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+
+                
+                
+                <!-- VIDEO 17 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/FaTlie7SipQ?si=tsd0hNEnGLYipaU8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 18 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/moOCcAp8IHc?si=2g5VoMagKKuZcJNN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 19 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/GftEHq4PFfo?si=GFnMMRCtGzLwbOjF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 20 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mZybx9Ttbhg?si=L9hBF8s1OoHZLM7U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 21 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/PscyipWwr3w?si=fzMZoW7E66qVSgIl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 22 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/FgMpAn-ldOs?si=vrvnDFJlCA1HmHzB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 23 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WLg7dt0i9Jo?si=vTFEKCHT4bPKu72s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 24 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jxrT8Bb5ilA?si=-GNb-dYjvxx52JrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 25 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/0UZ0Yl1MtAU?si=om89_MApSADIX5eC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 26 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/S8AVpLVxx2g?si=3lMZxMP9W5zSnHeR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 27 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/A1GnJUI5utA?si=TtLI3nYPlsSCgGYt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 28 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Jvj4G46wJ4U?si=AAAreZaQCRMx2gX2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 29 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4nkiFqSJe1I?si=gctksI-lO-Ag0ehr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 30 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/iO_VZYXGpNU?si=3zdJNtn18piNE18A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 31 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/0K8ks6lXOH0?si=n5x7bHrJpUNeD-nJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- VIDEO 32 -->
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xEvOqqtD8DQ?si=h0CyFYTi_T-D7cZ2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/lwWn5TRwlLk?si=mp-lEY0XfrqyVti1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <section>
+            <footer class="urukais-footer">
+    <div class="footer-container">
+        <div class="footer-main">
+            <div class="footer-section">
+                <h3 class="footer-title">Urukais KLICK</h3>
+                <p class="footer-description">
+                    Una especie extraordinaria que habita las montañas alrededor de Alforja, 
+                    fusionando la biología con la geología en perfecta armonía mística.
+                </p>
+                <div class="footer-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">Características</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">847</span>
+                        <span class="stat-label">Número Sagrado</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100</span>
+                        <span class="stat-label">Años/Evento</span>
+                    </div>
+                        <a href="/index.html"  rel="noopener noreferrer" class="sound-link">Volver al Inicio</a>
+                </div>
+                
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Características Principales</h4>
+                <ul class="footer-links">
+                    <li><a href="/interior/sonido-metalico.html">El Sonido Metálico</a></li>
+                    <li><a href="/interior/vision-ecceccional.html">Visión Excepcional</a></li>
+                    <li><a href="/interior/polinizacion.html">Polinización Mineral</a></li>
+                    <li><a href="/interior/dispersion.html">Dispersión de Polen</a></li>
+                    <li><a href="/interior/havilidad.html">Hábitat Montañoso</a></li>
+                    <li><a href="/interior/camuflaje.html">Camuflaje Pétreo</a></li>
+                    <li><a href="/interior/la-vivracion.html">Latido de la Tierra</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Información Geográfica</h4>
+                <div class="geo-info">
+                    <p><strong>Ubicación:</strong> Valle de Alforja, España</p>
+                    <p><strong>Serra de Prades:</strong> Formación montañosa norte</p>
+                    <p><strong>Puigcerver:</strong> Pico principal del sistema</p>
+                    <p><strong>Cueva de l'Ermità:</strong> Lugar sagrado (847m profundidad)</p>
+                </div>
+                
+                <div class="coordinates">
+                    <h5>Coordenadas Clave:</h5>
+                    <p>Alforja: 41.1874°N, 1.0047°E</p>
+                    <p>Serra de Prades: 41.2345°N, 0.9876°E</p>
+                    <p>Puigcerver: 41.2101°N, 1.0123°E</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-subtitle">Datos Científicos</h4>
+                <div class="scientific-data">
+                    <div class="data-item">
+                        <span class="data-label">Frecuencia Klick:</span>
+                        <span class="data-value">847 Hz</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Profundidad máxima:</span>
+                        <span class="data-value">847 m</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Población estimada:</span>
+                        <span class="data-value">3,847 individuos</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Manantiales activados:</span>
+                        <span class="data-value">27 fuentes</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">Precisión:</span>
+                        <span class="data-value">97.3%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>&copy; 2025 Urukais Klick. Enciclopedia Digital Manuel Casimiro Carrasco.</p>
+                <p>Documentación científica del fenómeno místico-geológico del valle de Alforja.</p>
+            </div>
+            
+            <div class="footer-sacred-number">
+                <span class="sacred-text">847</span>
+                <span class="sacred-subtitle">El número sagrado</span>
+            </div>
+        </div>
+    </div>
+</footer>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+            
+
+        <nav class="footer-nav">
+            <ul class="footer-column">
+                <li><strong>Secciones</strong></li>
+                <li><a href="/index.html">Inicio en Urukais Klick</a></li>
+                <li><a href="/#caracteristicas">Características Web</a></li>
+                <li><a href="/#galeria">Galería de Proyectos</a></li>
+                <li><a href="/#videos">Videos de Música</a></li>
+                <li><a href="/contenido/contacto.html">Contacto Manuel C.C.</a></li>
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Proyectos</strong></li>
+                <li><a href="https://zingy-pavlova-6aa6a6.netlify.app/" target="_blank" rel="noopener">Urukais Klick Pro 🐸</a></li>
+                <li><a href="https://adorable-belekoy-d064de.netlify.app/" target="_blank" rel="noopener">Clima Urukais</a></li>
+                <li><a href="https://resplendent-faun-6147ea.netlify.app/" target="_blank" rel="noopener">PokéDex Urukais</a></li>
+                <li><a href="https://cute-pegasus-a3487f.netlify.app/" target="_blank" rel="noopener">API Urukais Klick</a></li>
+                <li><a href="https://stately-sherbet-955c30.netlify.app/musica" target="_blank" rel="noopener">Plataforma Musical 🐸</a></li>
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Contenido</strong></li>
+                <li><a href="/contenido/heavy-metal.html" target="_blank" rel="noopener">Heavy Metal</a></li>
+                <li><a href="/contenido/libros.html" target="_blank" rel="noopener">Biblioteca del Infierno</a></li>
+                <li><a href="/contenido/matrix.html" target="_blank" rel="noopener">Centro de Búsqueda Matricial</a></li>
+                <li><a href="/contenido/montanas.html" target="_blank" rel="noopener">Ecosistema de Alforja</a></li>
+                <li><a href="/footer/generador-de-datos.html" target="_blank" rel="noopener">Generador avanzado de datos</a></li>
+            
+            </ul>
+
+            <ul class="footer-column">
+                <li><strong>Redes & Legal</strong></li>
+                <li><a href="https://www.facebook.com/groups/1189456591848515/?ref=share_group_link" target="_blank" rel="noopener">Facebook</a></li>
+                <li><a href="https://www.youtube.com/channel/UCt8Wwz9KOwsq5VN-q2MnSWg" target="_blank" rel="noopener">YouTube</a></li>
+                <li><a href="/footer/cookies.html">Política de Cookies</a></li>
+                <li><a href="/footer/politica-de-privacidad.html">Política de Privacidad</a></li>
+                <li><a href="https://silly-boba-dc057e.netlify.app/" target="blank">Manuel Casimiro Carrasco</a></li>
+            </ul>
+        </nav>
+        <div class="footer-content">
+            <h3>&copy; 2025 Urukais Klick 🐸. Todos los derechos reservados.</h3>
+            <h3>Desarrollado por Manuel Casimiro Carrasco.👀</h3>
+        </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT PARA CAMBIO DE TEMA -->
+    <script>
+        function switchTheme(theme) {
+            const body = document.body;
+            const buttons = document.querySelectorAll('.theme-btn');
+            
+            // Remover clases existentes
+            body.classList.remove('conspiracy-mode', 'meditation-mode');
+            
+            // Agregar nueva clase
+            body.classList.add(theme + '-mode');
+            
+            // Actualizar botones activos
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Guardar preferencia en localStorage
+            localStorage.setItem('theme', theme);
+        }
+        
+        // Cargar tema guardado al cargar la página
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'conspiracy';
+            const body = document.body;
+            const buttons = document.querySelectorAll('.theme-btn');
+            
+            body.classList.remove('conspiracy-mode', 'meditation-mode');
+            body.classList.add(savedTheme + '-mode');
+            
+            buttons.forEach(btn => {
+                if (btn.textContent.toLowerCase().includes(savedTheme)) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        });
+    </script>
+    
+    <script src="/javascript/botones.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/botones.js"></script>
+    <script src="/menu/menu.js"></script>
+</body>
+</html>
