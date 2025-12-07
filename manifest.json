@@ -1,0 +1,93 @@
+{
+    "name": "Urukais Klick - Ecosistema Silencioso de Alforja",
+    "short_name": "Urukais Klick",
+    "description": "Descubre los guardianes silenciosos de las montañas de Alforja. Una especie extraordinaria que fusiona biología con geología.",
+    "start_url": "/index.html",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "any",
+    "theme_color": "#0a0e27",
+    "background_color": "#0a0e27",
+    "lang": "es",
+    "dir": "ltr",
+    "categories": [
+        "entertainment",
+        "education",
+        "lifestyle"
+    ],
+    "icons": [
+        {
+            "src": "/rana.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/images/screenshot-mobile.jpg",
+            "sizes": "540x720",
+            "type": "image/jpeg",
+            "form_factor": "narrow"
+        },
+        {
+            "src": "/images/screenshot-desktop.jpg",
+            "sizes": "1280x720",
+            "type": "image/jpeg",
+            "form_factor": "wide"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Explorar",
+            "short_name": "Explorar",
+            "description": "Explorar el ecosistema Urukais",
+            "url": "/aplicacion/index.html",
+            "icons": [
+                {
+                    "src": "/rana.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Buscador",
+            "short_name": "Buscar",
+            "description": "Buscador Web Urukais",
+            "url": "/buscador/index.html",
+            "icons": [
+                {
+                    "src": "/rana.svg",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ],
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "share_target": {
+        "action": "/share",
+        "method": "POST",
+        "enctype": "multipart/form-data",
+        "params": {
+            "title": "title",
+            "text": "text",
+            "url": "url"
+        }
+    }
+}

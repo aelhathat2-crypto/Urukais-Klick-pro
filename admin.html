@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin - Urukais Klick</title>
+  <link rel="icon" href="/rana.svg">
+  <style>
+    body{font-family:Inter,system-ui,Arial;background:#0a0e27;color:#fff;padding:24px}
+    .container{max-width:960px;margin:0 auto}
+    h1{color:#00ff88}
+    .card{background:rgba(255,255,255,0.03);padding:16px;border-radius:8px;margin-bottom:16px}
+    input,textarea{width:100%;padding:8px;margin-top:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.08);background:transparent;color:#fff}
+    button{background:#00ff88;border:none;padding:10px 14px;border-radius:6px;color:#041022;cursor:pointer;font-weight:700}
+    .posts-list{display:grid;grid-template-columns:1fr;gap:8px}
+    .post-item{padding:12px;border-radius:6px;background:rgba(0,0,0,0.2)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Panel Admin</h1>
+
+    <div id="login-prompt" class="card" style="background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.3);">
+      <p style="text-align:center; margin-bottom:12px;">Inicia sesión para crear posts</p>
+      <button id="btn-ir-login" style="width:100%">Ir a Login</button>
+    </div>
+
+    <div id="form-container" style="display:none">
+    <div class="card">
+      <h2>Crear nuevo post</h2>
+      <div>
+        <label>Título</label>
+        <input id="post-titulo" placeholder="Título del post">
+      </div>
+      <div>
+        <label>Slug</label>
+        <input id="post-slug" placeholder="mi-primer-post">
+      </div>
+      <div>
+        <label>Extracto</label>
+        <input id="post-extracto" placeholder="Resumen corto">
+      </div>
+      <div>
+        <label>Contenido</label>
+        <textarea id="post-contenido" rows="6" placeholder="Escribe el contenido..."></textarea>
+      </div>
+      <div style="margin-top:10px">
+        <button id="btn-crear">Crear post</button>
+      </div>
+      <div id="status" style="margin-top:10px"></div>
+    </div>
+
+    <div class="card">
+      <h2>Posts publicados</h2>
+      <div id="posts" class="posts-list">Cargando...</div>
+    </div>
+    </div>
+
+    <div id="user-info" style="display:none; margin-top:20px; padding:12px; background:rgba(0,255,136,0.1); border-radius:6px; border:1px solid rgba(0,255,136,0.3)">
+      <p>Usuario: <strong id="user-email"></strong></p>
+      <button id="btn-logout" style="background:#ff6464; color:white; margin-top:8px">Cerrar Sesión</button>
+    </div>
+  </div>
+
+  <!-- Dependencias y scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.0/+esm"></script>
+  <script src="/javascript/supabase.js"></script>
+  <script src="/javascript/api.js"></script>
+
+  <script>
+    let usuarioActual = null;
+
+    async function verificarSesion(){
+      const u = await supabaseAuth.obtenerUsuarioActual();
+      if(u.success && u.user){
+        usuarioActual = u.user;
+        document.getElementById('login-prompt').style.display = 'none';
+        document.getElementById('form-container').style.display = 'block';
+        document.getElementById('user-info').style.display = 'block';
+        document.getElementById('user-email').textContent = u.user.email;
+        cargarPosts();
+      } else {
+        document.getElementById('login-prompt').style.display = 'block';
+        document.getElementById('form-container').style.display = 'none';
+        document.getElementById('user-info').style.display = 'none';
+        usuarioActual = null;
+      }
+    }
+
+    async function cargarPosts(){
+      const cont = document.getElementById('posts');
+      cont.innerHTML = 'Cargando...';
+      const r = await apiDB.obtenerPosts(50);
+      if(r.success){
+        cont.innerHTML = '';
+        if(!r.posts || r.posts.length===0){ cont.innerHTML = '<em>No hay posts publicados</em>'; return }
+        r.posts.forEach(p => {
+          const el = document.createElement('div');
+          el.className = 'post-item';
+          el.innerHTML = `<strong>${p.titulo}</strong> <div style="font-size:12px;color:rgba(255,255,255,0.6)">by: ${p.author_id || 'anon'} - ${p.fecha_publicacion || p.created_at}</div><div style="margin-top:8px">${p.extracto || ''}</div>`;
+          cont.appendChild(el);
+        })
+      } else {
+        cont.innerHTML = '<em>Error al cargar posts</em>';
+      }
+    }
+
+    async function crearPost(){
+      if(!usuarioActual){
+        alert('Debes iniciar sesión primero');
+        return;
+      }
+
+      const titulo = document.getElementById('post-titulo').value.trim();
+      const slug = document.getElementById('post-slug').value.trim();
+      const contenido = document.getElementById('post-contenido').value.trim();
+      const extracto = document.getElementById('post-extracto').value.trim();
+      const status = document.getElementById('status');
+
+      if(!titulo || !slug || !contenido){
+        status.textContent = 'Rellena titulo, slug y contenido';
+        return;
+      }
+
+      status.textContent = 'Creando...';
+
+      const nuevo = {
+        titulo,
+        slug,
+        contenido,
+        extracto,
+        author_id: usuarioActual.id,
+        publicado: true,
+        fecha_publicacion: new Date().toISOString()
+      };
+
+      const res = await apiDB.crearPost(nuevo);
+      if(res.success){
+        status.textContent = 'Post creado correctamente';
+        // limpiar
+        document.getElementById('post-titulo').value = '';
+        document.getElementById('post-slug').value = '';
+        document.getElementById('post-extracto').value = '';
+        document.getElementById('post-contenido').value = '';
+        cargarPosts();
+      } else {
+        status.textContent = 'Error: ' + (res.error || 'desconocido');
+      }
+    }
+
+    async function logout(){
+      const res = await supabaseAuth.logoutUsuario();
+      if(res.success){
+        usuarioActual = null;
+        verificarSesion();
+      }
+    }
+
+    document.getElementById('btn-crear').addEventListener('click', crearPost);
+    document.getElementById('btn-logout').addEventListener('click', logout);
+    document.getElementById('btn-ir-login').addEventListener('click', () => {
+      window.location.href = '/autenticacion.html';
+    });
+
+    window.addEventListener('load', () => {
+      verificarSesion();
+    });
+  </script>
+</body>
+</html>

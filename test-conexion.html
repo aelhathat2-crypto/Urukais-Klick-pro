@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Conexión Supabase</title>
+    <style>
+        body {
+            font-family: monospace;
+            background: #0a0e27;
+            color: #fff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        button {
+            background: #7c3aed;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .log { background: rgba(0, 0, 0, 0.5); padding: 15px; margin-top: 20px; border-radius: 4px; max-height: 500px; overflow-y: auto; }
+        .success { color: #00ff88; }
+        .error { color: #ff6464; }
+        .warning { color: #ffb347; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Test Conexión Supabase</h1>
+        <button onclick="testAuth()">Test Auth (Crear Usuario)</button>
+        <button onclick="testTables()">Test Tablas (Leer perfiles)</button>
+        <button onclick="clearLog()">Limpiar</button>
+        <div id="log" class="log"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.0"></script>
+    
+    <script>
+        let supabase = null;
+        const logDiv = document.getElementById('log');
+        
+        function log(msg, type = 'warning') {
+            const time = new Date().toLocaleTimeString();
+            const div = document.createElement('div');
+            div.className = type;
+            div.textContent = `[${time}] ${msg}`;
+            logDiv.appendChild(div);
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+        
+        function clearLog() {
+            logDiv.innerHTML = '';
+        }
+        
+        async function testAuth() {
+            clearLog();
+            log('Inicializando Supabase...', 'warning');
+            
+            const url = localStorage.getItem('SUPABASE_URL');
+            const key = localStorage.getItem('SUPABASE_ANON_KEY');
+            
+            log(`URL: ${url}`, 'warning');
+            log(`Key length: ${key?.length}`, 'warning');
+            
+            if (!url || !key) {
+                log('❌ Credenciales no configuradas', 'error');
+                return;
+            }
+            
+            try {
+                supabase = window.supabase.createClient(url, key);
+                log('✅ Cliente Supabase creado', 'success');
+                
+                const email = 'test' + Math.random().toString(36).substring(7) + '@test.com';
+                const password = 'test123456';
+                
+                log(`Intentando registrar: ${email}`, 'warning');
+                
+                const { data, error } = await supabase.auth.signUp({
+                    email,
+                    password
+                });
+                
+                if (error) {
+                    log(`❌ Error en auth.signUp: ${error.message}`, 'error');
+                    log(JSON.stringify(error, null, 2), 'error');
+                } else {
+                    log(`✅ Usuario registrado: ${data.user.id}`, 'success');
+                    log(`Email: ${data.user.email}`, 'success');
+                }
+            } catch (err) {
+                log(`❌ Exception: ${err.message}`, 'error');
+            }
+        }
+        
+        async function testTables() {
+            clearLog();
+            log('Probando acceso a tablas...', 'warning');
+            
+            const url = localStorage.getItem('SUPABASE_URL');
+            const key = localStorage.getItem('SUPABASE_ANON_KEY');
+            
+            if (!url || !key) {
+                log('❌ Credenciales no configuradas', 'error');
+                return;
+            }
+            
+            try {
+                supabase = window.supabase.createClient(url, key);
+                
+                log('Leyendo tabla "perfiles"...', 'warning');
+                const { data, error } = await supabase.from('perfiles').select('*').limit(1);
+                
+                if (error) {
+                    log(`❌ Error: ${error.message}`, 'error');
+                    log(`Mensaje completo: ${JSON.stringify(error, null, 2)}`, 'error');
+                    log('💡 Posible causa: Las tablas no existen. Ejecuta el SQL en Supabase.', 'warning');
+                } else {
+                    log(`✅ Tabla accesible, registros encontrados: ${data.length}`, 'success');
+                }
+            } catch (err) {
+                log(`❌ Exception: ${err.message}`, 'error');
+            }
+        }
+        
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                log('✅ Página cargada', 'success');
+            }, 500);
+        });
+    </script>
+</body>
+</html>

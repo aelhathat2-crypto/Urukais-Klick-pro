@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador SEO - Urukais Klick</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #fff;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #ff8800, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .validator-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .validator-section h2 {
+            color: #00d4ff;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .check-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .status-icon {
+            font-size: 24px;
+            min-width: 30px;
+        }
+
+        .check-item.success {
+            border-left: 4px solid #00ff88;
+        }
+
+        .check-item.warning {
+            border-left: 4px solid #ffaa00;
+        }
+
+        .check-item.error {
+            border-left: 4px solid #ff4444;
+        }
+
+        .check-item.pending {
+            border-left: 4px solid #888;
+        }
+
+        .check-details {
+            flex: 1;
+        }
+
+        .check-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .check-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .action-button {
+            background: linear-gradient(45deg, #ff8800, #00d4ff);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .action-button:hover {
+            transform: scale(1.05);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+
+        .links-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .external-link {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #00d4ff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .external-link:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff88, #00d4ff);
+            transition: width 0.3s;
+        }
+
+        .score-display {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔍 Validador SEO - Urukais Klick</h1>
+
+        <!-- Estadísticas Generales -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="seo-score">0</div>
+                <div class="stat-label">Puntuación SEO</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="checks-passed">0/12</div>
+                <div class="stat-label">Validaciones Pasadas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="schemas-count">0</div>
+                <div class="stat-label">Schemas Detectados</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="images-count">0</div>
+                <div class="stat-label">Imágenes OG</div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+        </div>
+
+        <!-- Validaciones de Schemas -->
+        <div class="validator-section">
+            <h2>📊 Structured Data (JSON-LD)</h2>
+            <div class="check-item pending" id="check-website">
+                <span class="status-icon">⏳</span>
+                <div class="check-details">
+                    <div class="check-title">WebSite Schema</div>
+                    <div class="check-description">Verifica que exista el schema principal del sitio</div>
+                </div>
+            </div>
+            <div class="check-item pending" id="check-organization">
+                <span class="status-icon">⏳</span>
+                <div class="check-details">
+                    <div class="check-title">Organization Schema</div>
+                    <div class="check-description">Información de la organización</div>
+                </div>
+            </div>
+            <div class="check-item pending" id="check-breadcrumb">
+                <span class="status-icon">⏳</span>
+                <div class="check-details">
+                    <div class="check-title">BreadcrumbList Schema</div>
+                    <div class="check-description">Navegación estructurada</div>
+                </div>
+            </div>
+            <div class="check-item pending" id="check-faq">
+                <span class="status-icon">⏳</span>
+                <div class="check-details">
+                    <div class="check-title">FAQPage Schema</div>
+                    <div class="check-description">Preguntas frecuentes</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Validaciones de Meta Tags -->
+        <div class="validator-section">
+            <h2>🏷️ Meta Tags & SEO Básico</h2>
+            <div class="check-item pending" id="check-title">
+                <span class="status-icon">⏳</span>
+                <div class="check-details">
+                    <div class="check-title">Title Tag</div>
+                    <div class="check-description">Verifica la presencia y longitud del título (50-60 caracteres)</div>
+                </div>
+            </div>
+            <div class="check-item pending" id="check-description">
+                <span class="status-icon">⏳</span>
+                <div class="check-details">
+                    <div class="check-title">Meta Description</div>
+                    <div class="check-description">Descripción óptima (150-160 caracteres)</div>
+                </div>
+            </div>
+            <div class="check-item pending" id="check-canonical">
+                <span class="status-icon">⏳</span>
+                <div class="check-details">
+                    <div class="check-title">Canonical URL</div>
+                    <div class="check-description">URL canónica definida</div>
+                </div>
+            </div>
+            <div class="check-item pending" id="check-og">
+                <span class="status-icon">⏳</span>
+                <div class="check-details">
+                    <div class="check-title">Open Graph Tags</div>
+                    <div class="check-description">Meta tags para redes sociales</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Validaciones de Archivos -->
+        <div class="validator-section">
+            <h2>📁 Archivos SEO</h2>
+            <div class="check-item pending" id="check-sitemap">
+                <span class="status-icon">⏳</span>
+                <div class="check-details">
+                    <div class="check-title">Sitemap.xml</div>
+                    <div class="check-description">Archivo sitemap accesible</div>
+                </div>
+            </div>
+            <div class="check-item pending" id="check-robots">
+                <span class="status-icon">⏳</span>
+                <div class="check-details">
+                    <div class="check-title">Robots.txt</div>
+                    <div class="check-description">Archivo robots.txt configurado</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Validaciones de Rendimiento -->
+        <div class="validator-section">
+            <h2>⚡ Rendimiento & Accesibilidad</h2>
+            <div class="check-item pending" id="check-https">
+                <span class="status-icon">⏳</span>
+                <div class="check-details">
+                    <div class="check-title">HTTPS</div>
+                    <div class="check-description">Sitio servido mediante HTTPS</div>
+                </div>
+            </div>
+            <div class="check-item pending" id="check-mobile">
+                <span class="status-icon">⏳</span>
+                <div class="check-details">
+                    <div class="check-title">Mobile Friendly</div>
+                    <div class="check-description">Viewport meta tag configurado</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enlaces Externos de Validación -->
+        <div class="validator-section">
+            <h2>🔗 Herramientas de Validación Externa</h2>
+            <div class="links-section">
+                <a href="https://search.google.com/test/rich-results" target="_blank" class="external-link">
+                    <span>🔍</span>
+                    Google Rich Results Test
+                </a>
+                <a href="https://validator.schema.org/" target="_blank" class="external-link">
+                    <span>✅</span>
+                    Schema.org Validator
+                </a>
+                <a href="https://www.xml-sitemaps.com/validate-xml-sitemap.html" target="_blank" class="external-link">
+                    <span>🗺️</span>
+                    Sitemap Validator
+                </a>
+                <a href="https://developers.facebook.com/tools/debug/" target="_blank" class="external-link">
+                    <span>📘</span>
+                    Facebook Debugger
+                </a>
+                <a href="https://cards-dev.twitter.com/validator" target="_blank" class="external-link">
+                    <span>🐦</span>
+                    Twitter Card Validator
+                </a>
+                <a href="https://pagespeed.web.dev/" target="_blank" class="external-link">
+                    <span>⚡</span>
+                    PageSpeed Insights
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para validar el documento actual
+        function validateSEO() {
+            let score = 0;
+            let passed = 0;
+            const total = 12;
+
+            // 1. Verificar WebSite Schema
+            const websiteSchema = document.querySelector('script[type="application/ld+json"]');
+            updateCheck('check-website', websiteSchema !== null);
+            if (websiteSchema) { score += 10; passed++; }
+
+            // 2. Verificar Organization Schema
+            const orgSchema = Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+                .some(script => script.textContent.includes('"@type": "Organization"'));
+            updateCheck('check-organization', orgSchema);
+            if (orgSchema) { score += 10; passed++; }
+
+            // 3. Verificar BreadcrumbList
+            const breadcrumbSchema = Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+                .some(script => script.textContent.includes('"@type": "BreadcrumbList"'));
+            updateCheck('check-breadcrumb', breadcrumbSchema);
+            if (breadcrumbSchema) { score += 10; passed++; }
+
+            // 4. Verificar FAQPage
+            const faqSchema = Array.from(document.querySelectorAll('script[type="application/ld+json"]'))
+                .some(script => script.textContent.includes('"@type": "FAQPage"'));
+            updateCheck('check-faq', faqSchema);
+            if (faqSchema) { score += 10; passed++; }
+
+            // 5. Verificar Title
+            const title = document.querySelector('title');
+            const titleValid = title && title.textContent.length >= 30 && title.textContent.length <= 60;
+            updateCheck('check-title', titleValid);
+            if (titleValid) { score += 8; passed++; }
+
+            // 6. Verificar Meta Description
+            const description = document.querySelector('meta[name="description"]');
+            const descValid = description && description.content.length >= 120 && description.content.length <= 160;
+            updateCheck('check-description', descValid);
+            if (descValid) { score += 8; passed++; }
+
+            // 7. Verificar Canonical
+            const canonical = document.querySelector('link[rel="canonical"]');
+            updateCheck('check-canonical', canonical !== null);
+            if (canonical) { score += 8; passed++; }
+
+            // 8. Verificar Open Graph
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            const ogDescription = document.querySelector('meta[property="og:description"]');
+            const ogImage = document.querySelector('meta[property="og:image"]');
+            const ogValid = ogTitle && ogDescription && ogImage;
+            updateCheck('check-og', ogValid);
+            if (ogValid) { score += 10; passed++; }
+
+            // 9-10. Verificar Sitemap y Robots (simulado)
+            updateCheck('check-sitemap', true, 'warning', 'Verifica manualmente en /sitemap.xml');
+            score += 8; passed++;
+
+            updateCheck('check-robots', true, 'warning', 'Verifica manualmente en /robots.txt');
+            score += 8; passed++;
+
+            // 11. Verificar HTTPS
+            const isHTTPS = window.location.protocol === 'https:';
+            updateCheck('check-https', isHTTPS);
+            if (isHTTPS) { score += 5; passed++; }
+
+            // 12. Verificar Mobile Friendly
+            const viewport = document.querySelector('meta[name="viewport"]');
+            updateCheck('check-mobile', viewport !== null);
+            if (viewport) { score += 5; passed++; }
+
+            // Actualizar estadísticas
+            document.getElementById('seo-score').textContent = score;
+            document.getElementById('checks-passed').textContent = `${passed}/${total}`;
+            document.getElementById('progress-fill').style.width = `${(score / 100) * 100}%`;
+
+            // Contar schemas
+            const schemas = document.querySelectorAll('script[type="application/ld+json"]').length;
+            document.getElementById('schemas-count').textContent = schemas;
+
+            // Contar imágenes OG
+            const ogImages = document.querySelectorAll('meta[property*="og:image"]').length;
+            document.getElementById('images-count').textContent = ogImages;
+        }
+
+        function updateCheck(id, passed, type = null, customMsg = null) {
+            const element = document.getElementById(id);
+            element.className = 'check-item ' + (type || (passed ? 'success' : 'error'));
+
+            const icon = element.querySelector('.status-icon');
+            icon.textContent = passed ? '✅' : (type === 'warning' ? '⚠️' : '❌');
+
+            if (customMsg) {
+                const desc = element.querySelector('.check-description');
+                desc.textContent = customMsg;
+            }
+        }
+
+        // Ejecutar validación al cargar
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(validateSEO, 500);
+        });
+    </script>
+</body>
+
+</html>

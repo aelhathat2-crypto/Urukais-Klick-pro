@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📱 Instalación Rápida - Mejoras Móviles Urukais Klick</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a2456 0%, #0a0e27 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ff8800, #0099cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border-left: 4px solid #ff8800;
+        }
+
+        .section h2 {
+            color: #ff8800;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .code-block {
+            background: #000;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+            border: 1px solid #333;
+            position: relative;
+        }
+
+        .code-block code {
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff8800;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: #0099cc;
+            transform: scale(1.05);
+        }
+
+        .copy-btn:active {
+            transform: scale(0.95);
+        }
+
+        .step {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 136, 0, 0.1);
+            border-radius: 10px;
+            border-left: 3px solid #0099cc;
+        }
+
+        .step-number {
+            background: #0099cc;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .checklist {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .checklist li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checklist li::before {
+            content: '✅';
+            font-size: 20px;
+        }
+
+        .warning {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .warning strong {
+            color: #ffc107;
+        }
+
+        .success {
+            background: rgba(0, 255, 0, 0.1);
+            border-left: 4px solid #0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .file-tree {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            line-height: 1.8;
+        }
+
+        .file-tree .folder {
+            color: #ffc107;
+        }
+
+        .file-tree .file {
+            color: #0099cc;
+        }
+
+        .file-tree .new {
+            color: #0f0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #ff8800, #0099cc);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 136, 0, 0.5);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 136, 0, 0.3);
+        }
+
+        .feature-card .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #0f0;
+            color: #000;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 15px;
+            }
+
+            .code-block {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📱 Instalación Rápida</h1>
+        <p class="subtitle">Mejoras Móviles Avanzadas para Urukais Klick</p>
+
+        <!-- Archivos Creados -->
+        <div class="section">
+            <h2>📦 Archivos Creados</h2>
+            <div class="file-tree">
+                <div class="folder">📁 historia urukais/</div>
+                <div>&nbsp;&nbsp;<span class="file new">✨ manifest.json</span></div>
+                <div>&nbsp;&nbsp;<span class="file new">✨ service-worker.js</span></div>
+                <div>&nbsp;&nbsp;<span class="folder">📁 css/</span></div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="file new">✨ mobile-responsive.css</span></div>
+                <div>&nbsp;&nbsp;<span class="folder">📁 javascript/</span></div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="file new">✨ mobile-enhancements.js</span></div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="file new">✨ pwa-install.js</span></div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="file new">✨ performance-optimizer.js</span></div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="file new">✨ touch-gestures.js</span></div>
+            </div>
+        </div>
+
+        <!-- Características -->
+        <div class="section">
+            <h2>✨ Características Implementadas</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon">📲</div>
+                    <h3>PWA Instalable</h3>
+                    <p>App nativa en móviles</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h3>Super Rápido</h3>
+                    <p>Optimización avanzada</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📡</div>
+                    <h3>Funciona Offline</h3>
+                    <p>Caché inteligente</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">👆</div>
+                    <h3>Gestos Táctiles</h3>
+                    <p>Swipe, tap, pinch</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instalación Paso 1 -->
+        <div class="section">
+            <h2>⚙️ Paso 1: Actualizar Manifest</h2>
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Busca esta línea en index.html (aprox. línea 45):</strong>
+            </div>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this, 'code1')">Copiar</button>
+                <code id="code1">&lt;link rel="manifest" href="/site.webmanifest"&gt;</code>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Cámbiala por:</strong>
+            </div>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this, 'code2')">Copiar</button>
+                <code id="code2">&lt;link rel="manifest" href="/manifest.json"&gt;</code>
+            </div>
+        </div>
+
+        <!-- Instalación Paso 2 -->
+        <div class="section">
+            <h2>⚙️ Paso 2: Agregar Scripts</h2>
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Busca el final del archivo index.html (aprox. línea 1995)</strong>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Justo ANTES de &lt;/body&gt;, agrega estas líneas:</strong>
+            </div>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this, 'code3')">Copiar</button>
+                <code id="code3">        &lt;!-- Scripts de mejoras móviles --&gt;
+        &lt;script src="/javascript/mobile-enhancements.js"&gt;&lt;/script&gt;
+        &lt;script src="/javascript/pwa-install.js"&gt;&lt;/script&gt;
+        &lt;script src="/javascript/performance-optimizer.js"&gt;&lt;/script&gt;
+        &lt;script src="/javascript/touch-gestures.js"&gt;&lt;/script&gt;</code>
+            </div>
+
+            <div class="success">
+                <strong>✅ Nota:</strong> El CSS mobile-responsive.css ya está incluido automáticamente!
+            </div>
+        </div>
+
+        <!-- Verificación -->
+        <div class="section">
+            <h2>✅ Verificación</h2>
+            <p><strong>Después de aplicar los cambios, verifica:</strong></p>
+            <ul class="checklist">
+                <li>Los archivos están en las carpetas correctas</li>
+                <li>El manifest.json apunta correctamente</li>
+                <li>Los scripts están antes de &lt;/body&gt;</li>
+                <li>No hay errores en la consola del navegador (F12)</li>
+            </ul>
+        </div>
+
+        <!-- Testing -->
+        <div class="section">
+            <h2>🧪 Probar en Móvil</h2>
+
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Abre DevTools</strong> (F12) en Chrome
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Activa modo responsive</strong> (Ctrl+Shift+M)
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Selecciona un dispositivo</strong> (iPhone, Samsung, etc.)
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>Busca en consola:</strong>
+            </div>
+
+            <div class="code-block">
+                <code style="color: #0f0;">🚀 Inicializando funcionalidades móviles...
+✅ Funcionalidades móviles cargadas correctamente
+🚀 Inicializando PWA...
+⚡ Inicializando optimizaciones de performance...
+👆 Inicializando gestos táctiles...</code>
+            </div>
+
+            <div class="warning">
+                <strong>⚠️ Importante:</strong> Si ves errores, verifica que todos los archivos existan en las rutas
+                correctas.
+            </div>
+        </div>
+
+        <!-- Gestos a Probar -->
+        <div class="section">
+            <h2>👆 Gestos Táctiles para Probar</h2>
+            <ul class="checklist">
+                <li><strong>Swipe Up</strong> en hero → Scroll a siguiente sección</li>
+                <li><strong>Double Tap</strong> en hero → 🎉 Confetti animation</li>
+                <li><strong>Swipe Left</strong> en menú → Cerrar menú</li>
+                <li><strong>Long Press</strong> en cards → Compartir contenido</li>
+                <li><strong>Menu Hamburguesa</strong> → Debe abrir/cerrar suavemente</li>
+            </ul>
+        </div>
+
+        <!-- PWA Testing -->
+        <div class="section">
+            <h2>📲 Probar Instalación PWA</h2>
+
+            <div class="warning">
+                <strong>⚠️ Requisito:</strong> El sitio DEBE estar en HTTPS (Netlify ya lo tiene ✅)
+            </div>
+
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Abre el sitio en Chrome (móvil o desktop)</strong>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Deberías ver:</strong><br>
+                - Banner: "Instala Urukais Klick"<br>
+                - Botón flotante "📱 Instalar App"
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Haz clic en "Instalar"</strong>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>La app se instalará</strong> en tu pantalla de inicio
+            </div>
+
+            <div class="success">
+                <strong>✅ Éxito:</strong> Verás mensaje "¡App instalada correctamente!" y podrás abrir desde el icono.
+            </div>
+        </div>
+
+        <!-- Performance -->
+        <div class="section">
+            <h2>📊 Verificar Performance</h2>
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Chrome DevTools → Lighthouse tab</strong>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Selecciona:</strong><br>
+                - ✅ Performance<br>
+                - ✅ Progressive Web App<br>
+                - ✅ Accessibility<br>
+                - ✅ Best Practices
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Click "Generate report"</strong>
+            </div>
+
+            <div class="success">
+                <strong>🎯 Objetivo:</strong> Puntaje de 90+ en todas las categorías
+            </div>
+        </div>
+
+        <!-- Links Útiles -->
+        <div class="section">
+            <h2>📚 Documentación Completa</h2>
+            <div class="btn-group">
+                <a href="./MEJORAS-AVANZADAS.md" class="btn">📖 Guía Completa</a>
+                <a href="./GUIA-CSS-MOVILES.md" class="btn">📱 Guía CSS Móvil</a>
+                <a href="./index.html" class="btn">🏠 Volver al Sitio</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div
+            style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <p>Creado con ❤️ para <strong>Urukais Klick</strong></p>
+            <p style="color: #888; font-size: 14px; margin-top: 10px;">
+                Por: Manuel Casimiro Carrasco | Diciembre 2025
+            </p>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">✅ Código copiado al portapapeles!</div>
+
+    <script>
+        function copyCode(button, codeId) {
+            const code = document.getElementById(codeId).textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                // Cambiar texto del botón
+                const originalText = button.textContent;
+                button.textContent = '✅ Copiado!';
+                button.style.background = '#0f0';
+                button.style.color = '#000';
+
+                // Mostrar toast
+                const toast = document.getElementById('toast');
+                toast.style.display = 'block';
+
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                }, 2000);
+
+                // Resetear botón
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '#ff8800';
+                    button.style.color = 'white';
+                }, 2000);
+            }).catch(err => {
+                alert('Error al copiar: ' + err);
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autenticación - Urukais Klick</title>
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    
+    <!-- Supabase Library - DEBE cargarse ANTES de supabase.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.0"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tab-btn {
+            flex: 1;
+            padding: 12px;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .tab-btn.active {
+            color: #00ff88;
+            border-bottom-color: #00ff88;
+            box-shadow: 0 4px 0 -2px #00ff88;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #00ff88;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+        }
+        
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #00ff88 0%, #00cc6b 100%);
+            border: none;
+            border-radius: 8px;
+            color: #0a0e27;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 20px rgba(0, 255, 136, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 255, 136, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            box-shadow: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .status {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+            display: none;
+        }
+        
+        .status.success {
+            display: block;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            color: #00ff88;
+        }
+        
+        .status.error {
+            display: block;
+            background: rgba(255, 100, 100, 0.1);
+            border: 1px solid rgba(255, 100, 100, 0.3);
+            color: #ff6464;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background: currentColor;
+            border-radius: 50%;
+            opacity: 0;
+            animation: loading 0.6s infinite;
+            margin-right: 5px;
+        }
+        
+        .loading::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background: currentColor;
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: loading 0.6s 0.1s infinite;
+        }
+        
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background: currentColor;
+            border-radius: 50%;
+            animation: loading 0.6s 0.2s infinite;
+        }
+        
+        @keyframes loading {
+            0%, 60%, 100% {
+                opacity: 0;
+            }
+            30% {
+                opacity: 1;
+            }
+        }
+        
+        .user-info {
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .user-info.active {
+            display: block;
+        }
+        
+        .user-info h3 {
+            color: #00ff88;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .user-info p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            word-break: break-all;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            background: linear-gradient(135deg, #00ff88 0%, #00cc6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .link a {
+            color: #00ff88;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .link a:hover {
+            color: #00ffbb;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐸 Urukais Klick</h1>
+        
+        <div id="config-banner" style="background: rgba(255, 159, 64, 0.15); border: 1px solid rgba(255, 159, 64, 0.5); border-radius: 8px; padding: 15px; margin-bottom: 20px; display: none; text-align: center;">
+            <p style="color: #ffb347; margin-bottom: 10px; font-size: 13px;">⚠️ <strong>Credenciales no configuradas</strong></p>
+            <a href="configurar-credenciales.html" style="display: inline-block; background: rgba(255, 159, 64, 0.3); color: #ffb347; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 12px; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255, 159, 64, 0.5)'" onmouseout="this.style.background='rgba(255, 159, 64, 0.3)'">→ Configurar Supabase</a>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="cambiarTab('login')">Iniciar Sesión</button>
+            <button class="tab-btn" onclick="cambiarTab('registro')">Registro</button>
+            <button class="tab-btn" onclick="cambiarTab('perfil')">Mi Perfil</button>
+        </div>
+        
+        <!-- TAB: LOGIN -->
+        <div id="login" class="tab-content active">
+            <div id="status-login" class="status"></div>
+            <div class="form-group">
+                <label>Correo Electrónico</label>
+                <input type="email" id="email-login" placeholder="tu@email.com">
+            </div>
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" id="password-login" placeholder="Tu contraseña">
+            </div>
+            <button class="btn" onclick="handleLogin()">Iniciar Sesión</button>
+            <div class="link">
+                ¿No tienes cuenta? <a onclick="cambiarTab('registro')">Regístrate aquí</a>
+            </div>
+        </div>
+        
+        <!-- TAB: REGISTRO -->
+        <div id="registro" class="tab-content">
+            <div id="status-registro" class="status"></div>
+            <div class="form-group">
+                <label>Nombre Completo</label>
+                <input type="text" id="nombre-registro" placeholder="Tu nombre">
+            </div>
+            <div class="form-group">
+                <label>Correo Electrónico</label>
+                <input type="email" id="email-registro" placeholder="tu@email.com">
+            </div>
+            <div class="form-group">
+                <label>Contraseña (mín. 6 caracteres)</label>
+                <input type="password" id="password-registro" placeholder="Contraseña segura">
+            </div>
+            <div class="form-group">
+                <label>Confirmar Contraseña</label>
+                <input type="password" id="password-confirm" placeholder="Repite la contraseña">
+            </div>
+            <button class="btn" onclick="handleRegistro()">Crear Cuenta</button>
+            <div class="link">
+                ¿Ya tienes cuenta? <a onclick="cambiarTab('login')">Inicia sesión aquí</a>
+            </div>
+        </div>
+        
+        <!-- TAB: PERFIL -->
+        <div id="perfil" class="tab-content">
+            <div id="user-info" class="user-info">
+                <h3>📋 Información del Usuario</h3>
+                <p><strong>Email:</strong> <span id="user-email"></span></p>
+                <p><strong>ID:</strong> <span id="user-id"></span></p>
+                <p><strong>Sesión desde:</strong> <span id="session-time"></span></p>
+            </div>
+            
+            <div id="status-perfil" class="status"></div>
+            
+            <div id="login-required" style="text-align: center; padding: 40px 0;">
+                <p style="color: rgba(255, 255, 255, 0.6); margin-bottom: 20px;">
+                    Inicia sesión para ver tu perfil
+                </p>
+                <button class="btn" onclick="cambiarTab('login')">Ir a Login</button>
+            </div>
+            
+            <div id="perfil-content" style="display: none;">
+                <button class="btn secondary" onclick="handleLogout()">
+                    🚪 Cerrar Sesión
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts de Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.0/+esm"></script>
+    <script src="/javascript/supabase.js"></script>
+    
+    <script>
+        // Variables globales
+        let usuarioActual = null;
+        
+        // Cambiar entre pestañas
+        function cambiarTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+            
+            if (tabName === 'perfil') {
+                actualizarPerfil();
+            }
+        }
+        
+        // Mostrar mensaje de estado
+        function mostrarStatus(elementId, mensaje, tipo = 'success') {
+            const elemento = document.getElementById(elementId);
+            elemento.textContent = mensaje;
+            elemento.className = `status ${tipo}`;
+            
+            if (tipo === 'success') {
+                setTimeout(() => elemento.classList.remove('success'), 5000);
+            }
+        }
+        
+        // HANDLE: LOGIN
+        async function handleLogin() {
+            const email = document.getElementById('email-login').value.trim();
+            const password = document.getElementById('password-login').value;
+            const statusEl = document.getElementById('status-login');
+            
+            if (!email || !password) {
+                mostrarStatus('status-login', '❌ Completa todos los campos', 'error');
+                return;
+            }
+            
+            statusEl.innerHTML = '<span class="loading"></span> Iniciando sesión...';
+            statusEl.className = 'status success';
+            
+            try {
+                const resultado = await supabaseAuth.loginUsuario(email, password);
+                
+                if (resultado.success) {
+                    usuarioActual = resultado.user;
+                    mostrarStatus('status-login', 
+                        `✅ ¡Bienvenido ${resultado.user.email}!`, 'success');
+                    
+                    setTimeout(() => {
+                        document.getElementById('email-login').value = '';
+                        document.getElementById('password-login').value = '';
+                        cambiarTab('perfil');
+                    }, 1500);
+                } else {
+                    mostrarStatus('status-login', 
+                        `❌ Error: ${resultado.error}`, 'error');
+                }
+            } catch (error) {
+                mostrarStatus('status-login', 
+                    `❌ Error: ${error.message}`, 'error');
+            }
+        }
+        
+        // HANDLE: REGISTRO
+        async function handleRegistro() {
+            const nombre = document.getElementById('nombre-registro').value.trim();
+            const email = document.getElementById('email-registro').value.trim();
+            const password = document.getElementById('password-registro').value;
+            const passwordConfirm = document.getElementById('password-confirm').value;
+            const statusEl = document.getElementById('status-registro');
+            
+            // Validar
+            if (!nombre || !email || !password || !passwordConfirm) {
+                mostrarStatus('status-registro', '❌ Completa todos los campos', 'error');
+                return;
+            }
+            
+            if (password.length < 6) {
+                mostrarStatus('status-registro', 
+                    '❌ La contraseña debe tener al menos 6 caracteres', 'error');
+                return;
+            }
+            
+            if (password !== passwordConfirm) {
+                mostrarStatus('status-registro', 
+                    '❌ Las contraseñas no coinciden', 'error');
+                return;
+            }
+            
+            if (!email.includes('@')) {
+                mostrarStatus('status-registro', 
+                    '❌ Email inválido', 'error');
+                return;
+            }
+            
+            statusEl.innerHTML = '<span class="loading"></span> Creando cuenta...';
+            statusEl.className = 'status success';
+            
+            try {
+                const resultado = await supabaseAuth.registroUsuario(email, password, nombre);
+                
+                if (resultado.success) {
+                    mostrarStatus('status-registro', 
+                        `✅ ¡Cuenta creada! Revisa tu email para confirmar.`, 'success');
+                    
+                    setTimeout(() => {
+                        document.getElementById('nombre-registro').value = '';
+                        document.getElementById('email-registro').value = '';
+                        document.getElementById('password-registro').value = '';
+                        document.getElementById('password-confirm').value = '';
+                        cambiarTab('login');
+                    }, 2000);
+                } else {
+                    mostrarStatus('status-registro', 
+                        `❌ Error: ${resultado.error}`, 'error');
+                }
+            } catch (error) {
+                mostrarStatus('status-registro', 
+                    `❌ Error: ${error.message}`, 'error');
+            }
+        }
+        
+        // HANDLE: LOGOUT
+        async function handleLogout() {
+            const resultado = await supabaseAuth.logoutUsuario();
+            
+            if (resultado.success) {
+                usuarioActual = null;
+                mostrarStatus('status-perfil', 
+                    '✅ Sesión cerrada correctamente', 'success');
+                
+                setTimeout(() => {
+                    cambiarTab('login');
+                    actualizarPerfil();
+                }, 1500);
+            }
+        }
+        
+        // Actualizar vista de perfil
+        async function actualizarPerfil() {
+            const user = await supabaseAuth.obtenerUsuarioActual();
+            const userInfo = document.getElementById('user-info');
+            const loginRequired = document.getElementById('login-required');
+            const perfilContent = document.getElementById('perfil-content');
+            
+            if (user.success && user.user) {
+                usuarioActual = user.user;
+                document.getElementById('user-email').textContent = user.user.email;
+                document.getElementById('user-id').textContent = user.user.id;
+                document.getElementById('session-time').textContent = new Date().toLocaleString('es-ES');
+                
+                userInfo.classList.add('active');
+                loginRequired.style.display = 'none';
+                perfilContent.style.display = 'block';
+            } else {
+                userInfo.classList.remove('active');
+                loginRequired.style.display = 'block';
+                perfilContent.style.display = 'none';
+            }
+        }
+        
+        // Inicializar
+        window.addEventListener('load', () => {
+            console.log('✅ Página de autenticación cargada');
+            
+            // Mostrar banner si no hay credenciales
+            setTimeout(() => {
+                const isConfigured = window.supabaseAuth && window.supabaseAuth.isConfigured?.();
+                const banner = document.getElementById('config-banner');
+                if (!isConfigured && banner) {
+                    banner.style.display = 'block';
+                }
+            }, 500);
+            
+            actualizarPerfil();
+        });
+    </script>
+    
+    <!-- Scripts para autenticación y base de datos -->
+    <script src="/javascript/supabase.js"></script>
+    <script src="/javascript/api.js"></script>
+    <script src="/javascript/config-helper.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+{
+  "name": "Urukais Klick - Ecosistema Silencioso de Alforja",
+  "short_name": "Urukais Klick",
+  "description": "Descubre los guardianes silenciosos de las montañas de Alforja. Documentación completa sobre los Urukais Klick, criaturas místicas que fusionan biología con geología.",
+  "start_url": "https://urukais-klick.netlify.app/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0e27",
+  "theme_color": "#0a0e27",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/rana.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/rana.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "education",
+    "reference",
+    "nature"
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-1.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshot-2.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ver Enciclopedia",
+      "short_name": "Enciclopedia",
+      "description": "Accede rápidamente a la enciclopedia de Urukais",
+      "url": "/interior/base-de-dtos.html",
+      "icons": [
+        {
+          "src": "/rana.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Base de Datos",
+      "short_name": "BD",
+      "description": "Accede a la base de datos",
+      "url": "/interior/base-de-dtos.html",
+      "icons": [
+        {
+          "src": "/rana.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}

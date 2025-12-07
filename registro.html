@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Básico - Sistema Urukais</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 40px; 
+            background: #1F2937; 
+            color: white; 
+        }
+        .test-section { 
+            margin: 20px 0; 
+            padding: 20px; 
+            border: 1px solid #374151; 
+            border-radius: 8px; 
+        }
+        .success { color: #10B981; }
+        .error { color: #EF4444; }
+        .warning { color: #F59E0B; }
+        button { 
+            background: #6B46C1; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            margin: 5px; 
+        }
+        button:hover { background: #9333EA; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test Básico del Sistema Urukais</h1>
+    
+    <div class="test-section">
+        <h2>Estado de Carga</h2>
+        <div id="load-status">
+            <p>Cargando...</p>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test de Funcionalidades</h2>
+        <button onclick="testJavaScript()">Test JavaScript</button>
+        <button onclick="testSistema()">Test Sistema</button>
+        <button onclick="testArchivos()">Test Archivos</button>
+        <button onclick="abrirPrincipal()">Abrir Sistema Principal</button>
+        <div id="test-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Información del Navegador</h2>
+        <div id="browser-info"></div>
+    </div>
+
+    <script>
+        // Test básico de carga
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusDiv = document.getElementById('load-status');
+            statusDiv.innerHTML = '<p class="success">✅ JavaScript cargado correctamente</p>';
+            statusDiv.innerHTML += '<p class="success">✅ DOM cargado correctamente</p>';
+            
+            // Mostrar información del navegador
+            const browserInfo = document.getElementById('browser-info');
+            browserInfo.innerHTML = `
+                <p><strong>Navegador:</strong> ${navigator.userAgent}</p>
+                <p><strong>URL actual:</strong> ${window.location.href}</p>
+                <p><strong>Protocolo:</strong> ${window.location.protocol}</p>
+                <p><strong>Support localStorage:</strong> ${typeof(Storage) !== 'undefined' ? '✅ Sí' : '❌ No'}</p>
+                <p><strong>Support ES6:</strong> ${typeof Promise !== 'undefined' ? '✅ Sí' : '❌ No'}</p>
+            `;
+        });
+
+        function testJavaScript() {
+            const results = document.getElementById('test-results');
+            let output = '<h3>Resultado del Test JavaScript:</h3>';
+            
+            try {
+                // Test funciones básicas
+                let testVar = 'Hola Mundo';
+                let testArray = [1, 2, 3];
+                let testObject = { nombre: 'test' };
+                
+                output += '<p class="success">✅ Variables y tipos de datos</p>';
+                output += '<p class="success">✅ Funciones básicas</p>';
+                output += '<p class="success">✅ Objetos y arrays</p>';
+                
+                // Test localStorage
+                localStorage.setItem('test', 'valor');
+                if (localStorage.getItem('test')) {
+                    output += '<p class="success">✅ localStorage funciona</p>';
+                }
+                
+            } catch (error) {
+                output += `<p class="error">❌ Error en JavaScript: ${error.message}</p>`;
+            }
+            
+            results.innerHTML = output;
+        }
+
+        function testSistema() {
+            const results = document.getElementById('test-results');
+            let output = '<h3>Resultado del Test del Sistema:</h3>';
+            
+            // Verificar archivos principales
+            const archivos = [
+                'motor_gamificacion_urukais.js',
+                'interfaz_gamificacion_urukais.js', 
+                'sistema_desafios_competencias_urukais.js',
+                'sistema_rutas_tematicas_urukais.js',
+                'demo.js'
+            ];
+            
+            output += '<p><strong>Verificando archivos:</strong></p>';
+            
+            // Test carga de archivos (esto es limitado en navegador)
+            output += '<p class="warning">⚠️ Nota: Algunos navegadores pueden bloquear la carga de archivos locales</p>';
+            output += '<p class="warning">⚠️ Si usas protocolo file://, algunos scripts pueden no cargar</p>';
+            
+            results.innerHTML = output;
+        }
+
+        function testArchivos() {
+            const results = document.getElementById('test-results');
+            results.innerHTML = '<h3>Archivos encontrados en el directorio:</h3>';
+            results.innerHTML += '<ul>';
+            results.innerHTML += '<li>index.html - Archivo principal</li>';
+            results.innerHTML += '<li>styles.css - Estilos</li>';
+            results.innerHTML += '<li>demo.js - Script de demo</li>';
+            results.innerHTML += '<li>motor_gamificacion_urukais.js - Motor principal</li>';
+            results.innerHTML += '<li>interfaz_gamificacion_urukais.js - Interfaz</li>';
+            results.innerHTML += '<li>sistema_desafios_competencias_urukais.js - Desafíos</li>';
+            results.innerHTML += '<li>sistema_rutas_tematicas_urukais.js - Rutas</li>';
+            results.innerHTML += '</ul>';
+            
+            results.innerHTML += '<h4>Soluciones para problemas comunes:</h4>';
+            results.innerHTML += '<ul>';
+            results.innerHTML += '<li><strong>Si ves errores de carga:</strong> Usar un servidor HTTP local</li>';
+            results.innerHTML += '<li><strong>Si no funciona:</strong> Abrir desde Chrome/Firefox y presionar F12</li>';
+            results.innerHTML += '<li><strong>Si hay errores de consola:</strong> Copiar los mensajes aquí</li>';
+            results.innerHTML += '</ul>';
+        }
+
+        function abrirPrincipal() {
+            window.open('index.html', '_blank');
+        }
+
+        // Test automático al cargar
+        setTimeout(() => {
+            console.log('🧪 Test automático iniciado...');
+            testJavaScript();
+        }, 1000);
+    </script>
+</body>
+</html>

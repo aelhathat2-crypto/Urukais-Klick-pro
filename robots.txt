@@ -1,0 +1,67 @@
+# Robots.txt para Urukais Klick
+# https://urukais-klick.netlify.app/robots.txt
+
+# Permitir acceso a todos los bots
+User-agent: *
+Allow: /
+
+# Bloquear directorios privados y de sistema
+Disallow: /base de datos/
+Disallow: /sistema-implementacion/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /_redirects
+Disallow: /.netlify/
+
+# Bloquear archivos de configuración
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /package.json
+Disallow: /package-lock.json
+
+# Permitir acceso a recursos importantes
+Allow: /javascript/
+Allow: /css/
+Allow: /images/
+Allow: /videos/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.mp4$
+Allow: /*.webm$
+
+# Configuración específica para Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Configuración específica para Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Configuración específica para Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+# Bloquear bots malintencionados y scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap
+Sitemap: https://urukais-klick.netlify.app/sitemap.xml
+
+# Host principal
+Host: https://urukais-klick.netlify.app

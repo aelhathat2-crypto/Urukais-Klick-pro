@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurar Supabase - Urukais Klick</title>
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            margin-bottom: 10px;
+            font-size: 28px;
+            background: linear-gradient(135deg, #7c3aed, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #7c3aed;
+            background: rgba(124, 58, 237, 0.1);
+            box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+        }
+        
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .info-box {
+            background: rgba(124, 58, 237, 0.1);
+            border-left: 3px solid #7c3aed;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .info-box strong {
+            color: #a78bfa;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .btn-guardar {
+            background: linear-gradient(135deg, #7c3aed, #ec4899);
+            color: white;
+        }
+        
+        .btn-guardar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+        }
+        
+        .btn-guardar:active {
+            transform: translateY(0);
+        }
+        
+        .btn-cancelar {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-cancelar:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+            font-size: 14px;
+        }
+        
+        .status.success {
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.5);
+            color: #86efac;
+            display: block;
+        }
+        
+        .status.error {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            color: #fca5a5;
+            display: block;
+        }
+        
+        .link {
+            color: #a78bfa;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .link:hover {
+            text-decoration: underline;
+        }
+        
+        .step {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #7c3aed, #ec4899);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Configurar Supabase</h1>
+        <p class="subtitle">Añade tus credenciales para habilitar autenticación y base de datos</p>
+        
+        <div class="info-box">
+            <strong>ℹ️ ¿Necesitas credenciales?</strong><br>
+            1. Ve a <a href="https://supabase.com/dashboard" target="_blank" class="link">Supabase Dashboard</a><br>
+            2. Abre tu proyecto → Settings → API<br>
+            3. Copia <strong>Project URL</strong> y <strong>Anon Key</strong>
+        </div>
+        
+        <form id="configForm">
+            <div class="form-group">
+                <label for="url">📍 Project URL</label>
+                <input 
+                    type="text" 
+                    id="url" 
+                    placeholder="https://tu-proyecto.supabase.co"
+                    required
+                >
+                <small style="color: rgba(255,255,255,0.6); display: block; margin-top: 5px;">
+                    ✅ Debe contener: <code style="background: rgba(0,0,0,0.2); padding: 2px 4px;">supabase.co</code> y ser única para tu proyecto
+                </small>
+            </div>
+            
+            <div class="form-group">
+                <label for="key">🔑 Anon Key (Pública)</label>
+                <input 
+                    type="password" 
+                    id="key" 
+                    placeholder="eyJ0eXAiOiJKV1QiLCJhbGc..."
+                    required
+                >
+                <small style="color: rgba(255,255,255,0.6); display: block; margin-top: 5px;">
+                    ✅ Debe tener al menos 100 caracteres (JWT token muy largo)
+                </small>
+            </div>
+            
+            <div style="background: rgba(255, 179, 71, 0.15); border: 1px solid rgba(255, 179, 71, 0.5); border-radius: 8px; padding: 15px; margin-bottom: 20px; font-size: 12px; line-height: 1.6; color: rgba(255, 255, 255, 0.8);">
+                <strong style="color: #ffb347;">⚠️ IMPORTANTE: ¿Dónde encontrar las credenciales CORRECTAS?</strong><br><br>
+                
+                <strong>1. Ve a Supabase Dashboard:</strong><br>
+                &nbsp;&nbsp;→ <a href="https://supabase.com/dashboard" target="_blank" style="color: #a78bfa; text-decoration: underline;">https://supabase.com/dashboard</a><br><br>
+                
+                <strong>2. En el menú izquierdo, haz clic en tu proyecto</strong><br><br>
+                
+                <strong>3. Ve a: Settings (engranaje) → API</strong><br><br>
+                
+                <strong>4. En la sección "Project API keys":</strong><br>
+                &nbsp;&nbsp;• <strong>Project URL</strong> = SUPABASE_URL<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Ejemplo: <code style="background: rgba(0,0,0,0.3); padding: 3px 6px;">https://abcdef123456.supabase.co</code><br><br>
+                
+                &nbsp;&nbsp;• <strong>anon (public)</strong> = SUPABASE_ANON_KEY<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Será una cadena LARGA tipo JWT (eyJ...)<br><br>
+                
+                <strong style="color: #ffb347;">❌ NO uses "service_role" (eso es secreto)</strong>
+            </div>
+            
+            <div class="buttons">
+                <button type="submit" class="btn-guardar">✅ Guardar Credenciales</button>
+                <button type="button" class="btn-cancelar" onclick="window.location.href='autenticacion.html'">← Volver</button>
+            </div>
+            
+            <div id="status" class="status"></div>
+        </form>
+        
+        <hr style="border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+        
+        <div style="font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.8;">
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Crear Proyecto</strong><br>
+                Ve a <a href="https://supabase.com" target="_blank" class="link">supabase.com</a> y crea un nuevo proyecto
+            </div>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Obtener Credenciales</strong><br>
+                Settings → API → Copia Project URL y Anon Key
+            </div>
+            
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Configurar Aquí</strong><br>
+                Pega los valores arriba y haz clic en "Guardar Credenciales"
+            </div>
+            
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>Crear Base de Datos</strong><br>
+                En Supabase, ve a SQL Editor y ejecuta el contenido de <code style="background: rgba(0,0,0,0.2); padding: 2px 6px; border-radius: 4px;">base de datos/setup-database.sql</code>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">5</span>
+                <strong>¡Listo!</strong><br>
+                Vuelve a <a href="autenticacion.html" class="link">autenticacion.html</a> y comienza a usar
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.0"></script>
+    <script src="/javascript/supabase.js"></script>
+    
+    <script>
+        const form = document.getElementById('configForm');
+        const urlInput = document.getElementById('url');
+        const keyInput = document.getElementById('key');
+        const statusDiv = document.getElementById('status');
+        
+        // Cargar valores guardados
+        urlInput.value = localStorage.getItem('SUPABASE_URL') || '';
+        keyInput.value = localStorage.getItem('SUPABASE_ANON_KEY') || '';
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const url = urlInput.value.trim();
+            const key = keyInput.value.trim();
+            
+            // Validaciones MÁS ESTRICTAS
+            if (!url || !key) {
+                mostrarStatus('❌ Ambos campos son requeridos', 'error');
+                return;
+            }
+            
+            // Validar URL
+            if (!url.includes('supabase.co')) {
+                mostrarStatus('❌ URL inválida. Debe ser: https://xxx.supabase.co (no mcp.supabase.com)', 'error');
+                return;
+            }
+            
+            if (!url.startsWith('https://')) {
+                mostrarStatus('❌ URL debe comenzar con https://', 'error');
+                return;
+            }
+            
+            // Validar Anon Key
+            if (key.length < 50) {
+                mostrarStatus(`❌ Anon Key muy corta (${key.length} caracteres). Debe tener al menos 100 caracteres. Copiaste mal.`, 'error');
+                return;
+            }
+            
+            if (!key.includes('.')) {
+                mostrarStatus('❌ Anon Key inválida. Debe ser un JWT (contener puntos). Verifica que sea la KEY, no el URL.', 'error');
+                return;
+            }
+            
+            try {
+                mostrarStatus('⏳ Validando credenciales...', 'success');
+                
+                // Intentar crear cliente Supabase para verificar
+                const testClient = window.supabase.createClient(url, key);
+                
+                // Hacer una petición simple para verificar
+                const { data, error } = await testClient.auth.getSession();
+                
+                if (error && error.message.includes('Invalid')) {
+                    mostrarStatus('❌ Credenciales inválidas. Verifica que sean correctas.', 'error');
+                    return;
+                }
+                
+                // Guardar en localStorage
+                localStorage.setItem('SUPABASE_URL', url);
+                localStorage.setItem('SUPABASE_ANON_KEY', key);
+                
+                // Reinicializar Supabase
+                await supabaseAuth.configureCredentials(url, key);
+                
+                mostrarStatus('✅ ¡Credenciales válidas! Redirigiendo a autenticación...', 'success');
+                
+                setTimeout(() => {
+                    window.location.href = 'autenticacion.html';
+                }, 1500);
+                
+            } catch (error) {
+                console.error('Error validando:', error);
+                mostrarStatus('❌ Error: ' + (error.message || 'Error desconocido'), 'error');
+            }
+        });
+        
+        function mostrarStatus(mensaje, tipo) {
+            statusDiv.className = `status ${tipo}`;
+            statusDiv.textContent = mensaje;
+            statusDiv.style.display = 'block';
+        }
+        
+        // Mostrar contraseña toggle
+        keyInput.addEventListener('change', (e) => {
+            if (e.target.type === 'password' && e.target.value) {
+                // Opcional: agregar toggle de mostrar/ocultar
+            }
+        });
+    </script>
+</body>
+</html>

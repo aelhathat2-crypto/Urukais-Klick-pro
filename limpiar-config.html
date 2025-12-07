@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head><title>Limpiar y Configurar</title></head>
+<body>
+<h1>Limpiando configuración...</h1>
+<script>
+// Limpiar todo
+localStorage.clear();
+
+// Establecer URL correcta
+const url = 'https://wwkjtxjtwkjearonoqbb.supabase.co';
+const key = localStorage.getItem('SUPABASE_ANON_KEY') || 'temporal';
+
+localStorage.setItem('SUPABASE_URL', url);
+console.log('✅ URL establecida:', url);
+console.log('LocalStorage limpiado y reconfigured');
+
+// Redirigir
+setTimeout(() => {
+  window.location.href = '/probar-registro.html';
+}, 1000);
+</script>
+</body>
+</html>

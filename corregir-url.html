@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corregir URL de Supabase</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #fff;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            background: linear-gradient(135deg, #7c3aed, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+        
+        .error-box {
+            background: rgba(255, 100, 100, 0.15);
+            border: 1px solid rgba(255, 100, 100, 0.5);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #ff8080;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .info-box {
+            background: rgba(0, 255, 136, 0.15);
+            border: 1px solid rgba(0, 255, 136, 0.5);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #00ff88;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            display: block;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #7c3aed, #ec4899);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 10px 0;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Corregir URL de Supabase</h1>
+        
+        <div class="error-box">
+            <strong>❌ Error detectado:</strong><br>
+            Tu URL es: <code>https://mcp.supabase.com/mcp?project_ref=wwkjtxjtwkjearonoqbb...</code><br>
+            Esto no es válido para Urukais Klick.
+        </div>
+        
+        <div class="info-box">
+            <strong>✅ URL Correcta:</strong><br>
+            Debería ser: <code>https://wwkjtxjtwkjearonoqbb.supabase.co</code>
+        </div>
+        
+        <p style="margin-bottom: 20px; line-height: 1.8;">
+            Tu proyecto Supabase tiene el ID: <code style="background: rgba(124, 58, 237, 0.2); color: #a78bfa; padding: 4px 8px; border-radius: 4px; display: inline;">wwkjtxjtwkjearonoqbb</code><br>
+            <br>
+            He extrado el ID de tu URL anterior. Ahora voy a configurarlo automáticamente.
+        </p>
+        
+        <button onclick="configurarURL()">✅ Configurar URL Correcta</button>
+        <button onclick="window.location.href='/configurar-credenciales.html'" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);">← Volver a Configuración Manual</button>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.0"></script>
+    <script src="/javascript/supabase.js"></script>
+    
+    <script>
+        async function configurarURL() {
+            const projectRef = 'wwkjtxjtwkjearonoqbb';
+            const correctURL = `https://${projectRef}.supabase.co`;
+            
+            // Necesitamos la Anon Key correcta también
+            const currentKey = localStorage.getItem('SUPABASE_ANON_KEY');
+            
+            if (!currentKey || currentKey.length < 50) {
+                alert('❌ Aún necesitas la Anon Key correcta de Supabase.\n\nVe a: Supabase Dashboard → Tu Proyecto → Settings → API → Copia "anon (public)" Key');
+                window.location.href = '/copiar-credenciales.html';
+                return;
+            }
+            
+            // Guardar URL correcta
+            localStorage.setItem('SUPABASE_URL', correctURL);
+            
+            console.log('✅ URL configurada:', correctURL);
+            
+            alert(`✅ URL Supabase configurada correctamente:\n\n${correctURL}\n\nRedirigiendo...`);
+            
+            // Reinicializar
+            if (window.supabaseAuth && window.supabaseAuth.configureCredentials) {
+                await window.supabaseAuth.configureCredentials(correctURL, currentKey);
+            }
+            
+            setTimeout(() => {
+                window.location.href = '/autenticacion.html';
+            }, 1500);
+        }
+        
+        // Ejecutar automáticamente
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('button').focus();
+            }, 500);
+        });
+    </script>
+</body>
+</html>

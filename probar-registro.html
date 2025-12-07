@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probar Registro Directamente</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0e27;
+            color: #fff;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        h1 {
+            color: #00ff88;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-radius: 4px;
+        }
+        button {
+            background: #7c3aed;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        button:hover {
+            background: #6d28d9;
+        }
+        #log {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+            max-height: 400px;
+            overflow-y: auto;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #00ff88;
+        }
+        .error { color: #ff6464; }
+        .success { color: #00ff88; }
+        .warning { color: #ffb347; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Probar Registro Directamente</h1>
+        
+        <div>
+            <label>Email:</label>
+            <input type="email" id="email" value="test@example.com" placeholder="test@example.com">
+            
+            <label>Contraseña:</label>
+            <input type="password" id="password" value="123456789" placeholder="123456789">
+            
+            <label>Nombre:</label>
+            <input type="text" id="nombre" value="Test User" placeholder="Test User">
+            
+            <button onclick="probarRegistro()">🔴 Registrar</button>
+            <button onclick="probarLogin()">🟢 Login</button>
+            <button onclick="probarObtenerUsuario()">👤 Obtener Usuario</button>
+            <button onclick="limpiarLog()">🗑️ Limpiar Log</button>
+        </div>
+        
+        <div id="log"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.0"></script>
+    <script src="/javascript/supabase.js"></script>
+    
+    <script>
+        const logDiv = document.getElementById('log');
+        
+        function log(mensaje, tipo = 'warning') {
+            const timestamp = new Date().toLocaleTimeString('es-ES');
+            const div = document.createElement('div');
+            div.className = tipo;
+            div.textContent = `[${timestamp}] ${mensaje}`;
+            logDiv.appendChild(div);
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(mensaje);
+        }
+        
+        function limpiarLog() {
+            logDiv.innerHTML = '';
+        }
+        
+        async function probarRegistro() {
+            limpiarLog();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const nombre = document.getElementById('nombre').value;
+            
+            log('▶️ Iniciando registro...', 'warning');
+            log(`Email: ${email}`, 'warning');
+            log(`Nombre: ${nombre}`, 'warning');
+            
+            try {
+                log('Llamando a supabaseAuth.registroUsuario()...', 'warning');
+                const resultado = await window.supabaseAuth.registroUsuario(email, password, nombre);
+                
+                log('Resultado recibido:', 'warning');
+                log(JSON.stringify(resultado, null, 2), 'warning');
+                
+                if (resultado.success) {
+                    log('✅ ¡Registro exitoso!', 'success');
+                    log(`Usuario ID: ${resultado.user.id}`, 'success');
+                    log(`Email: ${resultado.user.email}`, 'success');
+                } else {
+                    log(`❌ Error: ${resultado.error}`, 'error');
+                }
+            } catch (error) {
+                log(`❌ Exception: ${error.message}`, 'error');
+                log(error.stack, 'error');
+            }
+        }
+        
+        async function probarLogin() {
+            limpiarLog();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            log('▶️ Iniciando login...', 'warning');
+            log(`Email: ${email}`, 'warning');
+            
+            try {
+                log('Llamando a supabaseAuth.loginUsuario()...', 'warning');
+                const resultado = await window.supabaseAuth.loginUsuario(email, password);
+                
+                log('Resultado recibido:', 'warning');
+                log(JSON.stringify(resultado, null, 2), 'warning');
+                
+                if (resultado.success) {
+                    log('✅ ¡Login exitoso!', 'success');
+                    log(`Usuario: ${resultado.user.email}`, 'success');
+                } else {
+                    log(`❌ Error: ${resultado.error}`, 'error');
+                }
+            } catch (error) {
+                log(`❌ Exception: ${error.message}`, 'error');
+                log(error.stack, 'error');
+            }
+        }
+        
+        async function probarObtenerUsuario() {
+            limpiarLog();
+            log('▶️ Obteniendo usuario actual...', 'warning');
+            
+            try {
+                const resultado = await window.supabaseAuth.obtenerUsuarioActual();
+                
+                log('Resultado recibido:', 'warning');
+                log(JSON.stringify(resultado, null, 2), 'warning');
+                
+                if (resultado.success && resultado.user) {
+                    log('✅ Usuario obtenido:', 'success');
+                    log(`Email: ${resultado.user.email}`, 'success');
+                    log(`ID: ${resultado.user.id}`, 'success');
+                } else {
+                    log(`❌ No hay usuario: ${resultado.error}`, 'warning');
+                }
+            } catch (error) {
+                log(`❌ Exception: ${error.message}`, 'error');
+                log(error.stack, 'error');
+            }
+        }
+        
+        // Verificar estado inicial
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                log('🚀 Sistema listo', 'success');
+                if (window.supabaseAuth) {
+                    log('✅ window.supabaseAuth disponible', 'success');
+                } else {
+                    log('❌ window.supabaseAuth NO disponible', 'error');
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>

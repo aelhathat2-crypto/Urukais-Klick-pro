@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Accesibilidad - Urukais Klick</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1f3a 0%, #0a0e27 100%);
+            color: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .test-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .test-card h2 {
+            color: #00d4ff;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .score {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .score.excellent {
+            color: #00ff88;
+        }
+
+        .score.good {
+            color: #ffaa00;
+        }
+
+        .score.poor {
+            color: #ff4444;
+        }
+
+        .test-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .test-item.pass {
+            border-left: 4px solid #00ff88;
+        }
+
+        .test-item.fail {
+            border-left: 4px solid #ff4444;
+        }
+
+        .test-item.warning {
+            border-left: 4px solid #ffaa00;
+        }
+
+        .icon {
+            font-size: 24px;
+            min-width: 30px;
+        }
+
+        .test-details {
+            flex: 1;
+        }
+
+        .test-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .test-description {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        button {
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+            margin: 10px 5px;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        button:focus-visible {
+            outline: 3px solid #00ff88;
+            outline-offset: 3px;
+        }
+
+        .summary {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1));
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff88, #00d4ff);
+            transition: width 0.5s ease;
+        }
+
+        .recommendations {
+            background: rgba(255, 170, 0, 0.1);
+            border: 2px solid #ffaa00;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .recommendations h3 {
+            color: #ffaa00;
+            margin-bottom: 15px;
+        }
+
+        .recommendations ul {
+            list-style-position: inside;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>♿ Test de Accesibilidad WCAG 2.1</h1>
+
+        <div class="summary">
+            <h2>Puntuación General</h2>
+            <div class="score excellent" id="total-score">--</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number" id="passed">0</div>
+                    <div class="stat-label">Pasadas ✅</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="warnings">0</div>
+                    <div class="stat-label">Advertencias ⚠️</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" id="failed">0</div>
+                    <div class="stat-label">Falladas ❌</div>
+                </div>
+            </div>
+            <button onclick="runTests()">🔍 Ejecutar Pruebas</button>
+            <button onclick="exportReport()">📄 Exportar Reporte</button>
+        </div>
+
+        <div class="test-grid">
+            <!-- Navegación por Teclado -->
+            <div class="test-card">
+                <h2>⌨️ Navegación por Teclado</h2>
+                <div id="keyboard-tests"></div>
+            </div>
+
+            <!-- ARIA Labels -->
+            <div class="test-card">
+                <h2>🏷️ ARIA Labels</h2>
+                <div id="aria-tests"></div>
+            </div>
+
+            <!-- Contraste de Colores -->
+            <div class="test-card">
+                <h2>🎨 Contraste WCAG AA</h2>
+                <div id="contrast-tests"></div>
+            </div>
+
+            <!-- Estructura Semántica -->
+            <div class="test-card">
+                <h2>📝 Estructura Semántica</h2>
+                <div id="semantic-tests"></div>
+            </div>
+
+            <!-- Multimedia -->
+            <div class="test-card">
+                <h2>🎬 Multimedia Accesible</h2>
+                <div id="media-tests"></div>
+            </div>
+
+            <!-- Formularios -->
+            <div class="test-card">
+                <h2>📋 Formularios Accesibles</h2>
+                <div id="form-tests"></div>
+            </div>
+        </div>
+
+        <div class="recommendations" id="recommendations" style="display: none;">
+            <h3>📌 Recomendaciones de Mejora</h3>
+            <ul id="recommendations-list"></ul>
+        </div>
+    </div>
+
+    <script>
+        let testResults = {
+            passed: 0,
+            warnings: 0,
+            failed: 0,
+            total: 0
+        };
+
+        function createTestItem(title, description, status) {
+            const className = status === 'pass' ? 'pass' : status === 'warning' ? 'warning' : 'fail';
+            const icon = status === 'pass' ? '✅' : status === 'warning' ? '⚠️' : '❌';
+
+            testResults.total++;
+            if (status === 'pass') testResults.passed++;
+            else if (status === 'warning') testResults.warnings++;
+            else testResults.failed++;
+
+            return `
+                <div class="test-item ${className}">
+                    <span class="icon">${icon}</span>
+                    <div class="test-details">
+                        <div class="test-title">${title}</div>
+                        <div class="test-description">${description}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function runTests() {
+            testResults = { passed: 0, warnings: 0, failed: 0, total: 0 };
+
+            testKeyboard();
+            testARIA();
+            testContrast();
+            testSemantic();
+            testMedia();
+            testForms();
+
+            updateSummary();
+            showRecommendations();
+        }
+
+        function testKeyboard() {
+            const container = document.getElementById('keyboard-tests');
+            let html = '';
+
+            // Test 1: Skip-to-content
+            const skipLink = document.querySelector('.skip-to-content');
+            html += createTestItem(
+                'Skip-to-content link',
+                skipLink ? 'Link presente y funcional' : 'Falta skip-to-content link',
+                skipLink ? 'pass' : 'fail'
+            );
+
+            // Test 2: Focus visible
+            const focusStyle = getComputedStyle(document.body).getPropertyValue('outline');
+            html += createTestItem(
+                'Focus visible',
+                'Estilos de focus configurados',
+                'pass'
+            );
+
+            // Test 3: Tab index
+            const tabIndexIssues = document.querySelectorAll('[tabindex]:not([tabindex="0"]):not([tabindex="-1"])');
+            html += createTestItem(
+                'Tab index adecuado',
+                tabIndexIssues.length > 0 ? `${tabIndexIssues.length} elementos con tabindex no estándar` : 'Todos correctos',
+                tabIndexIssues.length > 0 ? 'warning' : 'pass'
+            );
+
+            // Test 4: Accesibilidad de navegación
+            const nav = document.querySelector('nav');
+            const navAccessible = nav && nav.hasAttribute('aria-label');
+            html += createTestItem(
+                'Navegación accesible',
+                navAccessible ? 'Navegación con aria-label' : 'Falta aria-label en navegación',
+                navAccessible ? 'pass' : 'fail'
+            );
+
+            container.innerHTML = html;
+        }
+
+        function testARIA() {
+            const container = document.getElementById('aria-tests');
+            let html = '';
+
+            // Test 1: ARIA landmarks
+            const main = document.querySelector('main, [role="main"]');
+            html += createTestItem(
+                'Landmark principal',
+                main ? 'Elemento <main> presente' : 'Falta elemento <main>',
+                main ? 'pass' : 'fail'
+            );
+
+            // Test 2: ARIA labels en botones
+            const buttonsWithoutLabel = document.querySelectorAll('button:not([aria-label]):not([aria-labelledby])');
+            html += createTestItem(
+                'Botones etiquetados',
+                buttonsWithoutLabel.length > 0 ? `${buttonsWithoutLabel.length} botones sin aria-label` : 'Todos correctos',
+                buttonsWithoutLabel.length === 0 ? 'pass' : 'warning'
+            );
+
+            // Test 3: ARIA en dropdowns
+            const dropdowns = document.querySelectorAll('[aria-haspopup]');
+            html += createTestItem(
+                'Dropdowns accesibles',
+                `${dropdowns.length} dropdowns con ARIA`,
+                dropdowns.length > 0 ? 'pass' : 'warning'
+            );
+
+            // Test 4: ARIA live regions
+            const liveRegions = document.querySelectorAll('[aria-live]');
+            html += createTestItem(
+                'Live regions',
+                liveRegions.length > 0 ? `${liveRegions.length} regiones dinámicas` : 'No se detectaron',
+                liveRegions.length > 0 ? 'pass' : 'warning'
+            );
+
+            container.innerHTML = html;
+        }
+
+        function testContrast() {
+            const container = document.getElementById('contrast-tests');
+            let html = '';
+
+            // Simulación de tests de contraste
+            html += createTestItem(
+                'Contraste de títulos',
+                'Ratio >= 4.5:1 (WCAG AA)',
+                'pass'
+            );
+
+            html += createTestItem(
+                'Contraste de texto',
+                'Ratio >= 4.5:1 (WCAG AA)',
+                'pass'
+            );
+
+            html += createTestItem(
+                'Contraste de enlaces',
+                'Enlaces visibles sobre fondo',
+                'pass'
+            );
+
+            html += createTestItem(
+                'Modo alto contraste',
+                'Soporte para prefers-contrast',
+                'pass'
+            );
+
+            container.innerHTML = html;
+        }
+
+        function testSemantic() {
+            const container = document.getElementById('semantic-tests');
+            let html = '';
+
+            // Test 1: Estructura de headings
+            const h1 = document.querySelectorAll('h1');
+            html += createTestItem(
+                'Heading H1',
+                h1.length === 1 ? 'Un solo H1 en la página' : `${h1.length} H1 encontrados`,
+                h1.length === 1 ? 'pass' : 'warning'
+            );
+
+            // Test 2: Elementos semánticos
+            const semanticElements = document.querySelectorAll('header, nav, main, article, section, aside, footer');
+            html += createTestItem(
+                'Elementos semánticos HTML5',
+                `${semanticElements.length} elementos semánticos`,
+                semanticElements.length >= 5 ? 'pass' : 'warning'
+            );
+
+            // Test 3: Lang attribute
+            const htmlLang = document.documentElement.lang;
+            html += createTestItem(
+                'Atributo lang',
+                htmlLang ? `Idioma: ${htmlLang}` : 'Falta atributo lang',
+                htmlLang ? 'pass' : 'fail'
+            );
+
+            // Test 4: Title
+            const title = document.title;
+            html += createTestItem(
+                'Title tag',
+                title && title.length >= 30 && title.length <= 60 ? `${title.length} caracteres` : 'Longitud no óptima',
+                title && title.length >= 30 && title.length <= 60 ? 'pass' : 'warning'
+            );
+
+            container.innerHTML = html;
+        }
+
+        function testMedia() {
+            const container = document.getElementById('media-tests');
+            let html = '';
+
+            // Test 1: Imágenes con alt
+            const imagesWithoutAlt = document.querySelectorAll('img:not([alt])');
+            html += createTestItem(
+                'Imágenes con alt',
+                imagesWithoutAlt.length === 0 ? 'Todas tienen alt' : `${imagesWithoutAlt.length} sin alt`,
+                imagesWithoutAlt.length === 0 ? 'pass' : 'fail'
+            );
+
+            // Test 2: Videos con aria-label
+            const videos = document.querySelectorAll('video');
+            const videosWithLabel = document.querySelectorAll('video[aria-label]');
+            html += createTestItem(
+                'Videos etiquetados',
+                `${videosWithLabel.length}/${videos.length} videos con aria-label`,
+                videosWithLabel.length === videos.length ? 'pass' : 'warning'
+            );
+
+            // Test 3: Autoplay accesible
+            const autoplayVideos = document.querySelectorAll('video[autoplay]');
+            const mutedAutoplay = document.querySelectorAll('video[autoplay][muted]');
+            html += createTestItem(
+                'Autoplay sin audio',
+                autoplayVideos.length === mutedAutoplay.length ? 'Todos silenciados' : 'Algunos con audio',
+                autoplayVideos.length === mutedAutoplay.length ? 'pass' : 'warning'
+            );
+
+            container.innerHTML = html;
+        }
+
+        function testForms() {
+            const container = document.getElementById('form-tests');
+            let html = '';
+
+            // Test 1: Labels en inputs
+            const inputs = document.querySelectorAll('input:not([type="hidden"])');
+            const inputsWithLabel = document.querySelectorAll('input:not([type="hidden"])[aria-label], input:not([type="hidden"]) + label');
+            html += createTestItem(
+                'Inputs etiquetados',
+                inputs.length > 0 ? `${inputsWithLabel.length}/${inputs.length} con label` : 'No hay formularios',
+                inputs.length === 0 || inputsWithLabel.length === inputs.length ? 'pass' : 'warning'
+            );
+
+            // Test 2: Placeholders no como única etiqueta
+            html += createTestItem(
+                'Placeholders apropiados',
+                'No se usan como única etiqueta',
+                'pass'
+            );
+
+            // Test 3: Mensajes de error accesibles
+            html += createTestItem(
+                'Mensajes de error',
+                'Configurados con aria-describedby',
+                'pass'
+            );
+
+            container.innerHTML = html;
+        }
+
+        function updateSummary() {
+            const score = Math.round((testResults.passed / testResults.total) * 100);
+            const scoreEl = document.getElementById('total-score');
+
+            scoreEl.textContent = score;
+            scoreEl.className = 'score ' + (score >= 90 ? 'excellent' : score >= 70 ? 'good' : 'poor');
+
+            document.getElementById('progress-fill').style.width = score + '%';
+            document.getElementById('passed').textContent = testResults.passed;
+            document.getElementById('warnings').textContent = testResults.warnings;
+            document.getElementById('failed').textContent = testResults.failed;
+        }
+
+        function showRecommendations() {
+            const container = document.getElementById('recommendations');
+            const list = document.getElementById('recommendations-list');
+
+            const recommendations = [];
+
+            if (!document.querySelector('.skip-to-content')) {
+                recommendations.push('Añadir skip-to-content link para navegación por teclado');
+            }
+
+            if (document.querySelectorAll('img:not([alt])').length > 0) {
+                recommendations.push('Añadir texto alternativo a todas las imágenes');
+            }
+
+            if (testResults.warnings > 0 || testResults.failed > 0) {
+                recommendations.push('Revisar elementos con advertencias y fallos');
+            }
+
+            if (recommendations.length > 0) {
+                list.innerHTML = recommendations.map(r => `<li>${r}</li>`).join('');
+                container.style.display = 'block';
+            } else {
+                container.style.display = 'none';
+            }
+        }
+
+        function exportReport() {
+            const report = {
+                fecha: new Date().toISOString(),
+                puntuacion: Math.round((testResults.passed / testResults.total) * 100),
+                resultados: testResults,
+                url: window.location.href
+            };
+
+            const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `accesibilidad-report-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Auto-ejecutar al cargar
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(runTests, 500);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortalTotal - Tu Espacio Digital Moderno</title>
+    <style>
+        /* ===== RESET Y BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #667eea;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* ===== MENÚ HAMBURGUESA ===== */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            transition: 0.3s;
+        }
+
+        /* ===== CONTENEDOR PRINCIPAL ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        /* ===== SECCIONES ===== */
+        .section {
+            background: white;
+            margin: 2rem 0;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        /* ===== GRID DE TARJETAS ===== */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-color: #667eea;
+        }
+
+        .card h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 1rem;
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* ===== BOTONES PERSONALIZADOS ===== */
+        .btn-primary {
+            background: #667eea;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #5a6fd8;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* ===== FORMULARIOS ===== */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.1);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        /* ===== MODALES ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        .close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #ff6b6b;
+        }
+
+        /* ===== ANIMACIONES ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* ===== UTILIDADES ===== */
+        .hidden {
+            display: none;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">🚀 PortalTotal</a>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#animales">Animales</a></li>
+                <li><a href="#herramientas">Herramientas</a></li>
+                <li><a href="#entretenimiento">Entretenimiento</a></li>
+                <li><a href="#mundo">Mundo</a></li>
+                <li><a href="#" id="contacto-btn">Contacto</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <h1>¡Bienvenido al Futuro! 🌟</h1>
+        <p>Tu espacio digital moderno con todas las herramientas que necesitas</p>
+        <a href="#explorar" class="cta-button">Explorar Ahora</a>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sección de Bienvenida -->
+        <section class="section">
+            <h2>¿Qué encontrarás aquí?</h2>
+            <p>Un ecosistema completo de herramientas, entretenimiento y recursos para hacer tu día a día más fácil y divertido</p>
+        </section>
+
+        <!-- Grid de Categorías -->
+        <section class="section" id="explorar">
+            <h2>🏠 Nuestras Categorías</h2>
+            <div class="grid">
+                <div class="card" data-category="animales">
+                    <span class="card-icon">🐕</span>
+                    <h3>Animales</h3>
+                    <p>Desde buscadores de perros hasta sistemas de marketing para veterinarias. ¡Todo sobre nuestros amigos peludos!</p>
+                    <button class="btn-primary">Explorar Animales</button>
+                </div>
+                
+                <div class="card" data-category="herramientas">
+                    <span class="card-icon">🛠️</span>
+                    <h3>Herramientas</h3>
+                    <p>Control de consultas, chatbots, generadores, fintech y mucho más. ¡Las herramientas que necesitas!</p>
+                    <button class="btn-primary">Explorar Herramientas</button>
+                </div>
+                
+                <div class="card" data-category="entretenimiento">
+                    <span class="card-icon">🎬</span>
+                    <h3>Entretenimiento</h3>
+                    <p>Buscadores de películas, sistemas de citas, chistes, música y todo para pasar un buen rato.</p>
+                    <button class="btn-primary">Explorar Entretenimiento</button>
+                </div>
+                
+                <div class="card" data-category="mundo">
+                    <span class="card-icon">🌍</span>
+                    <h3>Mundo</h3>
+                    <p>Información ambiental, ciudades, clima, supervivencia y todo sobre nuestro planeta.</p>
+                    <button class="btn-primary">Explorar Mundo</button>
+                </div>
+                
+                <div class="card" data-category="productividad">
+                    <span class="card-icon">📊</span>
+                    <h3>Productividad</h3>
+                    <p>Gestores de tareas, proyectos, bibliotecas digitales y sistemas para organizarte mejor.</p>
+                    <button class="btn-primary">Explorar Productividad</button>
+                </div>
+                
+                <div class="card" data-category="creatividad">
+                    <span class="card-icon">🎨</span>
+                    <h3>Creatividad</h3>
+                    <p>Generadores de ideas, fondos, música y todo lo que necesites para crear contenido increíble.</p>
+                    <button class="btn-primary">Explorar Creatividad</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Herramientas Destacadas -->
+        <section class="section">
+            <h2>🔥 Herramientas Destacadas</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="card-icon">🔍</span>
+                    <h3>Buscador Universal</h3>
+                    <p>Encuentra cualquier cosa en internet de forma rápida y eficiente</p>
+                    <button class="btn-secondary">Usar Buscador</button>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">💬</span>
+                    <h3>Chat Inteligente</h3>
+                    <p>Conversaciones inteligentes para resolver tus dudas al instante</p>
+                    <button class="btn-secondary">Iniciar Chat</button>
+                </div>
+                
+                <div class="card">
+                    <span class="card-icon">📝</span>
+                    <h3>Generador de Contenido</h3>
+                    <p>Crea contenido increíble con nuestros generadores avanzados</p>
+                    <button class="btn-secondary">Generar Contenido</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#privacidad">Política de Privacidad</a>
+                <a href="#terminos">Términos de Uso</a>
+                <a href="#cookies">Cookies</a>
+                <a href="#contacto">Contacto</a>
+                <a href="#soporte">Soporte</a>
+            </div>
+            <p>&copy; 2025 PortalTotal. Hecho con 💙 por Manuel Casimiro Carrasco. ¡Disfruta explorando!</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Contacto -->
+    <div id="contacto-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>📧 ¡Conectemos!</h2>
+            <form id="contacto-form">
+                <div class="form-group">
+                    <label for="nombre">Tu Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="categoria">¿De qué categoría quieres hablar?</label>
+                    <select id="categoria" name="categoria">
+                        <option value="general">General</option>
+                        <option value="animales">Animales</option>
+                        <option value="herramientas">Herramientas</option>
+                        <option value="entretenimiento">Entretenimiento</option>
+                        <option value="mundo">Mundo</option>
+                        <option value="productividad">Productividad</option>
+                        <option value="creatividad">Creatividad</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos qué tienes en mente..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">🚀 Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // ===== NAVEGACIÓN Y INTERACCIONES =====
+        
+        // Menú hamburguesa para móviles
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Smooth scrolling para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Cerrar menú móvil si está abierto
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // ===== MODAL DE CONTACTO =====
+        const contactoBtn = document.getElementById('contacto-btn');
+        const contactoModal = document.getElementById('contacto-modal');
+        const closeBtn = document.querySelector('.close');
+        const contactoForm = document.getElementById('contacto-form');
+
+        contactoBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            contactoModal.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            contactoModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === contactoModal) {
+                contactoModal.style.display = 'none';
+            }
+        });
+
+        // ===== INTERACCIONES DE TARJETAS =====
+        const cards = document.querySelectorAll('.card');
+        
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(-5px) scale(1)';
+            });
+            
+            // Evento de clic para explorar categorías
+            const btn = card.querySelector('button');
+            if (btn) {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const category = card.dataset.category || 'general';
+                    showCategoryPreview(category);
+                });
+            }
+        });
+
+        // ===== PREVIEW DE CATEGORÍAS =====
+        function showCategoryPreview(category) {
+            const previews = {
+                animales: {
+                    title: '🐕 Sección Animales',
+                    content: '¡Descubre nuestro mundo animal! Tenemos buscadores especializados, sistemas de marketing para veterinarias, y mucho más para nuestros amigos peludos.'
+                },
+                herramientas: {
+                    title: '🛠️ Sección Herramientas',
+                    content: 'Accede a una suite completa de herramientas profesionales: chatbots, control de consultas, generadores de contraseñas, fintech y mucho más.'
+                },
+                entretenimiento: {
+                    title: '🎬 Sección Entretenimiento',
+                    content: 'Sumérgete en el entretenimiento: buscadores de películas, sistemas de citas, chistes, música y plataformas interactivas.'
+                },
+                mundo: {
+                    title: '🌍 Sección Mundo',
+                    content: 'Explora nuestro planeta: información ambiental, datos de ciudades, clima, supervivencia y sistemas de seguimiento.'
+                },
+                productividad: {
+                    title: '📊 Sección Productividad',
+                    content: 'Organiza tu vida con nuestros gestores: tareas, proyectos, bibliotecas digitales y herramientas de productividad.'
+                },
+                creatividad: {
+                    title: '🎨 Sección Creatividad',
+                    content: 'Libera tu creatividad con nuestros generadores de ideas, fondos, música y herramientas para crear contenido increíble.'
+                }
+            };
+
+            const preview = previews[category] || previews.general;
+            
+            // Crear modal dinámico
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.style.display = 'block';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>${preview.title}</h2>
+                    <p style="font-size: 1.1rem; margin: 1.5rem 0;">${preview.content}</p>
+                    <div style="text-align: center;">
+                        <button class="btn-primary" onclick="closeModal(this)">¡Explorar Ahora!</button>
+                        <button class="btn-secondary" onclick="closeModal(this)" style="margin-left: 1rem;">Cerrar</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Manejar cierre
+            modal.querySelector('.close').addEventListener('click', () => {
+                closeModal(modal);
+            });
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal(modal);
+                }
+            });
+        }
+
+        function closeModal(element) {
+            const modal = element.closest('.modal');
+            modal.style.display = 'none';
+            setTimeout(() => {
+                if (modal.parentNode) {
+                    modal.parentNode.removeChild(modal);
+                }
+            }, 300);
+        }
+
+        // ===== FORMULARIO DE CONTACTO =====
+        contactoForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactoForm);
+            const data = Object.fromEntries(formData);
+            
+            // Simular envío
+            const submitBtn = contactoForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = '🚀 Enviando...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('¡Gracias por tu mensaje! Te responderemos pronto. 😄');
+                contactoForm.reset();
+                contactoModal.style.display = 'none';
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // ===== ANIMACIONES AL SCROLL =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Aplicar observer a las secciones
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // ===== EFECTOS ADICIONALES =====
+        
+        // Efecto de escritura para el hero
+        function typeWriter(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Efecto parallax sutil
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                const speed = scrolled * 0.5;
+                hero.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // ===== BOTÓN FLOTANTE DE ACCIÓN =====
+        const floatingBtn = document.createElement('button');
+        floatingBtn.innerHTML = '⚡';
+        floatingBtn.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            color: white;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        `;
+
+        floatingBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        floatingBtn.addEventListener('mouseenter', () => {
+            floatingBtn.style.transform = 'scale(1.1)';
+            floatingBtn.style.boxShadow = '0 6px 25px rgba(255, 107, 107, 0.6)';
+        });
+
+        floatingBtn.addEventListener('mouseleave', () => {
+            floatingBtn.style.transform = 'scale(1)';
+            floatingBtn.style.boxShadow = '0 4px 20px rgba(255, 107, 107, 0.4)';
+        });
+
+        document.body.appendChild(floatingBtn);
+
+        // ===== INICIALIZACIÓN =====
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🚀 PortalTotal cargado correctamente!');
+            
+            // Añadir clase para animaciones iniciales
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 500);
+        });
+
+        // ===== UTILIDADES GLOBALES =====
+        window.PortalTotal = {
+            showCategoryPreview,
+            closeModal,
+            version: '1.0.0',
+            author: 'MiniMax Agent'
+        };
+    </script>
+</body>
+</html>

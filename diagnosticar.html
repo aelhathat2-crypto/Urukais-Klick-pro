@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosticar Supabase - Urukais Klick</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0e27;
+            color: #fff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        h1 {
+            color: #00ff88;
+            margin-bottom: 20px;
+        }
+        .test {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid #7c3aed;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .test.success {
+            border-left-color: #00ff88;
+            background: rgba(0, 255, 136, 0.1);
+        }
+        .test.error {
+            border-left-color: #ff6464;
+            background: rgba(255, 100, 100, 0.1);
+        }
+        .test.warning {
+            border-left-color: #ffb347;
+            background: rgba(255, 179, 71, 0.1);
+        }
+        code {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #a78bfa;
+        }
+        button {
+            background: #7c3aed;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+            font-family: monospace;
+        }
+        button:hover {
+            background: #6d28d9;
+        }
+        #results {
+            margin-top: 20px;
+        }
+        .action-buttons {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Diagnosticar Configuración de Supabase</h1>
+        
+        <p>Este script verifica si tu configuración de Supabase es correcta.</p>
+        
+        <div class="action-buttons">
+            <button onclick="runDiagnostics()">▶️ Ejecutar Diagnóstico</button>
+            <button onclick="location.reload()">🔄 Actualizar</button>
+            <button onclick="history.back()">← Volver</button>
+        </div>
+        
+        <div id="results"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.0"></script>
+    <script src="/javascript/supabase.js"></script>
+    
+    <script>
+        const resultsDiv = document.getElementById('results');
+        
+        function addResult(title, message, status = 'warning') {
+            const div = document.createElement('div');
+            div.className = `test ${status}`;
+            div.innerHTML = `<strong>${title}</strong><br>${message}`;
+            resultsDiv.appendChild(div);
+        }
+        
+        async function runDiagnostics() {
+            resultsDiv.innerHTML = '';
+            
+            // 1. Verificar localStorage
+            const url = localStorage.getItem('SUPABASE_URL');
+            const key = localStorage.getItem('SUPABASE_ANON_KEY');
+            
+            if (!url || url === 'https://tu-proyecto.supabase.co') {
+                addResult(
+                    '❌ URL no configurada',
+                    'localStorage: SUPABASE_URL no existe o es el valor por defecto',
+                    'error'
+                );
+            } else {
+                addResult(
+                    '✅ URL configurada',
+                    `<code>${url}</code>`,
+                    'success'
+                );
+            }
+            
+            if (!key || key === 'tu-anon-key-aqui') {
+                addResult(
+                    '❌ Anon Key no configurada',
+                    'localStorage: SUPABASE_ANON_KEY no existe o es el valor por defecto',
+                    'error'
+                );
+            } else {
+                addResult(
+                    '✅ Anon Key configurada',
+                    `Longitud: ${key.length} caracteres (debe ser > 50)`,
+                    key.length > 50 ? 'success' : 'warning'
+                );
+            }
+            
+            // 2. Verificar window.supabase
+            if (window.supabase && window.supabase.createClient) {
+                addResult(
+                    '✅ Librería Supabase cargada',
+                    'window.supabase.createClient está disponible',
+                    'success'
+                );
+            } else {
+                addResult(
+                    '❌ Librería Supabase NO cargada',
+                    'window.supabase no existe. Verifica que el CDN se cargó correctamente',
+                    'error'
+                );
+                return;
+            }
+            
+            // 3. Verificar window.supabaseAuth
+            if (window.supabaseAuth) {
+                addResult(
+                    '✅ window.supabaseAuth disponible',
+                    'Funciones de autenticación cargadas',
+                    'success'
+                );
+            } else {
+                addResult(
+                    '❌ window.supabaseAuth NO disponible',
+                    'Script supabase.js no se cargó correctamente',
+                    'error'
+                );
+                return;
+            }
+            
+            // 4. Verificar configuración de Supabase
+            const isConfigured = window.supabaseAuth.isConfigured?.();
+            if (isConfigured) {
+                addResult(
+                    '✅ Supabase está configurado',
+                    'Las credenciales son válidas',
+                    'success'
+                );
+            } else {
+                addResult(
+                    '⚠️  Supabase no validado',
+                    'Las credenciales podrían no ser válidas. Verifica que sean correctas.',
+                    'warning'
+                );
+            }
+            
+            // 5. Intentar obtener usuario actual
+            try {
+                const userResult = await window.supabaseAuth.obtenerUsuarioActual();
+                if (userResult.success) {
+                    addResult(
+                        '✅ Sesión activa',
+                        `Usuario: ${userResult.user.email} (ID: ${userResult.user.id})`,
+                        'success'
+                    );
+                } else {
+                    addResult(
+                        '⚠️  No hay sesión activa',
+                        'Debes iniciar sesión o registrarte',
+                        'warning'
+                    );
+                }
+            } catch (error) {
+                addResult(
+                    '❌ Error al obtener usuario',
+                    `${error.message}`,
+                    'error'
+                );
+            }
+            
+            // 6. Resumen
+            addResult(
+                '📋 PASOS SIGUIENTE',
+                `
+1. Si ves errores ❌, abre: <a href="configurar-credenciales.html" style="color: #a78bfa;">configurar-credenciales.html</a><br>
+2. Si todo está ✅, intenta: <a href="autenticacion.html" style="color: #a78bfa;">autenticacion.html</a><br>
+3. En la consola (F12), ejecuta: <code>supabaseAuth.registroUsuario('test@test.com', '123456', 'Test')</code><br>
+4. Revisa qué error sale en la consola del navegador
+                `,
+                'warning'
+            );
+        }
+        
+        // Ejecutar automáticamente cuando carga
+        window.addEventListener('load', () => {
+            setTimeout(runDiagnostics, 500);
+        });
+    </script>
+</body>
+</html>
