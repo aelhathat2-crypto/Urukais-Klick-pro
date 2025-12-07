@@ -1,0 +1,474 @@
+/* SISTEMA DE GAMIFICACIÓN URUKAIS - ESTILOS CSS */
+/* Diseño responsive y moderno con tema místico */
+
+:root {
+    /* Colores del tema místico */
+    --color-primario: #6B46C1;
+    --color-secundario: #9333EA;
+    --color-acento: #F59E0B;
+    --color-exito: #10B981;
+    --color-advertencia: #F59E0B;
+    --color-error: #EF4444;
+    --color-fondo: #1F2937;
+    --color-superficie: #374151;
+    --color-texto: #F9FAFB;
+    --color-texto-secundario: #D1D5DB;
+    --color-borde: #4B5563;
+    
+    /* Gradientes */
+    --gradiente-mistico: linear-gradient(135deg, #6B46C1 0%, #9333EA 50%, #EC4899 100%);
+    --gradiente-oscuro: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+    
+    /* Sombras */
+    --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --sombra-fuerte: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --sombra-mistica: 0 0 20px rgba(107, 70, 193, 0.3);
+    
+    /* Transiciones */
+    --transicion-rapida: all 0.2s ease;
+    --transicion-media: all 0.3s ease;
+    --transicion-lenta: all 0.5s ease;
+}
+
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--gradiente-oscuro);
+    color: var(--color-texto);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Layout principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.app-header {
+    background: var(--gradiente-mistico);
+    padding: 1rem 0;
+    box-shadow: var(--sombra-media);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo i {
+    font-size: 2rem;
+    color: var(--color-acento);
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--color-acento), var(--color-exito));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+#user-name {
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+/* Botones */
+.btn-primary, .btn-demo {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicion-media);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: var(--color-acento);
+    color: var(--color-fondo);
+    box-shadow: var(--sombra-suave);
+}
+
+.btn-primary:hover {
+    background: #D97706;
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-media);
+}
+
+.btn-demo {
+    background: var(--color-superficie);
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+    margin: 4px;
+}
+
+.btn-demo:hover {
+    background: var(--color-primario);
+    border-color: var(--color-primario);
+    transform: translateY(-1px);
+    box-shadow: var(--sombra-suave);
+}
+
+.btn-demo.action {
+    background: var(--color-exito);
+    color: white;
+}
+
+.btn-demo.action:hover {
+    background: #059669;
+}
+
+.btn-demo.reset {
+    background: var(--color-error);
+    color: white;
+}
+
+.btn-demo.reset:hover {
+    background: #DC2626;
+}
+
+/* Contenido principal */
+.main-content {
+    padding: 2rem 0;
+}
+
+/* Secciones */
+.demo-section, .stats-section, .info-section {
+    margin-bottom: 3rem;
+}
+
+.demo-section {
+    background: var(--color-superficie);
+    padding: 2rem 0;
+    border-radius: 12px;
+    box-shadow: var(--sombra-media);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: var(--gradiente-mistico);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--color-texto-secundario);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-acento);
+}
+
+/* Controles de demostración */
+.demo-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.control-group {
+    background: var(--color-fondo);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-borde);
+}
+
+.control-group h3 {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.control-group i {
+    color: var(--color-acento);
+}
+
+/* Estadísticas */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.stat-card {
+    background: var(--color-superficie);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--color-borde);
+    transition: var(--transicion-media);
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-mistica);
+    border-color: var(--color-primario);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-acento);
+    display: block;
+}
+
+.stat-label {
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Características */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: var(--color-superficie);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--color-borde);
+    transition: var(--transicion-media);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-mistica);
+    border-color: var(--color-primario);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: var(--color-acento);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.feature-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-texto);
+}
+
+.feature-card p {
+    color: var(--color-texto-secundario);
+}
+
+/* Footer */
+.app-footer {
+    background: var(--color-fondo);
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--color-borde);
+    margin-top: 3rem;
+}
+
+/* Animaciones */
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulso {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .demo-controls {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .control-group {
+        padding: 1rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .btn-primary, .btn-demo {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .logo {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Estilos específicos para el panel de gamificación */
+.gamificacion-ui {
+    font-family: inherit !important;
+    font-size: var(--gamificacion-fuente-base) !important;
+}
+
+.gamificacion-ui .gamificacion-panel {
+    background: var(--color-superficie) !important;
+    border: 1px solid var(--color-borde) !important;
+    border-radius: 12px !important;
+    box-shadow: var(--sombra-fuerte) !important;
+    color: var(--color-texto) !important;
+}
+
+.gamificacion-ui .gamificacion-header {
+    background: var(--gradiente-mistico) !important;
+    color: white !important;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.gamificacion-ui .gamificacion-nav-boton {
+    background: var(--color-superficie) !important;
+    color: var(--color-texto) !important;
+    border: 1px solid var(--color-borde) !important;
+}
+
+.gamificacion-ui .gamificacion-nav-boton.activo {
+    background: var(--color-primario) !important;
+    color: white !important;
+    border-color: var(--color-primario) !important;
+}
+
+.gamificacion-ui .gamificacion-card {
+    background: var(--color-fondo) !important;
+    border: 1px solid var(--color-borde) !important;
+    border-radius: 8px !important;
+}
+
+.gamificacion-ui .gamificacion-puntos {
+    background: var(--color-superficie) !important;
+    border: 1px solid var(--color-borde) !important;
+    border-radius: 8px !important;
+}
+
+.gamificacion-ui .gamificacion-progreso {
+    background: var(--color-superficie) !important;
+}
+
+.gamificacion-ui .gamificacion-progreso-fill {
+    background: var(--gradiente-mistico) !important;
+}
+
+.gamificacion-ui .gamificacion-boton {
+    background: var(--color-acento) !important;
+    color: var(--color-fondo) !important;
+    border: none !important;
+    border-radius: 6px !important;
+}
+
+.gamificacion-ui .gamificacion-boton:hover {
+    background: #D97706 !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Modo oscuro mejorado */
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-fondo: #F9FAFB;
+        --color-superficie: #FFFFFF;
+        --color-texto: #111827;
+        --color-texto-secundario: #6B7280;
+        --color-borde: #E5E7EB;
+    }
+}

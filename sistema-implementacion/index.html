@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/rana.svg">
+    <meta name="author" content="Manuel Casimiro Carrasco">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gamificación Urukais Klick</title>
+    <link rel="stylesheet" href="/sistema-implementacion/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header de la aplicación -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-ghost"></i>
+                <h1>Urukais Gamificación</h1>
+            </div>
+            <div class="user-info">
+                <span id="user-name">Explorador Místico</span>
+                <button id="btn-gamificacion" class="btn-primary">
+                    <i class="fas fa-trophy"></i>
+                    Panel Gamificación
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <!-- Sección de demostración de funcionalidades -->
+        <section class="demo-section">
+            <div class="container">
+                <h2>Demostración del Sistema de Gamificación</h2>
+                <p class="subtitle">Explora las criaturas místicas y gana puntos, logros y desbloquea desafíos.</p>
+                
+                <!-- Controles de demostración -->
+                <div class="demo-controls">
+                    <div class="control-group">
+                        <h3><i class="fas fa-eye"></i> Avistamientos</h3>
+                        <button onclick="demoAvistamiento('fantasma')" class="btn-demo">
+                            <i class="fas fa-ghost"></i> Fantasma
+                        </button>
+                        <button onclick="demoAvistamiento('dragon')" class="btn-demo">
+                            <i class="fas fa-dragon"></i> Dragón
+                        </button>
+                        <button onclick="demoAvistamiento('vampiro')" class="btn-demo">
+                            <i class="fas fa-bat"></i> Vampiro
+                        </button>
+                    </div>
+
+                    <div class="control-group">
+                        <h3><i class="fas fa-camera"></i> Fotografías</h3>
+                        <button onclick="demoFotografia()" class="btn-demo">
+                            <i class="fas fa-camera"></i> Tomar Foto
+                        </button>
+                    </div>
+
+                    <div class="control-group">
+                        <h3><i class="fas fa-map-marked-alt"></i> Exploración</h3>
+                        <button onclick="demoExploracion()" class="btn-demo">
+                            <i class="fas fa-walking"></i> Explorar Zona
+                        </button>
+                    </div>
+
+                    <div class="control-group">
+                        <h3><i class="fas fa-tasks"></i> Acciones Rápidas</h3>
+                        <button onclick="simularVariasAcciones()" class="btn-demo action">
+                            <i class="fas fa-rocket"></i> Simular Progreso
+                        </button>
+                        <button onclick="resetearDatos()" class="btn-demo reset">
+                            <i class="fas fa-refresh"></i> Resetear
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estadísticas en tiempo real -->
+        <section class="stats-section">
+            <div class="container">
+                <h3>Estadísticas en Tiempo Real</h3>
+                <div class="stats-grid" id="stats-grid">
+                    <!-- Se llenarán dinámicamente -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Información del sistema -->
+        <section class="info-section">
+            <div class="container">
+                <h3>Características del Sistema</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-star"></i>
+                        <h4>Sistema de Puntos</h4>
+                        <p>Gana puntos por avistamientos, fotografías y exploración</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-trophy"></i>
+                        <h4>Logros y Niveles</h4>
+                        <p>Desbloquea logros y sube de nivel con experiencia</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-flag-checkered"></i>
+                        <h4>Desafíos</h4>
+                        <p>Completa desafíos para obtener recompensas especiales</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-map"></i>
+                        <h4>Rutas Temáticas</h4>
+                        <p>Explora rutas narrativas con mapas interactivos</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-collection"></i>
+                        <h4>Colección</h4>
+                        <p>Colecciona tarjetas de criaturas y lugares</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Competencias</h4>
+                        <p>Participa en competencias individuales y por equipos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Panel de gamificación (se inicializará dinámicamente) -->
+    <div id="gamificacion-panel"></div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="container">
+            <p>&copy; 2025 Sistema de Gamificación Urukais Klick - Creado por Manuel Casimiro Carrasco</p>
+        </div>
+    </footer>
+
+    <!-- Scripts --> 
+    <script src="/sistema-implementacion/demo.js"></script>
+    <script src="/sistema-implementacion/interfaz_gamificacion_urukais.js"></script>
+    <script src="/sistema-implementacion/motor_gamificacion_urukais.js"></script>
+    <script src="/sistema-implementacion/sistema_desafios_competencias_urukais.js"></script>
+    <script src="/sistema-implementacion/sistema_rutas_tematicas_urukais.js"></script>
+</body>
+</html>

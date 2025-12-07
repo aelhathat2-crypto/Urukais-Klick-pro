@@ -1,0 +1,554 @@
+/* ============================================
+   SISTEMA DE DISEÑO VISUAL - URUKAIS KLICK
+   Desarrollado por: MiniMax Agent
+   Fecha: 2025-11-16
+   ============================================ */
+
+/* ===== VARIABLES CSS DEL SISTEMA DE DISEÑO ===== */
+:root {
+  /* Colores Primarios - Base Oscura (Tema Principal) */
+  --urukais-primary: #0a0e27;
+  --urukais-primary-dark: #060814;
+  --urukais-primary-light: #1a1e3e;
+  
+  /* Colores Secundarios - Tonos Montaña */
+  --urukais-secondary: #2d4a6b;
+  --urukais-secondary-dark: #1a3447;
+  --urukais-secondary-light: #456b8a;
+  
+  /* Colores de Acento - Naturaleza Viva */
+  --urukais-accent: #4a7c59;
+  --urukais-accent-dark: #2d5038;
+  --urukais-accent-light: #6b9c78;
+  
+  /* Colores Especiales - Elementos Misteriosos */
+  --urukais-mystic: #6b46c1;
+  --urukais-mystic-dark: #4c1d95;
+  --urukais-mystic-light: #8b5cf6;
+  
+  /* Colores de Terrains (Terrenos) */
+  --urukais-forest: #228b22;
+  --urukais-forest-dark: #006400;
+  --urukais-forest-light: #32cd32;
+  
+  --urukais-rock: #8b4513;
+  --urukais-rock-dark: #654321;
+  --urukais-rock-light: #a0522d;
+  
+  --urukais-water: #4682b4;
+  --urukais-water-dark: #2f4f4f;
+  --urukais-water-light: #6495ed;
+  
+  /* Colores de Estado */
+  --urukais-success: #28a745;
+  --urukais-warning: #ffc107;
+  --urukais-error: #dc3545;
+  --urukais-info: #17a2b8;
+  
+  /* Colores de Texto */
+  --urukais-text-primary: #ffffff;
+  --urukais-text-secondary: #b8c5d6;
+  --urukais-text-muted: #6c7a89;
+  --urukais-text-inverse: #0a0e27;
+  
+  /* Gradientes Principales */
+  --urukais-gradient-primary: linear-gradient(135deg, #0a0e27 0%, #2d4a6b 100%);
+  --urukais-gradient-mystic: linear-gradient(135deg, #6b46c1 0%, #4a7c59 100%);
+  --urukais-gradient-forest: linear-gradient(135deg, #228b22 0%, #0a0e27 100%);
+  --urukais-gradient-sunset: linear-gradient(45deg, #8b4513 0%, #6b46c1 50%, #4682b4 100%);
+  --urukais-gradient-mountain: linear-gradient(to bottom, #2d4a6b 0%, #0a0e27 50%, #228b22 100%);
+  
+  /* Tipografía - Fuentes Optimizadas para Ecosistemas */
+  --urukais-font-primary: 'Crimson Text', 'Georgia', serif;
+  --urukais-font-secondary: 'Inter', 'Helvetica Neue', sans-serif;
+  --urukais-font-accent: 'Cinzel', 'Times New Roman', serif;
+  --urukais-font-mono: 'JetBrains Mono', 'Consolas', monospace;
+  
+  /* Tamaños de Fuente */
+  --urukais-font-size-xs: 0.75rem;    /* 12px */
+  --urukais-font-size-sm: 0.875rem;   /* 14px */
+  --urukais-font-size-base: 1rem;     /* 16px */
+  --urukais-font-size-lg: 1.125rem;   /* 18px */
+  --urukais-font-size-xl: 1.25rem;    /* 20px */
+  --urukais-font-size-2xl: 1.5rem;    /* 24px */
+  --urukais-font-size-3xl: 1.875rem;  /* 30px */
+  --urukais-font-size-4xl: 2.25rem;   /* 36px */
+  --urukais-font-size-5xl: 3rem;      /* 48px */
+  
+  /* Pesos de Fuente */
+  --urukais-font-light: 300;
+  --urukais-font-normal: 400;
+  --urukais-font-medium: 500;
+  --urukais-font-semibold: 600;
+  --urukais-font-bold: 700;
+  
+  /* Espaciado */
+  --urukais-space-xs: 0.25rem;   /* 4px */
+  --urukais-space-sm: 0.5rem;    /* 8px */
+  --urukais-space-md: 1rem;      /* 16px */
+  --urukais-space-lg: 1.5rem;    /* 24px */
+  --urukais-space-xl: 2rem;      /* 32px */
+  --urukais-space-2xl: 3rem;     /* 48px */
+  --urukais-space-3xl: 4rem;     /* 64px */
+  
+  /* Sombras */
+  --urukais-shadow-sm: 0 1px 2px 0 rgba(10, 14, 39, 0.05);
+  --urukais-shadow-md: 0 4px 6px -1px rgba(10, 14, 39, 0.1);
+  --urukais-shadow-lg: 0 10px 15px -3px rgba(10, 14, 39, 0.1);
+  --urukais-shadow-xl: 0 20px 25px -5px rgba(10, 14, 39, 0.1);
+  --urukais-shadow-mystic: 0 0 20px rgba(107, 70, 193, 0.3);
+  
+  /* Bordes Redondeados */
+  --urukais-radius-sm: 0.125rem;   /* 2px */
+  --urukais-radius-md: 0.375rem;   /* 6px */
+  --urukais-radius-lg: 0.5rem;     /* 8px */
+  --urukais-radius-xl: 0.75rem;    /* 12px */
+  --urukais-radius-2xl: 1rem;      /* 16px */
+  --urukais-radius-full: 50%;
+  
+  /* Transiciones */
+  --urukais-transition-fast: 150ms ease-in-out;
+  --urukais-transition-normal: 250ms ease-in-out;
+  --urukais-transition-slow: 350ms ease-in-out;
+  --urukais-transition-slower: 500ms ease-in-out;
+  
+  /* Z-Index Layers */
+  --urukais-z-dropdown: 1000;
+  --urukais-z-sticky: 1020;
+  --urukais-z-fixed: 1030;
+  --urukais-z-modal-backdrop: 1040;
+  --urukais-z-modal: 1050;
+  --urukais-z-popover: 1060;
+  --urukais-z-tooltip: 1070;
+  --urukais-z-toast: 1080;
+}
+
+/* ===== RESET Y BASE ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--urukais-font-primary);
+  font-size: var(--urukais-font-size-base);
+  line-height: 1.6;
+  color: var(--urukais-text-primary);
+  background: var(--urukais-gradient-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== TIPOGRAFÍA OPTIMIZADA ===== */
+.uk-heading {
+  font-family: var(--urukais-font-accent);
+  font-weight: var(--urukais-font-bold);
+  line-height: 1.2;
+  margin-bottom: var(--urukais-space-md);
+  background: var(--urukais-gradient-mystic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.uk-heading-1 {
+  font-size: var(--urukais-font-size-5xl);
+  margin-bottom: var(--urukais-space-xl);
+}
+
+.uk-heading-2 {
+  font-size: var(--urukais-font-size-4xl);
+  margin-bottom: var(--urukais-space-lg);
+}
+
+.uk-heading-3 {
+  font-size: var(--urukais-font-size-3xl);
+  margin-bottom: var(--urukais-space-md);
+}
+
+.uk-heading-4 {
+  font-size: var(--urukais-font-size-2xl);
+  margin-bottom: var(--urukais-space-sm);
+}
+
+.uk-text {
+  font-family: var(--urukais-font-secondary);
+  font-weight: var(--urukais-font-normal);
+  margin-bottom: var(--urukais-space-md);
+}
+
+.uk-text-large {
+  font-size: var(--urukais-font-size-lg);
+  line-height: 1.7;
+}
+
+.uk-text-small {
+  font-size: var(--urukais-font-size-sm);
+  color: var(--urukais-text-secondary);
+}
+
+.uk-text-muted {
+  color: var(--urukais-text-muted);
+}
+
+.uk-text-accent {
+  color: var(--urukais-accent);
+}
+
+.uk-text-mystic {
+  color: var(--urukais-mystic);
+}
+
+/* ===== BOTONES ===== */
+.uk-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--urukais-space-sm) var(--urukais-space-lg);
+  font-family: var(--urukais-font-secondary);
+  font-size: var(--urukais-font-size-base);
+  font-weight: var(--urukais-font-medium);
+  line-height: 1.5;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--urukais-radius-lg);
+  cursor: pointer;
+  transition: all var(--urukais-transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.uk-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left var(--urukais-transition-slow);
+}
+
+.uk-btn:hover::before {
+  left: 100%;
+}
+
+.uk-btn-primary {
+  background: var(--urukais-gradient-primary);
+  color: var(--urukais-text-primary);
+  box-shadow: var(--urukais-shadow-md);
+}
+
+.uk-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--urukais-shadow-lg);
+}
+
+.uk-btn-secondary {
+  background: var(--urukais-gradient-forest);
+  color: var(--urukais-text-primary);
+  box-shadow: var(--urukais-shadow-md);
+}
+
+.uk-btn-accent {
+  background: var(--urukais-gradient-mystic);
+  color: var(--urukais-text-primary);
+  box-shadow: var(--urukais-shadow-mystic);
+}
+
+.uk-btn-outline {
+  background: transparent;
+  color: var(--urukais-accent);
+  border: 2px solid var(--urukais-accent);
+}
+
+.uk-btn-outline:hover {
+  background: var(--urukais-accent);
+  color: var(--urukais-text-primary);
+}
+
+.uk-btn-ghost {
+  background: rgba(74, 124, 89, 0.1);
+  color: var(--urukais-accent);
+  border: 1px solid rgba(74, 124, 89, 0.3);
+}
+
+.uk-btn-ghost:hover {
+  background: rgba(74, 124, 89, 0.2);
+  border-color: var(--urukais-accent);
+}
+
+/* ===== TARJETAS ===== */
+.uk-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--urukais-radius-xl);
+  padding: var(--urukais-space-xl);
+  margin-bottom: var(--urukais-space-lg);
+  transition: all var(--urukais-transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.uk-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--urukais-gradient-mystic);
+}
+
+.uk-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--urukais-shadow-xl);
+  border-color: rgba(107, 70, 193, 0.3);
+}
+
+.uk-card-forest {
+  border-left: 4px solid var(--urukais-forest);
+}
+
+.uk-card-rock {
+  border-left: 4px solid var(--urukais-rock);
+}
+
+.uk-card-water {
+  border-left: 4px solid var(--urukais-water);
+}
+
+.uk-card-mystic {
+  border-left: 4px solid var(--urukais-mystic);
+  box-shadow: var(--urukais-shadow-mystic);
+}
+
+/* ===== FORMULARIOS ===== */
+.uk-input,
+.uk-textarea,
+.uk-select {
+  width: 100%;
+  padding: var(--urukais-space-md);
+  font-family: var(--urukais-font-secondary);
+  font-size: var(--urukais-font-size-base);
+  color: var(--urukais-text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--urukais-radius-md);
+  transition: all var(--urukais-transition-normal);
+}
+
+.uk-input:focus,
+.uk-textarea:focus,
+.uk-select:focus {
+  outline: none;
+  border-color: var(--urukais-mystic);
+  box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.uk-label {
+  display: block;
+  font-family: var(--urukais-font-secondary);
+  font-size: var(--urukais-font-size-sm);
+  font-weight: var(--urukais-font-medium);
+  color: var(--urukais-text-secondary);
+  margin-bottom: var(--urukais-space-sm);
+}
+
+/* ===== ANIMACIONES SUAVES ===== */
+@keyframes ukFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ukSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes ukScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ukGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(107, 70, 193, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(107, 70, 193, 0.6);
+  }
+}
+
+@keyframes ukPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes ukFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Clases de Animación */
+.uk-fade-in {
+  animation: ukFadeIn 0.6s ease-out;
+}
+
+.uk-slide-in {
+  animation: ukSlideIn 0.6s ease-out;
+}
+
+.uk-scale-in {
+  animation: ukScaleIn 0.4s ease-out;
+}
+
+.uk-glow {
+  animation: ukGlow 2s ease-in-out infinite;
+}
+
+.uk-pulse {
+  animation: ukPulse 2s ease-in-out infinite;
+}
+
+.uk-float {
+  animation: ukFloat 3s ease-in-out infinite;
+}
+
+/* Stagger Animation para listas */
+.uk-stagger > * {
+  animation-delay: calc(var(--stagger) * 100ms);
+}
+
+.uk-stagger > *:nth-child(1) { --stagger: 1; }
+.uk-stagger > *:nth-child(2) { --stagger: 2; }
+.uk-stagger > *:nth-child(3) { --stagger: 3; }
+.uk-stagger > *:nth-child(4) { --stagger: 4; }
+.uk-stagger > *:nth-child(5) { --stagger: 5; }
+.uk-stagger > *:nth-child(6) { --stagger: 6; }
+
+/* ===== UTILIDADES ===== */
+.uk-text-center { text-align: center; }
+.uk-text-left { text-align: left; }
+.uk-text-right { text-align: right; }
+
+.uk-flex { display: flex; }
+.uk-flex-center { display: flex; align-items: center; justify-content: center; }
+.uk-flex-between { display: flex; align-items: center; justify-content: space-between; }
+.uk-flex-column { display: flex; flex-direction: column; }
+.uk-flex-wrap { display: flex; flex-wrap: wrap; }
+
+.uk-hidden { display: none; }
+.uk-visible { display: block; }
+
+.uk-mb-sm { margin-bottom: var(--urukais-space-sm); }
+.uk-mb-md { margin-bottom: var(--urukais-space-md); }
+.uk-mb-lg { margin-bottom: var(--urukais-space-lg); }
+.uk-mb-xl { margin-bottom: var(--urukais-space-xl); }
+
+.uk-mt-sm { margin-top: var(--urukais-space-sm); }
+.uk-mt-md { margin-top: var(--urukais-space-md); }
+.uk-mt-lg { margin-top: var(--urukais-space-lg); }
+.uk-mt-xl { margin-top: var(--urukais-space-xl); }
+
+.uk-p-sm { padding: var(--urukais-space-sm); }
+.uk-p-md { padding: var(--urukais-space-md); }
+.uk-p-lg { padding: var(--urukais-space-lg); }
+.uk-p-xl { padding: var(--urukais-space-xl); }
+
+.uk-rounded { border-radius: var(--urukais-radius-lg); }
+.uk-rounded-full { border-radius: var(--urukais-radius-full); }
+
+.uk-shadow { box-shadow: var(--urukais-shadow-md); }
+.uk-shadow-lg { box-shadow: var(--urukais-shadow-lg); }
+.uk-shadow-mystic { box-shadow: var(--urukais-shadow-mystic); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  :root {
+    --urukais-font-size-5xl: 2.5rem;
+    --urukais-font-size-4xl: 2rem;
+    --urukais-font-size-3xl: 1.75rem;
+    --urukais-font-size-2xl: 1.5rem;
+  }
+  
+  .uk-heading {
+    text-align: center;
+  }
+  
+  .uk-card {
+    padding: var(--urukais-space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --urukais-font-size-5xl: 2rem;
+    --urukais-font-size-4xl: 1.75rem;
+    --urukais-font-size-3xl: 1.5rem;
+  }
+  
+  .uk-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ===== ACCESIBILIDAD ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.uk-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus visible para navegación por teclado */
+.uk-btn:focus-visible,
+.uk-input:focus-visible,
+.uk-textarea:focus-visible,
+.uk-select:focus-visible {
+  outline: 2px solid var(--urukais-mystic);
+  outline-offset: 2px;
+}
