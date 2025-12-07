@@ -1,0 +1,357 @@
+/* Clase genérica para categorías no definidas */
+[class*="category-"]:not(.category-personal):not(.category-professional):not(.category-family):not(.category-friends):not(.category-work):not(.category-business):not(.category-client):not(.category-customer):not(.category-supplier):not(.category-vendor):not(.category-medical):not(.category-doctor):not(.category-education):not(.category-school):not(.category-university):not(.category-service):not(.category-support):not(.category-emergency):not(.category-urgent):not(.category-vip):not(.category-important):not(.category-contact):not(.category-reference):not(.category-social):not(.category-network):not(.category-relatives):not(.category-relatives-extended):not(.category-group):not(.category-team):not(.category-favorite):not(.category-preferred):not(.category-others):not(.category-miscellaneous):not(.category-other):not(.category-company):not(.category-enterprise):not(.category-student):not(.category-student-body):not(.category-senior):not(.category-elder):not(.category-junior):not(.category-young):not(.category-veteran):not(.category-experienced):not(.category-new):not(.category-recent):not(.category-inactive):not(.category-dormant) {
+    background: linear-gradient(135deg, rgba(156, 163, 175, 0.3), rgba(156, 163, 175, 0.1));
+    color: #9ca3af;
+    box-shadow: 0 2px 15px rgba(156, 163, 175, 0.3);
+}
+
+/* ===== ESTILOS PARA DESPLEGABLE (SELECT) ===== */
+
+/* Estilo general del select */
+select.form-control,
+select {
+    width: 100%;
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-sm);
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: var(--transition-smooth);
+    backdrop-filter: var(--glass-blur);
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 20px;
+    padding-right: 50px;
+}
+
+select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    outline: none;
+}
+
+select:hover {
+    background-color: var(--bg-glass);
+}
+
+/* Estilo de las opciones del select */
+select option {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+}
+
+/* Espaciado entre opciones */
+select optgroup {
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font-weight: bold;
+    padding: 8px 0;
+}
+
+/* Personalización del dropdown */
+select option:hover,
+select option:focus,
+select option:checked {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+/* Dropdown con estilo customizado */
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.custom-select::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid var(--text-primary);
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Select con placeholder */
+select:invalid {
+    color: var(--text-muted);
+}
+
+/* Opción por defecto */
+select option[value=""] {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Categorías en el select - colores para opciones específicas */
+select option[value*="personal"],
+select option[data-category="personal"] {
+    color: #41a5ff;
+    font-weight: 600;
+}
+
+select option[value*="professional"],
+select option[data-category="professional"] {
+    color: #43e97b;
+    font-weight: 600;
+}
+
+select option[value*="family"],
+select option[data-category="family"] {
+    color: #fa709a;
+    font-weight: 600;
+}
+
+select option[value*="friends"],
+select option[data-category="friends"] {
+    color: #ffc371;
+    font-weight: 600;
+}
+
+select option[value*="work"],
+select option[value*="business"],
+select option[data-category="work"],
+select option[data-category="business"] {
+    color: #6c63ff;
+    font-weight: 600;
+}
+
+select option[value*="client"],
+select option[value*="customer"],
+select option[data-category="client"],
+select option[data-category="customer"] {
+    color: #ff9a9e;
+    font-weight: 600;
+}
+
+select option[value*="supplier"],
+select option[value*="vendor"],
+select option[data-category="supplier"],
+select option[data-category="vendor"] {
+    color: #ffdaaf;
+    font-weight: 600;
+}
+
+select option[value*="medical"],
+select option[value*="doctor"],
+select option[data-category="medical"],
+select option[data-category="doctor"] {
+    color: #f093fb;
+    font-weight: 600;
+}
+
+select option[value*="education"],
+select option[value*="school"],
+select option[value*="university"],
+select option[data-category="education"],
+select option[data-category="school"],
+select option[data-category="university"] {
+    color: #4facfe;
+    font-weight: 600;
+}
+
+select option[value*="service"],
+select option[value*="support"],
+select option[data-category="service"],
+select option[data-category="support"] {
+    color: #00f2fe;
+    font-weight: 600;
+}
+
+select option[value*="emergency"],
+select option[value*="urgent"],
+select option[data-category="emergency"],
+select option[data-category="urgent"] {
+    color: #ff6348;
+    font-weight: 600;
+}
+
+select option[value*="vip"],
+select option[value*="important"],
+select option[data-category="vip"],
+select option[data-category="important"] {
+    color: #ffd700;
+    font-weight: 600;
+}
+
+select option[value*="contact"],
+select option[value*="reference"],
+select option[data-category="contact"],
+select option[data-category="reference"] {
+    color: #9333ea;
+    font-weight: 600;
+}
+
+select option[value*="social"],
+select option[value*="network"],
+select option[data-category="social"],
+select option[data-category="network"] {
+    color: #10b981;
+    font-weight: 600;
+}
+
+select option[value*="relatives"],
+select option[data-category="relatives"] {
+    color: #ec4899;
+    font-weight: 600;
+}
+
+select option[value*="group"],
+select option[value*="team"],
+select option[data-category="group"],
+select option[data-category="team"] {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+select option[value*="favorite"],
+select option[value*="preferred"],
+select option[data-category="favorite"],
+select option[data-category="preferred"] {
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+select option[value*="company"],
+select option[value*="enterprise"],
+select option[data-category="company"],
+select option[data-category="enterprise"] {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+select option[value*="student"],
+select option[data-category="student"] {
+    color: #6366f1;
+    font-weight: 600;
+}
+
+select option[value*="senior"],
+select option[value*="elder"],
+select option[data-category="senior"],
+select option[data-category="elder"] {
+    color: #8b4513;
+    font-weight: 600;
+}
+
+select option[value*="junior"],
+select option[value*="young"],
+select option[data-category="junior"],
+select option[data-category="young"] {
+    color: #a855f7;
+    font-weight: 600;
+}
+
+select option[value*="veteran"],
+select option[value*="experienced"],
+select option[data-category="veteran"],
+select option[data-category="experienced"] {
+    color: #4b5563;
+    font-weight: 600;
+}
+
+select option[value*="new"],
+select option[value*="recent"],
+select option[data-category="new"],
+select option[data-category="recent"] {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+select option[value*="inactive"],
+select option[value*="dormant"],
+select option[data-category="inactive"],
+select option[data-category="dormant"] {
+    color: #6b7280;
+    font-weight: 600;
+}
+
+/* Opción por defecto para categorías no especificadas */
+select option:not([class*="category"]):not([data-category]) {
+    color: var(--text-muted);
+}
+
+/* Estilos para múltiples selects */
+select[multiple] {
+    background: var(--bg-card);
+    padding: 10px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+select[multiple] option {
+    padding: 8px 12px;
+    margin: 2px 0;
+    border-radius: 4px;
+    background: var(--bg-glass);
+}
+
+select[multiple] option:checked {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+/* Select con agrupamiento visual */
+optgroup {
+    background: var(--bg-primary);
+    color: var(--text-secondary);
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+optgroup optgroup {
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    font-weight: normal;
+    padding: 5px 15px;
+}
+
+/* Estados de validación para select */
+select:valid {
+    border-color: var(--success-color);
+}
+
+select:invalid {
+    border-color: var(--danger-color);
+}
+
+select:required:valid {
+    box-shadow: 0 0 0 2px rgba(67, 233, 123, 0.2);
+}
+
+select:required:invalid {
+    box-shadow: 0 0 0 2px rgba(255, 154, 158, 0.2);
+}
+
+/* Deshabilitado */
+select:disabled {
+    background: var(--bg-card);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Responsive para select */
+@media (max-width: 576px) {
+    select {
+        font-size: 16px; /* Previene zoom en iOS */
+        padding: 14px 18px;
+        padding-right: 45px;
+        background-size: 18px;
+        background-position: right 18px center;
+    }
+}
